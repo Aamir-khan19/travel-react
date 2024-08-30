@@ -39,7 +39,7 @@ const ContactForm = () => {
 
       console.log("data", firstName, lastName, email, phone, message)
 
-    axios.post("http://127.0.0.1:3001/data", {
+    axios.post("https://travel-backend-seven.vercel.app/data", {
       firstName,
       lastName, 
       email,
