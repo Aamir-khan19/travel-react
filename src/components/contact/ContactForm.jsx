@@ -40,7 +40,7 @@ const ContactForm = () => {
       console.log("data", firstName, lastName, email, phone, message)
 
     
-    axios.post("https://travel-backend-j07yvfzy7-aamirs-projects-785d174b.vercel.app/data", {
+    axios.post("https://travel-backend-seven.vercel.app/data", {
       firstName,
       lastName, 
       email,
