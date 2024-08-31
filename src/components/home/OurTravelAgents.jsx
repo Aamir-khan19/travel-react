@@ -3,37 +3,44 @@ import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { Link } from "react-router-dom";
 const OurTravelAgents = () => {
-  // Destinations Data
+  
   const ourTravelAgents = [
     {
       imageUrl: `/Images/travelAgenciesLogo/richieRichTravels.png`,
       name: "RICHE RICH TOURS AND TRAVELS",
       phone: "9632417602",
+      contact:"https://www.richierichholidays.in/",
     },
     {
       imageUrl: `/Images/travelAgenciesLogo/travelYug.jpg`,
       name: "Travels YUG",
       phone: "9625624780",
+      contact:"https://travelyuga.com/",
     },
     {
       imageUrl: `/Images/travelAgenciesLogo/kamakshiHolidays.png`,
       name: "KAMAKSHI HOLIDAYS",
       phone: "9881290229",
+      contact:"https://kamakshiholidays.com/",
     },
     {
       imageUrl: `/Images/travelAgenciesLogo/southIndianHolidays.jpeg`,
       name: "SOUTH INDIAN HOLIDAYS",
       phone: "7567891018",
+      contact:"http://www.southindianholidays.in/",
     },
     {
       imageUrl: `/Images/travelAgenciesLogo/perfectPlanners.png`,
       name: "PERFECT PLANNERS",
       phone: "9596863183",
+      contact:"https://perfectplannerco.com/",
+
     },
     {
       imageUrl: `/Images/travelAgenciesLogo/sathyaTravels.png`,
       name: "SATHYA TRAVELS",
       phone: "9965539599",
+      contact:"https://satyatravelsindia.com/",
     },
   ];
 
@@ -46,28 +53,28 @@ const OurTravelAgents = () => {
         loop: true,
         slides: {
           origin: "center",
-          perView: 1, // Default to 1 review visible
+          perView: 1, 
           spacing: 8,
         },
         breakpoints: {
           "(min-width: 288px)": {
             slides: {
               origin: "auto",
-              perView: 1, // Show 2 reviews on screens >= 768px
+              perView: 1,
               spacing: 8,
             },
           },
           "(min-width: 768px)": {
             slides: {
               origin: "auto",
-              perView: 2, // Show 2 reviews on screens >= 768px
+              perView: 2, 
               spacing: 8,
             },
           },
           "(min-width: 1024px)": {
             slides: {
               origin: "auto",
-              perView: 3, // Show 3 reviews on screens >= 1024px
+              perView: 3, 
               spacing: 12,
             },
           },
@@ -147,7 +154,7 @@ const OurTravelAgents = () => {
                           </span>
                           {item.phone}
                         </p>
-                        <Link to ="/contact">
+                        <Link to ={item.contact}>
                         <button className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]">
                           Contact
                         </button>
