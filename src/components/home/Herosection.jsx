@@ -3,10 +3,10 @@ import React from "react";
 const Herosection = () => {
   return (
 <div
-      className="  w-full h-fit bg-cover  bg-transparent bg-center  relative " 
+      className="  w-full bg-cover h-[330px] bg-transparent bg-center  relative " 
       style={{ backgroundImage: "url('/Images/Homepageimages/goa.jpg')" }} 
     >
-      <div className=" py-10 px-5">
+      <div className=" py-5 px-5">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between md:items-start items-center">
             <div className="md:w-1/2 lg:w-2/3">
@@ -16,15 +16,15 @@ const Herosection = () => {
               </h1>
             </div>
             <div>
-              <div className="max-w-lg mx-auto p-6   rounded-lg   backdrop:blur-md border bg-transparent border-white/20 bg-white/30 backdrop-blur-lg shadow-md">
-                    <h2 className="text-2xl font-bold mb-6 text-blue-900 dark:text-white">
+              {/* <div className="max-w-lg mx-auto px-2 pt-2   rounded-lg   backdrop:blur-md border border-white/20 bg-red-900 backdrop-blur-lg shadow-md">
+                    <h2 className="text-2xl font-bold mb-2 text-blue-900 dark:text-white">
                   Tell us what you are looking for!
                 </h2>
-                <form className="bg-transparent py-5  rounded-lg   ">
-                  <div className="mb-5">
+                <form className="bg-transparent  rounded-lg pb-4">
+                  <div className="mb-3">
                     <label
                       htmlFor="companyName"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
                     >
                       Company Name
                     </label>
@@ -36,10 +36,10 @@ const Herosection = () => {
                       required
                     />
                   </div>
-                  <div className="mb-5 ">
+                  <div className="mb-3 ">
                     <label
                       htmlFor="mobileNumber"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
                     >
                       Mobile Number
                     </label>
@@ -51,10 +51,10 @@ const Herosection = () => {
                       required
                     />
                   </div>
-                  <div className="mb-5">
+                  <div className="mb-3">
                     <label
                       htmlFor="email"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
                     >
                       Email id
                     </label>
@@ -66,10 +66,10 @@ const Herosection = () => {
                       required
                     />
                   </div>
-                  <div className="mb-5">
+                  <div className="mb-3">
                     <label
                       htmlFor="services"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
                     >
                       Services
                     </label>
@@ -81,7 +81,7 @@ const Herosection = () => {
                       required
                     />
                   </div>
-                  <div className="flex items-start mb-5">
+                  <div className="flex items-start mb-3">
                     <div className="flex items-center h-5">
                       <input
                         id="terms"
@@ -93,7 +93,7 @@ const Herosection = () => {
                     </div>
                     <label
                       htmlFor="terms"
-                      className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                      className="ml-2 text-sm font-bold text-gray-900 dark:text-gray-300"
                     >
                       I agree with the{" "}
                       <a
@@ -106,12 +106,12 @@ const Herosection = () => {
                   </div>
                   <button
                     type="submit"
-                    className="w-full text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    className="w-full text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                   >
                     Submit
                   </button>
                 </form>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

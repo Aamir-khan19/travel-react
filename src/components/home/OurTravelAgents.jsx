@@ -2,12 +2,14 @@ import React, { useEffect, useRef } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { Link } from "react-router-dom";
+import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp, FaPhone } from "react-icons/fa";
+
 const OurTravelAgents = () => {
   
   const ourTravelAgents = [
     {
       imageUrl: `/Images/travelAgenciesLogo/richieRichTravels.png`,
-      name: "RICHE RICH TOURS AND TRAVELS",
+      name: "RICHE RICH HOLIDAYS",
       phone: "9632417602",
       contact:"https://www.richierichholidays.in/",
     },
@@ -96,10 +98,10 @@ const OurTravelAgents = () => {
   };
   return (
     <section className="">
-      <div className="mx-auto relative max-w-[1340px] px-4 md:py-20 py-10 sm:px-6  lg:ps-8 ">
-        <div className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16">
+      <div className="mx-auto relative max-w-[1340px] px-4 sm:px-6  lg:ps-8 ">
+        <div className="flex flex-col sm:flex-row items-center justify-center mx-auto mb-8 sm:mb-16">
           <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0">
-            Top Travel Agents
+            Verified Travel Agents
           </h2>
           <div className="hidden sm:flex gap-4">
             <button
@@ -143,6 +145,10 @@ const OurTravelAgents = () => {
               <div key={i}>
                 <div className="keen-slider__slide" key={i}>
                   <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full ">
+
+
+                   <div className=" flex justify-between w-full">
+
                     <div className="flex w-full flex-col justify-center  items-center">
                       <img src={item.imageUrl} alt="" className="w-auto h-32" />
                       <div className="flex gap-4 justify-center  items-center flex-col">
@@ -161,6 +167,35 @@ const OurTravelAgents = () => {
                         </Link>
                       </div>
                     </div>
+
+
+                    {/* Icons div starts here */}
+                    <div className="p-2 bg-white rounded-full flex flex-col items-center justify-around">
+                    <a href="#!" className="text-[#2fb347]">
+                      <FaWhatsapp className="h-6 w-6" />
+                    </a>
+                   
+                    <a href="#!" className="text-[#4267B2]">
+                      <FaPhone className="h-6 w-6" />
+                    </a>
+                   
+                    <a href="#!" className="text-[#4267B2]">
+                      <FaFacebookF className="h-6 w-6" />
+                    </a>
+
+                    <a href="#!" className="text-[#E1306C]">
+                      <FaInstagram className="h-6 w-6" />
+                    </a>
+
+                    <a href="#!" className="text-[#E1306C]">
+                      <FaYoutube className="h-6 w-6" />
+                    </a>
+                  </div>
+                    {/* Icons div ends here */}
+
+                    </div>
+
+
                   </div>
                 </div>
               </div>

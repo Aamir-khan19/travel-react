@@ -50,11 +50,11 @@ const NavLinks = ({ menuOpen }) => {
     >
       <NavLink to="/" text="Home" />
       <NavLink to="/about" text="About" />
-      <NavLink to="/contact" text="Contact" />
      <Link to ="/TourPackages"><NavLinkWithDropdown text="Packages" >
         <DropdownMenu items={dropdownItems} />
       </NavLinkWithDropdown></Link>
       <NavLink to="/blogs" text="Blogs"  />
+      <NavLink to="/contact" text="Contact" />
       {menuOpen && <ContactUs mobile />}
     </ul>
   </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 const Client = () => {
   return (
-    <section className=" w-full flex flex-col items-center justify-center px-5 mx-auto md:py-20 py-10">
+    <section className=" w-full flex flex-col items-center justify-center px-5 mx-auto pt-10 pb-7">
       <div className="grid grid-cols-1 max-w-7xl  w-fit gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 dark:text-gray-400 justify-center md:justify-center">
         <div className=" flex justify-center items-center">
           <a

@@ -41,8 +41,8 @@ const Modal = ({ onClose }) => {
   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center  items-center z-50 ">
-      <div className="bg-white p-10 rounded-lg shadow-lg max-w-md w-full relative pt-11">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center  items-center z-50">
+      <div className="bg-white px-9 pb-6 rounded-lg shadow-lg max-w-md w-full relative pt-5 mt-[70px]">
         <button
           className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
           onClick={onClose}
@@ -63,10 +63,11 @@ const Modal = ({ onClose }) => {
             />
           </svg>
         </button>
-        <h1 className="text-3xl font-bold text-center mb-6">
+
+        <h1 className="text-3xl font-bold text-center mb-3">
           Let's talk about your project
         </h1>
-        <p className="text-center text-gray-600 mb-8">
+        <p className="text-center text-gray-600 mb-3">
           Drop us a line through the form below and we'll get back to you
         </p>
         <form onSubmit={handleSubmit} className="space-y-6">

@@ -8,46 +8,57 @@ const VerifiedHotel = () => {
     {
       id: 1,
       imageUrl: "/Images/hotelsLogo/royalHeritageLogo.png",
+      website:"https://www.royalheritagehaveli.com/"
     },
     {
       id: 2,
       imageUrl: "/Images/hotelsLogo/pineViewLogo.png",
+      website: "https://www.pineviewhotels.com/"
     },
     {
       id: 3,
       imageUrl: "/Images/hotelsLogo/pillicanLogo.png",
+      website: "https://hotelpelican.co.in/"
     },
     {
       id: 4,
       imageUrl: "/Images/hotelsLogo/reefValley.png",
+      website: "https://www.reefvalleyresort.com/"
     },
     {
       id: 5,
       imageUrl: "/Images/hotelsLogo/sangrilla.png",
+      website: "https://www.shangri-la.com/"
     },
     {
       id: 6,
       imageUrl: "/Images/hotelsLogo/casaMontana.png",
+      website: "https://casamontanamunnar.com/"
     },
     {
       id: 7,
       imageUrl: "/Images/hotelsLogo/munnarCastle.png",
+      website: "https://www.munnarcastle.co.in"
     },
     {
       id: 8,
       imageUrl: "/Images/hotelsLogo/pineViewLogo.png",
+      website: "https://www.pineviewhotels.com/"
     },
     {
       id: 9,
       imageUrl: "/Images/hotelsLogo/periyarNest.png",
+      website: "https://periyarnestresort.com/"
     },
     {
       id: 10,
       imageUrl: "/Images/hotelsLogo/grandThekaddy.png",
+      website: "https://grandthekkady.in/"
     },
     {
       id: 11,
       imageUrl: "/Images/hotelsLogo/sangrilla.png",
+      website: "https://www.shangri-la.com/"
     },
   ];
 
@@ -112,11 +123,14 @@ const VerifiedHotel = () => {
                 className="keen-slider__slide sm:h-28 h-20 w-24 flex items-center "
                 key={item.id}
               >
+                <a href={item?.website} target="_blank">
                 <img
                   className="mx-auto  w-full max-h-full max-w-full dark:shadow-black/20"
                   src={item.imageUrl}
                   alt="avatar"
                 />
+                </a>
+
               </div>
             ))}
           </div>
