@@ -34,8 +34,9 @@ const Logo = () => (
   </div>
 );
 
-const NavLinks = ({ menuOpen }) => (
-  <div
+const NavLinks = ({ menuOpen }) => {
+
+  return <div
     className={`nav-links duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
       menuOpen ? "top-[60px]" : "top-[-500%]"
     } lg:w-auto w-full flex items-center px-5 lg:px-0`}
@@ -57,7 +58,7 @@ const NavLinks = ({ menuOpen }) => (
       {menuOpen && <ContactUs mobile />}
     </ul>
   </div>
-);
+};
 
 const NavLink = ({ to, text }) => (
   <li className="relative">
@@ -67,18 +68,42 @@ const NavLink = ({ to, text }) => (
   </li>
 );
 
-const NavLinkWithDropdown = ({ text, children }) => (
-  <li className="relative group">
-    <span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer">
+const NavLinkWithDropdown = ({ text, children }) => {
+  
+  return (<li className="relative group">
+    <span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"  onMouseEnter={() =>{
+      console.log("mouseEnter");
+
+    const ele = document.querySelector(".custom-showHide");
+
+    if(ele.classList.contains("hidden")){
+     console.log("yes it contains hidden class");
+     ele.classList.remove("hidden");
+    }
+
+    }}
+      onMouseLeave={() =>{
+       console.log("onMouseLeave");
+
+       const ele = document.querySelector(".custom-showHide");
+
+       console.log("ele over", ele)
+
+       if(!ele.classList.contains("hidded")){
+        ele.classList.add("hidden");
+       }
+
+      } }>
       {text}
     </span>
     {children}
   </li>
-);
+  )
+};
 ;
 
 const DropdownMenu = ({ items }) => (
-  <div className="absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex   mr-4 mt-6 gap-4 sm:gap-6 p-4">
+  <div className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}>
     <div>
       <h1 className="font-bold py-4">Indian Packages</h1>
       <ul className="flex flex-col md:justify-center align-center">
