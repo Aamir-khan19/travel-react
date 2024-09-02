@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp, FaPhone } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp, FaPhone, FaCheckCircle } from "react-icons/fa";
 
 const OurTravelAgents = () => {
   
@@ -145,6 +145,7 @@ const OurTravelAgents = () => {
           <div key={i}>
             <div className="keen-slider__slide" key={i}>
               <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full">
+              <FaCheckCircle className="h-8 w-7" style={{ color: "#2fb347" }} />
                 <div className="flex justify-between w-full">
                   <div className="flex w-full flex-col justify-center items-center">
                     <img src={item.imageUrl} alt="" className="w-auto h-32" />
