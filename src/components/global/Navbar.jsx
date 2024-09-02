@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 
@@ -35,6 +35,7 @@ const Logo = () => (
 );
 
 const NavLinks = ({ menuOpen }) => {
+  const [isOnDropDownMenu, setIsOnDropDownMenu] = useState(false);
 
   return <div
     className={`nav-links duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
@@ -50,8 +51,8 @@ const NavLinks = ({ menuOpen }) => {
     >
       <NavLink to="/" text="Home" />
       <NavLink to="/about" text="About" />
-     <Link to ="/TourPackages"><NavLinkWithDropdown text="Packages" >
-        <DropdownMenu items={dropdownItems} />
+     <Link to ="/TourPackages"><NavLinkWithDropdown text="Packages" isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} >
+        <DropdownMenu isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} items={dropdownItems} />
       </NavLinkWithDropdown></Link>
       <NavLink to="/blogs" text="Blogs"  />
       <NavLink to="/contact" text="Contact" />
@@ -68,32 +69,48 @@ const NavLink = ({ to, text }) => (
   </li>
 );
 
-const NavLinkWithDropdown = ({ text, children }) => {
+const NavLinkWithDropdown = ({ text, children, isOnDropDownMenu, setIsOnDropDownMenu }) => {
+ 
   
-  return (<li className="relative group">
-    <span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"  onMouseEnter={() =>{
-      console.log("mouseEnter");
+const handleMouseEnter = function(){
+  // console.log("mouseEnter");
 
     const ele = document.querySelector(".custom-showHide");
 
-    if(ele.classList.contains("hidden")){
-     console.log("yes it contains hidden class");
-     ele.classList.remove("hidden");
-    }
-
-    }}
-      onMouseLeave={() =>{
-       console.log("onMouseLeave");
-
-       const ele = document.querySelector(".custom-showHide");
-
-       console.log("ele over", ele)
-
-       if(!ele.classList.contains("hidded")){
-        ele.classList.add("hidden");
+      if(ele.classList.contains("hidden")){
+        // console.log("yes it contains hidden class");
+        // setIsOnDropDownMenu(true)
+        ele.classList.remove("hidden");
        }
+    
+   
+}
 
-      } }>
+const handleMouseLeave = function(){
+  // console.log("onMouseLeave");
+
+  const ele = document.querySelector(".custom-showHide");
+
+  // console.log("ele over", ele)
+
+  
+   
+      if(isOnDropDownMenu == false){
+        if(!ele.classList.contains("hidded")){
+          setTimeout(()=>{
+        ele.classList.add("hidden");
+        
+      }, 800)
+      }
+ }
+ 
+  
+}
+
+  
+  return (<li className="relative group">
+    <span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"  onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}>
       {text}
     </span>
     {children}
@@ -102,9 +119,40 @@ const NavLinkWithDropdown = ({ text, children }) => {
 };
 ;
 
-const DropdownMenu = ({ items }) => (
-  <div className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}>
-    <div>
+const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
+
+  const handleMouseEnter = function(){
+    //  setIsOnDropDownMenu(true);
+    console.log("mouseEnter");
+
+    console.log("isOnDropDownMenu", isOnDropDownMenu);
+  
+      const ele = document.querySelector(".custom-showHide");
+  
+      if(ele.classList.contains("hidden")){
+       console.log("yes it contains hidden class");
+      
+       ele.classList.remove("hidden");
+      }
+  }
+  
+  const handleMouseLeave = function(){
+    console.log("onMouseLeave");
+  
+    const ele = document.querySelector(".custom-showHide");
+  
+    console.log("ele over", ele)
+  
+    if(!ele.classList.contains("hidded")){
+      // setIsOnDropDownMenu(false)
+      
+       ele.classList.add("hidden");
+    }
+  }
+
+
+ return <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}>
+    <div onMouseEnter={()=>setIsOnDropDownMenu(true)} >
       <h1 className="font-bold py-4">Indian Packages</h1>
       <ul className="flex flex-col md:justify-center align-center">
         {items.indian.map((item, index) => (
@@ -116,7 +164,7 @@ const DropdownMenu = ({ items }) => (
         ))}
       </ul>
     </div>
-    <div>
+    <div onMouseEnter={()=>setIsOnDropDownMenu(true)} >
       <h1 className="font-bold py-4 ">International Packages</h1>
       <ul className="flex flex-col ">
         {items.international.map((item, index) => (
@@ -129,7 +177,7 @@ const DropdownMenu = ({ items }) => (
       </ul>
     </div>
   </div>
-);
+};
 
 const dropdownItems = {
   indian: [

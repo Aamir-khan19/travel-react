@@ -15,7 +15,7 @@ const BlogPost = () => {
   return (
     <>
       <Navbar />
-      {/* <div className="max-w-7xl mx-auto flex flex-col gap-5 py-10 px-5">
+      <div className="max-w-7xl mx-auto flex flex-col gap-5 py-10 px-5">
         <h1 className="text-2xl font-bold mb-4">{post.title}</h1>
         <img
           src={post.image}
@@ -41,7 +41,7 @@ const BlogPost = () => {
             <img className="w-4/5 " src={con.imageSrc} alt="" />
           </div>
         ))}
-      </div> */}
+      </div>
       <Footer />
     </>
   );

@@ -5,7 +5,7 @@ import { blogPosts } from "./blogPostsData";
 const Blogs = () => {
   return (
     <section className="w-full">
-      {/* <div className="max-w-7xl mx-auto py-10 px-5">
+      <div className="max-w-7xl mx-auto py-10 px-5">
         <div className="relative w-full">
           <div className="relative">
             <img
@@ -67,7 +67,7 @@ const Blogs = () => {
             ))}
           </div>
         </div>
-      </div> */}
+      </div>
     </section>
   );
 };
