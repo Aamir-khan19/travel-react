@@ -8,11 +8,7 @@ const BlogsPage = () => {
     <>
       <Navbar />
 
-    <div className=" h-screen font-semibold text-5xl text-center">
-      blog page
-    </div>
-
-      {/* <Blogs /> */}
+      <Blogs />
 
       <Footer />
     </>
