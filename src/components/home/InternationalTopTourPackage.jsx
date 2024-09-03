@@ -94,7 +94,7 @@ const InternationalTopTourPackage = () => {
           id="international"
         >
           <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
-            Highlight international packages
+            Highlight International Packages
           </h2>
           <div className="hidden sm:flex gap-4">
             <button
