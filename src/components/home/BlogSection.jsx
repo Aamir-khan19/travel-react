@@ -116,7 +116,7 @@ const BlogSection = () => {
     <section className="py-10 md:py-20 ">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16">
-          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0">
+          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
             Discover India's Hidden Gems
           </h2>
           <div className="hidden sm:flex gap-4">
@@ -158,14 +158,14 @@ const BlogSection = () => {
         <div ref={sliderContainer} className="keen-slider">
           {BlogData.map((item, i) => (
             <div key={i} className="keen-slider__slide">
-              <div className="relative w-full h-96 rounded-xl overflow-hidden shadow-lg">
+              <div className="relative w-full rounded-xl overflow-hidden shadow-lg">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="object-cover object-center w-full h-full"
+                  className="object-cover object-center w-full h-[280px]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                <div className="absolute flex flex-col gap-3 bottom-0 left-0 right-0 p-6">
+                <div className="absolute flex flex-col gap-3 top-0 h-[210px] justify-end left-0 right-0 p-4">
                   <h3 className="text-white text-2xl font-semibold">
                     {item.title}
                   </h3>

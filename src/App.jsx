@@ -58,7 +58,7 @@ const App = () => {
         <>
           {/* {showModal && <Modal onClose={handleCloseModal} />} */}
           <Navbar />
-          {/* <WeddingCarouselTop /> */}
+          <WeddingCarouselTop />
           <Herosection />
           <Client />
           <OurTravelAgents />

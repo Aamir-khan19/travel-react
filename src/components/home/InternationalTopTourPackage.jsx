@@ -9,7 +9,7 @@ const InternationalTopTourPackage = () => {
       imageUrl: `https://cdn.pixabay.com/photo/2015/02/24/13/23/buildings-647400_640.jpg`,
       title: "Singapore",
       description:
-        "Experience the vibrant culture, stunning skyline, and world-class attractions in Singapore. From Gardens by the Bay to Sentosa Island, there's something for everyone.",
+        "Experience the vibrant culture, stunning skyline, and world-class attractions in Singapore. From Gardens by the Bay to Sentosa Island",
     },
     {
       imageUrl: `https://cdn.pixabay.com/photo/2020/03/19/18/29/camel-4948299_640.jpg`,
@@ -27,19 +27,19 @@ const InternationalTopTourPackage = () => {
       imageUrl: `https://cdn.pixabay.com/photo/2018/07/26/07/45/valais-3562988_640.jpg`,
       title: "Switzerland",
       description:
-        "Explore the picturesque landscapes and charming cities of Switzerland. From the Swiss Alps to the beautiful lakes, it's a dream destination for nature lovers.",
+        "Explore the picturesque landscapes and charming cities of Switzerland. From the Swiss Alps to the beautiful lakes.",
     },
     {
       imageUrl: `https://cdn.pixabay.com/photo/2021/02/23/11/06/mountains-6043079_960_720.jpg`,
       title: "Nepal",
       description:
-        "Embark on an adventure in Nepal, home to the majestic Himalayas. Trek through stunning landscapes, visit ancient temples, and immerse yourself in the rich culture.",
+        "Embark on an adventure in Nepal, home to the majestic Himalayas. Trek through stunning landscapes, visit ancient temples.",
     },
     {
       imageUrl: `https://cdn.pixabay.com/photo/2016/09/15/01/57/temple-1670926_640.jpg`,
       title: "Thailand",
       description:
-        "Experience the vibrant street life, beautiful beaches, and delicious cuisine of Thailand. From Bangkok's bustling markets to the tranquil islands, it's a destination like no other.",
+        "Experience the vibrant street life, beautiful beaches, and delicious cuisine of Thailand. From Bangkok's bustling markets to the tranquil islands.",
     },
   ];
   const sliderContainer = useRef(null);
@@ -93,8 +93,8 @@ const InternationalTopTourPackage = () => {
           className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16"
           id="international"
         >
-          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0">
-            Top International Tour Packages
+          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
+            Highlight international packages
           </h2>
           <div className="hidden sm:flex gap-4">
             <button
@@ -135,14 +135,14 @@ const InternationalTopTourPackage = () => {
         <div ref={sliderContainer} className="keen-slider">
           {internationalTopTourPackageData.map((item, i) => (
             <div key={i} className="keen-slider__slide">
-              <div className="relative w-full h-96 rounded-xl overflow-hidden">
+              <div className="relative w-full rounded-xl overflow-hidden">
                 <img
                   src={item.imageUrl}
                   alt={item.title}
-                  className="object-cover object-center w-full h-full"
+                  className="object-cover object-center w-full h-full min-h-[280px]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
-                <div className="absolute flex flex-col gap-3 bottom-0 left-0 right-0 p-4">
+                {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div> */}
+                <div className="absolute flex flex-col gap-3 top-0 h-[210px] justify-end left-0 right-0 p-4">
                   <h3 className="text-white text-2xl font-semibold">
                     {item.title}
                   </h3>

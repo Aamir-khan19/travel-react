@@ -101,7 +101,7 @@ const VerifiedTransport = () => {
     <section className="">
       <div className="mx-auto relative max-w-[1340px] px-4 md:py-20 py-10 sm:px-6    lg:ps-8 ">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16">
-          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0">
+          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
             Verified Transports
           </h2>
           <div className="hidden sm:flex gap-4">

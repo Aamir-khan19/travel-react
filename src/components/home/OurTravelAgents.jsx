@@ -177,11 +177,11 @@ const OurTravelAgents = () => {
                             </span>
                             {item?.Address}
                           </p>
-                          <Link to={item.contact}>
-                            <button className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]">
+                         
+                            <a href={item?.contact} target="_blank" className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]">
                               view more
-                            </button>
-                          </Link>
+                            </a>
+                         
                         </div>
                       </div>
 

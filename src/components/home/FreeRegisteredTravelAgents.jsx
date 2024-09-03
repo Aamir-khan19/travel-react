@@ -2,6 +2,14 @@ import React, { useEffect, useRef } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { Link } from "react-router-dom";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaPhone,
+  FaCheckCircle,
+} from "react-icons/fa";
 const FreeRegisteredTravelAgents = () => {
   // Destinations Data
   const ourTravelAgents = [
@@ -60,7 +68,18 @@ const FreeRegisteredTravelAgents = () => {
       phone: "8374837460",
       email: "care@trip2sky.com",
     },
-  ];
+
+    {
+      name: "TAHA INTERNATIONAL TOURS AND TRAVELS ",
+      phone: "8975850699",
+      email: "tahatrips@gmail.com",
+    },
+    {
+      name: "Aanantham Resorts",
+      phone: "9736200082",
+      email: "booking.aanantham@gmail.com",
+    },
+  ]
 
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
@@ -116,7 +135,7 @@ const FreeRegisteredTravelAgents = () => {
     <section className="">
       <div className="mx-auto relative max-w-[1340px] px-4 md:py-20 py-10 sm:px-6    lg:ps-8 ">
         <div className="flex flex-col sm:flex-row items-center justify-between ">
-          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0">
+          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
             Registered Travel Agents
           </h2>
           <div className="hidden sm:flex gap-4">
@@ -154,12 +173,12 @@ const FreeRegisteredTravelAgents = () => {
             </button>
           </div>
         </div>
-        <div className=" sm:mt-16 relative mt-8 lg:col-span-2 lg:mx-0">
+        <div className="   sm:mt-16 relative mt-8 lg:col-span-2 lg:mx-0">
           <div ref={sliderContainer} className="keen-slider">
             {ourTravelAgents.map((item, i) => (
               <div key={i}>
                 <div className="keen-slider__slide" key={i}>
-                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full sm:w-auto">
+                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full sm:w-auto min-h-[260px]">
                     <div className="flex sm:flex-row flex-col-reverse sm:justify-start justify-center sm:items-start items-center">
                       <div className="flex gap-5 sm:justify-start justify-center sm:items-start items-center flex-col">
                         <h1 className="text-xl font-bold">{item.name}</h1>
@@ -184,10 +203,34 @@ const FreeRegisteredTravelAgents = () => {
                         </button>
                         </Link>
                       </div>
+                      
                     </div>
+                    <div className="w-1/3 p-2 bg-white rounded-full flex flex-col items-end justify-between">
+                        <a href="#!" className="text-[#2fb347]">
+                          <FaWhatsapp className="h-6 w-6" />
+                        </a>
+
+                        <a href="#!" className="text-[#4267B2]">
+                          <FaPhone className="h-6 w-6" />
+                        </a>
+
+                        <a href="#!" className="text-[#4267B2]">
+                          <FaFacebookF className="h-6 w-6" />
+                        </a>
+
+                        <a href="#!" className="text-[#E1306C]">
+                          <FaInstagram className="h-6 w-6" />
+                        </a>
+
+                        <a href="#!" className="text-[#E1306C]">
+                          <FaYoutube className="h-6 w-6" />
+                        </a>
+                      </div>
                   </div>
+                  
                 </div>
               </div>
+              
             ))}
           </div>
         </div>
@@ -224,7 +267,8 @@ const FreeRegisteredTravelAgents = () => {
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
               />
             </svg>
-          </button>
+          </button> 
+       
         </div>
       </div>
     </section>
