@@ -65,7 +65,7 @@ const Contact = () => {
                   <MdOutlineMessage color="#01055b" size={40} />
                   <div className="flex flex-col">
                     <p className="text-base font-medium">Email Us</p>
-                    <p className="text-base text-gray-800">info@triptohoneymoon.com</p>
+                    <p className="text-base text-gray-800">info@travelnworld.com</p>
                   </div>
                 </div>
               </div>
