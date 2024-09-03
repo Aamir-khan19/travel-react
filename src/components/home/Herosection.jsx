@@ -1,119 +1,127 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Herosection = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isFormVisible, setIsFormVisible] = useState(true);
+
+  const slides = [
+    { image: "/Images/Homepageimages/goa.jpg" },
+    { image: "/Images/Homepageimages/boat_heroImage.png" },
+    { image: "/Images/Homepageimages/winter_heroImage.png" },
+    { image: "/Images/Homepageimages/mountain_heroImage.png" },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) =>
+        prevSlide >= slides.length - 1 ? 0 : prevSlide + 1
+      );
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
-<div
-      className="  w-full bg-cover h-[330px] bg-transparent bg-center  relative " 
-      style={{ backgroundImage: "url('/Images/Homepageimages/goa.jpg')" }} 
-    >
-      <div className=" py-5 px-5">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between md:items-start items-center">
-            <div className="md:w-1/2 lg:w-2/3">
-              <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
-                Let's <br className="hidden md:block" />
-                <span className="text-white">Explore</span> Goa
-              </h1>
+    <div className="relative w-full h-[85vh] overflow-hidden">
+      {/* Button to trigger the form */}
+      <button
+        className={`absolute z-30 ${
+          isFormVisible ? "right-1/3" : "right-0"
+        } top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rotate-90 origin-bottom transition-all duration-700`}
+        onClick={() => setIsFormVisible(!isFormVisible)}
+      >
+        Register with us
+      </button>
+
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-in-out ${
+            index === currentSlide ? "translate-y-0" : "translate-y-full"
+          }`}
+          style={{
+            backgroundImage: `url('${slide.image}')`,
+            zIndex: index === currentSlide ? 1 : 0,
+          }}
+        />
+      ))}
+
+      {/* Form with smooth transition */}
+      <div
+        className={`absolute z-50 top-1/4 right-0 w-1/3 bg-white shadow-lg transition-transform duration-700 ease-in-out ${
+          isFormVisible ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className=" px-6 py-2">
+          <h2 className="text-2xl font-bold mb-2">Register with us</h2>
+          <form>
+            <div className="mb-2">
+              <label className="block text-gray-700 font-bold" htmlFor="name">
+                Name
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="name"
+                type="text"
+                placeholder="Your Name"
+              />
             </div>
-            <div>
-              {/* <div className="max-w-lg mx-auto px-2 pt-2   rounded-lg   backdrop:blur-md border border-white/20 bg-red-900 backdrop-blur-lg shadow-md">
-                    <h2 className="text-2xl font-bold mb-2 text-blue-900 dark:text-white">
-                  Tell us what you are looking for!
-                </h2>
-                <form className="bg-transparent  rounded-lg pb-4">
-                  <div className="mb-3">
-                    <label
-                      htmlFor="companyName"
-                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
-                    >
-                      Company Name
-                    </label>
-                    <input
-                      type="text"
-                      id="companyName"
-                      className=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Your company name"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3 ">
-                    <label
-                      htmlFor="mobileNumber"
-                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
-                    >
-                      Mobile Number
-                    </label>
-                    <input
-                      type="tel"
-                      id="mobileNumber"
-                      className=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Your mobile number"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label
-                      htmlFor="email"
-                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
-                    >
-                      Email id
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      className=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="name@example.com"
-                      required
-                    />
-                  </div>
-                  <div className="mb-3">
-                    <label
-                      htmlFor="services"
-                      className="block mb-2 text-sm font-bold text-gray-900 dark:text-white"
-                    >
-                      Services
-                    </label>
-                    <input
-                      type="text"
-                      id="services"
-                      className=" bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                      placeholder="Your services"
-                      required
-                    />
-                  </div>
-                  <div className="flex items-start mb-3">
-                    <div className="flex items-center h-5">
-                      <input
-                        id="terms"
-                        type="checkbox"
-                        value=""
-                        className="w-4 h-4 border border-gray-700 rounded bg-white focus:ring-3 focus:ring-blue-300 dark:bg-gray-800 dark:border-gray-600 dark:focus:ring-blue-900 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                        required
-                      />
-                    </div>
-                    <label
-                      htmlFor="terms"
-                      className="ml-2 text-sm font-bold text-gray-900 dark:text-gray-300"
-                    >
-                      I agree with the{" "}
-                      <a
-                        href="#"
-                        className="text-blue-900 hover:underline dark:text-blue-900"
-                      >
-                        Terms and conditions  
-                      </a>
-                    </label>
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full text-white bg-blue-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div> */}
+            <div className="mb-2">
+              <label className="block text-gray-700 font-bold" htmlFor="email">
+                Email
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="email"
+                type="email"
+                placeholder="Your Email"
+              />
             </div>
-          </div>
+            <div className="mb-2">
+              <label className="block text-gray-700 font-bold" htmlFor="phone">
+                Phone
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="phone"
+                type="tel"
+                placeholder="Your Phone Number"
+              />
+            </div>
+            <div className="mb-2">
+              <label className="block text-gray-700 font-bold" htmlFor="password">
+                Password
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="password"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+            {/* <div className="mb-2">
+              <label
+                className="block text-gray-700 font-bold"
+                htmlFor="confirm-password"
+              >
+                Confirm Password
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="confirm-password"
+                type="password"
+                placeholder="Confirm Password"
+              />
+            </div> */}
+            <div className="flex items-center justify-between">
+              <button
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                type="button"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
@@ -121,4 +129,3 @@ const Herosection = () => {
 };
 
 export default Herosection;
-
