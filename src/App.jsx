@@ -56,7 +56,7 @@ const App = () => {
         </div>
       ) : (
         <>
-          {showModal && <Modal onClose={handleCloseModal} />}
+          {/* {showModal && <Modal onClose={handleCloseModal} />} */}
           <Navbar />
           {/* <WeddingCarouselTop /> */}
           <Herosection />
