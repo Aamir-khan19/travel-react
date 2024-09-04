@@ -30,7 +30,7 @@ const Herosection = () => {
       {/* Button to trigger the form */}
       <button
         className={`absolute z-30 ${
-          isFormVisible ? "right-1/3 max-[600px]:right-[78%]" : "right-0"
+          isFormVisible ? "md:right-1/3 right-[78%]" : "right-0"
         } top-1/2 transform -translate-y-1/2 bg-blue-500 text-white  px-4 py-2 rotate-90 origin-bottom transition-all duration-700 whitespace-nowrap`}
         onClick={() => setIsFormVisible(!isFormVisible)}
       >
@@ -57,7 +57,7 @@ const Herosection = () => {
        
 
       <div
-        className={`absolute z-50 right-0 w-1/3 max-[600px]:w-[80%] bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
+        className={`absolute z-50 right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
           isFormVisible ? "translate-x-0" : "translate-x-full"
         }`}
       >
