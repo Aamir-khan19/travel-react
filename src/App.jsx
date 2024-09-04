@@ -15,10 +15,14 @@ import BlogSection from "./components/home/BlogSection";
 import Testimonial from "./components/home/Testimonial";
 import NextTopLoader from 'nextjs-toploader';
 import Modal from "./components/Modal/Modal";
+import WhatsAppLinkComp from "./components/home/WhatsAppLinkComp";
+import RequestQuoteComp from "./components/home/RequestQuoteComp";
+import RequestQuoteModal from "./components/home/RequestQuoteModal";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  const [isRequestQuoteModalOpen, setIsRequestQuoteModalOpen] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -37,6 +41,15 @@ const App = () => {
 
   const handleCloseModal = () => {
     setShowModal(false);
+  };
+
+
+  const handleRequestQuoteOpenModal = () => {
+    setIsRequestQuoteModalOpen(true);
+  };
+
+  const handleRequestQuoteCloseModal = () => {
+    setIsRequestQuoteModalOpen(false);
   };
 
   return (
@@ -71,6 +84,9 @@ const App = () => {
           <BlogSection />
           <Testimonial />
           <Footer />
+          <WhatsAppLinkComp />
+          <RequestQuoteComp handleRequestQuoteOpenModal={handleRequestQuoteOpenModal} />
+          <RequestQuoteModal isRequestQuoteModalOpen={isRequestQuoteModalOpen} handleRequestQuoteCloseModal={handleRequestQuoteCloseModal} />
         </>
       )}
     </>

@@ -144,9 +144,8 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
     console.log("ele over", ele)
   
     if(!ele.classList.contains("hidded")){
-      // setIsOnDropDownMenu(false)
-      
        ele.classList.add("hidden");
+       setIsOnDropDownMenu(false)
     }
   }
 
