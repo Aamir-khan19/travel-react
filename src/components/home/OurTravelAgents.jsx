@@ -55,7 +55,34 @@ const OurTravelAgents = () => {
       phone: "9965539599",
       contact: "https://satyatravelsindia.com/",
       Address:
-        "B-28, DDA Complex Market, New Rajinder Nagar, New Delhi,Delhi-110060, India",
+        "B-28, DDA Complex Market, New Rajinder Nagar, New Delhi, Delhi-110060, India",
+    },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",
+      name: "Just keep travels",
+      phone: "9965539599",
+      contact: "/",
+      Address:   "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
+       
+    },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
+      name: "TOURZPLANNER",
+      phone: "9965539599",
+      contact: "/",
+      Address:   "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
+
+
+       
+    },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/himalayancircle.png",
+      name: "Himalayan Circle",
+      phone: "9965539599",
+      contact: "https://himalayancircle.com/",
+      Address:   "vill-Nauni,PO-Darlaghat,teh-Arki, Distt-Solon HP -171102",
+
+       
     },
   ];
 

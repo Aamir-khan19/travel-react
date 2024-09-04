@@ -79,6 +79,39 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9736200082",
       email: "booking.aanantham@gmail.com",
     },
+    {
+      name: " Travelbee Holiday's ",
+      phone: "9152023332",
+      email: "holidaystravelbee@gmail.com",
+    },
+    {
+      name: " Global Gateway",
+      phone: " 7201017126",
+      email: "globalgatewaystv@gmail.com",
+    },
+    {
+      name: " Around pondy",
+      phone: " 8940308019",
+      email: "aroundpondy@gmail.com",
+    },
+
+    {
+      name: " Kesariya Travels ",
+      phone: " 7733937777 ",
+      email: "kesariyatravels0094@gmail.com",
+    },
+
+    {
+      name: "KU TOUR TRAVEL ",
+      phone: "9422267336",
+      email: "KUTRAVELS23@GMAIL.COM",
+    },
+
+    {
+      name: "siddhesh Tours and travels ",
+      phone: "9422267336",
+      email: "id-phalak.mahesh@gmail.com",
+    },
   ]
 
   const sliderContainer = useRef(null);
