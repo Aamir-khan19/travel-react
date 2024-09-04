@@ -50,7 +50,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span>Dashboard</span>
+                <span>Agent Dashboard</span>
               </li>
               <li className="flex items-center space-x-3">
                 <svg
@@ -80,7 +80,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span>10 Professional Templates</span>
+                <span>10 Professional Graphics</span>
               </li>
               <li className="flex items-center space-x-3">
                 <svg
@@ -169,7 +169,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span>10 page website</span>
+                <span>5 page website</span>
               </li>
               <li className="flex items-center space-x-3">
                 <svg
@@ -199,7 +199,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span>Dashboard </span>
+                <span>Agent Dashboard </span>
               </li>
 
               <li className="flex items-center space-x-3">
@@ -230,7 +230,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span> 25 Professional Templates</span>
+                <span> 25 Professional Graphics</span>
               </li>
               <li className="flex items-center space-x-3">
                 <svg
@@ -364,7 +364,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span>Dashboard </span>
+                <span>Agent Dashboard </span>
               </li>
 
               <li className="flex items-center space-x-3">
@@ -395,7 +395,7 @@ const PricingSection = () => {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <span> 50 Professional Templates</span>
+                <span> 50 Professional Graphics</span>
               </li>
               <li className="flex items-center space-x-3">
                 <svg
