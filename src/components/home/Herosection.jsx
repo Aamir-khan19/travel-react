@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 const Herosection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isFormVisible, setIsFormVisible] = useState(true);
+  const [isFormVisible, setIsFormVisible] = useState(false);
 
   const slides = [
     { image: "/Images/Homepageimages/goa.jpg" },
@@ -18,6 +18,10 @@ const Herosection = () => {
       );
     }, 2000);
 
+    setTimeout(()=>{
+    setIsFormVisible(true)
+    }, 2000)
+
     return () => clearInterval(interval);
   }, []);
 
@@ -27,7 +31,7 @@ const Herosection = () => {
       <button
         className={`absolute z-30 ${
           isFormVisible ? "right-1/3 max-[600px]:right-[78%]" : "right-0"
-        } top-1/2 transform -translate-y-1/2 bg-blue-500 text-white px-4 py-2 rotate-90 origin-bottom transition-all duration-700 whitespace-nowrap`}
+        } top-1/2 transform -translate-y-1/2 bg-blue-500 text-white  px-4 py-2 rotate-90 origin-bottom transition-all duration-700 whitespace-nowrap`}
         onClick={() => setIsFormVisible(!isFormVisible)}
       >
         Register with us
