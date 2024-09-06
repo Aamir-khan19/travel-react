@@ -112,6 +112,16 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9422267336",
       email: "id-phalak.mahesh@gmail.com",
     },
+    {
+      name: "sarvadnya travels",
+      phone: "9822281125",
+      email: "pramodnamde@rediffmail.com",
+    },
+    {
+      name: "travel triangle Tours",
+      phone: "8850049553",
+      email: "traveltriangle77@gmail.com"
+    }
   ]
 
   const sliderContainer = useRef(null);
