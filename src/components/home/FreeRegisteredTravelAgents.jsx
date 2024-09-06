@@ -121,6 +121,16 @@ const FreeRegisteredTravelAgents = () => {
       name: "travel triangle Tours",
       phone: "8850049553",
       email: "traveltriangle77@gmail.com"
+    },
+    {
+      name: "Vanshika caps",
+      phone: "888128888",
+      email: "vanshikatravelsagra@gmail.com"
+    },
+    {
+      name: "Al safari travels",
+      phone: "9335515971",
+      email: "allsafaritravels@gmail.com"
     }
   ]
 
