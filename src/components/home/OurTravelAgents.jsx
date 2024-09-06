@@ -61,7 +61,7 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",
       name: "Just keep travels",
       phone: "9965539599",
-      contact: "/",
+      contact: "https://justkeeptravel.com/",
       Address:   "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
        
     },
