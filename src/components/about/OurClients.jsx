@@ -2,21 +2,21 @@ import React from "react";
 
 const testimonials = [
   {
-    text: "Pagedone has made it possible for me to stay on top of my portfolio and make informed decisions quickly and easily.",
-    name: "Jane D",
-    position: "CEO",
+    text: "I received good services and timely care during the tour. Travelnworld ensured a smooth and enjoyable trip, making it hassle-free and memorable. Will choose them again!",
+    name: "Prathmesh Sagare,Mumbai",
+    
     img: "https://pagedone.io/asset/uploads/1696229969.png",
   },
   {
-    text: "Pagedone has made it possible for me to stay on top of my portfolio and make informed decisions quickly and easily.",
-    name: "Jane D",
-    position: "CEO",
+    text: "Travelnworld provided excellent service throughout my trip. I was highly satisfied with their professionalism and attention to detail. Definitely recommend them for a memorable travel experience.",
+    name: "Akash Desarda,Mumbai",
+    
     img: "https://pagedone.io/asset/uploads/1696229969.png",
   },
   {
-    text: "Thanks to Pagedone, I feel more informed and confident about my investment decisions than ever before.",
-    name: "Harsh P.",
-    position: "Product Designer",
+    text: "I received good services and timely care during the tour. Travelnworld ensured a smooth and enjoyable trip, making it hassle-free and memorable. Will choose them again!",
+    name: " Prabhul, Kerala",
+
     img: "https://pagedone.io/asset/uploads/1696229994.png",
   },
 ];

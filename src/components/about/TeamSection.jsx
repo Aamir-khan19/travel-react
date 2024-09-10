@@ -19,26 +19,26 @@ const TeamSection = () => {
         </div>
 
         {/* Team Members */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5 ">
+        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-5  ">
           {/* Member #1 */}
           <div className="w-full ">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center border-solid border-2 border-black-400 min-h-[460px]">
               <a href="#" className="mx-auto">
                 <img
                   className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
-                  src="https://images.unsplash.com/photo-1634926878768-2a5b3c42f139?fit=clamp&w=400&h=400&q=80"
+                  src="Images/aboutPageImages/new.jpeg"
                   alt="Tranter Jaskulski"
                 />
               </a>
               <div className="text-center mt-6">
-                <h1 className="text-gray-900 text-xl font-bold mb-1">
-                  Tranter Jaskulski
+                <h1 className="text-gray-900 text-xl font-bold mb-1  ">
+                  Mulayam Singh 
                 </h1>
-                <div className="text-gray-700 font-light mb-2">
-                  Founder & Specialist
+                <div className="text-gray-900 font-light mb-2">
+                  Tech Support
                 </div>
                 <div className="flex space-x-2">
-                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
+                  <div className="p-2 bg-white rounded-full flex items-center justify-center ">
                     <a href="#!" className="text-[#4267B2]">
                       <FaFacebookF className="h-6 w-6" />
                     </a>
@@ -61,22 +61,22 @@ const TeamSection = () => {
 
           {/* Member #2 */}
           <div className="w-full  ">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items- border-solid border-2 border-black-400 min-h-[460px]">
               <a href="#" className="mx-auto">
                 <img
                   className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
-                  src="https://images.unsplash.com/photo-1634896941598-b6b500a502a7?fit=clamp&w=400&h=400&q=80"
+                  src="Images/aboutPageImages/new2.jpeg"
                   alt="Denice Jagna"
                 />
               </a>
               <div className="text-center mt-6">
                 <h1 className="text-gray-900 text-xl font-bold mb-1">
-                  Denice Jagna
+                  Vikas  Singh
                 </h1>
-                <div className="text-gray-700 font-light mb-2">
-                  Tired & M. Specialist
+                <div className="text-gray-900 font-light mb-2">
+                 Sales Head
                 </div>
-                <div className="flex space-x-2">
+                <div className="flex space-x-2 w-full justify-center ">
                   <div className="p-2 bg-white rounded-full flex items-center justify-center">
                     <a href="#!" className="text-[#4267B2]">
                       <FaFacebookF className="h-6 w-6" />
@@ -100,19 +100,19 @@ const TeamSection = () => {
 
           {/* Member #3 */}
           <div className="w-full ">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center border-solid border-2 border-black-400 min-h-[460px]">
               <a href="#" className="mx-auto">
                 <img
                   className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
-                  src="https://images.unsplash.com/photo-1634193295627-1cdddf751ebf?fit=clamp&w=400&h=400&q=80"
+                   src="Images/aboutPageImages/new3.jpeg"
                   alt="Kenji Milton"
                 />
               </a>
               <div className="text-center mt-6">
                 <h1 className="text-gray-900 text-xl font-bold mb-1">
-                  Kenji Milton
+                  Nitesh Pandey
                 </h1>
-                <div className="text-gray-700 font-light mb-2">Team Member</div>
+                <div className="text-gray-700 font-light mb-2">Sales Support</div>
                 <div className="flex space-x-2">
                   <div className="p-2 bg-white rounded-full flex items-center justify-center">
                     <a href="#!" className="text-[#4267B2]">
@@ -137,20 +137,20 @@ const TeamSection = () => {
 
           {/* Member #4 */}
           <div className="w-full">
-            <div className="flex flex-col items-center">
+            <div className="flex flex-col items-center  border-solid border-2 border-black-400 min-h-[460px]">
               <a href="#" className="mx-auto">
                 <img
                   className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
-                  src="https://images.unsplash.com/photo-1635003913011-95971abba560?fit=clamp&w=400&h=400&q=80"
+                  src="Images/aboutPageImages/new4.jpeg"
                   alt="Doesn't matter"
                 />
               </a>
               <div className="text-center mt-6">
                 <h1 className="text-gray-900 text-xl font-bold mb-1">
-                  Doesn't matter
+                  Renu Rana
                 </h1>
                 <div className="text-gray-700 font-light mb-2">
-                  Will be fired
+                  Hr/Admin
                 </div>
                 <div className="flex space-x-2">
                   <div className="p-2 bg-white rounded-full flex items-center justify-center">
