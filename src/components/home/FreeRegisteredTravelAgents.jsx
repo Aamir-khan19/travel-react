@@ -14,63 +14,63 @@ const FreeRegisteredTravelAgents = () => {
   // Destinations Data
   const ourTravelAgents = [
     {
-      name: "WANDERLUST TRAVEL WORLD",
+      name: "Wanderlust Travel World",
       phone: "7407300991",
       email: "wanderlusttravelworld@gmail.com",
     },
     {
-      name: "RR TOURS AND TRAVELS",
+      name: "RR Tours and Travels",
       phone: "6304234227",
       email: "ravirajendar24@gmail.com",
     },
     {
-      name: "FINNA TRAVEL",
+      name: "Finna Travel",
       phone: "7006457689",
       email: "finnatravels@gmail.com",
     },
     {
-      name: "BHARAT ECAB",
+      name: "Bharat Ecab",
       phone: "8882906451",
       email: "bharatecab00@gmail.com",
     },
     {
-      name: "TRIP BOUQUET",
+      name: "Trip Bouquet",
       phone: "7303193848",
       email: "support@tripbouquet.com",
     },
     {
-      name: "TRAWELL.IN",
+      name: "Trawell.in",
       phone: "7799591230",
       email: "trawell.in@gmail.com",
     },
     {
-      name: "QUGO",
+      name: "Qugo",
       phone: "7411940703",
       email: "bhalltravels@gmail.com",
     },
     {
-      name: "BHALLA TRAVELS",
+      name: "Bhalla Travels",
       phone: "7678223408",
       email: "bhallatravels@gmail.com",
     },
     {
-      name: "CUTE VOYAGES",
+      name: "Cute Voyages",
       phone: "8121202999",
       email: "sales@cutevoyages.in",
     },
     {
-      name: "HOLIDAY TRIP ADVISOR",
+      name: "Holiday Trip Advisor",
       phone: "8197200830",
       email: "info@holidaytripadvisor.in",
     },
     {
-      name: "TRIP TO SKY PVT LTD",
+      name: "Trip To Sky Pvt LTD",
       phone: "8374837460",
       email: "care@trip2sky.com",
     },
 
     {
-      name: "TAHA INTERNATIONAL TOURS AND TRAVELS ",
+      name: "Taha International Tours and Travels",
       phone: "8975850699",
       email: "tahatrips@gmail.com",
     },
@@ -80,7 +80,7 @@ const FreeRegisteredTravelAgents = () => {
       email: "booking.aanantham@gmail.com",
     },
     {
-      name: " Travelbee Holiday's ",
+      name: " Travelbee Holiday's",
       phone: "9152023332",
       email: "holidaystravelbee@gmail.com",
     },
@@ -90,7 +90,7 @@ const FreeRegisteredTravelAgents = () => {
       email: "globalgatewaystv@gmail.com",
     },
     {
-      name: " Around pondy",
+      name: " Around Pondy",
       phone: " 8940308019",
       email: "aroundpondy@gmail.com",
     },
@@ -102,36 +102,68 @@ const FreeRegisteredTravelAgents = () => {
     },
 
     {
-      name: "KU TOUR TRAVEL ",
+      name: "Ku Tour Travel",
       phone: "9422267336",
       email: "KUTRAVELS23@GMAIL.COM",
     },
 
     {
-      name: "siddhesh Tours and travels ",
+      name: "Siddhesh Tours and Travels",
       phone: "9422267336",
       email: "id-phalak.mahesh@gmail.com",
     },
     {
-      name: "sarvadnya travels",
+      name: "Sarvadnya Travels",
       phone: "9822281125",
       email: "pramodnamde@rediffmail.com",
     },
     {
-      name: "travel triangle Tours",
+      name: "Travel Triangle Tours",
       phone: "8850049553",
       email: "traveltriangle77@gmail.com"
     },
     {
-      name: "Vanshika caps",
+      name: "Vanshika Caps",
       phone: "888128888",
       email: "vanshikatravelsagra@gmail.com"
     },
     {
-      name: "Al safari travels",
+      name: "Al Safari Travels",
       phone: "9335515971",
       email: "allsafaritravels@gmail.com"
-    }
+    },
+
+    {
+      name: "Siddhesh Tours and Travels ",
+      phone: "9422267336",
+      email: "id-phalak.mahesh@gmail.com",
+    },
+    {
+      name: "TTC Tour & Travels",
+      phone: "9219329824",
+      email: "ashutoshreema0077@gmail.com",
+    },
+    {
+      name: "Anupam Travels",
+      phone: "7817083788",
+      email: "anupamtravels2024@gmail.com",
+    },
+
+    {
+      name: "Shivansh Tour and Travels",
+      phone: " 9992100588",
+      email: "lokeshsingh51098@gmail.com",
+    },
+    {
+      name: "Tattvam Tours",
+      phone: " 9758840400",
+      email: "tattvamtours@gmail.com",
+    },
+    {
+      name: "GRV Holidays Pvt Ltd",
+      phone: "9557471004",
+      email: "grvholidayslko@gmail.com",
+    },
   ]
 
   const sliderContainer = useRef(null);
