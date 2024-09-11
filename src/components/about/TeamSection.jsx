@@ -58,6 +58,42 @@ const TeamSection = () => {
               </div>
             </div>
           </div>
+          {/* Member #3 */}
+          <div className="w-full ">
+            <div className="flex flex-col items-center border-solid border-2 border-black-400 min-h-[460px]">
+              <a href="#" className="mx-auto">
+                <img
+                  className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
+                   src="Images/aboutPageImages/new3.jpeg"
+                  alt="Kenji Milton"
+                />
+              </a>
+              <div className="text-center mt-6">
+                <h1 className="text-gray-900 text-xl font-bold mb-1">
+                  Nitesh Pandey
+                </h1>
+                <div className="text-gray-700 font-light mb-2">Sales Support</div>
+                <div className="flex space-x-2">
+                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
+                    <a href="#!" className="text-[#4267B2]">
+                      <FaFacebookF className="h-6 w-6" />
+                    </a>
+                  </div>
+
+                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
+                    <a href="#!" className="text-[#E1306C]">
+                      <FaInstagram className="h-6 w-6" />
+                    </a>
+                  </div>
+                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
+                    <a href="#!" className="text-[#E1306C]">
+                      <FaYoutube className="h-6 w-6" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Member #2 */}
           <div className="w-full  ">
@@ -98,42 +134,7 @@ const TeamSection = () => {
             </div>
           </div>
 
-          {/* Member #3 */}
-          <div className="w-full ">
-            <div className="flex flex-col items-center border-solid border-2 border-black-400 min-h-[460px]">
-              <a href="#" className="mx-auto">
-                <img
-                  className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
-                   src="Images/aboutPageImages/new3.jpeg"
-                  alt="Kenji Milton"
-                />
-              </a>
-              <div className="text-center mt-6">
-                <h1 className="text-gray-900 text-xl font-bold mb-1">
-                  Nitesh Pandey
-                </h1>
-                <div className="text-gray-700 font-light mb-2">Sales Support</div>
-                <div className="flex space-x-2">
-                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
-                    <a href="#!" className="text-[#4267B2]">
-                      <FaFacebookF className="h-6 w-6" />
-                    </a>
-                  </div>
-
-                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
-                    <a href="#!" className="text-[#E1306C]">
-                      <FaInstagram className="h-6 w-6" />
-                    </a>
-                  </div>
-                  <div className="p-2 bg-white rounded-full flex items-center justify-center">
-                    <a href="#!" className="text-[#E1306C]">
-                      <FaYoutube className="h-6 w-6" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          
 
           {/* Member #4 */}
           <div className="w-full">
@@ -141,7 +142,7 @@ const TeamSection = () => {
               <a href="#" className="mx-auto">
                 <img
                   className="rounded-2xl shadow-md hover:shadow-xl transition-all duration-200"
-                  src="Images/aboutPageImages/new4.jpeg"
+                  src="Images/aboutPageImages/ok.jpeg"
                   alt="Doesn't matter"
                 />
               </a>

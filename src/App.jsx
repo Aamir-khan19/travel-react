@@ -31,7 +31,7 @@ const App = () => {
 
     const modalTimer = setTimeout(() => {
       setShowModal(true);
-    }, 4000); // Show modal after 4 seconds
+    }, 4000);
 
     return () => {
       clearTimeout(timer);
