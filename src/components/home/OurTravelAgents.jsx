@@ -37,7 +37,7 @@ const OurTravelAgents = () => {
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
-      name: "Soth Indian Holidays",
+      name: "South Indian Holidays",
       phone: "7567891018",
       contact: "http://www.southindianholidays.in/",
       Address:
