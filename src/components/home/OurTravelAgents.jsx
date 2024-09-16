@@ -15,7 +15,7 @@ const OurTravelAgents = () => {
   const ourTravelAgents = [
     {
       imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
-      name: "RICHE RICH HOLIDAYS",
+      name: "Riche Rich Holidays",
       phone: "9632417602",
       contact: "https://www.richierichholidays.in/",
       Address:
@@ -23,21 +23,21 @@ const OurTravelAgents = () => {
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
-      name: "Travels YUG",
+      name: "Travels Yug",
       phone: "9625624780",
       contact: "https://travelyuga.com/",
       Address: " N-2, 24th Main, LIC Row Houses, Bengaluru, Karnataka 560078",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/kamakshiHolidays.png",
-      name: "KAMAKSHI HOLIDAYS",
+      name: "Kamakshi Holidays",
       phone: "9881290229",
       contact: "https://kamakshiholidays.com/",
       Address: "Lane no 30, Ubale Nagar, Wagholi, Pune 412207",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
-      name: "SOUTH INDIAN HOLIDAYS",
+      name: "Soth Indian Holidays",
       phone: "7567891018",
       contact: "http://www.southindianholidays.in/",
       Address:
@@ -45,13 +45,13 @@ const OurTravelAgents = () => {
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
-      name: "PERFECT PLANNERS",
+      name: "Perfect Planners",
       phone: "9596863183",
       contact: "https://perfectplannerco.com/"
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/sathyaTravels.png",
-      name: "SATHYA TRAVELS",
+      name: "Sathya Travels",
       phone: "9965539599",
       contact: "https://satyatravelsindia.com/",
       Address:
@@ -59,7 +59,7 @@ const OurTravelAgents = () => {
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",
-      name: "Just keep travels",
+      name: "Just keep Travels",
       phone: "9965539599",
       contact: "https://justkeeptravel.com/",
       Address:   "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
@@ -67,7 +67,7 @@ const OurTravelAgents = () => {
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
-      name: "TOURZ PLANNER",
+      name: "Tourz Planner",
       phone: "9965539599",
       contact: "/",
       Address:   "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
