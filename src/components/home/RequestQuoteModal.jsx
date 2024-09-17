@@ -8,9 +8,9 @@ const RequestQuoteModal = ({isRequestQuoteModalOpen, handleRequestQuoteCloseModa
 
       {isRequestQuoteModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
-          <div className="bg-white p-2 rounded-lg shadow-lg w-[400px] max-[600]:w-[320px] max-[400px]:w-[280px] relative">
+          <div className="bg-white p-2 rounded-lg shadow-lg w-[400px] max-[600]:w-[320px] max-[400px]:w-[280px] relative px-4 pb-4">
             <button 
-              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-5xl" 
+              className="absolute top-3 right-3 text-gray-500 hover:text-gray-700 text-4xl -m-2" 
               onClick={handleRequestQuoteCloseModal}
             >
               &times;

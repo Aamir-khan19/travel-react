@@ -83,7 +83,7 @@ const Contact = () => {
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                      <IoLocationOutline color="#01055b" size={20} />
+                      {/* <IoLocationOutline color="#01055b" size={20} /> */}
                     </div>
                   </div>
                   <div className="relative w-1/2">
@@ -95,7 +95,7 @@ const Contact = () => {
                       required
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
-                      <MdOutlineMessage color="#01055b" size={20} />
+                      {/* <MdOutlineMessage color="#01055b" size={20} /> */}
                     </div>
                   </div>
                 </div>

@@ -25,6 +25,14 @@ const Herosection = () => {
     return () => clearInterval(interval);
   }, []);
 
+
+
+  const handleFormData = (e)=>{
+    e.preventDefault();
+
+  console.log("handleFormdata", e);
+  }
+
   return (
     <div className="relative w-full h-[85vh] max-[600px]:h-[60vh] overflow-hidden">
       {/* Button to trigger the form */}
@@ -64,7 +72,7 @@ const Herosection = () => {
         {/* form div starts here  */}
         <div className=" px-6 py-2">
           <h2 className="text-2xl font-bold mb-2">Register with us</h2>
-          <form>
+          <form onSubmit={(e)=> handleFormData(e)}>
             <div className="mb-2">
               <label className="block text-gray-700 font-bold" htmlFor="name">
                 Name
@@ -73,6 +81,7 @@ const Herosection = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="name"
                 type="text"
+                name="name"
                 placeholder="Your Name"
               />
             </div>
@@ -84,6 +93,7 @@ const Herosection = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="email"
                 type="email"
+                name="email"
                 placeholder="Your Email"
               />
             </div>
@@ -95,20 +105,22 @@ const Herosection = () => {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="phone"
                 type="tel"
+                name="phone"
                 placeholder="Your Phone Number"
               />
             </div>
+
             <div className="mb-2">
-              <label className="block text-gray-700 font-bold" htmlFor="password">
-                Password
+              <label className="block text-gray-700 font-bold" htmlFor="message">
+                Message
               </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="password"
-                type="password"
-                placeholder="Password"
-              />
+
+              <textarea name="message" id="message" placeholder="message" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+
+              </textarea>
+
             </div>
+
             {/* <div className="mb-2">
               <label
                 className="block text-gray-700 font-bold"
@@ -126,7 +138,7 @@ const Herosection = () => {
             <div className="flex items-center justify-between">
               <button
                 className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="button"
+                type="submit"
               >
                 Submit
               </button>

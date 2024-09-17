@@ -78,7 +78,7 @@ const App = () => {
           <InternationalTopTourPackage />
           <VerifiedHotel />
           <DomesticTopTourPackage />
-          <VerifiedTransport />
+          {/* <VerifiedTransport /> */}
           <FreeRegisteredTravelAgents />
           <GrowBuisness />
           <BlogSection />

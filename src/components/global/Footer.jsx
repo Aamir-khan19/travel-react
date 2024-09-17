@@ -143,7 +143,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-10 flex flex-col md:flex-row justify-between items-center p-2 dark:bg-neutral-700">
-          <span>© Travelnworld@2024, All rights reserved</span>
+          <span>©2024@ Travelnworld, All rights reserved</span>
         </div>
       </div>
     </footer>

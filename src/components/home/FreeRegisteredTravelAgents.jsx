@@ -64,7 +64,7 @@ const FreeRegisteredTravelAgents = () => {
       email: "info@holidaytripadvisor.in",
     },
     {
-      name: "Trip To Sky Pvt LTD",
+      name: "Trip To Sky Pvt Ltd",
       phone: "8374837460",
       email: "care@trip2sky.com",
     },
@@ -164,6 +164,12 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9557471004",
       email: "grvholidayslko@gmail.com",
     },
+   
+    {
+      name: "Chillax Holidays",
+      phone: "9968388499",
+      email: "sales@chillaxholidays.com",
+    }
   ]
 
   const sliderContainer = useRef(null);
