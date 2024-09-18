@@ -69,7 +69,7 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
       name: "Tourz Planner",
       phone: "9965539599",
-      contact: "/",
+      contact: "/https://tourzplanner.in/",
       Address:   "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
        
     },

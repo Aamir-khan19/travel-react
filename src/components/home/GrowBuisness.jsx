@@ -18,12 +18,13 @@ const GrowBuisness = () => {
                 <span className="text-white"> Buisness</span> with Us
               </h1>
 
-              <button
-                type="button"
+              <a
+                // type="button"
+                href="/contact"
                 className="bg-white text-[#142035] font-medium px-9 py-2 rounded-full "
               >
                 Contact Us
-              </button>
+              </a>
             </div>
             <div></div>
           </div>

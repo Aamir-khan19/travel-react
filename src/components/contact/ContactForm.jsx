@@ -1,37 +1,83 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineAddIcCall, MdOutlineMessage } from "react-icons/md";
+import api from "../../api.js";
 
 const Contact = () => {
   const [result, setResult] = useState("Submit");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const contactSubmit = async (event) => {
-    event.preventDefault();
-    setIsSubmitting(true);
-    setResult("Sending....");
-    const formData = new FormData(event.target);
+  const [flashMessage, setFlashMessage] = useState("");
 
-    formData.append("access_key", "c1e1dd01-589b-418d-b6bd-0ba7c09dfde5");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+  const contactSubmit = async (e) => {
+    e.preventDefault();
+    // setIsSubmitting(true);
+    // setResult("Sending....");
+    // const formData = new FormData(event.target);
 
-    const data = await response.json();
+    // formData.append("access_key", "c1e1dd01-589b-418d-b6bd-0ba7c09dfde5");
 
-    if (data.success) {
-      setResult("Submitted");
-      event.target.reset();
-    } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
+    // const response = await fetch("https://api.web3forms.com/submit", {
+    //   method: "POST",
+    //   body: formData,
+    // });
 
-    setIsSubmitting(false);
+    // const data = await response.json();
+
+    // if (data.success) {
+    //   setResult("Submitted");
+    //   event.target.reset();
+    // } else {
+    //   console.log("Error", data);
+    //   setResult(data.message);
+    // }
+
+    // setIsSubmitting(false);
+
+    const registerBody = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message
+    };
+
+
+    api.postReq("contact-us", registerBody)
+    .then((data)=>{
+     console.log("contact-us", data)
+
+     setFlashMessage("Form submitted successfully you will be contacted soon");
+     console.log("successfully refgsitered eith us", data);
+ 
+     setFormData({ name: "", email: "", phone: "", message: "" });
+    })
+    .catch((error)=>{
+      console.log("oopps seomtjing went wrong", error)
+    })
   };
+
+
+  useEffect(()=>{
+    if(flashMessage){
+      setTimeout(()=>{
+      setFlashMessage("");
+      }, 5000)
+    }
+    }, [flashMessage]);
+  
+  
+    const handleChange = (e) => {
+      const { name, value } = e.target;
+      setFormData((prevData) => ({ ...prevData, [name]: value }));
+    };
 
   return (
     <section className="bg-gradient-to-r from-white-100 to white-300 py-20">
@@ -72,6 +118,11 @@ const Contact = () => {
             </div>
             <div className="flex flex-col gap-8 md:w-1/2">
               <h2 className="text-xl font-semibold text-center">Leave a Reply</h2>
+
+              <div className={ `bg-white rounded ${flashMessage? "block" : "hidden"}`}>
+         <h1 className=" text-center text-green-500 font-bold text-lg">{flashMessage}</h1>
+         </div>
+
               <form onSubmit={contactSubmit} className="flex flex-col gap-5 bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex gap-5">
                   <div className="relative w-1/2">
@@ -81,6 +132,9 @@ const Contact = () => {
                       name="name"
                       className="border border-gray-300 rounded-lg py-3 px-4 w-full pl-12"
                       required
+
+                      value={formData.name}
+                      onChange={handleChange}
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
                       {/* <IoLocationOutline color="#01055b" size={20} /> */}
@@ -93,6 +147,9 @@ const Contact = () => {
                       name="email"
                       className="border border-gray-300 rounded-lg py-3 px-4 w-full pl-12"
                       required
+
+                      value={formData.email}
+                      onChange={handleChange}
                     />
                     <div className="absolute left-4 top-1/2 transform -translate-y-1/2">
                       {/* <MdOutlineMessage color="#01055b" size={20} /> */}
@@ -100,19 +157,25 @@ const Contact = () => {
                   </div>
                 </div>
                 <input
-                  type="text"
-                  placeholder="Subject*"
-                  name="subject"
+                  type="tel"
+                  placeholder="Phone"
+                  name="phone"
                   className="border border-gray-300 rounded-lg py-3 px-4"
                   required
+
+                  value={formData.phone}
+                  onChange={handleChange}
                 />
                 <textarea
-                  name="text"
+                  name="message"
                   placeholder="Message*"
                   cols="30"
                   rows="6"
                   className="border border-gray-300 rounded-lg py-3 px-4"
                   required
+
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
                 <button className="text-white bg-[#01055b] rounded-lg w-full px-5 py-3 flex justify-center items-center transition-transform transform hover:scale-105">
                   {isSubmitting ? "Sending..." : result}

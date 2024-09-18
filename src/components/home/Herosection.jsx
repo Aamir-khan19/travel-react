@@ -1,8 +1,18 @@
 import React, { useEffect, useState } from "react";
+import api from "../../api";
 
 const Herosection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFormVisible, setIsFormVisible] = useState(false);
+
+  const [flashMessage, setFlashMessage] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
 
   const slides = [
     { image: "/Images/Homepageimages/goa.jpg" },
@@ -31,7 +41,44 @@ const Herosection = () => {
     e.preventDefault();
 
   console.log("handleFormdata", e);
+
+  const registerBody = {
+    name: formData.name,
+    email: formData.email,
+    phone: formData.phone,
+    message: formData.message
+  };
+
+
+  api.postReq("register", registerBody)
+  .then((data)=>{
+    setFlashMessage("Form submitted successfully you will be contacted soon");
+    console.log("successfully refgsitered eith us", data);
+
+    setFormData({ name: "", email: "", phone: "", message: "" });
+  })
+  .catch((error)=>{
+    console.log("something went wrong ", error)
+  })
+
+  
   }
+
+
+
+  useEffect(()=>{
+  if(flashMessage){
+    setTimeout(()=>{
+    setFlashMessage("");
+    }, 5000)
+  }
+  }, [flashMessage]);
+
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
   return (
     <div className="relative w-full h-[85vh] max-[600px]:h-[60vh] overflow-hidden">
@@ -72,6 +119,11 @@ const Herosection = () => {
         {/* form div starts here  */}
         <div className=" px-6 py-2">
           <h2 className="text-2xl font-bold mb-2">Register with us</h2>
+
+         <div className={ `bg-white rounded ${flashMessage? "block" : "hidden"}`}>
+         <h1 className=" text-center text-green-500 font-bold text-lg">{flashMessage}</h1>
+         </div>
+
           <form onSubmit={(e)=> handleFormData(e)}>
             <div className="mb-2">
               <label className="block text-gray-700 font-bold" htmlFor="name">
@@ -83,6 +135,9 @@ const Herosection = () => {
                 type="text"
                 name="name"
                 placeholder="Your Name"
+                value={formData.name}
+                  onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-2">
@@ -95,6 +150,9 @@ const Herosection = () => {
                 type="email"
                 name="email"
                 placeholder="Your Email"
+                value={formData.email}
+                  onChange={handleChange}
+                required
               />
             </div>
             <div className="mb-2">
@@ -107,6 +165,9 @@ const Herosection = () => {
                 type="tel"
                 name="phone"
                 placeholder="Your Phone Number"
+                value={formData.phone}
+                  onChange={handleChange}
+                required
               />
             </div>
 
@@ -115,7 +176,10 @@ const Herosection = () => {
                 Message
               </label>
 
-              <textarea name="message" id="message" placeholder="message" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+              <textarea
+              value={formData.message}
+              onChange={handleChange}
+              name="message" id="message" placeholder="message" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
 
               </textarea>
 
