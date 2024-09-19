@@ -8,37 +8,37 @@ const WeddingCarouselTop = () => {
       image:
         "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 1",
-      title: "Wedding Planner 1",
+      title: "Trip Planner 1",
     },
     {
       image:
         "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 2",
-      title: "Wedding Planner 2",
+      title: "Trip Planner 1",
     },
     {
       image:
         "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 3",
-      title: "Wedding Planner 3",
+      title: "Trip Planner 1",
     },
     {
       image:
         "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 1",
-      title: "Wedding Planner 1",
+      title: "Trip Planner 2",
     },
     {
       image:
         "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 2",
-      title: "Wedding Planner 2",
+      title: " Trip Planner 2",
     },
     {
       image:
         "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 3",
-      title: "Wedding Planner 3",
+      title: "Trip Planner 3",
     },
   ];
 

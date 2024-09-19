@@ -23,7 +23,7 @@ const Aboutherosection = () => {
           </div>
           <div className="relative w-full lg:w-1/2 h-auto">
             <img
-                     src="/Images/aboutPageImages/abouthero.png"
+                     src="/Images/aboutPageImages/office.jpg"
               className=" lg:w-full lg:sm:h-full  sm:h-full   lg:h-[100%] rounded-lg  hover:shadow-lg "
               alt="About us"
             />

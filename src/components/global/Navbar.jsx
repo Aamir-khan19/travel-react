@@ -51,7 +51,8 @@ const NavLinks = ({ menuOpen }) => {
     >
       <NavLink to="/" text="Home" />
       <NavLink to="/about" text="About" />
-     <Link to ="/TourPackages"><NavLinkWithDropdown text="Packages" isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} >
+      {/* /TourPackages */}
+     <Link to ="/"><NavLinkWithDropdown text="Packages" isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} >
         <DropdownMenu isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} items={dropdownItems} />
       </NavLinkWithDropdown></Link>
       <NavLink to="/blogs" text="Blogs"  />
@@ -180,7 +181,7 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
 
 const dropdownItems = {
   indian: [
-    { to: "/packages/package1", text: "Manali" },
+
     { to: "/packages/package1", text: "Manali" },
     { to: "/packages/package2", text: "Shimla" },
     { to: "/packages/package3", text: "Kerala" },
@@ -195,7 +196,7 @@ const dropdownItems = {
     { to: "/packages/package10", text: "New York" },
     { to: "/packages/package11", text: "Dubai" },
     { to: "/packages/package12", text: "Singapore" },
-    { to: "/packages/package12", text: "Singapore" },
+    
   ],
 };
 

@@ -35,7 +35,8 @@ const Blogs = () => {
             {blogPosts.map((post) => (
               <Link
                 key={post.id}
-                to={`/blog/${post.id}`}
+                // to={`/blogdetail/${post.id}`}
+                to={'/blogs'}
                 className="flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
               >
                 <img

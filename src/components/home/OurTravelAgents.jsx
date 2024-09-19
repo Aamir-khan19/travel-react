@@ -183,10 +183,14 @@ const OurTravelAgents = () => {
               <div key={i}>
                 <div className="keen-slider__slide" key={i}>
                   <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[350px] max-[600px]:min-h-[400px]">
-                    <FaCheckCircle
+                    {/* <FaCheckCircle
                       className="h-8 w-7"
                       style={{ color: "#2fb347" }}
-                    />
+                    /> */}
+                    <div className=" bg-[url('Images/Homepageimages/verified.png')] bg-cover bg-center w-[75px] h-[70px] mx-2">
+
+                    </div>
+                    {/* <img src="Images/Homepageimages/verified.png" alt="" /> */}
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
                         <img

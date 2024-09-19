@@ -14,6 +14,7 @@ import PrivacyPolicyPage from "./pages/PrivacyPolicyPage.jsx";
 import TermandconditionPage from "./pages/TermandconditionPage.jsx";
 
 import TourPackages from "./pages/TourPackages.jsx";
+import BlogDetail from "./pages/BlogPage/BlogDetail.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -33,6 +34,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/testimonails" element={<Testimonials />} />
           <Route path="/privacyPolicy" element={<PrivacyPolicyPage/>} />
           <Route path="/terms" element={<TermandconditionPage/>} />
+          <Route path="/blogdetail/:id" element={<BlogDetail/>} />
         </Routes>
       </div>
     </BrowserRouter>
