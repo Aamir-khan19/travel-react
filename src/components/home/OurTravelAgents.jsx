@@ -187,7 +187,7 @@ const OurTravelAgents = () => {
                       className="h-8 w-7"
                       style={{ color: "#2fb347" }}
                     /> */}
-                    <div className=" bg-[url('Images/Homepageimages/verified.png')] bg-contain bg-center w-[100px] h-[100px] bg-no-repeat mx-2 -mt-2">
+                    <div className=" bg-[url('/Images/Homepageimages/verified.png')] bg-contain bg-center w-[100px] h-[100px] bg-no-repeat mx-2 -mt-2">
 
                     </div>
                     {/* <img src="Images/Homepageimages/verified.png" alt="" /> */}
