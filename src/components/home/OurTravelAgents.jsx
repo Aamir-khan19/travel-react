@@ -113,6 +113,7 @@ const OurTravelAgents = () => {
           },
           "(min-width: 1024px)": {
             slides: {
+              
               origin: "auto",
               perView: 3,
               spacing: 12,

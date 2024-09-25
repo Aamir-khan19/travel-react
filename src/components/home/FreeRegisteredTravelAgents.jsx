@@ -169,7 +169,17 @@ const FreeRegisteredTravelAgents = () => {
       name: "Chillax Holidays",
       phone: "9968388499",
       email: "sales@chillaxholidays.com",
-    }
+    },
+    {
+      name: "Travelouge Services",
+      phone: "9735055161",
+      email: "travelougeservices@ymail.com",
+    },
+    {
+      name: "Nandita Tours and Travels",
+      phone: "9560523667",
+      email: "nirjal.biswa1490@gmail.com",
+    },
   ]
 
   const sliderContainer = useRef(null);
@@ -181,28 +191,28 @@ const FreeRegisteredTravelAgents = () => {
         loop: true,
         slides: {
           origin: "center",
-          perView: 1, // Default to 1 review visible
+          perView: 1, 
           spacing: 8,
         },
         breakpoints: {
           "(min-width: 288px)": {
             slides: {
               origin: "auto",
-              perView: 1, // Show 2 reviews on screens >= 768px
+              perView: 1,
               spacing: 8,
             },
           },
           "(min-width: 768px)": {
             slides: {
               origin: "auto",
-              perView: 2, // Show 2 reviews on screens >= 768px
+              perView: 2, 
               spacing: 8,
             },
           },
           "(min-width: 1024px)": {
             slides: {
               origin: "auto",
-              perView: 3, // Show 3 reviews on screens >= 1024px
+              perView: 3, 
               spacing: 12,
             },
           },
@@ -269,7 +279,7 @@ const FreeRegisteredTravelAgents = () => {
             {ourTravelAgents.map((item, i) => (
               <div key={i}>
                 <div className="keen-slider__slide" key={i}>
-                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full sm:w-auto min-h-[260px]">
+                  <div className="flex border-[1px] p-5 border-gray-00 rounded-lg relative w-full sm:w-auto min-h-[290px]">
                     <div className="flex sm:flex-row flex-col-reverse sm:justify-start justify-center sm:items-start items-center">
                       <div className="flex gap-5 sm:justify-start justify-center sm:items-start items-center flex-col">
                         <h1 className="text-xl font-bold">{item.name}</h1>

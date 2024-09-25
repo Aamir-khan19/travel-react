@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
@@ -37,29 +36,41 @@ const Logo = () => (
 const NavLinks = ({ menuOpen }) => {
   const [isOnDropDownMenu, setIsOnDropDownMenu] = useState(false);
 
-  return <div
-    className={`nav-links duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
-      menuOpen ? "top-[60px]" : "top-[-500%]"
-    } lg:w-auto w-full flex items-center px-5 lg:px-0`}
-  >
-    <ul
-      className={`flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full lg:w-auto ${
-        menuOpen
-          ? "flex flex-col items-center justify-center"
-          : "hidden lg:flex"
-      }`}
+  return (
+    <div
+      className={`nav-links duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
+        menuOpen ? "top-[60px]" : "top-[-500%]"
+      } lg:w-auto w-full flex items-center px-5 lg:px-0`}
     >
-      <NavLink to="/" text="Home" />
-      <NavLink to="/about" text="About" />
-      {/* /TourPackages */}
-     <Link to ="/"><NavLinkWithDropdown text="Packages" isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} >
-        <DropdownMenu isOnDropDownMenu={isOnDropDownMenu} setIsOnDropDownMenu={setIsOnDropDownMenu} items={dropdownItems} />
-      </NavLinkWithDropdown></Link>
-      <NavLink to="/blogs" text="Blogs"  />
-      <NavLink to="/contact" text="Contact" />
-      {menuOpen && <ContactUs mobile />}
-    </ul>
-  </div>
+      <ul
+        className={`flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full lg:w-auto ${
+          menuOpen
+            ? "flex flex-col items-center justify-center"
+            : "hidden lg:flex"
+        }`}
+      >
+        <NavLink to="/" text="Home" />
+        <NavLink to="/about" text="About" />
+        {/* /TourPackages */}
+        <Link to="/">
+          <NavLinkWithDropdown
+            text="Packages"
+            isOnDropDownMenu={isOnDropDownMenu}
+            setIsOnDropDownMenu={setIsOnDropDownMenu}
+          >
+            <DropdownMenu
+              isOnDropDownMenu={isOnDropDownMenu}
+              setIsOnDropDownMenu={setIsOnDropDownMenu}
+              items={dropdownItems}
+            />
+          </NavLinkWithDropdown>
+        </Link>
+        <NavLink to="/blogs" text="Blogs" />
+        <NavLink to="/contact" text="Contact" />
+        {menuOpen && <ContactUs mobile />}
+      </ul>
+    </div>
+  );
 };
 
 const NavLink = ({ to, text }) => (
@@ -70,118 +81,108 @@ const NavLink = ({ to, text }) => (
   </li>
 );
 
-const NavLinkWithDropdown = ({ text, children, isOnDropDownMenu, setIsOnDropDownMenu }) => {
- 
-  
-const handleMouseEnter = function(){
-  // console.log("mouseEnter");
-
+const NavLinkWithDropdown = ({
+  text,
+  children,
+  isOnDropDownMenu,
+  setIsOnDropDownMenu,
+}) => {
+  const handleMouseEnter = function () {
     const ele = document.querySelector(".custom-showHide");
 
-      if(ele.classList.contains("hidden")){
-        // console.log("yes it contains hidden class");
-        // setIsOnDropDownMenu(true)
-        ele.classList.remove("hidden");
-       }
-    
-   
-}
+    if (ele.classList.contains("hidden")) {
+      ele.classList.remove("hidden");
+    }
+  };
 
-const handleMouseLeave = function(){
-  // console.log("onMouseLeave");
+  const handleMouseLeave = function () {
+    const ele = document.querySelector(".custom-showHide");
 
-  const ele = document.querySelector(".custom-showHide");
-
-  // console.log("ele over", ele)
-
-  
-   
-      if(isOnDropDownMenu == false){
-        if(!ele.classList.contains("hidded")){
-          setTimeout(()=>{
-        ele.classList.add("hidden");
-        
-      }, 800)
+    if (isOnDropDownMenu == false) {
+      if (!ele.classList.contains("hidded")) {
+        setTimeout(() => {
+          ele.classList.add("hidden");
+        }, 800);
       }
- }
- 
-  
-}
+    }
+  };
 
-  
-  return (<li className="relative group">
-    <span className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"  onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}>
-      {text}
-    </span>
-    {children}
-  </li>
-  )
+  return (
+    <li className="relative group">
+      <span
+        className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {text}
+      </span>
+      {children}
+    </li>
+  );
 };
-;
-
 const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
-
-  const handleMouseEnter = function(){
-    //  setIsOnDropDownMenu(true);
+  const handleMouseEnter = function () {
     console.log("mouseEnter");
 
     console.log("isOnDropDownMenu", isOnDropDownMenu);
-  
-      const ele = document.querySelector(".custom-showHide");
-  
-      if(ele.classList.contains("hidden")){
-       console.log("yes it contains hidden class");
-      
-       ele.classList.remove("hidden");
-      }
-  }
-  
-  const handleMouseLeave = function(){
-    console.log("onMouseLeave");
-  
+
     const ele = document.querySelector(".custom-showHide");
-  
-    console.log("ele over", ele)
-  
-    if(!ele.classList.contains("hidded")){
-       ele.classList.add("hidden");
-      //  setIsOnDropDownMenu(false)
+
+    if (ele.classList.contains("hidden")) {
+      console.log("yes it contains hidden class");
+
+      ele.classList.remove("hidden");
     }
-  }
+  };
 
+  const handleMouseLeave = function () {
+    console.log("onMouseLeave");
 
- return <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}>
-    <div onMouseEnter={()=>setIsOnDropDownMenu(true)} >
-      <h1 className="font-bold py-4">Indian Packages</h1>
-      <ul className="flex flex-col md:justify-center align-center">
-        {items.indian.map((item, index) => (
-          <li key={index}>
-            <Link to={item.to} className="block py-2 hover:bg-gray-100">
-              {item.text}
-            </Link>
-          </li>
-        ))}
-      </ul>
+    const ele = document.querySelector(".custom-showHide");
+
+    console.log("ele over", ele);
+
+    if (!ele.classList.contains("hidded")) {
+      ele.classList.add("hidden");
+    }
+  };
+
+  return (
+    <div
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}
+    >
+      <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
+        <h1 className="font-bold py-4">Indian Packages</h1>
+        <ul className="flex flex-col md:justify-center align-center">
+          {items.indian.map((item, index) => (
+            <li key={index}>
+              <Link to={item.to} className="block py-2 hover:bg-gray-100">
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
+        <h1 className="font-bold py-4 ">International Packages</h1>
+        <ul className="flex flex-col ">
+          {items.international.map((item, index) => (
+            <li key={index}>
+              <Link to={item.to} className="block py-2 hover:bg-gray-100">
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
-    <div onMouseEnter={()=>setIsOnDropDownMenu(true)} >
-      <h1 className="font-bold py-4 ">International Packages</h1>
-      <ul className="flex flex-col ">
-        {items.international.map((item, index) => (
-          <li key={index}>
-            <Link to={item.to} className="block py-2 hover:bg-gray-100">
-              {item.text}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
+  );
 };
 
 const dropdownItems = {
   indian: [
-
     { to: "/packages/package1", text: "Manali" },
     { to: "/packages/package2", text: "Shimla" },
     { to: "/packages/package3", text: "Kerala" },
@@ -196,7 +197,6 @@ const dropdownItems = {
     { to: "/packages/package10", text: "New York" },
     { to: "/packages/package11", text: "Dubai" },
     { to: "/packages/package12", text: "Singapore" },
-    
   ],
 };
 
@@ -251,5 +251,3 @@ const ContactUs = ({ mobile = false }) => (
 );
 
 export default Navbar;
-
-
