@@ -180,6 +180,11 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9560523667",
       email: "nirjal.biswa1490@gmail.com",
     },
+    {
+      name: "Nandita Tours and Travels",
+      phone: "9560523667",
+      email: "nirjal.biswa1490@gmail.com",
+    },
   ]
 
   const sliderContainer = useRef(null);

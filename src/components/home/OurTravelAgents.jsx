@@ -82,6 +82,16 @@ const OurTravelAgents = () => {
 
        
     },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/abv.jpeg",
+      name: "Rathore Travels ",
+      phone: "9988325982",
+      // contact: "https://himalayancircle.com/",
+      Address:   "Housing board near cival hospital ferozpur city Pin-152002",
+
+
+       
+    },
   ];
 
   const sliderContainer = useRef(null);
