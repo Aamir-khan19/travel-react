@@ -47,7 +47,7 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
       name: "Perfect Planners",
       phone: "9596863183",
-      contact: "https://perfectplannerco.com/"
+      contact: "https://perfectplannerco.com/",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/sathyaTravels.png",
@@ -62,35 +62,29 @@ const OurTravelAgents = () => {
       name: "Just Keep Travels",
       phone: "9965539599",
       contact: "https://justkeeptravel.com/",
-      Address:   "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
-       
+      Address: "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
       name: "Tourz Planner",
       phone: "9965539599",
       contact: "/https://tourzplanner.in/",
-      Address:   "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
-       
+      Address:
+        "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/himalayancircle.png",
       name: "Himalayan Circle",
       phone: "9965539599",
       contact: "https://himalayancircle.com/",
-      Address:   "vill-Nauni,PO-Darlaghat,teh-Arki, Distt-Solon HP -171102",
-
-       
+      Address: "vill-Nauni,PO-Darlaghat,teh-Arki, Distt-Solon HP -171102",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/abv.jpeg",
       name: "Rathore Travels ",
       phone: "9988325982",
       // contact: "https://himalayancircle.com/",
-      Address:   "Housing board near cival hospital ferozpur city Pin-152002",
-
-
-       
+      Address: "Housing board near cival hospital ferozpur city Pin-152002",
     },
   ];
 
@@ -123,7 +117,6 @@ const OurTravelAgents = () => {
           },
           "(min-width: 1024px)": {
             slides: {
-              
               origin: "auto",
               perView: 3,
               spacing: 12,
@@ -198,9 +191,7 @@ const OurTravelAgents = () => {
                       className="h-8 w-7"
                       style={{ color: "#2fb347" }}
                     /> */}
-                    <div className=" bg-[url('Images/Homepageimages/verified.png')] bg-cover bg-center w-[75px] h-[70px] mx-2">
-
-                    </div>
+                    <div className=" bg-[url('/Images/Homepageimages/verified.png')] bg-cover bg-center w-[75px] h-[70px] mx-2"></div>
                     {/* <img src="Images/Homepageimages/verified.png" alt="" /> */}
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
@@ -213,15 +204,18 @@ const OurTravelAgents = () => {
                           <h1 className="text-xl font-bold">{item.name}</h1>
                           <p>
                             <span className="font-semibold text-xl">
-                            {item?.Address &&  <span>Address:- </span>  }
+                              {item?.Address && <span>Address:- </span>}
                             </span>
                             {item?.Address}
                           </p>
-                         
-                            <a href={item?.contact} target="_blank" className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]">
-                              view more
-                            </a>
-                         
+
+                          <a
+                            href={item?.contact}
+                            target="_blank"
+                            className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]"
+                          >
+                            view more
+                          </a>
                         </div>
                       </div>
 

@@ -120,17 +120,17 @@ const FreeRegisteredTravelAgents = () => {
     {
       name: "Travel Triangle Tours",
       phone: "8850049553",
-      email: "traveltriangle77@gmail.com"
+      email: "traveltriangle77@gmail.com",
     },
     {
       name: "Vanshika Caps",
       phone: "888128888",
-      email: "vanshikatravelsagra@gmail.com"
+      email: "vanshikatravelsagra@gmail.com",
     },
     {
       name: "Al Safari Travels",
       phone: "9335515971",
-      email: "allsafaritravels@gmail.com"
+      email: "allsafaritravels@gmail.com",
     },
 
     {
@@ -164,7 +164,7 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9557471004",
       email: "grvholidayslko@gmail.com",
     },
-   
+
     {
       name: "Chillax Holidays",
       phone: "9968388499",
@@ -185,7 +185,7 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9560523667",
       email: "nirjal.biswa1490@gmail.com",
     },
-  ]
+  ];
 
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
@@ -196,7 +196,7 @@ const FreeRegisteredTravelAgents = () => {
         loop: true,
         slides: {
           origin: "center",
-          perView: 1, 
+          perView: 1,
           spacing: 8,
         },
         breakpoints: {
@@ -210,14 +210,14 @@ const FreeRegisteredTravelAgents = () => {
           "(min-width: 768px)": {
             slides: {
               origin: "auto",
-              perView: 2, 
+              perView: 2,
               spacing: 8,
             },
           },
           "(min-width: 1024px)": {
             slides: {
               origin: "auto",
-              perView: 3, 
+              perView: 3,
               spacing: 12,
             },
           },
@@ -303,40 +303,37 @@ const FreeRegisteredTravelAgents = () => {
                           <span className="absolute h-7 left-24 mt-1 w-32 blur-sm backdrop:blur-sm  bg-gray-500 "></span>
                           {item.email}
                         </p>
-                        <Link to ="/contact">
-                        <button className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]">
-                          Contact
-                        </button>
+                        <Link to="/contact">
+                          <button className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]">
+                            Contact
+                          </button>
                         </Link>
                       </div>
-                      
                     </div>
                     <div className="w-1/3 p-2 bg-white rounded-full flex flex-col items-end justify-between">
-                        <a href="#!" className="text-[#2fb347]">
-                          <FaWhatsapp className="h-6 w-6" />
-                        </a>
+                      <a href="#!" className="text-[#2fb347]">
+                        <FaWhatsapp className="h-6 w-6" />
+                      </a>
 
-                        <a href="#!" className="text-[#4267B2]">
-                          <FaPhone className="h-6 w-6" />
-                        </a>
+                      <a href="#!" className="text-[#4267B2]">
+                        <FaPhone className="h-6 w-6" />
+                      </a>
 
-                        <a href="#!" className="text-[#4267B2]">
-                          <FaFacebookF className="h-6 w-6" />
-                        </a>
+                      <a href="#!" className="text-[#4267B2]">
+                        <FaFacebookF className="h-6 w-6" />
+                      </a>
 
-                        <a href="#!" className="text-[#E1306C]">
-                          <FaInstagram className="h-6 w-6" />
-                        </a>
+                      <a href="#!" className="text-[#E1306C]">
+                        <FaInstagram className="h-6 w-6" />
+                      </a>
 
-                        <a href="#!" className="text-[#E1306C]">
-                          <FaYoutube className="h-6 w-6" />
-                        </a>
-                      </div>
+                      <a href="#!" className="text-[#E1306C]">
+                        <FaYoutube className="h-6 w-6" />
+                      </a>
+                    </div>
                   </div>
-                  
                 </div>
               </div>
-              
             ))}
           </div>
         </div>
@@ -373,8 +370,7 @@ const FreeRegisteredTravelAgents = () => {
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
               />
             </svg>
-          </button> 
-       
+          </button>
         </div>
       </div>
     </section>
