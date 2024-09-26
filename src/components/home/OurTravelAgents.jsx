@@ -13,14 +13,7 @@ import {
 
 const OurTravelAgents = () => {
   const ourTravelAgents = [
-    {
-      imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
-      name: "Riche Rich Holidays",
-      phone: "9632417602",
-      contact: "https://www.richierichholidays.in/",
-      Address:
-        " N-2, 24th Main, LIC Row Houses,  1st Phase, J. P. Nagar, Bengaluru, Karnataka 560078",
-    },
+    
     {
       imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
       name: "Travels Yug",
@@ -35,6 +28,7 @@ const OurTravelAgents = () => {
       contact: "https://kamakshiholidays.com/",
       Address: "Lane no 30, Ubale Nagar, Wagholi, Pune 412207",
     },
+    
     {
       imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
       name: "South Indian Holidays",
@@ -42,6 +36,14 @@ const OurTravelAgents = () => {
       contact: "http://www.southindianholidays.in/",
       Address:
         "Anna Nagar, Moonjikal, Pambarpuram, Kodaikanal, Tamil Nadu - 624101, India",
+    },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
+      name: "Riche Rich Holidays",
+      phone: "9632417602",
+      contact: "https://www.richierichholidays.in/",
+      Address:
+        " N-2, 24th Main, LIC Row Houses,  1st Phase, J. P. Nagar, Bengaluru, Karnataka 560078",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
