@@ -52,7 +52,7 @@ const NavLinks = ({ menuOpen }) => {
         <NavLink to="/" text="Home" />
         <NavLink to="/about" text="About" />
         {/* /TourPackages */}
-        <Link to="/">
+        <Link to="/TourPackages ">
           <NavLinkWithDropdown
             text="Packages"
             isOnDropDownMenu={isOnDropDownMenu}
@@ -242,10 +242,18 @@ const ContactUs = ({ mobile = false }) => (
   >
     <Link
       to="/B2BLogin"
-      className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#142035] text-xl"
+      className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
     >
       <CiUser color="white" size={20} />
       Login
+    </Link>
+    <Link
+      to="/TourPackages "
+      className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
+    >
+      
+      Trip Planner
+     
     </Link>
   </div>
 );
