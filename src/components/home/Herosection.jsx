@@ -11,7 +11,7 @@ const Herosection = () => {
     name: "",
     email: "",
     phone: "",
-    message: ""
+    message: "",
   });
 
   const slides = [
@@ -28,52 +28,47 @@ const Herosection = () => {
       );
     }, 2000);
 
-    setTimeout(()=>{
-    setIsFormVisible(true)
-    }, 2000)
+    setTimeout(() => {
+      setIsFormVisible(true);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, []);
 
-
-
-  const handleFormData = (e)=>{
+  const handleFormData = (e) => {
     e.preventDefault();
 
-  console.log("handleFormdata", e);
+    console.log("handleFormdata", e);
 
-  const registerBody = {
-    name: formData.name,
-    email: formData.email,
-    phone: formData.phone,
-    message: formData.message
+    const registerBody = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      message: formData.message,
+    };
+
+    api
+      .postReq("register", registerBody)
+      .then((data) => {
+        setFlashMessage(
+          "Form submitted successfully you will be contacted soon"
+        );
+        console.log("successfully refgsitered eith us", data);
+
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      })
+      .catch((error) => {
+        console.log("something went wrong ", error);
+      });
   };
 
-
-  api.postReq("register", registerBody)
-  .then((data)=>{
-    setFlashMessage("Form submitted successfully you will be contacted soon");
-    console.log("successfully refgsitered eith us", data);
-
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  })
-  .catch((error)=>{
-    console.log("something went wrong ", error)
-  })
-
-  
-  }
-
-
-
-  useEffect(()=>{
-  if(flashMessage){
-    setTimeout(()=>{
-    setFlashMessage("");
-    }, 5000)
-  }
+  useEffect(() => {
+    if (flashMessage) {
+      setTimeout(() => {
+        setFlashMessage("");
+      }, 5000);
+    }
   }, [flashMessage]);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -81,8 +76,7 @@ const Herosection = () => {
   };
 
   return (
-    <div className="relative w-full h-[85vh] max-[600px]:h-[60vh] overflow-hidden">
-      {/* Button to trigger the form */}
+    <div className="relative w-full h-[65vh] max-[600px]:h-[60vh] overflow-hidden">
       <button
         className={`absolute z-30 ${
           isFormVisible ? "md:right-1/3 right-[78%]" : "right-0"
@@ -105,87 +99,97 @@ const Herosection = () => {
         />
       ))}
 
-      {/* Form with smooth transition */}
-      {/* form div parent div starts here   */}
-       <div className=" h-full flex flex-col items-end justify-center">
+      <div className=" h-full flex flex-col items-end justify-center">
+        <div
+          className={`absolute z-50 right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
+            isFormVisible ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <div className=" px-6 py-2">
+            <h2 className="text-2xl font-bold mb-2">Register with us</h2>
 
-       
+            <div
+              className={`bg-white rounded ${
+                flashMessage ? "block" : "hidden"
+              }`}
+            >
+              <h1 className=" text-center text-green-500 font-bold text-lg">
+                {flashMessage}
+              </h1>
+            </div>
 
-      <div
-        className={`absolute z-50 right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
-          isFormVisible ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
-        {/* form div starts here  */}
-        <div className=" px-6 py-2">
-          <h2 className="text-2xl font-bold mb-2">Register with us</h2>
-
-         <div className={ `bg-white rounded ${flashMessage? "block" : "hidden"}`}>
-         <h1 className=" text-center text-green-500 font-bold text-lg">{flashMessage}</h1>
-         </div>
-
-          <form onSubmit={(e)=> handleFormData(e)}>
-            <div className="mb-2">
-              <label className="block text-gray-700 font-bold" htmlFor="name">
-                Name
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                value={formData.name}
+            <form onSubmit={(e) => handleFormData(e)}>
+              <div className="mb-2">
+                <label className="block text-gray-700 font-bold" htmlFor="name">
+                  Name
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="name"
+                  type="text"
+                  name="name"
+                  placeholder="Your Name"
+                  value={formData.name}
                   onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="mb-2">
-              <label className="block text-gray-700 font-bold" htmlFor="email">
-                Email
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="email"
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                value={formData.email}
+                  required
+                />
+              </div>
+              <div className="mb-2">
+                <label
+                  className="block text-gray-700 font-bold"
+                  htmlFor="email"
+                >
+                  Email
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="email"
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  value={formData.email}
                   onChange={handleChange}
-                required
-              />
-            </div>
-            <div className="mb-2">
-              <label className="block text-gray-700 font-bold" htmlFor="phone">
-                Phone
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="phone"
-                type="tel"
-                name="phone"
-                placeholder="Your Phone Number"
-                value={formData.phone}
+                  required
+                />
+              </div>
+              <div className="mb-2">
+                <label
+                  className="block text-gray-700 font-bold"
+                  htmlFor="phone"
+                >
+                  Phone
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="phone"
+                  type="tel"
+                  name="phone"
+                  placeholder="Your Phone Number"
+                  value={formData.phone}
                   onChange={handleChange}
-                required
-              />
-            </div>
+                  required
+                />
+              </div>
 
-            <div className="mb-2">
-              <label className="block text-gray-700 font-bold" htmlFor="message">
-                Message
-              </label>
+              <div className="mb-2">
+                <label
+                  className="block text-gray-700 font-bold"
+                  htmlFor="message"
+                >
+                  Message
+                </label>
 
-              <textarea
-              value={formData.message}
-              onChange={handleChange}
-              name="message" id="message" placeholder="message" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" >
+                <textarea
+                  value={formData.message}
+                  onChange={handleChange}
+                  name="message"
+                  id="message"
+                  placeholder="message"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                ></textarea>
+              </div>
 
-              </textarea>
-
-            </div>
-
-            {/* <div className="mb-2">
+              {/* <div className="mb-2">
               <label
                 className="block text-gray-700 font-bold"
                 htmlFor="confirm-password"
@@ -199,25 +203,20 @@ const Herosection = () => {
                 placeholder="Confirm Password"
               />
             </div> */}
-            <div className="flex items-center justify-between">
-              <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit"
-              >
-                Submit
-              </button>
-            </div>
-          </form>
+              <div className="flex items-center justify-between">
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </div>
+            </form>
+          </div>
+          {/* form ends here  */}
         </div>
-        {/* form ends here  */}
-
-      </div>
-
       </div>
       {/* form div parent div ends here  */}
-
-
-
     </div>
   );
 };

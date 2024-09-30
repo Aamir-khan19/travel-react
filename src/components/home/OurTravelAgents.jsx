@@ -35,7 +35,7 @@ const OurTravelAgents = () => {
       phone: "7567891018",
       contact: "http://www.southindianholidays.in/",
       Address:
-        "Anna Nagar, Moonjikal, Pambarpuram, Kodaikanal, Tamil Nadu - 624101, India",
+        "Anna Nagar, Moonjikal, Pambarpuram, Kodaikanal, Tamil Nadu - 624101.",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
@@ -43,7 +43,7 @@ const OurTravelAgents = () => {
       phone: "9632417602",
       contact: "https://www.richierichholidays.in/",
       Address:
-        " N-2, 24th Main, LIC Row Houses,  1st Phase, J. P. Nagar, Bengaluru, Karnataka 560078",
+        " N-2, 24th Main, LIC Row Houses,  1st Phase, J. P. Nagar, Bengaluru, Karnataka 560078.",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
@@ -57,7 +57,7 @@ const OurTravelAgents = () => {
       phone: "9965539599",
       contact: "https://satyatravelsindia.com/",
       Address:
-        "B-28, DDA Complex Market, New Rajinder Nagar, New Delhi, Delhi-110060, India",
+        "B-28, DDA Complex Market, New Rajinder Nagar, New Delhi, Delhi-110060,",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",

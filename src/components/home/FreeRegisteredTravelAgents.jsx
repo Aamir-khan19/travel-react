@@ -136,7 +136,7 @@ const FreeRegisteredTravelAgents = () => {
     {
       name: "Siddhesh Tours and Travels ",
       phone: "9422267336",
-      email: "id-phalak.mahesh@gmail.com",
+      email: "phalak.mahesh@gmail.com",
     },
     {
       name: "TTC Tour & Travels",
@@ -180,11 +180,7 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9560523667",
       email: "nirjal.biswa1490@gmail.com",
     },
-    {
-      name: "Nandita Tours and Travels",
-      phone: "9560523667",
-      email: "nirjal.biswa1490@gmail.com",
-    },
+    
   ];
 
   const sliderContainer = useRef(null);

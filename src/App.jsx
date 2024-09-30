@@ -13,7 +13,7 @@ import VerifiedTransport from "./components/home/VerifiedTransport";
 import FreeRegisteredTravelAgents from "./components/home/FreeRegisteredTravelAgents";
 import BlogSection from "./components/home/BlogSection";
 import Testimonial from "./components/home/Testimonial";
-import NextTopLoader from 'nextjs-toploader';
+import NextTopLoader from "nextjs-toploader";
 import Modal from "./components/Modal/Modal";
 import WhatsAppLinkComp from "./components/home/WhatsAppLinkComp";
 import RequestQuoteComp from "./components/home/RequestQuoteComp";
@@ -43,7 +43,6 @@ const App = () => {
     setShowModal(false);
   };
 
-
   const handleRequestQuoteOpenModal = () => {
     setIsRequestQuoteModalOpen(true);
   };
@@ -69,7 +68,6 @@ const App = () => {
         </div>
       ) : (
         <>
-          {/* {showModal && <Modal onClose={handleCloseModal} />} */}
           <Navbar />
           <WeddingCarouselTop />
           <Herosection />
@@ -85,8 +83,13 @@ const App = () => {
           <Testimonial />
           <Footer />
           <WhatsAppLinkComp />
-          <RequestQuoteComp handleRequestQuoteOpenModal={handleRequestQuoteOpenModal} />
-          <RequestQuoteModal isRequestQuoteModalOpen={isRequestQuoteModalOpen} handleRequestQuoteCloseModal={handleRequestQuoteCloseModal} />
+          <RequestQuoteComp
+            handleRequestQuoteOpenModal={handleRequestQuoteOpenModal}
+          />
+          <RequestQuoteModal
+            isRequestQuoteModalOpen={isRequestQuoteModalOpen}
+            handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
+          />
         </>
       )}
     </>
@@ -94,4 +97,3 @@ const App = () => {
 };
 
 export default App;
-

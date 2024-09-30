@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white px-5 py-3 relative z-50 w-full">
-      <nav className="flex justify-between items-center max-w-7xl mx-auto">
+      <nav className="flex justify-between items-center  mx-auto">
         <Link to="/">
           <Logo />
         </Link>
@@ -26,7 +26,7 @@ const Navbar = () => {
 const Logo = () => (
   <div className="z-50">
     <img
-      className="w-20 cursor-pointer"
+      className="w-20 cursor-pointer ml-10"
       src="/Images/Homepageimages/logo.png"
       alt="Logo"
     />

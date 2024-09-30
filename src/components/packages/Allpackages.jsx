@@ -27,7 +27,7 @@ const Allpackages = () => {
               <div className="p-6">
                 <div className="flex justify-between items-center mb-4">
                   <h3 className="text-lg font-semibold text-gray-700">
-                    ${elem?.price} / Per Person
+                  ₹{elem?.price} / Per Person
                   </h3>
                   <div className="flex items-center">
                     <FaRegStar className="text-yellow-400 text-xl" />

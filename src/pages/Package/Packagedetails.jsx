@@ -1,158 +1,214 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import  packageData  from '../../components/packages/Allpackages/packagedata';
-import Footer from '../../components/global/Footer';
-import Navbar from '../../components/global/Navbar';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { FaEnvelope, FaPhone } from "react-icons/fa";
+import packageData from "../../components/packages/Allpackages/packagedata";
+import { FaCalendarAlt } from "react-icons/fa";
+import { FaClock } from "react-icons/fa6";
+import Footer from "../../components/global/Footer";
+import Navbar from "../../components/global/Navbar";
 
 const Packagedetails = () => {
-    
-    const { id } = useParams();
-    const [pack, setPackage] = useState({});
-  
-    useEffect(() => {
-      const pack = packageData.find((obj) => obj.id == id);
-      setPackage(pack);
-      window.scrollTo(0, 0);
-    }, [id]);
-  
-    return (
-      <div>
-    
-        <Navbar/>
-        <div className="max-w-6xl mx-auto p-6 sm:p-12 bg-white shadow-lg rounded-lg mt-8 transition-all duration-300 hover:shadow-2xl">
-      
-        {pack?.image && (
-          <div className="relative overflow-hidden rounded-lg shadow-lg mb-8">
-            <img
-              src={pack?.image}
-              alt={pack?.title}
-              className="w-full h-[500px] object-cover rounded-lg hover:scale-105 transition-transform duration-700 ease-in-out"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-          </div>
-        )}
-  
-        {/* Package Title & Info */}
-        <div className="space-y-6 text-center">
-          <h1 className="text-4xl font-bold text-gray-800 hover:text-indigo-900 transition-colors duration-300">
-            {pack?.title}
+  const { id } = useParams();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [images, setImages] = useState(() => {
+    const pack = packageData.find((obj) => obj.id == id);
+    return pack?.content || [];
+  });
+
+  const totalImages = images.length;
+  const [pack, setPackage] = useState({});
+
+  const handleNext = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % totalImages);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const pack = packageData.find((obj) => obj.id == id);
+    setImages(pack?.content || []);
+    setPackage(pack);
+    window.scrollTo(0, 0);
+  }, [id]);
+
+  const [activeIndex, setActiveIndex] = useState(null);
+  const questions = [
+    {
+      question: "What types of travel packages do you offer?",
+      answer:
+        "We offer adventure tours, cultural experiences, beach vacations, and customized travel packages.",
+    },
+    {
+      question: "What is the cancellation policy for your travel bookings?",
+      answer:
+        "We have a flexible cancellation policy, allowing cancellations up to 48 hours before departure for a full refund.",
+    },
+    {
+      question: "Do you provide assistance with visa applications?",
+      answer:
+        "Yes, we offer guidance and assistance with visa applications for various destinations.",
+    },
+    {
+      question: "What safety measures do you have in place for travelers?",
+      answer:
+        "We prioritize traveler safety with measures including 24/7 support, travel insurance options, and partnerships with trusted local guides.",
+    },
+  ];
+
+  const toggleAnswer = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
+  };
+
+  return (
+    <div className="bg-gray-50">
+      <Navbar />
+
+      {/* Hero Section with Parallax Effect */}
+      <div
+        className="relative w-full overflow-hidden h-96"
+        style={{
+          backgroundImage: `url(${images[currentIndex]})`,
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+          <h1 className="text-5xl font-bold text-white drop-shadow-lg">
+            {"Explore the World"}
           </h1>
-          <div className="text-gray-600 flex justify-between items-center space-x-4 text-sm font-medium">
-            <span className="bg-indigo-100 text-indigo-900 py-1 px-4 rounded-full">
-              {pack?.category}
-            </span>
-            <div className="flex items-center space-x-2">
-              <span className="text-gray-500">
-                <span className="font-semibold text-gray-800"></span>
-              </span>
-              <span className="text-gray-500">•</span>
-              <span className="text-gray-500">4.9 (1.2k Reviews)</span>
-            </div>
-          </div>
         </div>
-  
-        {/* Divider */}
-        <div className="border-t border-gray-300 my-10"></div>
-  
-        {/* Package Content */}
-        <div className="mt-8 space-y-16">
-          {pack?.content?.map((elem, index) => (
-            <div key={index} className="space-y-6">
-              <h2 className="text-3xl font-semibold text-indigo-800 hover:text-indigo-900 transition-colors duration-300">
-                {elem?.heading}
-              </h2>
-              <p className="text-lg text-gray-700 leading-relaxed tracking-wide">
-                {elem?.text}
-              </p>
-              {elem?.imageSrc && (
+      </div>
+
+      {/* Package Details */}
+      <div className="container mx-auto p-8 md:p-12">
+        <h2 className="text-4xl font-bold text-center mb-8 capitalize">
+          {"Discover " + (pack?.category || "Dubai")}
+        </h2>
+
+        {/* Image Gallery */}
+        <div className="relative w-full overflow-hidden rounded-lg shadow-xl mb-10">
+          <div
+            className="flex transition-transform duration-500 ease-in-out"
+            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          >
+            {images.map((image, index) => (
+              <div key={index} className="w-full flex-shrink-0">
                 <img
-                  src={elem?.imageSrc}
-                  alt={elem?.heading}
-                  className="w-full h-[450px] object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-500 ease-in-out"
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  className="w-full h-96 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                 />
-              )}
-            </div>
-          ))}
-        </div>
-  
-        {/* Author Bio */}
-        <div className="border-t border-gray-300 my-10"></div>
-        <div className="flex items-center space-x-4">
-          {/* Replace img with your author's image */}
-          {/* <img
-            src={`https://i.pravatar.cc/150?u=${pack?.author}`}
-            alt={pack?.author}
-            className="w-16 h-16 rounded-full border border-gray-300"
-          /> */}
-          <div>
-            <p className="text-gray-700 font-semibold">Written by {pack?.author}</p>
-            <p className="text-sm text-gray-500">
-              {pack?.author} is a travel enthusiast who loves exploring new cultures and places.
-            </p>
-          </div>
-        </div>
-  
-        {/* Share Buttons */}
-        <div className="flex justify-between items-center mt-10">
-          <div className="flex space-x-4">
-            <a href="#" className="text-gray-500 hover:text-indigo-900 transition-colors">
-              <i className="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="#" className="text-gray-500 hover:text-indigo-900 transition-colors">
-              <i className="fab fa-twitter fa-2x"></i>
-            </a>
-            <a href="#" className="text-gray-500 hover:text-indigo-900 transition-colors">
-              <i className="fab fa-instagram fa-2x"></i>
-            </a>
-          </div>
-          <div className="flex space-x-4">
-            <a
-              href="/packs"
-              className="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-full shadow hover:bg-indigo-700 transition-colors duration-300"
-            >
-              Back to Packages
-            </a>
-            <a
-              href="/contact"
-              className="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-full shadow hover:bg-indigo-700 transition-colors duration-300"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-  
-        {/* Related Posts */}
-        {/* <div className="mt-20">
-          <h3 className="text-3xl font-semibold text-gray-800 mb-8">Related Posts</h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {packPosts.slice(0, 3).map((post) => (
-              <div
-                key={post.id}
-                className="bg-gray-100 p-4 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-500 ease-in-out"
-              >
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="h-48 w-full object-cover rounded-md mb-4"
-                />
-                <h4 className="text-xl font-semibold mb-2 text-gray-800">{post.title}</h4>
-                <a
-                  href={`/packdetail/${post?.id}`}
-                  className="text-indigo-900 font-semibold hover:underline"
-                >
-                  Read more
-                </a>
               </div>
             ))}
           </div>
-        </div> */}
-      </div>
-      <Footer/>
-      </div>
-    
-      
-      
-    );
-}
+          <button
+            onClick={handleNext}
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 p-3 rounded-full bg-gray-800 text-white opacity-70 hover:opacity-100 transition"
+          >
+            &gt;
+          </button>
+        </div>
 
-export default Packagedetails
+        {/* Package Overview */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white p-8 rounded-lg shadow-xl">
+          <div>
+            <h3 className="text-3xl font-semibold mb-4">
+              About {pack?.category || "this destination"}
+            </h3>
+            <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+              {pack?.title2 ||
+                "This is a detailed description about the package..."}
+            </p>
+            <div className="flex items-center justify-center">
+              <button className="flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition duration-300">
+                <FaEnvelope className="mr-2" /> ENQUIRE NOW
+              </button>
+            </div>
+          </div>
+          <div>
+            {pack?.image && (
+              <img
+                src={pack?.image}
+                alt={pack?.title}
+                className="rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 ease-in-out"
+              />
+            )}
+          </div>
+        </div>
+
+        <div className="flex justify-between mt-8 text-lg">
+          {/* Ideal Days Section */}
+          <div className="flex items-center gap-3">
+            <FaClock className="text-indigo-600 text-2xl" />{" "}
+            {/* FaClock Icon */}
+            <div>
+              <h4 className="text-xl font-bold mb-2">Ideal Days</h4>
+              <p>{pack?.Idealdays || "7-10 Days"}</p>
+            </div>
+          </div>
+
+          {/* Best Time to Visit Section */}
+          <div className="flex items-center gap-3">
+            <FaCalendarAlt className="text-indigo-600 text-2xl" />{" "}
+            {/* FaCalendarAlt Icon */}
+            <div>
+              <h4 className="text-xl font-bold mb-2">Best Time to Visit</h4>
+              <p>{pack?.Besttime || "Winter months"}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* FAQs */}
+        <div className="bg-gray-100 py-10">
+          <h3 className="text-3xl font-semibold text-center mb-8">
+            Frequently Asked Questions
+          </h3>
+          <div className="max-w-4xl mx-auto">
+            {questions.map((item, index) => (
+              <div key={index} className="border-b border-gray-300 mb-4">
+                <button
+                  className="flex justify-between w-full p-4 text-lg font-medium text-gray-800 hover:bg-gray-200 transition"
+                  onClick={() => toggleAnswer(index)}
+                >
+                  {item.question}
+                  <svg
+                    className={`w-6 h-6 transform transition-transform ${
+                      activeIndex === index ? "rotate-180" : ""
+                    }`}
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M16.293 9.293L12 13.586 7.707 9.293 6.293 10.707 12 16.414l5.707-5.707z"></path>
+                  </svg>
+                </button>
+                {activeIndex === index && (
+                  <div className="p-4 text-gray-600">{item.answer}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Sticky Action Buttons */}
+      <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center gap-4">
+        <button className="flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition duration-300">
+          <FaPhone className="mr-2" /> CONTACT AGENT
+        </button>
+        <button className="flex items-center px-8 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-700 transition duration-300">
+          <FaEnvelope className="mr-2" /> ENQUIRE NOW
+        </button>
+      </div>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Packagedetails;
