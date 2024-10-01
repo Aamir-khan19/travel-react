@@ -101,7 +101,7 @@ const Herosection = () => {
 
       <div className=" h-full flex flex-col items-end justify-center">
         <div
-          className={`absolute z-50 right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
+          className={`absolute z-40 right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
             isFormVisible ? "translate-x-0" : "translate-x-full"
           }`}
         >

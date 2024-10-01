@@ -11,14 +11,11 @@ const packageData = [
     Idealdays: "4-7 Days",
     Besttime: "Dec,Mar,Jan",
     content: [
-      "https://lh3.googleusercontent.com/p/AF1QipNsPXYqDpsrHDk016rTjsOdKCxrMmT2uM2QOJoU=s680-w680-h510-rw",
-      "https://static.wanderon.in/wp-content/uploads/2023/07/aryamanwanderon_water_sports_in_andaman_islands_4c6bd4ee-8ede-490a-bf60-2deb4c423f89.png",
+      "https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YW5kYW1hbnxlbnwwfHwwfHx8MA%3D%3D",
 
-      "https://lh3.googleusercontent.com/p/AF1QipNsPXYqDpsrHDk016rTjsOdKCxrMmT2uM2QOJoU=s680-w680-h510-rw",
-      "https://static.wanderon.in/wp-content/uploads/2023/07/aryamanwanderon_water_sports_in_andaman_islands_4c6bd4ee-8ede-490a-bf60-2deb4c423f89.png",
+      "https://images.unsplash.com/photo-1642498232612-a837df233825?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
-      "https://lh3.googleusercontent.com/p/AF1QipNsPXYqDpsrHDk016rTjsOdKCxrMmT2uM2QOJoU=s680-w680-h510-rw",
-      "https://static.wanderon.in/wp-content/uploads/2023/07/aryamanwanderon_water_sports_in_andaman_islands_4c6bd4ee-8ede-490a-bf60-2deb4c423f89.png",
+      "https://images.unsplash.com/photo-1545762374-d18079617da8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5kYW1hbnxlbnwwfHwwfHx8MA%3D%3D",
     ],
   },
   {
