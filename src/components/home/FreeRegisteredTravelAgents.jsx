@@ -180,7 +180,37 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9560523667",
       email: "nirjal.biswa1490@gmail.com",
     },
-    
+    {
+      name: "LSE Travel & Holidays",
+      phone: "9642640787",
+      email: "lsetravelandholidays@gmail.com",
+    },
+    {
+      name: "Purna Tours ",
+      phone: " 8218886132",
+      email: "purnatours23@gmail.com",
+    },
+    {
+      name: " Ak Sharma Tour Travel Dharmshala ",
+      phone: " 7876649577",
+      email: "aksharmatourtraveldharmshala@gmail.com",
+    },
+    {
+      name: " Dinesh Tours and Travels ",
+      phone: "  7304814617",
+      email: "dineshmarathe46@gmail.com",
+    },
+    {
+      name: " MM Holidays Pvt Ltd",
+      phone: "7770009889",
+      email: "info@mmholidays.in",
+    },
+    {
+      name: " The Trip Organiser",
+      phone: "9311789315",
+      email: "info@thetriporganiser.in",
+      
+    },
   ];
 
   const sliderContainer = useRef(null);
@@ -280,7 +310,7 @@ const FreeRegisteredTravelAgents = () => {
             {ourTravelAgents.map((item, i) => (
               <div key={i}>
                 <div className="keen-slider__slide" key={i}>
-                  <div className="flex border-[1px] p-5 border-gray-00 rounded-lg relative w-full sm:w-auto min-h-[290px]">
+                  <div className="flex border-[1px] p-5 border-gray-00 rounded-lg relative w-full sm:w-auto min-h-[290px] px-3">
                     <div className="flex sm:flex-row flex-col-reverse sm:justify-start justify-center sm:items-start items-center">
                       <div className="flex gap-5 sm:justify-start justify-center sm:items-start items-center flex-col">
                         <h1 className="text-xl font-bold">{item.name}</h1>
@@ -292,7 +322,7 @@ const FreeRegisteredTravelAgents = () => {
 
                           {item.phone}
                         </p>
-                        <p className="flex items-center">
+                        <p className="flex items-center ">
                           <span className="font-semibold text-xl">
                             Email -{" "}
                           </span>

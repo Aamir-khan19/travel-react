@@ -86,7 +86,14 @@ const OurTravelAgents = () => {
       name: "Rathore Travels ",
       phone: "9988325982",
       // contact: "https://himalayancircle.com/",
-      Address: "Housing board near cival hospital ferozpur city Pin-152002",
+      Address: "Housing board near cival hospital ferozpur city ,Pin-152002",
+    },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/kancharla.jpeg",
+      name: "Kancharla Tour's and Travels",
+      phone: "7095974001",
+      // contact: "https://himalayancircle.com/",
+      Address: " Plot No.48 Venk. Colony ,Hyderabad -501501",
     },
   ];
 

@@ -6,6 +6,7 @@ import { FaCalendarAlt } from "react-icons/fa";
 import { FaClock } from "react-icons/fa6";
 import Footer from "../../components/global/Footer";
 import Navbar from "../../components/global/Navbar";
+import StatsSection from "./StatsSection";
 
 const Packagedetails = () => {
   const { id } = useParams();
@@ -68,7 +69,6 @@ const Packagedetails = () => {
     <div className="bg-gray-50">
       <Navbar />
 
-      {/* Hero Section with Parallax Effect */}
       <div
         className="relative w-full overflow-hidden h-96"
         style={{
@@ -205,6 +205,8 @@ const Packagedetails = () => {
           <FaEnvelope className="mr-2" /> ENQUIRE NOW
         </button>
       </div>
+      {/* <StatsSection/> */}
+     
 
       <Footer />
     </div>
