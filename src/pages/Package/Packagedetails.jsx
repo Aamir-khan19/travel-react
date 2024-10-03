@@ -205,7 +205,7 @@ const Packagedetails = () => {
           <FaEnvelope className="mr-2" /> ENQUIRE NOW
         </button>
       </div>
-      {/* <StatsSection/> */}
+      <StatsSection/>
      
 
       <Footer />

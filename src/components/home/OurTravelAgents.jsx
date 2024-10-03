@@ -13,7 +13,6 @@ import {
 
 const OurTravelAgents = () => {
   const ourTravelAgents = [
-    
     {
       imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
       name: "Travels Yug",
@@ -28,7 +27,7 @@ const OurTravelAgents = () => {
       contact: "https://kamakshiholidays.com/",
       Address: "Lane no 30, Ubale Nagar, Wagholi, Pune 412207",
     },
-    
+
     {
       imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
       name: "South Indian Holidays",
@@ -43,7 +42,7 @@ const OurTravelAgents = () => {
       phone: "9632417602",
       contact: "https://www.richierichholidays.in/",
       Address:
-        " N-2, 24th Main, LIC Row Houses,  1st Phase, J. P. Nagar, Bengaluru, Karnataka 560078.",
+        " N-2, 24th Main, LIC Row Houses, J.P. Nagar, Bengaluru, Ka-560078.",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
