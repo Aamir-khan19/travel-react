@@ -157,7 +157,7 @@ const OurTravelAgents = () => {
             <button
               aria-label="Previous slide"
               onClick={handlePrevSlide}
-              className="rounded-full bg-[#01055b] p-4 text-white"
+              className="rounded-full  bg-[#01055b] p-4 text-white"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

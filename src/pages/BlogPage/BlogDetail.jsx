@@ -118,7 +118,7 @@ const BlogDetail = () => {
           <div className="flex space-x-4">
             <a
               href="/blogs"
-              className="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-full shadow hover:bg-indigo-700 transition-colors duration-300"
+              className="px-6 py-3 bg-indigo-900 text-white font-semibold rounded-full shadow hover:bg-indigo-800 transition-colors duration-300"
             >
               Back to Blogs
             </a>
@@ -131,7 +131,7 @@ const BlogDetail = () => {
           </div>
         </div>
 
-        {/* Related Posts */}
+      
         <div className="mt-20">
           <h3 className="text-3xl font-semibold text-gray-800 mb-8">
             Related Posts

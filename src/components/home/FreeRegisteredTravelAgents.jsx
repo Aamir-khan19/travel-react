@@ -209,7 +209,6 @@ const FreeRegisteredTravelAgents = () => {
       name: " The Trip Organiser",
       phone: "9311789315",
       email: "info@thetriporganiser.in",
-      
     },
   ];
 

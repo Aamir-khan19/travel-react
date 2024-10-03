@@ -32,6 +32,8 @@ const Packagedetails = () => {
 
   useEffect(() => {
     const pack = packageData.find((obj) => obj.id == id);
+
+     
     setImages(pack?.content || []);
     setPackage(pack);
     window.scrollTo(0, 0);
@@ -78,20 +80,18 @@ const Packagedetails = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
           <h1 className="text-5xl font-bold text-white drop-shadow-lg">
             {"Explore the World"}
           </h1>
         </div>
       </div>
 
-      {/* Package Details */}
       <div className="container mx-auto p-8 md:p-12">
-        <h2 className="text-4xl font-bold text-center mb-8 capitalize">
+        <h2 className="text-4xl  text-blue-900 font-bold text-center mb-8 capitalize">
           {"Discover " + (pack?.category || "Dubai")}
         </h2>
 
-        {/* Image Gallery */}
         <div className="relative w-full overflow-hidden rounded-lg shadow-xl mb-10">
           <div
             className="flex transition-transform duration-500 ease-in-out"
@@ -115,7 +115,6 @@ const Packagedetails = () => {
           </button>
         </div>
 
-        {/* Package Overview */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white p-8 rounded-lg shadow-xl">
           <div>
             <h3 className="text-3xl font-semibold mb-4">
@@ -126,7 +125,7 @@ const Packagedetails = () => {
                 "This is a detailed description about the package..."}
             </p>
             <div className="flex items-center justify-center">
-              <button className="flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition duration-300">
+              <button className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-900 transition duration-300">
                 <FaEnvelope className="mr-2" /> ENQUIRE NOW
               </button>
             </div>
@@ -143,20 +142,16 @@ const Packagedetails = () => {
         </div>
 
         <div className="flex justify-between mt-8 text-lg">
-          {/* Ideal Days Section */}
           <div className="flex items-center gap-3">
-            <FaClock className="text-indigo-600 text-2xl" />{" "}
-            {/* FaClock Icon */}
+            <FaClock className="text-blue-900 text-2xl" />
             <div>
               <h4 className="text-xl font-bold mb-2">Ideal Days</h4>
               <p>{pack?.Idealdays || "7-10 Days"}</p>
             </div>
           </div>
 
-          {/* Best Time to Visit Section */}
           <div className="flex items-center gap-3">
-            <FaCalendarAlt className="text-indigo-600 text-2xl" />{" "}
-            {/* FaCalendarAlt Icon */}
+            <FaCalendarAlt className="text-blue-900 text-2xl" />{" "}
             <div>
               <h4 className="text-xl font-bold mb-2">Best Time to Visit</h4>
               <p>{pack?.Besttime || "Winter months"}</p>
@@ -164,7 +159,6 @@ const Packagedetails = () => {
           </div>
         </div>
 
-        {/* FAQs */}
         <div className="bg-gray-100 py-10">
           <h3 className="text-3xl font-semibold text-center mb-8">
             Frequently Asked Questions
@@ -196,17 +190,15 @@ const Packagedetails = () => {
         </div>
       </div>
 
-      {/* Sticky Action Buttons */}
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center gap-4">
-        <button className="flex items-center px-8 py-3 bg-indigo-600 text-white rounded-lg shadow hover:bg-indigo-700 transition duration-300">
+        <button className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-indigo-900 transition duration-300">
           <FaPhone className="mr-2" /> CONTACT AGENT
         </button>
         <button className="flex items-center px-8 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-700 transition duration-300">
           <FaEnvelope className="mr-2" /> ENQUIRE NOW
         </button>
       </div>
-      <StatsSection/>
-     
+      <StatsSection />
 
       <Footer />
     </div>

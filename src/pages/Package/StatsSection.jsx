@@ -3,15 +3,15 @@ import React, { useEffect, useState } from "react";
 const StatsSection = () => {
   const stats = [
     {
-      value: 1000,
+      value: 100,
       label: "TRAVEL AGENTS",
     },
     {
-      value: 100000,
+      value: 10000,
       label: "HAPPY TRAVELERS",
     },
     {
-      value: 10000,
+      value: 1000,
       label: "PLACES SERVED",
     },
   ];
@@ -22,15 +22,13 @@ const StatsSection = () => {
         {stats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center">
             <Counter targetValue={stat.value} />
-            <p className="text-gray-600 mt-2">{stat.label}</p>
+            <p className="text-gray-800 mt-2">{stat.label}</p>
           </div>
         ))}
       </div>
     </div>
   );
 };
-
-
 
 const Counter = ({ targetValue }) => {
   const [count, setCount] = useState(0);
@@ -43,16 +41,21 @@ const Counter = ({ targetValue }) => {
       start += increment;
       if (start >= targetValue) {
         clearInterval(interval);
-        setCount(targetValue); 
+        setCount(targetValue);
       } else {
         setCount(Math.floor(start));
       }
-    }, 50); 
+    }, 50);
 
-    return () => clearInterval(interval); 
+    return () => clearInterval(interval);
   }, [targetValue]);
 
-  return <h2 className="text-4xl font-bold text-blue-900">{count.toLocaleString()}</h2>;
+  return (
+    <h2 className="text-4xl font-bold text-blue-900">
+      {count.toLocaleString()}
+    </h2>
+    
+  );
 };
 
 export default StatsSection;

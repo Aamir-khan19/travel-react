@@ -32,7 +32,7 @@ const Allpackages = () => {
                     <span className="text-sm text-gray-600 ml-1">4.9 (1.2k Reviews)</span>
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold text-blue-600 mb-2">
+                <h3 className="text-2xl font-bold text-blue-900 mb-2">
                   {elem?.category}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4">
@@ -40,7 +40,7 @@ const Allpackages = () => {
                 </p>
                 <Link
                   to={`/package-details/${elem?.id}`}
-                  className="block bg-blue-500 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-600 hover:shadow-lg transition-all"
+                  className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
                 >
                   See Details
                 </Link>
