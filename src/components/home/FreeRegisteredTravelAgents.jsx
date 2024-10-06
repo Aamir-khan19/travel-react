@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { Link } from "react-router-dom";
@@ -215,6 +215,12 @@ const FreeRegisteredTravelAgents = () => {
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
 
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleInputChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+
   useEffect(() => {
     if (sliderContainer.current && !keenSlider.current) {
       keenSlider.current = new KeenSlider(sliderContainer.current, {
@@ -249,7 +255,16 @@ const FreeRegisteredTravelAgents = () => {
         },
       });
     }
-  }, []);
+
+
+    return () => {
+      if (keenSlider.current) {
+        keenSlider.current.destroy();
+        keenSlider.current = null;
+      }
+    };
+  
+  }, [searchTerm]);
 
   const handlePrevSlide = () => {
     if (keenSlider.current) {
@@ -262,6 +277,12 @@ const FreeRegisteredTravelAgents = () => {
       keenSlider.current.next();
     }
   };
+
+
+  const filteredItems = ourTravelAgents.filter(item =>
+    item?.name.toLowerCase().startsWith(searchTerm?.toLowerCase())
+  );
+
   return (
     <section className="">
       <div className="mx-auto relative max-w-[1340px] px-4 md:py-20 py-10 sm:px-6    lg:ps-8 ">
@@ -269,7 +290,8 @@ const FreeRegisteredTravelAgents = () => {
           <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
             Registered Travel Agents
           </h2>
-          <div className="hidden sm:flex gap-4">
+
+          {/* <div className="hidden sm:flex gap-4">
             <button
               aria-label="Previous slide"
               onClick={handlePrevSlide}
@@ -302,11 +324,28 @@ const FreeRegisteredTravelAgents = () => {
                 />
               </svg>
             </button>
-          </div>
+          </div> */}
+
+<input
+        type="text"
+        placeholder="Tumhare pass laptop nahi hai"
+        value={searchTerm}
+        onChange={handleInputChange}
+
+        className=" min-w-[220px] border-gray-500 rounded border-2"
+      />
+
+
         </div>
-        <div className="   sm:mt-16 relative mt-8 lg:col-span-2 lg:mx-0">
+
+
+        <div className="sm:mt-16 relative mt-8 lg:col-span-2 lg:mx-0">
+
+          {/* slider container div starts here  */}
           <div ref={sliderContainer} className="keen-slider">
-            {ourTravelAgents.map((item, i) => (
+            {
+            
+(searchTerm === '' ? ourTravelAgents : filteredItems).map((item, i) => (
               <div key={i}>
                 <div className="keen-slider__slide" key={i}>
                   <div className="flex border-[1px] p-5 border-gray-00 rounded-lg relative w-full sm:w-auto min-h-[290px] px-3">
@@ -359,8 +398,14 @@ const FreeRegisteredTravelAgents = () => {
                   </div>
                 </div>
               </div>
-            ))}
+            ))
+            
+            }
           </div>
+          {/* slider container div ends here  */}
+
+
+
         </div>
 
         <div className="flex sm:hidden justify-center gap-4 mt-8">
@@ -397,6 +442,8 @@ const FreeRegisteredTravelAgents = () => {
             </svg>
           </button>
         </div>
+
+
       </div>
     </section>
   );
