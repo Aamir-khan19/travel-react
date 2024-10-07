@@ -12,7 +12,7 @@ const InternationalTopTourPackage = () => {
         "Experience the vibrant culture, stunning skyline, and world-class attractions in Singapore. From Gardens by the Bay to Sentosa Island",
     },
     {
-      imageUrl: `https://cdn.pixabay.com/photo/2020/03/19/18/29/camel-4948299_640.jpg`,
+      imageUrl: `https://cdn.pixabay.com/photo/2020/03/19/18/29/camel-4948299_640.jpg`, 
       title: "Dubai",
       description:
         "Discover the luxury and adventure of Dubai. Visit the iconic Burj Khalifa, explore the vast desert, and indulge in shopping at world-renowned malls.",

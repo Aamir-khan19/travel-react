@@ -9,6 +9,7 @@ import {
   FaWhatsapp,
   FaPhone,
   FaCheckCircle,
+  FaSearch,
 } from "react-icons/fa";
 const FreeRegisteredTravelAgents = () => {
   // Destinations Data
@@ -326,14 +327,20 @@ const FreeRegisteredTravelAgents = () => {
             </button>
           </div> */}
 
-<input
-        type="text"
-        placeholder="Tumhare pass laptop nahi hai"
-        value={searchTerm}
-        onChange={handleInputChange}
 
-        className=" min-w-[220px] border-gray-500 rounded border-2"
-      />
+<div className="relative w-full sm:w-auto flex items-center max-w-sm">
+  <span className="absolute left-3 text-gray-500">
+    <FaSearch className="w-5 h-5" />
+  </span>
+  <input
+    type="text"
+    placeholder="Search travel agents..."
+    value={searchTerm}
+    onChange={handleInputChange}
+    className="pl-10 pr-4 py-2 w-full border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#01055b] transition duration-300 ease-in-out shadow-md"
+  />
+</div>
+
 
 
         </div>

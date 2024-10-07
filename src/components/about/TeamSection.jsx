@@ -72,7 +72,7 @@ const TeamSection = () => {
                 <h1 className="text-gray-900 text-xl font-bold mb-1">
                   Nitesh Pandey
                 </h1>
-                <div className="text-gray-700 font-light mb-2">Sales Support</div>
+                <div className="text-gray-700 font-light mb-2">Buisness Manager</div>
                 <div className="flex space-x-2">
                   <div className="p-2 bg-white rounded-full flex items-center justify-center">
                     <a href="#!" className="text-[#4267B2]">

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { FaEnvelope, FaPhone } from "react-icons/fa";
 import packageData from "../../components/packages/Allpackages/packagedata";
 import { FaCalendarAlt } from "react-icons/fa";
@@ -7,10 +7,12 @@ import { FaClock } from "react-icons/fa6";
 import Footer from "../../components/global/Footer";
 import Navbar from "../../components/global/Navbar";
 import StatsSection from "./StatsSection";
+import LoginModal from "../../components/home/LoginModal";
 
 const Packagedetails = () => {
   const { id } = useParams();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [images, setImages] = useState(() => {
     const pack = packageData.find((obj) => obj.id == id);
     return pack?.content || [];
@@ -125,9 +127,11 @@ const Packagedetails = () => {
                 "This is a detailed description about the package..."}
             </p>
             <div className="flex items-center justify-center">
-              <button className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-900 transition duration-300">
+              <button onClick={() => setIsModalOpen(true)} className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-900 transition duration-300">
+               
                 <FaEnvelope className="mr-2" /> ENQUIRE NOW
               </button>
+              <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
             </div>
           </div>
           <div>
@@ -191,12 +195,15 @@ const Packagedetails = () => {
       </div>
 
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center gap-4">
-        <button className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-indigo-900 transition duration-300">
+        <button onClick={() => setIsModalOpen(true)}  className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-indigo-900 transition duration-300">
           <FaPhone className="mr-2" /> CONTACT AGENT
         </button>
+        <Link to="/contact">
+       
         <button className="flex items-center px-8 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-700 transition duration-300">
           <FaEnvelope className="mr-2" /> ENQUIRE NOW
         </button>
+        </Link>
       </div>
       <StatsSection />
 

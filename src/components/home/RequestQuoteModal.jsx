@@ -112,7 +112,7 @@ useEffect(()=>{
                 value={formData.destination}
                 onChange={handleChange}
                 required 
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
               />
               <textarea 
                 placeholder="Message" 
@@ -121,7 +121,7 @@ useEffect(()=>{
                 value={formData.message}
                 onChange={handleChange}
                 required 
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
               ></textarea>
               <button 
                 type="submit" 
