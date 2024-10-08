@@ -263,8 +263,10 @@ const ContactUs = ({ mobile = false }) => {
       <CiUser color="white" size={20} />
       Login
     </Link>
-    <Link
-      to="/TourPackages "
+
+
+    <button
+      onClick={handleRequestQuoteOpenModal}
       className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
     >
       
