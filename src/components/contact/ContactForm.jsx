@@ -17,6 +17,8 @@ const Contact = () => {
     message: ""
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const contactSubmit = async (e) => {
     e.preventDefault();
     // setIsSubmitting(true);
@@ -49,10 +51,12 @@ const Contact = () => {
       message: formData.message
     };
 
+    setIsLoading(true);
 
     api.postReq("contact-us", registerBody)
     .then((data)=>{
      console.log("contact-us", data)
+     setIsLoading(false);
 
      setFlashMessage("Form submitted successfully you will be contacted soon");
      console.log("successfully refgsitered eith us", data);
@@ -60,6 +64,7 @@ const Contact = () => {
      setFormData({ name: "", email: "", phone: "", message: "" });
     })
     .catch((error)=>{
+      setIsLoading(false);
       console.log("oopps seomtjing went wrong", error)
     })
   };
@@ -177,7 +182,9 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                 ></textarea>
-                <button className="text-white bg-[#01055b] rounded-lg w-full px-5 py-3 flex justify-center items-center transition-transform transform hover:scale-105">
+                <button
+                disabled={isLoading}
+                className="text-white bg-[#01055b] rounded-lg w-full px-5 py-3 flex justify-center items-center transition-transform transform hover:scale-105">
                   {isSubmitting ? "Sending..." : result}
                 </button>
               </form>

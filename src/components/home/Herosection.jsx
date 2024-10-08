@@ -14,6 +14,8 @@ const Herosection = () => {
     message: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const slides = [
     { image: "/Images/Homepageimages/goa.jpg" },
     { image: "/Images/Homepageimages/boat_heroImage.png" },
@@ -47,9 +49,12 @@ const Herosection = () => {
       message: formData.message,
     };
 
+    setIsLoading(true);
+
     api
       .postReq("register", registerBody)
       .then((data) => {
+        setIsLoading(false);
         setFlashMessage(
           "Form submitted successfully you will be contacted soon"
         );
@@ -58,6 +63,7 @@ const Herosection = () => {
         setFormData({ name: "", email: "", phone: "", message: "" });
       })
       .catch((error) => {
+        setIsLoading(false);
         console.log("something went wrong ", error);
       });
   };
@@ -205,6 +211,8 @@ const Herosection = () => {
             </div> */}
               <div className="flex items-center justify-between">
                 <button
+                 disabled={isLoading}                
+
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                   type="submit"
                 >

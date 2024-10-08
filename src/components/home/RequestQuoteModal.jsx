@@ -13,6 +13,8 @@ const RequestQuoteModal = ({
     message: "",
   });
 
+  const [isLoading, setIsLoading] = useState(false);
+
   const [flashMessage, setFlashMessage] = useState("");
 
   const handleFormSubmit = (e) => {
@@ -30,11 +32,13 @@ const RequestQuoteModal = ({
 
     console.log("regsiterBosy REqesutQouteModal.jsx", registerBody);
 
+    setIsLoading(true);
+
     api
       .postReq("quote", registerBody)
       .then((data) => {
         console.log("request a quote successfully got", data);
-
+        setIsLoading(false);
         setFlashMessage(
           "Form submitted successfully you will be contacted soon"
         );
@@ -49,6 +53,7 @@ const RequestQuoteModal = ({
         });
       })
       .catch((error) => {
+        setIsLoading(false)
         console.log("ReqesutQhuoteModel.jsx", error);
       });
   };
@@ -139,6 +144,7 @@ const RequestQuoteModal = ({
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
               ></textarea>
               <button
+              disabled={isLoading}
                 type="submit"
                 className="w-full p-3 text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg hover:opacity-90 transition"
               >
