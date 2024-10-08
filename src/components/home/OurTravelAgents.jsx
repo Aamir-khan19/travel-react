@@ -147,7 +147,7 @@ const OurTravelAgents = () => {
         if (keenSlider.current) {
           keenSlider.current.next();
         }
-      }, 2000);
+      }, 10000);
     }
 
     return () => {
