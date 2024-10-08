@@ -45,6 +45,7 @@ const LoginModal = ({ isOpen, onClose }) => {
           >
             SUBMIT
           </button>
+         
         </form>
       </div>
     </div>

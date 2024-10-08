@@ -1,3 +1,6 @@
+
+
+
 import React, { useEffect, useRef, useState } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
@@ -88,9 +91,9 @@ const OurTravelAgents = () => {
     },
   ];
 
-
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
+  const autoSlideInterval = useRef(null);
 
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -138,17 +141,25 @@ const OurTravelAgents = () => {
           },
         },
       });
+
+      // Set up auto slide every 3 seconds
+      autoSlideInterval.current = setInterval(() => {
+        if (keenSlider.current) {
+          keenSlider.current.next();
+        }
+      }, 2000);
     }
 
-
-  return () => {
-    if (keenSlider.current) {
-      keenSlider.current.destroy();
-      keenSlider.current = null;
-    }
-  };
-
-}, [searchTerm]);
+    return () => {
+      if (keenSlider.current) {
+        keenSlider.current.destroy();
+        keenSlider.current = null;
+      }
+      if (autoSlideInterval.current) {
+        clearInterval(autoSlideInterval.current); // Clear auto-slide interval on unmount
+      }
+    };
+  }, [searchTerm]);
 
   const handlePrevSlide = () => {
     if (keenSlider.current) {
@@ -192,7 +203,8 @@ const OurTravelAgents = () => {
               filteredAgents.map((agent, i) => (
                 <div className="keen-slider__slide" key={i}>
                   <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[350px] max-[600px]:min-h-[400px]">
-                    <div className="bg-[url('/Images/Homepageimages/verified.png')] bg-cover bg-center w-[75px] h-[70px] mx-2"></div>
+                    <div className="bg-[url('Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[145px] h-[110px] mx-2 -ml-[15px] -mt-[16px]"></div>
+                
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
                         <img src={agent.imageUrl} alt={agent.name} className="w-auto h-32" />
@@ -246,6 +258,7 @@ const OurTravelAgents = () => {
         {/* Mobile Slide Controls */}
         <div className="flex sm:hidden justify-center gap-4 mt-8">
           <button
+          
             aria-label="Previous slide"
             onClick={handlePrevSlide}
             className="rounded-full bg-[#01055b] p-4 text-white"
@@ -276,3 +289,4 @@ const OurTravelAgents = () => {
 };
 
 export default OurTravelAgents;
+

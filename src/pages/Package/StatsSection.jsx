@@ -45,6 +45,7 @@ const Counter = ({ targetValue }) => {
       } else {
         setCount(Math.floor(start));
       }
+                
     }, 50);
 
     return () => clearInterval(interval);
