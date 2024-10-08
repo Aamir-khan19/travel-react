@@ -202,7 +202,7 @@ const OurTravelAgents = () => {
             {filteredAgents.length > 0 ? (
               filteredAgents.map((agent, i) => (
                 <div className="keen-slider__slide" key={i}>
-                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[350px] max-[600px]:min-h-[400px]">
+                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[380px] max-[600px]:min-h-[400px]">
                     <div className="bg-[url('Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[145px] h-[110px] mx-2 -ml-[15px] -mt-[16px]"></div>
                 
                     <div className="flex justify-between w-full">
