@@ -28,7 +28,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/contact" element={<Contact />} />
           <Route path="/B2BLogin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/TourPackages" element={<TourPackages />} />
+          <Route path="/tour-packages/:name" element={<TourPackages />} />
           <Route path="/destination" element={<SignUp />} />
           <Route path="/blogs" element={<Blogs />} />
       

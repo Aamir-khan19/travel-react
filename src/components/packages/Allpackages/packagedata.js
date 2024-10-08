@@ -1,44 +1,51 @@
 const packageData = [
   {
-    id: 1,
-    title:
-      "Andaman is an island paradise with pristine beaches, turquoise waters, rich marine life, tropical forests, and a tranquil atmosphere.",
-    title2:
-      "The Andaman Islands, an enchanting archipelago in the Bay of Bengal, are celebrated as an island paradise known for their pristine beaches, turquoise waters, and rich marine life. With stunning destinations like Havelock Island and Neil Island, visitors can enjoy idyllic sandy shores, crystal-clear waters, and vibrant coral reefs, making it a haven for snorkeling and scuba diving enthusiasts.The lush tropical forests are home to diverse flora and fauna, offering opportunities for trekking and exploring untouched nature. Popular activities include visiting the famous Radhanagar Beach, enjoying water sports, and taking boat rides to the serene Ross Island and North Bay Island. The islands also boast a tranquil atmosphere, perfect for relaxation and rejuvenation. With its unique blend of natural beauty, adventure, and peaceful ambiance, the Andaman Islands provide an unforgettable escape for travelers seeking serenity and adventure in a tropical paradise.",
-    image:
-      "https://cdn.pixabay.com/photo/2017/06/17/18/33/andaman-2413073_640.jpg",
-    category: "Andaman",
-    Idealdays: "4-7 Days",
-    Besttime: "Dec,Mar,Jan",
-    content: [
+    "id": 1,
+    "title": "Andaman is an island paradise with pristine beaches, turquoise waters, rich marine life, tropical forests, and a tranquil atmosphere.",
+    "title2": "The Andaman Islands, an enchanting archipelago in the Bay of Bengal, are celebrated as an island paradise known for their pristine beaches, turquoise waters, and rich marine life. With stunning destinations like Havelock Island and Neil Island, visitors can enjoy idyllic sandy shores, crystal-clear waters, and vibrant coral reefs, making it a haven for snorkeling and scuba diving enthusiasts. The lush tropical forests are home to diverse flora and fauna, offering opportunities for trekking and exploring untouched nature. Popular activities include visiting the famous Radhanagar Beach, enjoying water sports, and taking boat rides to the serene Ross Island and North Bay Island. The islands also boast a tranquil atmosphere, perfect for relaxation and rejuvenation. With its unique blend of natural beauty, adventure, and peaceful ambiance, the Andaman Islands provide an unforgettable escape for travelers seeking serenity and adventure in a tropical paradise.",
+    "image": "https://cdn.pixabay.com/photo/2017/06/17/18/33/andaman-2413073_640.jpg",
+    "category": "Andaman",
+    "Idealdays": "4-7 Days",
+    "Besttime": "Dec,Mar,Jan",
+    "content": [
       "https://plus.unsplash.com/premium_photo-1661962958462-9e52fda9954d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YW5kYW1hbnxlbnwwfHwwfHx8MA%3D%3D",
-
-      "https://images.unsplash.com/photo-1642498232612-a837df233825?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
-      "https://images.unsplash.com/photo-1545762374-d18079617da8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW5kYW1hbnxlbnwwfHwwfHx8MA%3D%3D",
-    ],
+      "https://images.unsplash.com/photo-1516685018646-549a00e9aa6b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dHJvcGljYWwlMjBiZWFjaGVzfGVufDB8fHx8fA%3D%3D"
+    ]
   },
   {
-    id: 2,
-    title:
-      "Kashmir is a breathtaking region with snow-capped mountains, serene valleys, lush greenery, vibrant culture, and rich history.",
-    title2:"Kashmir, often referred to as Paradise on Earth, is a breathtaking region in northern India, celebrated for its snow-capped mountains, serene valleys, and lush greenery. The picturesque landscapes, dominated by the majestic Himalayas, offer a stunning backdrop for adventure and tranquility. Famous destinations like Gulmarg, Pahalgam, and Sonamarg provide opportunities for skiing, trekking, and nature walks amidst stunning scenery.The enchanting Dal Lake, known for its charming houseboats and shikaras, allows visitors to experience the tranquility of the region. Kashmir’s rich cultural heritage is reflected in its traditional handicrafts, vibrant festivals, and delicious cuisine, including the famous Rogan Josh and Kashmiri pulao. The region's history is marked by influences from various cultures, evident in its beautiful gardens and ancient temples. With its unique blend of natural beauty, vibrant culture, and warm hospitality, Kashmir offers an unforgettable experience for travelers seeking peace and adventure.",
-    image:
-      "https://cdn.pixabay.com/photo/2017/03/26/19/37/landscape-2176347_1280.jpg",
-    category: "Kashmir",
-    Idealdays: "5-7 Days",
-    Besttime: "Dec,Mar,Jan",
-    content: [
-      "https://images.unsplash.com/photo-1712998000706-7e9c218e5e91?q=80&w=1758&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1716573263049-bb901a972ce1?q=80&w=1658&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1714039656237-4c8bdd2ef26d?q=80&w=1862&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1641593758596-39b200b51e8d?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1614591276564-7b3e69347a48?q=80&w=1748&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1666501544962-8ce21801165a?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    ],
+    "id": 2,
+    "title": "Explore the vibrant marine life and coral reefs of Andaman's hidden underwater world.",
+    "title2": "Diving into the crystal-clear waters of the Andaman Islands unveils a hidden world of vibrant marine life and thriving coral reefs. For underwater enthusiasts, Havelock Island is a top destination, offering unforgettable snorkeling and scuba diving experiences at popular spots like Elephant Beach and the lesser-known Dixon's Pinnacle. Explore colorful coral gardens, swim alongside schools of exotic fish, and encounter sea turtles, stingrays, and reef sharks. The reefs are a haven for marine biodiversity, with an array of hard and soft corals creating a mesmerizing underwater landscape. The serene waters make it an ideal location for beginners and seasoned divers alike.",
+    "image": "https://images.pexels.com/photos/20355637/pexels-photo-20355637/free-photo-of-people-and-motorboats-on-beach-in-summer.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Andaman",
+    "Idealdays": "5-7 Days",
+    "Besttime": "Dec,Feb,Mar",
+    "content": [
+      "https://images.unsplash.com/photo-1640618428217-30131ccdfd7a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1641719320002-743bc0384e0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1640615531485-1357f35dde8d?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ]
   },
   {
-    id: 3,
+    "id": 3,
+    "title": "Unwind on the serene, secluded beaches of Andaman with crystal-clear waters and golden sands.",
+    "title2": "For those seeking peace and tranquility, the Andaman Islands offer secluded beaches where travelers can unwind amidst the serene beauty of nature. Long Island, Little Andaman, and Diglipur provide a peaceful retreat from the more popular tourist spots, allowing visitors to relax on golden sands while gazing at crystal-clear waters. These less-explored beaches are perfect for those who want to escape the crowds and enjoy a more intimate connection with the natural surroundings. Whether you're reading a book under a palm tree, collecting seashells, or simply taking in the soothing sound of the waves, these beaches offer the perfect setting for relaxation.",
+    "image": "https://images.pexels.com/photos/14313849/pexels-photo-14313849.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "category": "Andaman",
+    "Idealdays": "6-8 Days",
+    "Besttime": "Jan,Feb,Mar",
+    "content": [
+      "https://images.pexels.com/photos/19755206/pexels-photo-19755206/free-photo-of-historic-building-facad-india.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/22893448/pexels-photo-22893448/free-photo-of-turquoise-sea-by-the-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/7970786/pexels-photo-7970786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    ]
+  },
+
+
+
+  {
+    id: 4,
     title:
       "Rajasthan is a desert state known for majestic forts, royal palaces, vibrant culture, camel rides, and colorful festivals. ",
     title2:
@@ -56,8 +63,47 @@ const packageData = [
       "https://images.unsplash.com/photo-1621926600808-1872f3302f1e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
   },
+
+
   {
-    id: 4,
+    "id": 5,
+    "title": "Rajasthan, the Land of Kings, is famous for its vibrant culture, intricate handicrafts, and grand palaces.",
+    "title2": "Rajasthan, often called the 'Land of Kings,' is a cultural paradise with its grand palaces, majestic forts, and intricate handicrafts. The Pink City of Jaipur, home to the stunning Hawa Mahal and City Palace, offers a glimpse into the royal past. Udaipur's beautiful lakes and Jodhpur's blue houses beneath the Mehrangarh Fort are must-see attractions. Beyond the cities, the villages of Rajasthan provide an authentic experience of local traditions, including puppet shows and folk music. With camel safaris in the Thar Desert and the colorful bazaars filled with handicrafts, Rajasthan is a must-visit for every traveler.",
+    "image": "https://cdn.pixabay.com/photo/2015/02/17/07/33/architecture-639103_1280.jpg",
+    "category": "Rajasthan",
+    "author": "Anita Mehra",
+    "date": "15th September 2024",
+    "content": [
+      "https://images.unsplash.com/photo-1621427639820-fb18ffbe8a38?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1661963050879-c6abd84f0261?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1677251486218-96798abb85a4?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1661964079694-ccfaf7dc8028?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1621926600808-1872f3302f1e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ]
+  }
+,
+
+{
+  "id": 6,
+  "title": "Rajasthan, the Land of Kings, is famous for its vibrant culture, intricate handicrafts, and grand palaces.",
+  "title2": "Rajasthan, often called the 'Land of Kings,' is a cultural paradise with its grand palaces, majestic forts, and intricate handicrafts. The Pink City of Jaipur, home to the stunning Hawa Mahal and City Palace, offers a glimpse into the royal past. Udaipur's beautiful lakes and Jodhpur's blue houses beneath the Mehrangarh Fort are must-see attractions. Beyond the cities, the villages of Rajasthan provide an authentic experience of local traditions, including puppet shows and folk music. With camel safaris in the Thar Desert and the colorful bazaars filled with handicrafts, Rajasthan is a must-visit for every traveler.",
+  "image": "https://cdn.pixabay.com/photo/2014/03/08/09/27/jodhpur-282944_1280.jpg",
+  "category": "Rajasthan",
+  "author": "Anita Mehra",
+  "date": "15th September 2024",
+  "content": [
+    "https://images.unsplash.com/photo-1621427639820-fb18ffbe8a38?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1661963050879-c6abd84f0261?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1677251486218-96798abb85a4?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1661964079694-ccfaf7dc8028?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1621926600808-1872f3302f1e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ]
+}
+,
+
+
+  {
+    id: 7,
     title:
       "Kerala, God's Own Country, offers serene backwaters, lush green tea plantations, exotic wildlife, and tranquil beaches.",
     title2:
@@ -76,27 +122,48 @@ const packageData = [
       "https://images.unsplash.com/photo-1593417033868-d18d4099d78e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
   },
+
+
   {
-    id: 5,
-    title:
-      "Leh-Ladakh is a cold desert with breathtaking landscapes, serene monasteries, and adventurous activities.",
-    title2:
-      "Leh-Ladakh, located in the northernmost region of India, is a stunning cold desert known for its breathtaking landscapes, serene monasteries, and adventurous activities. Nestled between the Great Himalayas and the Karakoram Range, this picturesque destination features dramatic mountain ranges, pristine lakes like Pangong Lake and Tso Moriri, and vast, unspoiled valleys. Adventure enthusiasts flock to Leh-Ladakh for thrilling activities such as trekking, river rafting, and mountain biking, while the famous Khardung La pass offers an exhilarating experience for motorbiking. The region is rich in Buddhist culture, with ancient monasteries like Hemis, Thiksey, and Diskit, showcasing beautiful frescoes and tranquil environments for meditation. The vibrant local culture, colorful festivals, and warm hospitality make Leh-Ladakh an unforgettable destination. With its unique blend of natural beauty and adventure, it provides an extraordinary experience for travelers seeking tranquility and exploration in the high Himalayas.",
-    image:
-      "https://as2.ftcdn.net/v2/jpg/05/19/52/35/1000_F_519523572_xmcWoezC3fgEX3ZcYeyG4pSxNQxKQtGQ.jpg",
-    category: "Leh-Ladakh",
-    author: "Pooja Mishra",
-    date: "1st July 2024",
+    "id": 8,
+    "title": "Kerala's backwaters and houseboats offer a tranquil escape amidst coconut palms and serene landscapes.",
+    "title2": "Kerala's backwaters are a serene network of interconnected canals, rivers, and lakes, surrounded by coconut palms and traditional villages. Houseboat cruises offer an unforgettable experience, allowing travelers to enjoy the tranquil beauty of the landscape while gliding along peaceful waters. The lush green surroundings, coupled with local Kerala cuisine served on board, create a relaxing and rejuvenating retreat for nature lovers and peace seekers. Alleppey and Kumarakom are the most popular destinations for houseboat experiences, with their network of calm waters and picturesque views, perfect for unwinding in nature.",
+    "image": "https://cdn.pixabay.com/photo/2017/06/27/14/20/couple-2447450_1280.jpg",
+    "category": "Kerala",
+    "author": "Anita Menon",
+    "date": "20th August 2024",
     content: [
-      "https://plus.unsplash.com/premium_photo-1661962344178-19930ba15492?q=80&w=1742&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1695954590938-ec7aa19efd5d?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1695954590927-465895cb6672?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1653112122775-a81f00f2c25b?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1701599347330-f01207c56ca5?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1647502586545-940ff9ac45c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEtlcmFsYXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1625401878457-a8fe61ccc6f8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1697729432049-caca66a1dab6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1718613898021-838855f2e3c9?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1593417033868-d18d4099d78e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
-  },
+  }
+,
+
+
+{
+  "id": 9,
+  "title": "Explore Kerala's rich cultural heritage through its traditional dance forms and vibrant festivals.",
+  "title2": "Kerala's cultural richness is reflected in its traditional dance forms like Kathakali and Mohiniyattam, which showcase intricate expressions and elaborate costumes. These classical art forms, deeply rooted in the state's history, are performed during festivals and special occasions, offering a glimpse into the spiritual and cultural life of the region. Kerala's festivals, such as Onam and Vishu, are marked by grand celebrations, boat races, and vibrant processions, reflecting the state's deep connection to its traditions and natural surroundings. These cultural experiences offer visitors a deep dive into Kerala's artistic and spiritual heritage.",
+  "image": "https://cdn.pixabay.com/photo/2018/11/04/19/54/houseboats-3794866_1280.jpg",
+  "category": "Kerala",
+  "author": "Meera Nair",
+  "date": "10th September 2024",
+  content: [
+    "https://images.unsplash.com/photo-1647502586545-940ff9ac45c1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fEtlcmFsYXxlbnwwfHwwfHx8MA%3D%3D",
+    "https://images.unsplash.com/photo-1625401878457-a8fe61ccc6f8?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1697729432049-caca66a1dab6?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1718613898021-838855f2e3c9?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1593417033868-d18d4099d78e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ],
+}
+,
+
+
   {
-    id: 6,
+    id: 10,
     title:
       "Goa is a coastal paradise with golden beaches, lively nightlife, Portuguese heritage, and water sports.",
     title2:
@@ -114,8 +181,46 @@ const packageData = [
       "https://images.unsplash.com/photo-1727276884260-15da3a728f34?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
   },
+
   {
-    id: 7,
+    "id": 11,
+    "title": "Goa's sun-kissed beaches and vibrant culture make it the perfect destination for a tropical getaway.",
+    "title2": "Goa offers a tropical escape with its sun-kissed beaches, vibrant culture, and lively festivals. The region's relaxed vibe, combined with stunning coastline views, makes it a popular destination for tourists seeking both adventure and relaxation. Visitors can engage in beachside activities such as jet-skiing, banana boat rides, and dolphin spotting. Nightlife in Goa is equally exciting, with beach parties, clubs, and music festivals drawing in crowds from across the world. Goa's diverse food culture, including traditional Goan curries and seafood platters, adds a flavorful twist to the holiday experience. With its mix of excitement and laid-back charm, Goa has something for everyone.",
+    "image": "https://cdn.pixabay.com/photo/2018/12/18/10/41/india-3882103_1280.jpg",
+    "category": "Goa",
+    "author": "Rohit Sharma",
+    "date": "20th May 2024",
+    "content": [
+      "https://images.unsplash.com/photo-1685271552630-9bc169185566?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1695453463057-aa5d48d9e3d4?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1701440138424-d851930f25cf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://plus.unsplash.com/premium_photo-1666286956135-0fb603dad5cf?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1727276884260-15da3a728f34?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    ]
+  }
+,
+
+{
+  "id": 12,
+  "title": "Goa's golden sands, palm-fringed beaches, and diverse wildlife offer nature lovers a paradise.",
+  "title2": "Goa is not just about its vibrant party scene; it is also a haven for nature lovers and wildlife enthusiasts. The state's beautiful beaches, like Benaulim and Agonda, offer a peaceful retreat, far from the bustling tourist spots. Goa's rich biodiversity is showcased in its wildlife sanctuaries, such as the Bhagwan Mahavir Wildlife Sanctuary and Salim Ali Bird Sanctuary, where visitors can witness a variety of flora and fauna. Whether it's relaxing on a quiet beach or exploring the lush countryside, Goa provides a perfect balance between adventure and nature appreciation.",
+  "image": "https://cdn.pixabay.com/photo/2012/03/01/01/32/couple-20208_1280.jpg",
+  "category": "Goa",
+  "author": "Rohit Sharma",
+  "date": "20th May 2024",
+  "content": [
+    "https://images.unsplash.com/photo-1685271552630-9bc169185566?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1695453463057-aa5d48d9e3d4?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1701440138424-d851930f25cf?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://plus.unsplash.com/premium_photo-1666286956135-0fb603dad5cf?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1727276884260-15da3a728f34?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  ]
+}
+,
+
+
+  {
+    id: 13,
     title:
       "Shimla is a charming hill station offering colonial architecture, scenic views, and pleasant weather.",
     title2:
@@ -133,8 +238,46 @@ const packageData = [
       "https://images.unsplash.com/photo-1704275627456-62d7fc44d4d6?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
   },
+
+
   {
-    id: 8,
+    "id": 14,
+    "title": "Shimla offers a perfect blend of natural beauty and rich cultural heritage.",
+    "title2": "Shimla, perched at an altitude of 2,205 meters, is a serene retreat in the Indian Himalayas. Known for its cool climate and enchanting views of the surrounding mountains, Shimla draws visitors seeking both relaxation and adventure. The town’s colonial architecture, including buildings like the Gaiety Theatre and Viceregal Lodge, transports visitors to a bygone era. Kufri, a nearby hill station, is a favorite spot for skiing in winter. The narrow-gauge Kalka-Shimla Railway, a UNESCO World Heritage Site, provides a scenic journey through the mountains. Whether hiking through pine forests or savoring local cuisine on Mall Road, Shimla offers a wealth of experiences for all types of travelers.",
+    "image": "https://cdn.pixabay.com/photo/2021/10/19/11/52/nature-6723371_1280.jpg",
+    "category": "Shimla",
+    "author": "Priya Kapoor",
+    "date": "12th May 2024",
+    content: [
+      "https://images.unsplash.com/photo-1695581263294-5fc40303e955?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1586881141091-1014c7c2cb79?q=80&w=1736&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1496372412473-e8548ffd82bc?q=80&w=1614&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1704275627456-62d7fc44d4d6?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+  },
+  {
+    "id": 15,
+    "title": "Shimla’s vibrant markets and rich flora make it a year-round destination.",
+    "title2": "Shimla, with its vibrant markets and lush green hills, has long been a favorite hill station for travelers. From shopping for woolen clothes and handicrafts on Lakkar Bazaar to savoring local delicacies at street-side stalls, the town offers a mix of urban convenience and rural charm. Summer months are perfect for nature walks in the surrounding forests, while winter transforms Shimla into a snow-covered wonderland. The nearby Chadwick Falls and Annandale ground add to the beauty of the region. Visitors can also explore the lush Himalayan Botanical Garden and take in the panoramic views of the valleys below.",
+    "image": "https://cdn.pixabay.com/photo/2018/09/01/09/59/himalayas-3646462_1280.jpg",
+    "category": "Shimla",
+    "author": "Sunil Sharma",
+    "date": "22nd July 2024",
+    content: [
+      "https://images.unsplash.com/photo-1695581263294-5fc40303e955?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1586881141091-1014c7c2cb79?q=80&w=1736&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1496372412473-e8548ffd82bc?q=80&w=1614&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "https://images.unsplash.com/photo-1704275627456-62d7fc44d4d6?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    ],
+  }
+,  
+
+
+  
+  {
+    id: 16,
     title:
       "Manali is a popular hill station known for its scenic beauty, adventure sports, and vibrant culture.",
     title2:
@@ -152,65 +295,46 @@ const packageData = [
       "https://images.unsplash.com/photo-1621342548664-e0b939512ad3?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     ],
   },
-  {
-    id: 9,
-    title:
-      "Agra is home to the magnificent Taj Mahal, a symbol of love, along with other Mughal-era monuments.",
-    title2:
-      "Agra, a historic city in northern India, is globally renowned as the home of the magnificent Taj Mahal, a UNESCO World Heritage Site and a symbol of eternal love. Built by Mughal Emperor Shah Jahan in memory of his beloved wife Mumtaz Mahal, this stunning marble mausoleum is an architectural masterpiece, attracting millions of visitors each year. In addition to the Taj Mahal, Agra boasts other remarkable Mughal-era monuments, including the Agra Fort, a UNESCO site showcasing impressive red sandstone architecture and rich history, and the beautiful Itmad-ud-Daula's Tomb, often referred to as the Baby Taj. Visitors can explore local markets offering exquisite handicrafts, leather goods, and traditional sweets. The city's vibrant culture, delicious cuisine, and historical significance make Agra a must-visit destination for travelers seeking to immerse themselves in India's rich heritage and marvel at its architectural wonders.",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/02/65/64/24/1000_F_265642486_IXw9DQVzjTfAzT8xMtTBXBvYD8Who6Fw.jpg",
-    category: "Agra",
-    author: "Shivani Tandon",
-    date: "12th March 2024",
-    content: [
-      "https://plus.unsplash.com/premium_photo-1697730551611-c2f004e5a7e8?q=80&w=1609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://images.unsplash.com/photo-1574092516306-5a843497ad89?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Agra_03-2016_10_Agra_Fort.jpg/800px-Agra_03-2016_10_Agra_Fort.jpg",
-      "https://www.rehousingpackers.in/india/images/agra-1.jpg",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/47406117.jpg?k=2c0d45158285df03e79c683ea4a2d04328b4270b0ba1a80175e28f0710f627a2&o=&hp=1",
-    ],
-  },
-  {
-    id: 10,
-    title:
-      "Arunachal Pradesh is known for its untouched beauty, majestic mountains, and rich cultural heritage.",
-    title2:
-      "Arunachal Pradesh, located in the northeastern part of India, is renowned for its untouched natural beauty, majestic mountains, and rich cultural heritage. This picturesque state, often referred to as the Land of the Rising Sun, is home to stunning landscapes, including the towering Himalayas, lush valleys, and pristine rivers. Adventure seekers can explore trekking trails in places like Tawang, famous for its stunning monasteries and vibrant Tibetan culture. The state boasts diverse tribes, each with unique traditions and customs, enriching its cultural tapestry. Visitors can experience local festivals, traditional dances, and exquisite handicrafts. Arunachal Pradesh is also known for its biodiversity, with numerous national parks and wildlife sanctuaries, such as Namdapha National Park, which harbors a variety of flora and fauna. With its serene environment, breathtaking vistas, and vibrant cultures, Arunachal Pradesh offers a unique and enriching travel experience for nature lovers and cultural enthusiasts alike.",
-    image:
-      "https://as2.ftcdn.net/v2/jpg/04/43/47/11/1000_F_443471197_UPwGSgkMLmeN9hkvMA0rW4dkM5GdUV3K.jpg",
-    category: "Arunachal Pradesh",
-    author: "Rina Gupta",
-    date: "15th September 2024",
-    content: [
-      "https://www.citybit.in/wp-content/uploads/2024/07/trip-to-Arunachal-Pradesh.png",
-      "https://www.tourmyindia.com/blog//wp-content/uploads/2020/12/Losar-Festival-Arunachal.jpg",
-      "https://i.pinimg.com/736x/dc/f2/83/dcf283351a9a6973a41a296445df4f60.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9yJlR1C0oQlC-CI7f9OkB2ILRdE9mOr95fg&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJwb4sCPHHTKQuLSardDo_ehyK5PlceOZ2PA&s",
-    ],
-  },
-  {
-    id: 11,
-    title:
-      "Assam is a beautiful state in Northeast India, known for its tea gardens, wildlife, and culture.",
-    title2:
-      "Assam, a picturesque state in Northeast India, is renowned for its lush tea gardens, rich wildlife, and vibrant culture. Nestled in the foothills of the Himalayas, Assam is the world’s largest tea-producing region, with sprawling estates offering picturesque views and tea-tasting tours that delight visitors. The state is home to the iconic Kaziranga National Park, a UNESCO World Heritage Site known for its population of the Indian one-horned rhinoceros, as well as diverse flora and fauna, making it a paradise for wildlife enthusiasts.Culturally rich, Assam boasts a tapestry of traditions, festivals, and handicrafts, including exquisite silk weaving, particularly the famous Assamese Muga silk. The state celebrates vibrant festivals like Bihu, showcasing traditional dance, music, and cuisine, which features delectable dishes such as Assam Laksa and pitha. With its stunning landscapes, welcoming people, and unique heritage, Assam offers a captivating experience for travelers seeking adventure, nature, and cultural immersion.",
-    image:
-      "https://cdn.pixabay.com/photo/2013/08/05/06/21/sunset-169925_640.jpg",
-    category: "Assam",
 
-    content: [
-      "https://www.citybit.in/wp-content/uploads/2024/07/Top-Places-to-Visit-in-Assam.png",
-      "https://cdn.britannica.com/51/124451-050-B0B0222D/view-Guwahati-Assam-India.jpg",
-      "https://i.ytimg.com/vi/o5mmIPUY8uY/maxresdefault.jpg",
-      "https://resize.indiatvnews.com/en/resize/newbucket/1200_-/2024/06/assam-floods-1719770335.jpg",
-      "https://www.northeastbullet.com/wp-content/uploads/2023/10/featured-image-4.jpg.webp",
-      "https://cdn.britannica.com/90/173790-004-44098646/palace-Ahom-Gargaon-Sibsagar-India-Assam.jpg",
-    ],
+
+
+  {
+    "id": 17,
+    "title": "Manali is a serene hill station known for its pristine beauty, adventure, and cultural richness.",
+    "title2": "Manali, nestled in the Indian Himalayas, offers travelers a perfect mix of adventure, nature, and cultural experiences. At 2,050 meters above sea level, it provides awe-inspiring views of snow-capped mountains, verdant valleys, and crystal-clear rivers. Adventure enthusiasts can indulge in trekking, river rafting, skiing in Solang Valley, and paragliding. Manali is also home to historical sites like Hadimba Devi Temple, known for its distinctive architecture. Visitors can stroll along Mall Road, savoring the local delicacies and shopping for woolen products. With the Kullu Dussehra adding to its charm, Manali is a destination that promises relaxation and adventure alike.",
+    "image": "https://images.unsplash.com/photo-1712388429936-2abc7144083f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bWFuYWxpfGVufDB8fDB8fHww",
+    "category": "Manali",
+    "author": "Aditi Rao",
+    "date": "20th April 2024",
+    "content": [
+      "https://images.unsplash.com/photo-1655470062377-ef3f5161960a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1hbmFsaXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1685795361575-413e869d744b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fG1hbmFsaXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.unsplash.com/photo-1583487960824-9f0e6bb411e7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hbmFsaXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://images.pexels.com/photos/22602470/pexels-photo-22602470/free-photo-of-road-in-mountains-under-cloud.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "https://images.unsplash.com/photo-1631044634488-bd63122201f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8a3VsbHUlMjBtYW5hbGl8ZW58MHx8MHx8fDA%3D"
+    ]
   },
   {
-    id: 12,
+    "id": 18,
+    "title": "Manali's snow-capped peaks and thrilling adventures make it a must-visit destination.",
+    "title2": "Manali, situated at an elevation of 2,050 meters, captivates travelers with its stunning mountain landscapes and exciting activities. The town offers something for everyone, from serene nature walks to exhilarating paragliding flights. Visitors can explore cultural gems like the Hadimba Devi Temple or enjoy shopping along the lively Mall Road. Manali's natural beauty, adventure opportunities, and vibrant local culture, including the famous Kullu Dussehra, make it an unforgettable getaway. Whether it’s skiing in Solang Valley or simply relaxing amidst nature, Manali has it all.",
+    "image": "https://images.unsplash.com/photo-1619344901057-d4dbeced24af?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fGt1bGx1JTIwbWFuYWxpfGVufDB8fDB8fHww",
+    "category": "Manali",
+    "author": "Aditi Rao",
+    "date": "25th April 2024",
+    "content": [
+      "https://images.unsplash.com/photo-1625591198312-3bc7ccf09952?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGt1bGx1JTIwbWFuYWxpfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1638778264370-64d964716fcf?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGt1bGx1JTIwbWFuYWxpfGVufDB8fDB8fHww",
+      "https://images.unsplash.com/photo-1655576939730-bff7f1402b84?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8a3VsbHUlMjBtYW5hbGl8ZW58MHx8MHx8fDA%3D",
+      "https://images.unsplash.com/photo-1583487960824-9f0e6bb411e7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fG1hbmFsaXxlbnwwfHwwfHx8MA%3D%3D",
+      "https://cdn.pixabay.com/photo/2020/04/28/12/29/manali-5104279_1280.jpg"
+    ]
+  }
+,  
+
+
+  {
+    id: 19,
     title:
       "Azerbaijan is a country that blends ancient culture with modern architecture.",
     title2:
@@ -228,46 +352,46 @@ const packageData = [
       "https://i.ytimg.com/vi/QD9f9AVuq3I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3o453XEmJ_UxlDGOiPP3KhkcXFA",
     ],
   },
+
   {
-    id: 13,
-    title:
-      "Bhutan is a Himalayan kingdom known for its breathtaking landscapes and rich Buddhist culture.",
-    title2:
-      "Bhutan, a stunning Himalayan kingdom, is renowned for its breathtaking landscapes, rich Buddhist culture, and commitment to preserving its unique heritage. Nestled between India and China, Bhutan boasts dramatic mountain ranges, lush valleys, and picturesque landscapes that attract nature lovers and adventure seekers. The country is famous for its iconic dzongs, or fortress monasteries, such as the Paro Taktsang (Tiger’s Nest), perched on cliffs and offering mesmerizing views. Bhutan is also celebrated for its vibrant Buddhist traditions, where the teachings of the Buddha are deeply ingrained in daily life. Festivals, or tshechus, showcase colorful masks, traditional dances, and communal celebrations that embody the spirit of Bhutanese culture. The country practices Gross National Happiness, prioritizing well-being over economic growth, making it a unique travel destination. With its warm hospitality, serene monasteries, and pristine natural beauty, Bhutan offers a profound experience for travelers seeking spirituality, adventure, and cultural immersion.",
-    image:
-      "https://as2.ftcdn.net/v2/jpg/01/66/12/27/1000_F_166122707_NnJUdPY6O4W6g9lJpIc9JdGo11AXJ1uW.jpg",
-    category: "Bhutan",
-    author: "Ravi Verma",
-    date: "1st August 2024",
-    content: [
-      "https://cdn.britannica.com/11/83411-050-217610BA/Tiger-monastery-Nest-Buddhist-Bhutan.jpg",
-      "https://lp-cms-production.imgix.net/2022-01/GettyRF_511875301.jpg?w=1440&h=810&fit=crop&auto=format&q=75",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS9kloLzKXX4EmusNlz8BeiHnYlBcns097HQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiDtW4qAq9CutEgM2rvMhZ6JoGQmXyhos-2Q&s",
-      "https://cdn.britannica.com/02/75702-050-C11357BD/Schoolchildren-hill-Thimpu-Bhutan.jpg",
-    ],
-  },
+    "id": 20,
+    "title": "Discover the enchanting landscapes and rich heritage of Azerbaijan.",
+    "title2": "Azerbaijan is a mesmerizing destination known for its unique blend of rich history and stunning landscapes. The capital, Baku, showcases a perfect harmony between the ancient and the modern, where visitors can wander through the historic Old City (Icherisheher) and marvel at its architectural wonders, such as the Maiden Tower. The contemporary skyline features innovative designs like the Flame Towers, which illuminate the night sky. Beyond Baku, Azerbaijan's diverse terrain offers breathtaking views, from the shores of the Caspian Sea to the majestic peaks of the Greater Caucasus. Nature enthusiasts can explore the Gobustan National Park, famous for its ancient rock carvings and mud volcanoes. With its vibrant culture, delicious cuisine including dolma and qutab, and warm hospitality, Azerbaijan promises a memorable travel experience.",
+    "image": "https://cdn.pixabay.com/photo/2019/11/14/19/41/baku-4626962_1280.jpg",
+    "category": "Azerbaijan",
+    "author": "Nargiz Aliyeva",
+    "date": "20th September 2024",
+    "content": [
+      "https://img.onmanorama.com/content/dam/mm/en/travel/outside-kerala/images/2024/3/19/azerbaijan.jpg",
+      "https://i.ytimg.com/vi/PLkzG4MAIWU/maxresdefault.jpg",
+      "https://go4explore.com/_next/image?url=https%3A%2F%2Fd2qa7a8q0vuocm.cloudfront.net%2Fimages%2F12536120240113123716.png&w=3840&q=100",
+      "https://news.az/uploads/2022/04/30/news/172920/original/172920-0972201.jpg",
+      "https://i.ytimg.com/vi/QD9f9AVuq3I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3o453XEmJ_UxlDGOiPP3KhkcXFA"
+    ]
+  }
+,
+
+{
+  "id": 21,
+  "title": "Experience the cultural richness and natural beauty of Azerbaijan.",
+  "title2": "Nestled between Europe and Asia, Azerbaijan captivates visitors with its rich tapestry of culture and breathtaking landscapes. Baku, the capital city, is a vibrant hub where the ancient Old City (Icherisheher) stands in stark contrast to the modern architectural marvels like the Heydar Aliyev Center, designed by Zaha Hadid. Azerbaijan is also known for its traditional arts, including carpet weaving and mugham music, reflecting the country’s deep cultural roots. Outdoor adventures await in the stunning regions of the Greater Caucasus, offering hiking trails and picturesque views. The Caspian Sea coastline provides opportunities for relaxation and recreation. With its delectable cuisine, featuring local specialties like plov and kebabs, and welcoming people, Azerbaijan is a destination that leaves a lasting impression.",
+  "image": "https://cdn.pixabay.com/photo/2017/01/25/13/33/travel-2007903_1280.jpg",
+  "category": "Azerbaijan",
+  "author": "Rashad Karimov",
+  "date": "30th September 2024",
+  "content": [
+    "https://img.onmanorama.com/content/dam/mm/en/travel/outside-kerala/images/2024/3/19/azerbaijan.jpg",
+    "https://i.ytimg.com/vi/PLkzG4MAIWU/maxresdefault.jpg",
+    "https://go4explore.com/_next/image?url=https%3A%2F%2Fd2qa7a8q0vuocm.cloudfront.net%2Fimages%2F12536120240113123716.png&w=3840&q=100",
+    "https://news.az/uploads/2022/04/30/news/172920/original/172920-0972201.jpg",
+    "https://i.ytimg.com/vi/QD9f9AVuq3I/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA3o453XEmJ_UxlDGOiPP3KhkcXFA"
+  ]
+}
+,
+
+
   {
-    id: 14,
-    title:
-      "Bihar is known for its rich history, ancient temples, and vibrant culture.",
-    title2:
-      "Bihar, a state in eastern India, is renowned for its rich history, ancient temples, and vibrant culture. It is home to significant historical sites like Nalanda, an ancient center of learning and a UNESCO World Heritage Site, and Bodh Gaya, where Buddha attained enlightenment, featuring the revered Mahabodhi Temple. The state is steeped in religious significance, with numerous temples, including the ancient Vishnupad Temple in Gaya and the Jain temples in Pawapuri. Bihar's diverse culture is reflected in its festivals, folk arts, and local cuisine, with dishes like litti chokha being popular among visitors. The scenic landscapes along the Ganges River and the lush greenery of the Bihar countryside enhance its appeal. With its deep-rooted traditions, historical landmarks, and warm hospitality, Bihar offers travelers a unique and enriching experience, making it a fascinating destination in India.",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/01/83/02/92/1000_F_183029245_ei8SPuLqi3DfzMSwp2hXlb0JHlUS6ukb.jpg",
-    category: "Bihar",
-    author: "Suresh Kumar",
-    date: "12th July 2024",
-    content: [
-      "https://housing.com/news/wp-content/uploads/2022/11/Bihar-FEATURE-compressed.jpg",
-      "https://www.bihartrip.com/pub/media/catalog/bihartrip-29.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZiA30qZ0GE-GzIOlCvwM67-pthEgdCP9rp5L22MuBFWL_1Z8h0IFDCKVIk9-kTtXi8R8&usqp=CAU",
-      "https://cdn.britannica.com/98/142598-050-962FD6C0/Patna-Museum-Bihar-India.jpg",
-      "https://s.w-x.co/util/image/w/in-bihar_food.jpg?crop=16:9&width=480&format=pjpg&auto=webp&quality=60",
-    ],
-  },
-  {
-    id: 15,
+    id: 22,
     title:
       "China is a vast country with ancient traditions, modern cities, and stunning natural landscapes.",
     title2:
@@ -286,28 +410,49 @@ const packageData = [
       "https://i0.wp.com/www.re-thinkingthefuture.com/wp-content/uploads/2021/06/A4380-10-Things-we-can-learn-from-Chinese-Architecture.jpg?w=999",
     ],
   },
+
   {
-    id: 16,
-    title:
-      "Delhi, the capital of India, is known for its historical landmarks and vibrant culture.",
-    title2:
-      "Delhi, the capital of India, is a dynamic metropolis known for its rich history, vibrant culture, and diverse cuisine. The city boasts iconic historical landmarks such as the majestic Red Fort, India Gate, and the towering Qutub Minar, showcasing a blend of Mughal and colonial architecture. Visitors can explore the bustling streets of Chandni Chowk, famous for its markets and delicious street food, or visit the serene Lotus Temple and the grand Akshardham Temple for spiritual tranquility. Delhi's cultural scene thrives with museums, art galleries, and theaters, offering insights into India's heritage. The city also hosts various festivals, reflecting its multicultural identity. With a robust metro system and excellent connectivity, Delhi serves as a gateway to exploring northern India. Whether indulging in shopping, savoring local delicacies, or exploring historical sites, Delhi offers an unforgettable experience for every traveler.",
-    image:
-      "https://cdn.britannica.com/37/189837-050-F0AF383E/New-Delhi-India-War-Memorial-arch-Sir.jpg",
-    category: "Delhi",
-    author: "Rajesh Gupta",
-    date: "5th June 2024",
-    content: [
-      "https://i.ytimg.com/vi/OUPTGDrXDy4/maxresdefault.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEdZOyXKuwKSmJQidnF-gq2rTy6rpS-dRI7A&s",
-      "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/67000/67997-New-Delhi.jpg",
-      "https://static.toiimg.com/thumb/106983540/delhi-mumbai.jpg?width=636&height=358&resize=4",
-      "https://static.theprint.in/wp-content/uploads/2021/07/Chandni-Chowk-market-area.jpg",
-      "https://static.theprint.in/wp-content/uploads/2021/07/Chandni-Chowk-market-area.jpg",
-    ],
-  },
+    "id": 23,
+    "title": "Discover the enchanting culture and history of China.",
+    "title2": "China is a land of contrasts, where ancient traditions coexist with cutting-edge technology. The country boasts breathtaking historical sites such as the Great Wall and the Forbidden City, which offer a glimpse into its imperial past. Visitors can also immerse themselves in the vibrant street life of cities like Beijing and Shanghai, where modern architecture meets rich cultural experiences. Outdoor enthusiasts can explore the natural wonders of Zhangjiajie National Forest Park, known for its striking cliffs and lush landscapes, or take a serene cruise along the Li River, surrounded by limestone karsts. China’s culinary diversity is equally captivating, featuring famous dishes like spicy Sichuan hotpot and sweet Cantonese dim sum. With its blend of history, culture, and modernity, China invites travelers to embark on a journey of discovery.",
+    "image": "https://as2.ftcdn.net/v2/jpg/00/69/17/35/1000_F_69173554_QStvbMrJGkGsxsC8eiHvFkBRtoR7HoGX.jpg",
+    "category": "China",
+    "author": "Ming Chen",
+    "date": "5th September 2024",
+    "content": [
+      "https://cdn.adventure-life.com/17/97/56/rafik-wahba-LkyYLdL3WxE-unsplash/1300x820.webp",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6o0o4EgpeG5qU_nRgwgcACZfKizAp4QmInQ&s",
+      "https://keystoneacademic-res.cloudinary.com/image/upload/v1696410672/articles/educationscom/article-hero-image-2106.jpg",
+      "https://i.ytimg.com/vi/HTS2plAOXDM/maxresdefault.jpg",
+      "https://imageio.forbes.com/specials-images/imageserve/1148469549/CHINA-CULTURE-FESTIVAL/960x0.jpg?format=jpg&width=960",
+      "https://i0.wp.com/www.re-thinkingthefuture.com/wp-content/uploads/2021/06/A4380-10-Things-we-can-learn-from-Chinese-Architecture.jpg?w=999"
+    ]
+  }
+,
+
+{
+  "id": 24,
+  "title": "Experience the modern marvels and rich heritage of China.",
+  "title2": "China is a captivating destination that offers travelers a unique blend of history and modernity. From the ancient splendor of the Great Wall and the majestic Terracotta Army to the modern skyline of Shanghai, where skyscrapers reach new heights, China showcases its evolution through time. The serene landscapes of Guilin, with its winding rivers and karst mountains, provide a stunning backdrop for exploration and relaxation. Visitors can enjoy traditional experiences such as calligraphy, tea ceremonies, and visits to ancient temples. The culinary scene is diverse and exciting, offering dishes from various regions, including the famous Peking duck and flavorful dumplings. With its vast territory and cultural richness, China promises an unforgettable adventure.",
+  "image": "https://as2.ftcdn.net/v2/jpg/00/69/17/35/1000_F_69173554_QStvbMrJGkGsxsC8eiHvFkBRtoR7HoGX.jpg",
+  "category": "China",
+  "author": "Xiu Zhang",
+  "date": "15th September 2024",
+  "content": [
+    "https://cdn.adventure-life.com/17/97/56/rafik-wahba-LkyYLdL3WxE-unsplash/1300x820.webp",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6o0o4EgpeG5qU_nRgwgcACZfKizAp4QmInQ&s",
+    "https://keystoneacademic-res.cloudinary.com/image/upload/v1696410672/articles/educationscom/article-hero-image-2106.jpg",
+    "https://i.ytimg.com/vi/HTS2plAOXDM/maxresdefault.jpg",
+    "https://imageio.forbes.com/specials-images/imageserve/1148469549/CHINA-CULTURE-FESTIVAL/960x0.jpg?format=jpg&width=960",
+    "https://i0.wp.com/www.re-thinkingthefuture.com/wp-content/uploads/2021/06/A4380-10-Things-we-can-learn-from-Chinese-Architecture.jpg?w=999"
+  ]
+}
+,
+
+
+
   {
-    id: 17,
+    id: 25,
     title:
       "Europe is a diverse continent known for its rich history, cultural landmarks, and scenic beauty.",
     title2:
@@ -325,46 +470,47 @@ const packageData = [
       "https://theportablewife.com/wp-content/uploads/must-see-cities-for-first-time-in-europe-vienna.jpg",
     ],
   },
+
   {
-    id: 18,
-    title:
-      "Gujarat is a vibrant state in India known for its historical significance and diverse wildlife.",
-    title2:
-      "Gujarat, a vibrant state in western India, is renowned for its rich history, cultural heritage, and diverse wildlife. The state is home to historical landmarks like the UNESCO-listed Rani Ki Vav stepwell, the grand Sun Temple in Modhera, and the Sabarmati Ashram, reflecting Mahatma Gandhi’s legacy. Gujarat's diverse landscapes range from the white salt desert of the Rann of Kutch, which hosts the famous Rann Utsav, to the lush Gir Forest, the last refuge of the endangered Asiatic lions. The state also offers serene beaches at Diu and Mandvi, along with pilgrimage sites such as Somnath and Dwarka. Known for its vibrant festivals, especially Navratri, Gujarat showcases a rich tradition of folk dances, crafts, and cuisine. With its unique blend of history, wildlife, and culture, Gujarat provides a fascinating travel experience for all types of visitors.",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/06/19/34/98/1000_F_619349872_G1mxacq728J2ev74kgtY9pMv7WHsVuSP.jpg",
-    category: "Gujarat",
-    author: "Rohan Patel",
-    date: "18th September 2024",
-    content: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_WPrhIHfOpvzVOjvA-_pT0ZIRH3WoiT9uDg&s",
-      "https://media.licdn.com/dms/image/D5612AQGPQmid7NnP9Q/article-cover_image-shrink_600_2000/0/1717133868740?e=2147483647&v=beta&t=Ly_KrFxvc1LhXX97fX3J5V9T-BiIoESjPrfyA-ZvDzU",
-      "https://blog.redbus.in/wp-content/uploads/2023/03/Copy-of-redBus.com-cover-26-850x479.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPwn5B78JSphl3S32nVswhb3vhWsF9iFqZtA&s",
-      "https://www.girnationalpark.in/uploads/gujarat-place.jpg",
-    ],
-  },
+    "id": 26,
+    "title": "Explore the enchanting landscapes and rich heritage of Europe.",
+    "title2": "Europe, a continent steeped in history and culture, invites travelers to experience its diverse landscapes and iconic landmarks. From the majestic castles of Germany and the breathtaking cliffs of Moher in Ireland to the sun-soaked beaches of the Mediterranean, Europe offers a wealth of natural beauty and cultural richness. Each city tells its own story, whether it’s the romantic ambiance of Paris or the vibrant street life of Barcelona. Visitors can indulge in world-renowned cuisines, from Italian pasta to French pastries, and explore art museums housing masterpieces by the likes of Van Gogh and Picasso. With its well-connected transport systems, exploring the hidden gems of Europe, such as the picturesque towns of Cinque Terre or the enchanting fjords of Norway, has never been easier.",
+    "image": "https://cdn.pixabay.com/photo/2021/10/28/09/59/city-6749295_1280.jpg",
+    "category": "Europe",
+    "author": "Lucas Taylor",
+    "date": "5th October 2024",
+    "content": [
+      "https://assets.cntraveller.in/photos/64e856f849623e7daecb81a9/16:9/w_1024%2Cc_limit/1177087824",
+      "https://i.natgeofe.com/n/075e4f53-f271-4f7a-855a-5eccdba43587/01_Europe.jpg?w=2880&h=1920",
+      "https://i.ytimg.com/vi/O4PmcP9ecE4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBgL46vWTjnklircOR5t4RWOcH8Aw",
+      "https://images.wsj.net/im-972420/?width=2000&size=1.5003750937734",
+      "https://theportablewife.com/wp-content/uploads/must-see-cities-for-first-time-in-europe-vienna.jpg"
+    ]
+  }
+,
+
+{
+  "id": 27,
+  "title": "Experience the cultural richness and scenic diversity of Europe.",
+  "title2": "Europe is a treasure trove of history and culture, offering a diverse array of experiences for every traveler. The continent boasts an impressive mix of landscapes, from the rolling vineyards of France to the rugged mountains of Switzerland. Iconic cities like Rome, with its ancient ruins, and Amsterdam, known for its picturesque canals, offer unique insights into European life. The region's rich culinary scene features delightful specialties such as tapas in Spain, goulash in Hungary, and chocolates in Belgium. Europe's well-preserved historical sites, including the Parthenon in Greece and the medieval streets of Prague, provide a glimpse into its fascinating past. With a seamless transportation network, exploring this captivating continent is both convenient and enriching.",
+  "image": "https://cdn.pixabay.com/photo/2020/09/06/17/52/island-5549660_1280.jpg",
+  "category": "Europe",
+  "author": "Sophie Laurent",
+  "date": "12th October 2024",
+  "content": [
+    "https://assets.cntraveller.in/photos/64e856f849623e7daecb81a9/16:9/w_1024%2Cc_limit/1177087824",
+    "https://i.natgeofe.com/n/075e4f53-f271-4f7a-855a-5eccdba43587/01_Europe.jpg?w=2880&h=1920",
+    "https://i.ytimg.com/vi/O4PmcP9ecE4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBgL46vWTjnklircOR5t4RWOcH8Aw",
+    "https://images.wsj.net/im-972420/?width=2000&size=1.5003750937734",
+    "https://theportablewife.com/wp-content/uploads/must-see-cities-for-first-time-in-europe-vienna.jpg"
+  ]
+}
+,
+
+
+
   {
-    id: 19,
-    title:
-    "Himachal Pradesh is known for its scenic beauty, snow-capped mountains, and adventure activities.",
-    title2:
-    "Himachal Pradesh, nestled in the Himalayas, is a paradise for nature lovers and adventure seekers, known for its scenic beauty, snow-capped mountains, and vibrant culture. Popular hill stations like Shimla, Manali, and Dalhousie offer stunning views and pleasant weather, making them perfect for relaxing getaways. Himachal’s serene valleys, such as Kullu and Spiti, provide breathtaking landscapes, lush greenery, and rivers ideal for trekking, camping, and river rafting. Adventure enthusiasts can enjoy skiing in Solang Valley, paragliding in Bir-Billing, and mountaineering in the rugged Himalayan terrain. The region is dotted with ancient temples and monasteries, adding spiritual richness to the experience. Himachal also boasts vibrant cultural festivals, traditional crafts, and local cuisine. With its blend of natural beauty, thrilling activities, and cultural heritage, Himachal Pradesh offers a memorable escape for travelers seeking peace and adventure.",
-    image:
-      "https://as2.ftcdn.net/v2/jpg/04/70/76/19/1000_F_470761995_6ru1SxTV2KCienxwZ5H2U8gZrqJH0fiI.jpg",
-    category: "Himachal Pradesh",
-    author: "Priya Sharma",
-    date: "15th September 2024",
-    content: [
-      "https://cdn1.tripoto.com/media/filter/tst/img/2176903/Image/1656995591_h10_1.jpg.webp",
-      "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202107/tuu_1200x768.jpeg",
-      "https://images.herzindagi.info/image/2023/Nov/snowfall-areas-in-himachal-pradesh.jpg",
-      "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/89000/89589-Shimla-Mall.jpg",
-      "https://himachalwatcher.com/wp-content/uploads/2020/06/Himachal-Pradesh-Temples-Opening-Postponed--1000x600.jpg",
-    ],
-  },
-  {
-    id: 20,
+    id: 28,
     title:
       "Indonesia is known for its tropical islands, volcanic landscapes, and rich cultural heritage.",
     title2:
@@ -375,69 +521,49 @@ const packageData = [
     author: "Yusuf Iqbal",
     date: "10th September 2024",
     content: [
+      "https://cdn.pixabay.com/photo/2018/10/28/09/56/mountains-3778244_1280.jpg",
+      "https://cdn.pixabay.com/photo/2023/05/04/02/24/bali-7969001_1280.jpg",
+      "https://cdn.pixabay.com/photo/2024/08/29/10/01/nature-9006428_1280.jpg"
+    ],
+  },
 
-    ],
-  },
   {
-    id: 21,
-    title:
-      "Jammu and Kashmir is renowned for its breathtaking landscapes, houseboats, and unique culture.",
-    title2:
-      "Jammu and Kashmir, India's northernmost region, is a land of breathtaking beauty, often referred to as Paradise on Earth. The state is divided into two distinct areas: Jammu, known for its ancient temples like Vaishno Devi, and Kashmir, famous for its stunning valleys, serene lakes, and snow-capped mountains. Kashmir’s iconic Dal Lake is lined with houseboats and shikaras, offering a unique stay experience amidst tranquil waters. The region is also renowned for its lush meadows of Gulmarg, a premier skiing destination in winter, and Pahalgam, a gateway to scenic treks and the Amarnath Yatra. Srinagar, the summer capital, enchants with its Mughal gardens and vibrant local markets selling Pashmina shawls, saffron, and Kashmiri handicrafts. With its unmatched natural beauty, rich culture, and adventure opportunities, Jammu and Kashmir remains a dream destination for travelers.",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/06/75/14/76/1000_F_675147680_P7Elb560Impdvniq2xvc5IMFO6oAgHqI.jpg",
-    category: "Jammu and Kashmir",
-    author: "Imran Khan",
-    date: "5th September 2024",
+    "id": 29,
+    "title": "Indonesia, an archipelago of wonders, offers a perfect blend of adventure and cultural experiences.",
+    "title2": "Indonesia, the world’s largest archipelago, is a haven for travelers seeking adventure and cultural immersion. Bali's captivating beaches and vibrant nightlife attract visitors from around the globe, while Ubud's serene rice terraces offer a peaceful retreat. Beyond Bali, Indonesia’s islands like Lombok and the Gili Islands are ideal for snorkeling, surfing, and exploring hidden beaches. The volcanic peaks of Mount Agung and Mount Batur are popular for sunrise treks, offering unforgettable views. The country's cultural richness shines through in traditional ceremonies, dances, and local crafts, making Indonesia an irresistible destination for those seeking both thrill and tranquility.",
+    "image": "https://cdn.pixabay.com/photo/2019/06/25/05/19/waterfall-4297450_1280.jpg",
+    "category": "Indonesia",
+    "author": "Aisha Rahman",
+    "date": "15th September 2024",
     content: [
-      "https://www.livelaw.in/h-upload/2021/02/18/750x450_389326-gulmarg-jk-hc.jpg",
-      "https://boldnewsonline.com/wp-content/uploads/2022/12/WINTER-TOURISM-699x430.jpg",
-      "https://trekveda.com/img/kashmir-banner-1.png",
-      "https://bsmedia.business-standard.com/_media/bs/img/article/2021-12/24/full/1640293126-1529.jpg?im=FeatureCrop,size=(826,465)",
-      "https://www.progressivetourtravels.com/images/jammu-kashmir-inner.jpg",
-      "https://www.bontravelindia.com/wp-content/uploads/2024/08/gulmarg-tourism-best-places-visit-1000x565.jpg",
+      "https://cdn.pixabay.com/photo/2018/10/28/09/56/mountains-3778244_1280.jpg",
+      "https://cdn.pixabay.com/photo/2023/05/04/02/24/bali-7969001_1280.jpg",
+      "https://cdn.pixabay.com/photo/2024/08/29/10/01/nature-9006428_1280.jpg"
     ],
-  },
+  }
+,
+
+{
+  "id": 30,
+  "title": "Indonesia, where nature and culture meet to create an unforgettable travel experience.",
+  "title2": "Indonesia, a sprawling archipelago with a unique blend of natural beauty and cultural richness, offers diverse experiences for travelers. The serene beaches of Bali and the tranquil islands of Flores provide the perfect tropical getaway, while the bustling markets and cultural sites of Jakarta offer a glimpse into Indonesia’s urban life. Mount Bromo, with its otherworldly landscape, is one of the country’s most iconic landmarks, drawing adventurers for sunrise hikes. Traditional arts and crafts, like batik and shadow puppetry, continue to thrive in cities like Yogyakarta, showcasing Indonesia's deep cultural heritage. Whether exploring temples or diving into vibrant coral reefs, Indonesia promises a journey filled with discovery and awe.",
+  "image": "https://cdn.pixabay.com/photo/2018/10/28/16/11/volcano-3779159_1280.jpg",
+  "category": "Indonesia",
+  "author": "Rani Suharto",
+  "date": "20th September 2024",
+  content: [
+    "https://cdn.pixabay.com/photo/2018/10/28/09/56/mountains-3778244_1280.jpg",
+    "https://cdn.pixabay.com/photo/2023/05/04/02/24/bali-7969001_1280.jpg",
+    "https://cdn.pixabay.com/photo/2024/08/29/10/01/nature-9006428_1280.jpg"
+  ],
+}
+,
+
+
+
+
   {
-    id: 22,
-    title:
-      "Karnataka is a diverse state known for its beaches, hills, temples, and wildlife sanctuaries.",
-    title2:
-      "Karnataka, a diverse state in southern India, offers a blend of natural beauty, rich heritage, and vibrant culture. Its stunning beaches, like Gokarna and Karwar, are perfect for relaxation, while the Western Ghats offer picturesque hill stations such as Coorg and Chikmagalur, known for their coffee plantations and trekking trails. Karnataka is home to magnificent temples, including the intricate Hoysala architecture at Belur and Halebidu, and the ancient Virupaksha Temple in Hampi, a UNESCO World Heritage site. Wildlife enthusiasts can explore sanctuaries like Bandipur and Nagarhole, rich in biodiversity and home to tigers and elephants. The state's capital, Bengaluru, is a thriving metropolis, blending modernity with history. From historical landmarks to serene landscapes and cultural richness, Karnataka offers diverse experiences for travelers.",
-    image:
-      "https://as1.ftcdn.net/v2/jpg/04/13/45/78/1000_F_413457825_cScTflsITqWk68TrTYCuR50xufVXPsls.jpg",
-    category: "Karnataka",
-    author: "Neha Rao",
-    date: "30th August 2024",
-    content: [
-      "https://lp-cms-production.imgix.net/2023-10/500pxRF5419167.jpg?w=1920&h=640&fit=crop&crop=faces%2Cedges&auto=format&q=75",
-      "https://karnatakatourismsociety.org/ktsv-admin/views/assets/slider/18.webp",
-      "https://www.holidify.com/images/tooltipImages/KARNATAKA.jpg",
-      "https://www.tusktravel.com/blog/wp-content/uploads/2021/06/Murudeshwar-Places-to-See-in-Karnataka.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8wyTomFI-jjCwUXlYX1ciYuBzzp1eAaSTKA&s",
-    ],
-  },
-  {
-    id: 23,
-    title:
-      "Lucknow, the capital of Uttar Pradesh, is known for its rich Mughal heritage, cuisine, and traditional crafts.",
-      title2:
-      "Lucknow, the capital of Uttar Pradesh, is a city renowned for its rich Mughal heritage, historical landmarks, and cultural charm. Known as the City of Nawabs. it boasts stunning architectural marvels like Bara Imambara, Chota Imambara, and Rumi Darwaza, which reflect Mughal and Awadhi grandeur. The city's bustling markets, such as Hazratganj and Aminabad, offer traditional crafts like chikankari embroidery, zardozi, and exquisite jewelry. Lucknow is also a paradise for food lovers, with its famous Awadhi cuisine featuring kebabs, biryanis, and rich desserts like kulfi and falooda. Visitors can enjoy a stroll through the beautiful British Residency or the lush Ambedkar Memorial Park. With its blend of history, art, and culinary delights, Lucknow offers an immersive travel experience steeped in elegance and tradition.",
-    image:
-      "https://as2.ftcdn.net/v2/jpg/05/13/77/31/1000_F_513773104_G7Pin2bxWwpMAWqI5MIvrSnWDpYs80WN.jpg",
-    category: "Lucknow",
-    author: "Akash Singh",
-    date: "20th August 2024",
-    content: [
-      "https://thelucknowtribune.org/wp-content/uploads/2024/07/l32220211210173103.webp",
-      "https://live-liamtra-blog.s3.ap-south-1.amazonaws.com/2020/05/main-13.jpg",
-      "https://content.r9cdn.net/rimg/dimg/d9/75/d8688a1c-lm-49860-1765221cb27.jpg?width=1200&height=630&xhint=1410&yhint=1810&crop=true",
-      "https://www.itchotels.com/content/dam/itchotels/in/umbrella/destinations/images/desktop/Lucknow.jpg",
-      "https://img.theweek.in/content/dam/week/magazine/theweek/statescan/images/2021/12/19/48-lucknow-rumi-darwaza-salil-bera.jpg",
-    ],
-  },
-  {
-    id: 24,
+    id: 31,
     title:
       "Malaysia is a Southeast Asian country known for its beautiful beaches, rainforests, and vibrant cities.",
       title2:
@@ -456,8 +582,48 @@ const packageData = [
       "https://www.trawell.in/blog/wp-content/uploads/2018/10/Malacca.jpg",
     ],
   },
+
   {
-    id: 25,
+    "id": 32,
+    "title": "Malaysia is a paradise for adventure seekers and culture enthusiasts.",
+    "title2": "Malaysia's breathtaking landscapes and vibrant cultures create an ideal destination for travelers of all kinds. From the bustling streets of Kuala Lumpur, where modern skyscrapers stand alongside historical sites, to the tranquil beaches of Langkawi, the country offers a diverse range of experiences. Visitors can explore the rich biodiversity of Borneo’s rainforests, home to unique wildlife such as orangutans and proboscis monkeys. The culinary scene is a fusion of flavors from Malay, Chinese, and Indian cuisines, with must-try dishes like Nasi Lemak and Char Kway Teow. Cultural festivals, such as Hari Raya and Chinese New Year, showcase Malaysia's multicultural heritage, making it a vibrant destination year-round.",
+    "image": "https://cdn.pixabay.com/photo/2013/08/09/05/58/kuala-lumpur-170985_1280.jpg",
+    "category": "Malaysia",
+    "author": "Hassan Yusof",
+    "date": "15th August 2024",
+    "content": [
+      "https://i.ytimg.com/vi/KHvhZfE3BtY/maxresdefault.jpg",
+      "https://moderndiplomacy.eu/wp-content/uploads/2018/09/malaysia-digital-economy.jpg",
+      "https://static2.tripoto.com/media/filter/tst/img/4335/TripDocument/1455120793_tui_india.jpg",
+      "https://lp-cms-production.imgix.net/2024-07/shutterstockRF1294739191.jpg?w=1440&h=810&fit=crop&auto=format&q=75",
+      "https://media.cntraveller.com/photos/6193e2965502655976f78f59/3:2/w_5121,h_3414,c_limit/Malaysia-503847689-conde-nast-traveller-16nov21%20Getty.jpg",
+      "https://www.trawell.in/blog/wp-content/uploads/2018/10/Malacca.jpg"
+    ]
+  }
+,
+
+{
+  "id": 33,
+  "title": "Malaysia is a paradise for adventure seekers and culture enthusiasts.",
+  "title2": "Malaysia's breathtaking landscapes and vibrant cultures create an ideal destination for travelers of all kinds. From the bustling streets of Kuala Lumpur, where modern skyscrapers stand alongside historical sites, to the tranquil beaches of Langkawi, the country offers a diverse range of experiences. Visitors can explore the rich biodiversity of Borneo’s rainforests, home to unique wildlife such as orangutans and proboscis monkeys. The culinary scene is a fusion of flavors from Malay, Chinese, and Indian cuisines, with must-try dishes like Nasi Lemak and Char Kway Teow. Cultural festivals, such as Hari Raya and Chinese New Year, showcase Malaysia's multicultural heritage, making it a vibrant destination year-round.",
+  "image": "https://cdn.pixabay.com/photo/2016/11/28/10/31/malaysia-1864676_1280.jpg",
+  "category": "Malaysia",
+  "author": "Hassan Yusof",
+  "date": "15th August 2024",
+  "content": [
+    "https://i.ytimg.com/vi/KHvhZfE3BtY/maxresdefault.jpg",
+    "https://moderndiplomacy.eu/wp-content/uploads/2018/09/malaysia-digital-economy.jpg",
+    "https://static2.tripoto.com/media/filter/tst/img/4335/TripDocument/1455120793_tui_india.jpg",
+    "https://lp-cms-production.imgix.net/2024-07/shutterstockRF1294739191.jpg?w=1440&h=810&fit=crop&auto=format&q=75",
+    "https://media.cntraveller.com/photos/6193e2965502655976f78f59/3:2/w_5121,h_3414,c_limit/Malaysia-503847689-conde-nast-traveller-16nov21%20Getty.jpg",
+    "https://www.trawell.in/blog/wp-content/uploads/2018/10/Malacca.jpg"
+  ]
+}
+,
+
+
+  {
+    id: 34,
     title:
       "Mauritius is an island nation known for its stunning beaches, lagoons, and reefs.",
       title2:
@@ -475,26 +641,42 @@ const packageData = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHl2_v6waaAiJ-Hd2ViNNZCzEN147ziC-zg&s",
     ],
   },
+
   {
-    id: 26,
-    title:
-      "Meghalaya, also known as the 'Abode of Clouds,' is known for its natural beauty, waterfalls, and caves.",
-    title2:
-    "Meghalaya, the Abode of Clouds, is a breathtaking state in Northeast India, famous for its rolling hills, dense forests, and mist-covered valleys. Known for natural wonders, it boasts stunning waterfalls like Nohkalikai, Seven Sisters, and Elephant Falls, along with unique limestone caves such as Mawsmai, Siju, and Liat Prah. Shillong, the vibrant capital, offers a mix of urban charm and nature, while Cherrapunji and Mawsynram are renowned for their heavy rainfall. Travelers can explore living root bridges, trek through lush landscapes, boat on the crystal-clear Umngot River, and experience the region’s rich tribal culture and traditions.",
-    image:
-      "https://as2.ftcdn.net/v2/jpg/01/35/06/17/1000_F_135061778_otxkBOkm5AuQFSSd3Ip7DB6H3pAcIzYx.jpg",
-    category: "Meghalaya",
-    author: "Tanya Das",
-    date: "1st August 2024",
-    content: [
-      "https://holidayscrowd-assets.imgix.net/8d05b09d-f0df-43a4-8f9f-55a387de6b92?auto=format%2Ccompress&w=1200&q=75&fm=webp",
-      "https://i.ytimg.com/vi/alh9zLRtWJM/hq720.jpg?sqp=-oaymwEXCK4FEIIDSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLDnLcY1yp8F0_TZ5q4gYBQePfPVow",
-      "https://www.remotelands.com/travelogues/app/uploads/2018/09/Meghalaya-header.jpg",
-      "https://nexplore.org/images/tour/meghalaya/dawki-meghalya-tour.webp",
-      "https://cdn1.tripoto.com/media/filter/tst/img/2176903/Image/1693208068_meghayala_2.png",
-      "https://cdn1.tripoto.com/media/filter/tst/img/2176903/Image/1693208068_meghayala_2.png",
-    ],
-  },
+    "id": 35,
+    "title": "Explore the breathtaking landscapes of Mauritius.",
+    "title2": "Mauritius is a jewel in the Indian Ocean, celebrated for its picturesque beaches and diverse ecosystems. The island offers a variety of activities, from relaxing on the stunning Belle Mare Beach to hiking in the Black River Gorges National Park, where visitors can encounter rare flora and fauna. The island’s cultural diversity is reflected in its vibrant festivals, like Diwali and Eid, and its delicious cuisine, which includes influences from Indian, Creole, and French cooking. Outdoor enthusiasts can enjoy water sports such as scuba diving, windsurfing, and deep-sea fishing. Whether you seek adventure or tranquility, Mauritius has something for everyone.",
+    "image": "https://cdn.pixabay.com/photo/2019/09/18/10/14/mauritius-4486056_1280.jpg",
+    "category": "Mauritius",
+    "author": "Priya Singh",
+    "date": "10th September 2024",
+    "content": [
+      "https://media.easemytrip.com/media/Blog/International/638241487495525450/638241487495525450vo8sQ8.png",
+      "https://i.ytimg.com/vi/_FpsMgsj37g/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBWmKbtGgwxoZSaIeca5M85fHbHIA",
+      "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Feee9e83a-d99f-11e8-a854-33d6f82e62f8?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
+      "https://pre-webunwto.s3.eu-west-1.amazonaws.com/2023-10/tourism-doing-business-investing-in-mauritius.jpg?VersionId=o9PsEwBjG4Lxyuy280UuWCAfkqxwNGmK",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHl2_v6waaAiJ-Hd2ViNNZCzEN147ziC-zg&s"
+    ]
+  }
+,
+
+
+{
+  "id": 36,
+  "title": "Uncover the vibrant culture and history of Mauritius.",
+  "title2": "Mauritius is a unique blend of cultures and traditions, offering a rich tapestry of experiences for visitors. The island's history is reflected in its colonial architecture, markets, and festivals, showcasing influences from various ethnic groups. Visitors can explore the capital, Port Louis, where the colorful Central Market is a feast for the senses, offering local handicrafts and delicious street food. The island is also famous for its sugarcane fields, and visitors can tour sugar estates to learn about the island's agricultural heritage. With its warm hospitality and stunning landscapes, Mauritius is truly a paradise waiting to be explored.",
+  "image": "https://cdn.pixabay.com/photo/2020/04/29/17/00/mauritius-5109739_1280.jpg",
+  "category": "Mauritius",
+  "author": "Anita Patel",
+  "date": "15th September 2024",
+  "content": [
+    "https://media.easemytrip.com/media/Blog/International/638241487495525450/638241487495525450vo8sQ8.png",
+    "https://i.ytimg.com/vi/_FpsMgsj37g/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBWmKbtGgwxoZSaIeca5M85fHbHIA",
+    "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Feee9e83a-d99f-11e8-a854-33d6f82e62f8?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
+    "https://pre-webunwto.s3.eu-west-1.amazonaws.com/2023-10/tourism-doing-business-investing-in-mauritius.jpg?VersionId=o9PsEwBjG4Lxyuy280UuWCAfkqxwNGmK",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfHl2_v6waaAiJ-Hd2ViNNZCzEN147ziC-zg&s"
+  ]
+}
 ];
 
 export default packageData;

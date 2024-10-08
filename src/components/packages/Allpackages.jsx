@@ -1,14 +1,15 @@
-import React, { useState } from "react";import { Link } from "react-router-dom";
+import React, { useState } from "react";import { Link, useParams } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa";
 import packagedata from "./Allpackages/packagedata";
 
 const Allpackages = () => {
+  const {name} = useParams();
+
   const [searchTerm, setSearchTerm] = useState("");
 
   // Filter packages based on the search term
   const filteredPackages = packagedata.filter((elem) =>
-    elem.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    elem.category.toLowerCase().includes(searchTerm.toLowerCase())
+    elem.category.toLowerCase().includes(name.toLowerCase())
   );
 
   return (
@@ -18,7 +19,7 @@ const Allpackages = () => {
           Explore Our Packages
         </h2>
         {/* Search Input */}
-        <div className="mb-8">
+        {/* <div className="mb-8">
           <input
             type="text"
             placeholder="Search for a package..."
@@ -26,7 +27,9 @@ const Allpackages = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-        </div>
+        </div> */}
+
+
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredPackages.length > 0 ? (
             filteredPackages.map((elem, index) => (

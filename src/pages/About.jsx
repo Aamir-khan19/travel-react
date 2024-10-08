@@ -17,6 +17,7 @@ const About = () => {
       <TeamSection />
       <PricingSection />
       <Footer />
+
     </>
   );
 };

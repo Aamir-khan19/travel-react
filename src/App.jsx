@@ -52,21 +52,6 @@ const App = () => {
   };
 
   return (
-    <>
-      {loading ? (
-        <div className="flex justify-center items-center min-h-screen bg-white">
-          <NextTopLoader
-            color="#FD4A4C"
-            initialPosition={0.08}
-            crawlSpeed={200}
-            height={2}
-            crawl={true}
-            showSpinner={false}
-            easing="ease"
-            speed={200}
-          />
-        </div>
-      ) : (
         <>
           <Navbar />
           <WeddingCarouselTop />
@@ -91,9 +76,8 @@ const App = () => {
             handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
           />
         </>
-      )}
-    </>
   );
+
 };
 
 export default App;

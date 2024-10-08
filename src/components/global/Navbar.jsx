@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
+import RequestQuoteModal from "../home/RequestQuoteModal";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -52,7 +53,8 @@ const NavLinks = ({ menuOpen }) => {
         <NavLink to="/" text="Home" />
         <NavLink to="/about" text="About" />
         {/* /TourPackages */}
-        <Link to="/TourPackages ">
+
+        <button>
           <NavLinkWithDropdown
             text="Packages"
             isOnDropDownMenu={isOnDropDownMenu}
@@ -64,7 +66,8 @@ const NavLinks = ({ menuOpen }) => {
               items={dropdownItems}
             />
           </NavLinkWithDropdown>
-        </Link>
+        </button>
+
         <NavLink to="/blogs" text="Blogs" />
         <NavLink to="/contact" text="Contact" />
         {menuOpen && <ContactUs mobile />}
@@ -154,7 +157,7 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
       className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}
     >
       <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
-        <h1 className="font-bold py-4">Indian Packages</h1>
+        <h1 className="font-bold py-4">Domestic Packages</h1>
         <ul className="flex flex-col md:justify-center align-center">
           {items.indian.map((item, index) => (
             <li key={index}>
@@ -183,20 +186,20 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
 
 const dropdownItems = {
   indian: [
-    { to: "/packages/package1", text: "Manali" },
-    { to: "/packages/package2", text: "Shimla" },
-    { to: "/packages/package3", text: "Kerala" },
-    { to: "/packages/package4", text: "Goa" },
-    { to: "/packages/package5", text: "Jaipur" },
-    { to: "/packages/package6", text: "Udaipur" },
+    { to: `/tour-packages/Manali` , text: "Manali" },
+    { to: `/tour-packages/Shimla` , text: "Shimla" },
+    { to: `/tour-packages/Kerala` , text: "Kerala" },
+    { to: `/tour-packages/Goa` , text: "Goa" },
+    { to: `/tour-packages/Rajasthan` , text: "Rajasthan" },
+    { to: `/tour-packages/Andaman` , text: "Andaman" },
   ],
   international: [
-    { to: "/packages/package7", text: "Switzerland" },
-    { to: "/packages/package8", text: "Paris" },
-    { to: "/packages/package9", text: "London" },
-    { to: "/packages/package10", text: "New York" },
-    { to: "/packages/package11", text: "Dubai" },
-    { to: "/packages/package12", text: "Singapore" },
+    { to: `/tour-packages/Indonesia` , text: "Indonesia" },
+    { to: `/tour-packages/Malaysia` , text: "Malaysia" },
+    { to: `/tour-packages/Mauritius` , text: "Mauritius" },
+    { to:  `/tour-packages/China` , text: "China" },
+    { to:  `/tour-packages/Azerbaijan` , text: "Azerbaijan" },
+    { to:  `/tour-packages/Europe` , text: "Europe" },
   ],
 };
 
@@ -234,8 +237,21 @@ const MenuToggle = ({ onClick, menuOpen }) => (
   </div>
 );
 
-const ContactUs = ({ mobile = false }) => (
-  <div
+const ContactUs = ({ mobile = false }) => {
+
+  const [isRequestQuoteModalOpen, setIsRequestQuoteModalOpen] = useState(false);
+
+  
+
+  const handleRequestQuoteOpenModal = () => {
+    setIsRequestQuoteModalOpen(true);
+  };
+
+  const handleRequestQuoteCloseModal = () => {
+    setIsRequestQuoteModalOpen(false);
+  };
+
+  return <div
     className={`flex items-center gap-6 ${
       mobile ? "lg:mt-0 lg:hidden" : "hidden lg:flex md:hidden"
     }`}
@@ -247,15 +263,24 @@ const ContactUs = ({ mobile = false }) => (
       <CiUser color="white" size={20} />
       Login
     </Link>
-    <Link
+    
+    <button
+    onClick={handleRequestQuoteOpenModal}
       to="/TourPackages "
       className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
     >
       
       Trip Planner
      
-    </Link>
+    </button>
+
+
+    <RequestQuoteModal
+            isRequestQuoteModalOpen={isRequestQuoteModalOpen}
+            handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
+          />
+
   </div>
-);
+}
 
 export default Navbar;
