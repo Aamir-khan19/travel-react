@@ -258,6 +258,7 @@ const OurTravelAgents = () => {
         {/* Mobile Slide Controls */}
         <div className="flex sm:hidden justify-center gap-4 mt-8">
           <button
+          
             aria-label="Previous slide"
             onClick={handlePrevSlide}
             className="rounded-full bg-[#01055b] p-4 text-white"
