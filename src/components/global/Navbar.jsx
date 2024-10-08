@@ -154,7 +154,7 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
       className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}
     >
       <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
-        <h1 className="font-bold py-4">Indian Packages</h1>
+        <h1 className="font-bold py-4">Domestic Packages</h1>
         <ul className="flex flex-col md:justify-center align-center">
           {items.indian.map((item, index) => (
             <li key={index}>
@@ -248,7 +248,7 @@ const ContactUs = ({ mobile = false }) => (
       Login
     </Link>
     <Link
-      to="/TourPackages "
+      to="/"
       className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
     >
       

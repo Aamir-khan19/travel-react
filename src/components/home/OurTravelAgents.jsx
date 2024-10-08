@@ -1,3 +1,6 @@
+
+
+
 import React, { useEffect, useRef, useState } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
@@ -88,9 +91,9 @@ const OurTravelAgents = () => {
     },
   ];
 
-
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
+  const autoSlideInterval = useRef(null);
 
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -138,17 +141,25 @@ const OurTravelAgents = () => {
           },
         },
       });
+
+      // Set up auto slide every 3 seconds
+      autoSlideInterval.current = setInterval(() => {
+        if (keenSlider.current) {
+          keenSlider.current.next();
+        }
+      }, 2000);
     }
 
-
-  return () => {
-    if (keenSlider.current) {
-      keenSlider.current.destroy();
-      keenSlider.current = null;
-    }
-  };
-
-}, [searchTerm]);
+    return () => {
+      if (keenSlider.current) {
+        keenSlider.current.destroy();
+        keenSlider.current = null;
+      }
+      if (autoSlideInterval.current) {
+        clearInterval(autoSlideInterval.current); // Clear auto-slide interval on unmount
+      }
+    };
+  }, [searchTerm]);
 
   const handlePrevSlide = () => {
     if (keenSlider.current) {
@@ -191,11 +202,11 @@ const OurTravelAgents = () => {
             {filteredAgents.length > 0 ? (
               filteredAgents.map((agent, i) => (
                 <div className="keen-slider__slide" key={i}>
-                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[350px] max-[600px]:min-h-[400px]">
-                    <div className="bg-[url('/Images/Homepageimages/verified.png')] bg-cover bg-center w-[75px] h-[70px] mx-2"></div>
+                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[350px] max-[600px]:min-h-[300px]">
+                    <img src="Images/travelAgenciesLogo/verifiedimg.jpeg" className="w-auto h-32  -ml-[18px]  -mt-[18px]" />
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
-                        <img src={agent.imageUrl} alt={agent.name} className="w-auto h-32" />
+                       
                         <div className="flex gap-4 justify-center items-center flex-col">
                           <h1 className="text-xl font-bold">{agent.name}</h1>
                           <p>
@@ -276,3 +287,4 @@ const OurTravelAgents = () => {
 };
 
 export default OurTravelAgents;
+

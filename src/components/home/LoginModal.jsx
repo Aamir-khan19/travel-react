@@ -45,6 +45,9 @@ const LoginModal = ({ isOpen, onClose }) => {
           >
             SUBMIT
           </button>
+          <div className='text-4xl text-pretty'>
+              hello im mie 
+          </div>
         </form>
       </div>
     </div>
