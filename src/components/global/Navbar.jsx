@@ -12,7 +12,7 @@ const Navbar = () => {
 
   return (
     <header className="bg-white px-5 py-3 relative z-50 w-full">
-      <nav className="flex justify-between items-center  mx-auto">
+      <nav className="flex justify-between items-center mx-auto">
         <Link to="/">
           <Logo />
         </Link>
@@ -39,12 +39,12 @@ const NavLinks = ({ menuOpen }) => {
 
   return (
     <div
-      className={`nav-links duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
+      className={`duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
         menuOpen ? "top-[60px]" : "top-[-500%]"
       } lg:w-auto w-full flex items-center px-5 lg:px-0`}
     >
       <ul
-        className={`flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full lg:w-auto ${
+        className={`flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full sm:w-[200px] lg:w-auto ${
           menuOpen
             ? "flex flex-col items-center justify-center"
             : "hidden lg:flex"
@@ -52,8 +52,6 @@ const NavLinks = ({ menuOpen }) => {
       >
         <NavLink to="/" text="Home" />
         <NavLink to="/about" text="About" />
-        {/* /TourPackages */}
-
         <button>
           <NavLinkWithDropdown
             text="Packages"
@@ -67,7 +65,6 @@ const NavLinks = ({ menuOpen }) => {
             />
           </NavLinkWithDropdown>
         </button>
-
         <NavLink to="/blogs" text="Blogs" />
         <NavLink to="/contact" text="Contact" />
         {menuOpen && <ContactUs mobile />}
@@ -90,23 +87,19 @@ const NavLinkWithDropdown = ({
   isOnDropDownMenu,
   setIsOnDropDownMenu,
 }) => {
-  const handleMouseEnter = function () {
+  const handleMouseEnter = () => {
     const ele = document.querySelector(".custom-showHide");
-
-    if (ele.classList.contains("hidden")) {
+    if (ele?.classList.contains("hidden")) {
       ele.classList.remove("hidden");
     }
   };
 
-  const handleMouseLeave = function () {
+  const handleMouseLeave = () => {
     const ele = document.querySelector(".custom-showHide");
-
-    if (isOnDropDownMenu == false) {
-      if (!ele.classList.contains("hidded")) {
-        setTimeout(() => {
-          ele.classList.add("hidden");
-        }, 800);
-      }
+    if (!isOnDropDownMenu && !ele?.classList.contains("hidden")) {
+      setTimeout(() => {
+        ele?.classList.add("hidden");
+      }, 800);
     }
   };
 
@@ -123,29 +116,18 @@ const NavLinkWithDropdown = ({
     </li>
   );
 };
+
 const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
-  const handleMouseEnter = function () {
-    console.log("mouseEnter");
-
-    console.log("isOnDropDownMenu", isOnDropDownMenu);
-
+  const handleMouseEnter = () => {
     const ele = document.querySelector(".custom-showHide");
-
-    if (ele.classList.contains("hidden")) {
-      console.log("yes it contains hidden class");
-
+    if (ele?.classList.contains("hidden")) {
       ele.classList.remove("hidden");
     }
   };
 
-  const handleMouseLeave = function () {
-    console.log("onMouseLeave");
-
+  const handleMouseLeave = () => {
     const ele = document.querySelector(".custom-showHide");
-
-    console.log("ele over", ele);
-
-    if (!ele.classList.contains("hidded")) {
+    if (!ele?.classList.contains("hidden")) {
       ele.classList.add("hidden");
     }
   };
@@ -154,31 +136,34 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
     <div
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`absolute z-[100]  lg:translate-x-[-30%]  translate-x-[-50%] px-2  md:px-3 -sm:px-5  md:right-8 sm:left-5 left-1/2 lg:left-6 sm:w-[470px] w-[95vw] bg-white  border border-gray-200  justify-evenly rounded-lg hidden transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide`}
+      className="absolute z-[100] lg:translate-x-[-30%] md:translate-x-[0%] translate-x-[-50%] sm:translate-x-[10%]  xs:translate-x-[-15%] xs:w-[250px] xs:justify-center xss:items-center xss:translate-x-[-15%] xss:w-[250px] xss:justify-center xs:items-center px-2 md:px-3 sm:px-5 md:right-8 sm:left-15 xs:left-15  xxs: left-15 md:left-30 left-1/2   lg:left-6 md:w-[600px] md:items-center md:justify-center sm:w-[300px]  sm:justify-center sm:items-center w-[1100px] bg-white border border-gray-200 rounded-lg  transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide"
     >
-      <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
-        <h1 className="font-bold py-4">Domestic Packages</h1>
-        <ul className="flex flex-col md:justify-center align-center">
-          {items.indian.map((item, index) => (
-            <li key={index}>
-              <Link to={item.to} className="block py-2 hover:bg-gray-100">
-                {item.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
-        <h1 className="font-bold py-4 ">International Packages</h1>
-        <ul className="flex flex-col ">
-          {items.international.map((item, index) => (
-            <li key={index}>
-              <Link to={item.to} className="block py-2 hover:bg-gray-100">
-                {item.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
+      <div className="flex flex-col lg:flex-row gap-6">
+        <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
+          <h1 className="font-bold py-4">Domestic Packages</h1>
+          <ul className="grid  lg:grid-cols-3 grid-cols-2 md:grid-cols-3   sm:grid-cols-2 gap-4">
+            {items.indian.map((item, index) => (
+              <li key={index}>
+                <Link to={item.to} className="block py-2 hover:bg-gray-100">
+                  {item.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
+          <h1 className="font-bold py-4">International Packages</h1>
+          <ul className="grid  lg:grid-cols-2  grid-cols-2  md:grid-cols-3 sm:grid-cols-2 gap-4">
+            {items.international.map((item, index) => (
+              <li key={index}>
+                <Link to={item.to} className="block py-2 hover:bg-gray-100">
+                  {item.text}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -186,21 +171,57 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
 
 const dropdownItems = {
   indian: [
-    { to: `/tour-packages/Manali` , text: "Manali" },
-    { to: `/tour-packages/Shimla` , text: "Shimla" },
-    { to: `/tour-packages/Kerala` , text: "Kerala" },
-    { to: `/tour-packages/Goa` , text: "Goa" },
-    { to: `/tour-packages/Rajasthan` , text: "Rajasthan" },
-    { to: `/tour-packages/Andaman` , text: "Andaman" },
+    { to: `/tour-packages/Kashmir`, text: "Kashmir" },
+    { to: `/tour-packages/Manali`, text: "Manali" },
+    { to: `/tour-packages/Goa`, text: "Goa" },
+    { to: `/tour-packages/Varanasi`, text: "Varanasi" },
+    { to: `/tour-packages/Gulmarg`, text: "Gulmarg" },
+    { to: `/tour-packages/Shimla`, text: "Shimla" },
+    { to: `/tour-packages/Jammu`, text: "Jammu" },
+    { to: `/tour-packages/Coorg`, text: "Coorg" },
+    { to: `/tour-packages/Kullu`, text: "Kullu" },
+    { to: `/tour-packages/Manikaran`, text: "Manikaran" },
+    { to: `/tour-packages/Lonavala`, text: "Lonavala" },
+    { to: `/tour-packages/Madurai`, text: "Madurai" },
+    { to: `/tour-packages/Kanyakumari`, text: "Kanyakumari" },
+    { to: `/tour-packages/Kerala`, text: "Kerala" },
+    { to: `/tour-packages/Darjeeling`, text: "Darjeeling" },
+    { to: `/tour-packages/Udaipur`, text: "Udaipur" },
+    { to: `/tour-packages/Rameswaram`, text: "Rameswaram" },
+    { to: `/tour-packages/Ooty`, text: "Ooty" },
+    { to: `/tour-packages/Andaman`, text: "Andaman" },
+    { to: `/tour-packages/Mount-Abu`, text: "Mount Abu" },
+    { to: `/tour-packages/Rishikesh`, text: "Rishikesh" },
+    { to: `/tour-packages/Gangtok`, text: "Gangtok" },
+    { to: `/tour-packages/Sikkim`, text: "Sikkim" },
+    { to: `/tour-packages/Munnar`, text: "Munnar" },
   ],
-  
+
   international: [
-    { to: `/tour-packages/Indonesia` , text: "Indonesia" },
-    { to: `/tour-packages/Malaysia` , text: "Malaysia" },
-    { to: `/tour-packages/Mauritius` , text: "Mauritius" },
-    { to:  `/tour-packages/China` , text: "China" },
-    { to:  `/tour-packages/Azerbaijan` , text: "Azerbaijan" },
-    { to:  `/tour-packages/Europe` , text: "Europe" },
+    { to: `/tour-packages/Thailand`, text: "Thailand" },
+    { to: `/tour-packages/UAE`, text: "U.A.E" },
+    { to: `/tour-packages/Indonesia`, text: "Indonesia" },
+    { to: `/tour-packages/Maldives`, text: "Maldives" },
+    { to: `/tour-packages/Saudi-Arabia`, text: "Saudi Arabia" },
+    { to: `/tour-packages/Malaysia`, text: "Malaysia" },
+    { to: `/tour-packages/USA`, text: "U.S.A" },
+    { to: `/tour-packages/Spain`, text: "Spain" },
+    { to: `/tour-packages/Israel`, text: "Israel" },
+    { to: `/tour-packages/France`, text: "France" },
+    { to: `/tour-packages/Bhutan`, text: "Bhutan" },
+    { to: `/tour-packages/China`, text: "China" },
+    { to: `/tour-packages/Vietnam`, text: "Vietnam" },
+    { to: `/tour-packages/UK`, text: "United Kingdom" },
+    // { to: `/tour-packages/Tunisia`, text: "Tunisia" },
+    // { to: `/tour-packages/Sri-Lanka`, text: "Sri Lanka" },
+    // { to: `/tour-packages/Russia`, text: "Russia" },
+    // { to: `/tour-packages/Japan`, text: "Japan" },
+    // { to: `/tour-packages/Great-Britain`, text: "Great Britain" },
+    // { to: `/tour-packages/Italy`, text: "Italy" },
+    // { to: `/tour-packages/Estonia`, text: "Estonia" },
+    // { to: `/tour-packages/Australia`, text: "Australia" },
+    // { to: `/tour-packages/Turkey`, text: "Turkey" },
+    // { to: `/tour-packages/Nepal`, text: "Nepal" },
   ],
 };
 
@@ -239,10 +260,7 @@ const MenuToggle = ({ onClick, menuOpen }) => (
 );
 
 const ContactUs = ({ mobile = false }) => {
-
   const [isRequestQuoteModalOpen, setIsRequestQuoteModalOpen] = useState(false);
-
-  
 
   const handleRequestQuoteOpenModal = () => {
     setIsRequestQuoteModalOpen(true);
@@ -252,36 +270,33 @@ const ContactUs = ({ mobile = false }) => {
     setIsRequestQuoteModalOpen(false);
   };
 
-  return <div
-    className={`flex items-center gap-6 ${
-      mobile ? "lg:mt-0 lg:hidden" : "hidden lg:flex md:hidden"
-    }`}
-  >
-    <Link
-      to="/B2BLogin"
-      className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
+  return (
+    <div
+      className={`flex items-center gap-6 ${
+        mobile ? "lg:mt-0 lg:hidden" : "hidden lg:flex md:hidden"
+      }`}
     >
-      <CiUser color="white" size={20} />
-      Login
-    </Link>
+      <Link
+        to="/B2BLogin"
+        className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
+      >
+        <CiUser color="white" size={20} />
+        Login
+      </Link>
 
+      <button
+        onClick={handleRequestQuoteOpenModal}
+        className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
+      >
+        Trip Planner
+      </button>
 
-    <button
-      onClick={handleRequestQuoteOpenModal}
-      className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
-    >
-      
-      Trip Planner
-     
-    </button>
-
-
-    <RequestQuoteModal
-            isRequestQuoteModalOpen={isRequestQuoteModalOpen}
-            handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
-          />
-
-  </div>
-}
+      <RequestQuoteModal
+        isRequestQuoteModalOpen={isRequestQuoteModalOpen}
+        handleRequestQuoteCloseModal={handleRequestQuoteCloseModal}
+      />
+    </div>
+  );
+};
 
 export default Navbar;
