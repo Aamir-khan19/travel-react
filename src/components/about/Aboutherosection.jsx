@@ -16,7 +16,7 @@ const Aboutherosection = () => {
             <Link to="/contact"> <button className="bg-black text-white px-5 py-2 hover:bg-[#142035]">
                 Start Your Journey
               </button></Link>
-              <Link to="/tourpackages"> <button className="bg-transparent text-black border border-black px-5 py-2 hover:bg-gray-200">
+              <Link to=""> <button className="bg-transparent text-black border border-black px-5 py-2 hover:bg-gray-200">
                 How It Works
               </button></Link>
             </div>

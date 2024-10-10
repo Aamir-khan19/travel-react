@@ -9,9 +9,11 @@ const Herosection = () => {
 
   const [formData, setFormData] = useState({
     name: "",
+    businessName: "",
     email: "",
     phone: "",
-    message: "",
+    location: "",
+    yourRequirements: ""
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -44,9 +46,11 @@ const Herosection = () => {
 
     const registerBody = {
       name: formData.name,
+      businessName: formData.businessName,
       email: formData.email,
       phone: formData.phone,
-      message: formData.message,
+      location: formData.location,
+      yourRequirements: formData.yourRequirements
     };
 
     setIsLoading(true);
@@ -60,7 +64,7 @@ const Herosection = () => {
         );
         console.log("successfully refgsitered eith us", data);
 
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", businessName: "", email: "", phone: "", location: "", yourRequirements: "" });
       })
       .catch((error) => {
         setIsLoading(false);
@@ -82,14 +86,14 @@ const Herosection = () => {
   };
 
   return (
-    <div className="relative w-full h-[65vh] max-[600px]:h-[60vh] overflow-hidden">
+    <div className="relative w-full h-[70vh] md:h-[80vh] overflow-hidden">
       <button
         className={`absolute z-30 ${
           isFormVisible ? "md:right-1/3 right-[78%]" : "right-0"
         } top-1/2 transform -translate-y-1/2 bg-blue-500 text-white  px-4 py-2 rotate-90 origin-bottom transition-all duration-700 whitespace-nowrap`}
         onClick={() => setIsFormVisible(!isFormVisible)}
       >
-        Register with us
+        Leave Your Inquiry
       </button>
 
       {slides.map((slide, index) => (
@@ -107,12 +111,12 @@ const Herosection = () => {
 
       <div className=" h-full flex flex-col items-end justify-center">
         <div
-          className={`absolute z-40 right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
+          className={`absolute z-[60] right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
             isFormVisible ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <div className=" px-6 py-2">
-            <h2 className="text-2xl font-bold mb-2">Register with us</h2>
+            <h2 className="text-2xl font-bold mb-2">Leave Your Inquiry<span className=" text-sm">(happy to help you)</span> </h2>
 
             <div
               className={`bg-white rounded ${
@@ -140,6 +144,47 @@ const Herosection = () => {
                   required
                 />
               </div>
+
+
+              <div className="mb-2">
+                <label className="block text-gray-700 font-bold" htmlFor="businessName">
+                  Business Name
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="businessName"
+                  type="text"
+                  name="businessName"
+                  placeholder="Your business name"
+                  value={formData.businessName}
+                  onChange={handleChange}
+              
+                />
+              </div>
+
+
+  
+              <div className="mb-2">
+                <label
+                  className="block text-gray-700 font-bold"
+                  htmlFor="phone"
+                >
+                  Phone
+                </label>
+                <input
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="phone"
+                  type="number"
+                  name="phone"
+                  placeholder="Your Phone Number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+
+
+
               <div className="mb-2">
                 <label
                   className="block text-gray-700 font-bold"
@@ -158,57 +203,46 @@ const Herosection = () => {
                   required
                 />
               </div>
+
+
+
+
               <div className="mb-2">
-                <label
-                  className="block text-gray-700 font-bold"
-                  htmlFor="phone"
-                >
-                  Phone
+                <label className="block text-gray-700 font-bold" htmlFor="location">
+                  Location
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="phone"
-                  type="tel"
-                  name="phone"
-                  placeholder="Your Phone Number"
-                  value={formData.phone}
+                  id="location"
+                  type="text"
+                  name="location"
+                  placeholder="Your business name"
+                  value={formData.location}
                   onChange={handleChange}
-                  required
+              
                 />
               </div>
+            
 
               <div className="mb-2">
                 <label
                   className="block text-gray-700 font-bold"
-                  htmlFor="message"
+                  htmlFor="yourRequirements"
                 >
-                  Message
+                  Your Requirements
                 </label>
 
                 <textarea
-                  value={formData.message}
+                  value={formData.yourRequirements}
                   onChange={handleChange}
-                  name="message"
-                  id="message"
-                  placeholder="message"
+                  name="yourRequirements"
+                  id="yourRequirements"
+                  placeholder="yourRequirements"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 ></textarea>
               </div>
 
-              {/* <div className="mb-2">
-              <label
-                className="block text-gray-700 font-bold"
-                htmlFor="confirm-password"
-              >
-                Confirm Password
-              </label>
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                id="confirm-password"
-                type="password"
-                placeholder="Confirm Password"
-              />
-            </div> */}
+              
               <div className="flex items-center justify-between">
                 <button
                  disabled={isLoading}                
