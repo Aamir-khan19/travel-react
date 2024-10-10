@@ -51,6 +51,25 @@ const App = () => {
     setIsRequestQuoteModalOpen(false);
   };
 
+
+  const today = new Date(); // Get the current date
+const dateOnly = today.toLocaleDateString('en-US'); // Format as MM/DD/YYYY (US locale)
+// console.log(dateOnly); // Example output: "10/9/2024"
+
+// Create a Date object for the target date (October 10, 2024)
+const targetDate = new Date('10/10/2024');
+
+// Convert `dateOnly` back to a Date object for comparison
+const currentDate = new Date(dateOnly);
+
+// Run a condition to check if the current date is on or after the target date
+if (currentDate >= targetDate) {
+  // intializeAutoScroll();
+    console.log("The date is 10/10/2024 or later. 10 october aur baad ki tarikh");
+} else {
+    console.log("The date is before 10/10/2024. 10 october ke pehle"); // 9 takih ko le line print ho rahi hai to kal upar wali line print honi chahiye
+}
+
   return (
         <>
           <Navbar />
