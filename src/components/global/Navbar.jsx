@@ -166,7 +166,7 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
             <li key={index}>
               <Link
                 to={item.to}
-                className="block py-2 font-bold hover:bg-gray-100 md:text-sm  hover:text-[#3d71cca4]"
+                className="block py-2 md:text-left font-bold hover:bg-gray-100 md:text-sm  hover:text-[#3d71cca4]"
               >
                 {item.text}
               </Link>
@@ -186,7 +186,7 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
             <li key={index}>
               <Link
                 to={item.to}
-                className="block py-2 font-bold hover:bg-gray-100 md:text-sm  hover:text-[#3d71cca4]"
+                className="block py-2 md:text-left font-bold hover:bg-gray-100 md:text-sm  hover:text-[#3d71cca4]"
               >
                 {item.text}
               </Link>
