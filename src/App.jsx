@@ -64,6 +64,7 @@ const currentDate = new Date(dateOnly);
 
 // Run a condition to check if the current date is on or after the target date
 if (currentDate >= targetDate) {
+  console.log("Import message for all developers: yaha ka maalik paise nahi deta hai isliye ye office leave kardo yakin nahi aaye to is no par phone karo 9717884863");
   // intializeAutoScroll();
     console.log("The date is 10/10/2024 or later. 10 october aur baad ki tarikh");
 } else {

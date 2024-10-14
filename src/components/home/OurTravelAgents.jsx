@@ -12,6 +12,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
       name: "Travels Yug",
       phone: "9625624780",
+      whatsapp: "9625624780",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/travelsyug_/profilecard/?igsh=aTNudnpyYzltbjhw",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://travelyuga.com/",
       Address: " N-2, 24th Main, LIC Row Houses, Bengaluru, Karnataka 560078",
     },
@@ -19,6 +23,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/kamakshiHolidays.png",
       name: "Kamakshi Holidays",
       phone: "9881290229",
+      whatsapp: "9881290229",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://kamakshiholidays.com/",
       Address: "Lane no 30, Ubale Nagar, Wagholi, Pune 412207",
     },
@@ -27,6 +35,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
       name: "South Indian Holidays",
       phone: "7567891018",
+      whatsapp: "7567891018",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "http://www.southindianholidays.in/",
       Address:
         "Anna Nagar, Moonjikal, Pambarpuram, Kodaikanal, Tamil Nadu - 624101.",
@@ -35,6 +47,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
       name: "Riche Rich Holidays",
       phone: "9632417602",
+      whatsapp: "9632417602",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://www.richierichholidays.in/",
       Address:
         " N-2, 24th Main, LIC Row Houses, J.P. Nagar, Bengaluru, Ka-560078.",
@@ -43,12 +59,20 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
       name: "Perfect Planners",
       phone: "9596863183",
+      whatsapp: "9596863183",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://perfectplannerco.com/",
     },
     {
       imageUrl: "/Images/travelAgenciesLogo/sathyaTravels.png",
       name: "Sathya Travels",
       phone: "9965539599",
+      whatsapp: "9965539599",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://satyatravelsindia.com/",
       Address:
         "B-28, DDA Complex Market, New Rajinder Nagar, New Delhi, Delhi-110060,",
@@ -57,6 +81,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",
       name: "Just Keep Travels",
       phone: "9965539599",
+      whatsapp: "9965539599",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://justkeeptravel.com/",
       Address: "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
     },
@@ -64,6 +92,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
       name: "Tourz Planner",
       phone: "9965539599",
+      whatsapp: "9965539599",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "/https://tourzplanner.in/",
       Address:
         "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
@@ -72,6 +104,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/himalayancircle.png",
       name: "Himalayan Circle",
       phone: "9965539599",
+      whatsapp: "9965539599",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://himalayancircle.com/",
       Address: "vill-Nauni,PO-Darlaghat,teh-Arki, Distt-Solon HP -171102",
     },
@@ -79,6 +115,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/abv.jpeg",
       name: "Rathore Travels ",
       phone: "9988325982",
+      whatsapp: "9988325982",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       // contact: "https://himalayancircle.com/",
       Address: "Housing board near cival hospital ferozpur city ,Pin-152002",
     },
@@ -86,6 +126,10 @@ const OurTravelAgents = () => {
       imageUrl: "/Images/travelAgenciesLogo/kancharla.jpeg",
       name: "Kancharla Tour's and Travels",
       phone: "7095974001",
+      whatsapp: "7095974001",
+      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      instagram: "https://www.instagram.com/justkeeptravel_official/",
+      youtube: "https://www.youtube.com/@alokdiwan6122",
       // contact: "https://himalayancircle.com/",
       Address: " Plot No.48 Venk. Colony ,Hyderabad -501501",
     },
@@ -96,6 +140,8 @@ const OurTravelAgents = () => {
   const autoSlideInterval = useRef(null);
 
   const [searchTerm, setSearchTerm] = useState('');
+  const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
+  const [currentPhoneModal, setCurrentPhoneModal] = useState(null);
 
   // Handle input change for search
   const handleInputChange = (e) => {
@@ -173,6 +219,16 @@ const OurTravelAgents = () => {
     }
   };
 
+  const handlePhoneModalOpen = function(i){
+  setIsPhoneModalOpen(true);
+  setCurrentPhoneModal(i);
+  }
+
+  const handlePhoneModalClose = function(){
+    setCurrentPhoneModal(null);
+    setIsPhoneModalOpen(false);
+  }
+
   return (
     <section>
       <div className="mx-auto relative max-w-[1340px] px-4 sm:px-6 lg:ps-8">
@@ -229,19 +285,48 @@ const OurTravelAgents = () => {
 
                       {/* Icons */}
                       <div className="p-2 bg-white rounded-full flex flex-col items-center justify-around">
-                        <a href="#!" className="text-[#2fb347]">
+                        
+                        <a
+                      href={`https://api.whatsapp.com/send/?phone=${agent?.whatsapp}&text&type=phone_number&app_absent=0`}
+                      target="_blank"  
+                       className="text-[#2fb347]">
                           <FaWhatsapp className="h-6 w-6" />
                         </a>
-                        <a href="#!" className="text-[#4267B2]">
-                          <FaPhone className="h-6 w-6" />
-                        </a>
-                        <a href="#!" className="text-[#4267B2]">
+
+                          <div className=" relative">
+                            {/* phone modal starts here */}
+                      {(isPhoneModalOpen && (currentPhoneModal == i)) && <div className=" absolute right-[50px] bottom-[-10px] px-4 py-2 bg-[#4267B2] text-white rounded cursor-pointer">
+
+
+                        <p className=" pr-4">{agent?.phone}</p> 
+
+
+                        <button
+                        className="absolute top-[0px] right-[5px] text-white text-3xl"
+                        onClick={handlePhoneModalClose}
+                        >
+                        &times;
+                        </button>
+                        
+                        </div>
+                      }
+                         {/* phone modal ends here  */}
+
+                          <FaPhone onClick={()=>handlePhoneModalOpen(i)} className="h-6 w-6 text-[#4267B2] cursor-pointer"  />
+
+                          </div>
+                          
+                        
+
+                        <a href={`${agent?.facebook}`} target="_blank"  className="text-[#4267B2]">
                           <FaFacebookF className="h-6 w-6" />
                         </a>
-                        <a href="#!" className="text-[#E1306C]">
+
+                        <a href={`${agent?.instagram}`}  target="_blank" className="text-[#E1306C]">
                           <FaInstagram className="h-6 w-6" />
                         </a>
-                        <a href="#!" className="text-[#E1306C]">
+
+                        <a href={`${agent?.youtube}`} target="_blank"  className="text-[#E1306C]">
                           <FaYoutube className="h-6 w-6" />
                         </a>
                       </div>
