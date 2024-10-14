@@ -65,7 +65,7 @@ const Footer = () => {
               </li>
               <li className="mb-4">
                 <a
-                  href="/TourPackages"
+                  href=""
                   className="text-white dark:text-neutral-200"
                 >
                   Packages
