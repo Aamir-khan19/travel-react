@@ -75,7 +75,7 @@ const NavLinks = ({ menuOpen }) => {
         <NavLink to="/blogs" text="Blogs" />
         <NavLink to="/contact" text="Contact" />
         <button className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl">
-          Trip Planner
+          Trip ideas
         </button>
 
         {menuOpen && <ContactUs mobile />}
@@ -328,16 +328,15 @@ const ContactUs = ({ mobile = false }) => {
         Login
       </Link> */}
 
-      <Link
-        to=""
-        className="bg-[#163263] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#3d71cc] text-xl"
-      >
-        <CiUser color="white" size={20} />
-        Trip Ideas
-      </Link>
-      {/* 
       <button
         onClick={handleRequestQuoteOpenModal}
+        className="bg-[#163263] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#3d71cc] text-xl"
+      >
+        Trip Planners
+      </button>
+      {/* 
+      <button
+       
         className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
       >
         Trip Planner
@@ -352,5 +351,3 @@ const ContactUs = ({ mobile = false }) => {
 };
 
 export default Navbar;
-
-
