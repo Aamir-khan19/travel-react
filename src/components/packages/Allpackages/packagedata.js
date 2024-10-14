@@ -658,7 +658,7 @@ const packageData = [
     author: "Priya Singh",
     date: "10th September 2024",
     content: [
-      "https://media.easemytrip.com/media/Blog/International/638241487495525450/638241487495525450vo8sQ8.png",
+      "https://images.unsplash.com/photo-1513415431848-a433b3de449f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8bWF1cml0aXVzfGVufDB8fDB8fHww",
       "https://i.ytimg.com/vi/_FpsMgsj37g/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBWmKbtGgwxoZSaIeca5M85fHbHIA",
       "https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2Feee9e83a-d99f-11e8-a854-33d6f82e62f8?source=next-article&fit=scale-down&quality=highest&width=700&dpr=1",
       "https://pre-webunwto.s3.eu-west-1.amazonaws.com/2023-10/tourism-doing-business-investing-in-mauritius.jpg?VersionId=o9PsEwBjG4Lxyuy280UuWCAfkqxwNGmK",
@@ -1105,767 +1105,767 @@ const packageData = [
       "https://example.com/rajasthan_3.jpg",
     ],
   },
-  // {
-  //   id: 57,
-  //   title:
-  //     "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
-  //   description:
-  //     "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
-  //   title2:
-  //     "Sikkim, a small state in northeastern India, is famous for its stunning landscapes, rich biodiversity, and vibrant culture. The state is home to the majestic Kanchenjunga, the third highest mountain in the world, and offers breathtaking views, trekking opportunities, and a unique blend of cultures. Sikkim is known for its rich flora and fauna, making it a paradise for nature enthusiasts. Visitors can explore the beautiful monasteries, enjoy traditional Sikkimese cuisine, and immerse themselves in the warm hospitality of the local communities.",
-  //   image: "https://example.com/sikkim.jpg",
-  //   category: "Sikkim",
-  //   idealDays: "7-10 Days",
-  //   bestTime: "Apr, May, Oct, Nov",
-  //   content: [
-  //     "https://example.com/sikkim_1.jpg",
-  //     "https://example.com/sikkim_2.jpg",
-  //     "https://example.com/sikkim_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 157,
-  //   title:
-  //     "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
-  //   description:
-  //     "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
-  //   title2:
-  //     "Sikkim, a small state in northeastern India, is famous for its stunning landscapes, rich biodiversity, and vibrant culture. The state is home to the majestic Kanchenjunga, the third highest mountain in the world, and offers breathtaking views, trekking opportunities, and a unique blend of cultures. Sikkim is known for its rich flora and fauna, making it a paradise for nature enthusiasts. Visitors can explore the beautiful monasteries, enjoy traditional Sikkimese cuisine, and immerse themselves in the warm hospitality of the local communities.",
-  //   image: "https://example.com/sikkim.jpg",
-  //   category: "Sikkim",
-  //   idealDays: "7-10 Days",
-  //   bestTime: "Apr, May, Oct, Nov",
-  //   content: [
-  //     "https://example.com/sikkim_1.jpg",
-  //     "https://example.com/sikkim_2.jpg",
-  //     "https://example.com/sikkim_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 58,
-  //   title:
-  //     "Tamil Nadu is known for its rich culture, ancient temples, and beautiful beaches.",
-  //   description:
-  //     "Tamil Nadu is known for its rich culture, ancient temples, and beautiful beaches.",
-  //   title2:
-  //     "Tamil Nadu, located in southern India, is renowned for its rich culture, ancient temples, and stunning beaches. The state is home to some of the most magnificent temples in India, showcasing intricate architecture and vibrant festivals. Tamil Nadu's beautiful coastline, with popular destinations like Mahabalipuram and Kanyakumari, attracts beach lovers and history enthusiasts alike. Visitors can explore the cultural richness of Chennai, indulge in the local cuisine, and experience the warm hospitality of the Tamil people, making Tamil Nadu a captivating destination.",
-  //   image: "https://example.com/tamil_nadu.jpg",
-  //   category: "Tamil-Nadu",
-  //   idealDays: "7-10 Days",
-  //   bestTime: "Nov, Dec, Jan, Feb",
-  //   content: [
-  //     "https://example.com/tamil_nadu_1.jpg",
-  //     "https://example.com/tamil_nadu_2.jpg",
-  //     "https://example.com/tamil_nadu_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 59,
-  //   title:
-  //     "Telangana is known for its historical sites, rich culture, and delicious cuisine.",
-  //   description:
-  //     "Telangana is known for its historical sites, rich culture, and delicious cuisine.",
-  //   title2:
-  //     "Telangana, located in southern India, is known for its historical sites, rich culture, and delicious cuisine. The state is home to the historic city of Hyderabad, famous for its iconic Charminar and delicious biryani. Telangana's cultural heritage is reflected in its festivals, traditional music, and dance forms. Visitors can explore the beautiful gardens, ancient forts, and temples, as well as indulge in the local cuisine that showcases the unique flavors of the region. Telangana offers a blend of history, culture, and gastronomy, making it an intriguing destination for travelers.",
-  //   image: "https://example.com/telangana.jpg",
-  //   category: "Telangana",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/telangana_1.jpg",
-  //     "https://example.com/telangana_2.jpg",
-  //     "https://example.com/telangana_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 60,
-  //   title:
-  //     "Tripura is known for its scenic beauty, tribal culture, and historical sites.",
-  //   description:
-  //     "Tripura is known for its scenic beauty, tribal culture, and historical sites.",
-  //   title2:
-  //     "Tripura, located in northeastern India, is known for its scenic beauty, rich tribal culture, and historical sites. The state is home to several ancient temples, palaces, and archaeological sites that reflect its rich heritage. Visitors can explore the beautiful landscapes of Unakoti and the serene lakes of Rudrasagar. Tripura's vibrant festivals and traditional crafts provide a glimpse into the unique lifestyles of its indigenous tribes. With its stunning natural beauty and cultural richness, Tripura is a hidden gem waiting to be discovered.",
-  //   image: "https://example.com/tripura.jpg",
-  //   category: "Tripura",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/tripura_1.jpg",
-  //     "https://example.com/tripura_2.jpg",
-  //     "https://example.com/tripura_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 61,
-  //   title:
-  //     "Uttar Pradesh is known for its historical landmarks, cultural richness, and diverse cuisine.",
-  //   description:
-  //     "Uttar Pradesh is known for its historical landmarks, cultural richness, and diverse cuisine.",
-  //   title2:
-  //     "Uttar Pradesh, located in northern India, is known for its historical landmarks, cultural richness, and diverse cuisine. The state is home to the iconic Taj Mahal in Agra, a UNESCO World Heritage Site, as well as the holy cities of Varanasi and Ayodhya. Uttar Pradesh's rich cultural heritage is showcased through its festivals, traditional music, and dance forms. Visitors can explore the vibrant markets, indulge in delicious street food, and experience the warmth of the local hospitality. With its historical significance and cultural diversity, Uttar Pradesh is a must-visit destination for travelers.",
-  //   image: "https://example.com/uttar_pradesh.jpg",
-  //   category: "Uttar Pradesh",
-  //   idealDays: "7-10 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/uttar_pradesh_1.jpg",
-  //     "https://example.com/uttar_pradesh_2.jpg",
-  //     "https://example.com/uttar_pradesh_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 62,
-  //   title: "Uttarakhand",
-  //   description:
-  //     "Uttarakhand is known for its scenic landscapes, pilgrimage sites, and adventure activities.",
-  //   title2:
-  //     "Uttarakhand, located in northern India, is known for its breathtaking landscapes, pilgrimage sites, and adventure activities. The state is home to famous hill stations like Nainital and Mussoorie, as well as the sacred cities of Haridwar and Rishikesh. Uttarakhand offers a plethora of outdoor activities, including trekking, river rafting, and wildlife safaris. The stunning views of the Himalayas and the serene lakes make Uttarakhand a paradise for nature lovers and adventure enthusiasts alike. Experience the spirituality, natural beauty, and adventure that Uttarakhand has to offer.",
-  //   image: "https://example.com/uttarakhand.jpg",
-  //   category: "Uttarakhand",
-  //   idealDays: "7-10 Days",
-  //   bestTime: "Mar, Apr, May, Sep, Oct, Nov",
-  //   content: [
-  //     "https://example.com/uttarakhand_1.jpg",
-  //     "https://example.com/uttarakhand_2.jpg",
-  //     "https://example.com/uttarakhand_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 63,
-  //   title: "West Bengal",
-  //   description:
-  //     "West Bengal is known for its cultural diversity, historical significance, and beautiful landscapes.",
-  //   title2:
-  //     "West Bengal, located in eastern India, is famous for its cultural diversity, historical significance, and beautiful landscapes. The state is home to the vibrant city of Kolkata, known for its colonial architecture and rich literary heritage. Visitors can explore the serene Sundarbans mangrove forests, the historical town of Santiniketan, and the picturesque hills of Darjeeling. West Bengal's festivals, cuisine, and art forms reflect the state's rich cultural tapestry. Experience the warmth and hospitality of West Bengal, making it a fascinating destination for travelers.",
-  //   image: "https://example.com/west_bengal.jpg",
-  //   category: "West Bengal",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/west_bengal_1.jpg",
-  //     "https://example.com/west_bengal_2.jpg",
-  //     "https://example.com/west_bengal_3.jpg",
-  //   ],
-  // },
+  {
+    id: 57,
+    title:
+      "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
+    description:
+      "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
+    title2:
+      "Sikkim, a small state in northeastern India, is famous for its stunning landscapes, rich biodiversity, and vibrant culture. The state is home to the majestic Kanchenjunga, the third highest mountain in the world, and offers breathtaking views, trekking opportunities, and a unique blend of cultures. Sikkim is known for its rich flora and fauna, making it a paradise for nature enthusiasts. Visitors can explore the beautiful monasteries, enjoy traditional Sikkimese cuisine, and immerse themselves in the warm hospitality of the local communities.",
+    image: "https://example.com/sikkim.jpg",
+    category: "Sikkim",
+    idealDays: "7-10 Days",
+    bestTime: "Apr, May, Oct, Nov",
+    content: [
+      "https://example.com/sikkim_1.jpg",
+      "https://example.com/sikkim_2.jpg",
+      "https://example.com/sikkim_3.jpg",
+    ],
+  },
+  {
+    id: 157,
+    title:
+      "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
+    description:
+      "Sikkim is known for its stunning landscapes, rich biodiversity, and cultural diversity.",
+    title2:
+      "Sikkim, a small state in northeastern India, is famous for its stunning landscapes, rich biodiversity, and vibrant culture. The state is home to the majestic Kanchenjunga, the third highest mountain in the world, and offers breathtaking views, trekking opportunities, and a unique blend of cultures. Sikkim is known for its rich flora and fauna, making it a paradise for nature enthusiasts. Visitors can explore the beautiful monasteries, enjoy traditional Sikkimese cuisine, and immerse themselves in the warm hospitality of the local communities.",
+    image: "https://example.com/sikkim.jpg",
+    category: "Sikkim",
+    idealDays: "7-10 Days",
+    bestTime: "Apr, May, Oct, Nov",
+    content: [
+      "https://example.com/sikkim_1.jpg",
+      "https://example.com/sikkim_2.jpg",
+      "https://example.com/sikkim_3.jpg",
+    ],
+  },
+  {
+    id: 58,
+    title:
+      "Tamil Nadu is known for its rich culture, ancient temples, and beautiful beaches.",
+    description:
+      "Tamil Nadu is known for its rich culture, ancient temples, and beautiful beaches.",
+    title2:
+      "Tamil Nadu, located in southern India, is renowned for its rich culture, ancient temples, and stunning beaches. The state is home to some of the most magnificent temples in India, showcasing intricate architecture and vibrant festivals. Tamil Nadu's beautiful coastline, with popular destinations like Mahabalipuram and Kanyakumari, attracts beach lovers and history enthusiasts alike. Visitors can explore the cultural richness of Chennai, indulge in the local cuisine, and experience the warm hospitality of the Tamil people, making Tamil Nadu a captivating destination.",
+    image: "https://example.com/tamil_nadu.jpg",
+    category: "Tamil-Nadu",
+    idealDays: "7-10 Days",
+    bestTime: "Nov, Dec, Jan, Feb",
+    content: [
+      "https://example.com/tamil_nadu_1.jpg",
+      "https://example.com/tamil_nadu_2.jpg",
+      "https://example.com/tamil_nadu_3.jpg",
+    ],
+  },
+  {
+    id: 59,
+    title:
+      "Telangana is known for its historical sites, rich culture, and delicious cuisine.",
+    description:
+      "Telangana is known for its historical sites, rich culture, and delicious cuisine.",
+    title2:
+      "Telangana, located in southern India, is known for its historical sites, rich culture, and delicious cuisine. The state is home to the historic city of Hyderabad, famous for its iconic Charminar and delicious biryani. Telangana's cultural heritage is reflected in its festivals, traditional music, and dance forms. Visitors can explore the beautiful gardens, ancient forts, and temples, as well as indulge in the local cuisine that showcases the unique flavors of the region. Telangana offers a blend of history, culture, and gastronomy, making it an intriguing destination for travelers.",
+    image: "https://example.com/telangana.jpg",
+    category: "Telangana",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/telangana_1.jpg",
+      "https://example.com/telangana_2.jpg",
+      "https://example.com/telangana_3.jpg",
+    ],
+  },
+  {
+    id: 60,
+    title:
+      "Tripura is known for its scenic beauty, tribal culture, and historical sites.",
+    description:
+      "Tripura is known for its scenic beauty, tribal culture, and historical sites.",
+    title2:
+      "Tripura, located in northeastern India, is known for its scenic beauty, rich tribal culture, and historical sites. The state is home to several ancient temples, palaces, and archaeological sites that reflect its rich heritage. Visitors can explore the beautiful landscapes of Unakoti and the serene lakes of Rudrasagar. Tripura's vibrant festivals and traditional crafts provide a glimpse into the unique lifestyles of its indigenous tribes. With its stunning natural beauty and cultural richness, Tripura is a hidden gem waiting to be discovered.",
+    image: "https://example.com/tripura.jpg",
+    category: "Tripura",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/tripura_1.jpg",
+      "https://example.com/tripura_2.jpg",
+      "https://example.com/tripura_3.jpg",
+    ],
+  },
+  {
+    id: 61,
+    title:
+      "Uttar Pradesh is known for its historical landmarks, cultural richness, and diverse cuisine.",
+    description:
+      "Uttar Pradesh is known for its historical landmarks, cultural richness, and diverse cuisine.",
+    title2:
+      "Uttar Pradesh, located in northern India, is known for its historical landmarks, cultural richness, and diverse cuisine. The state is home to the iconic Taj Mahal in Agra, a UNESCO World Heritage Site, as well as the holy cities of Varanasi and Ayodhya. Uttar Pradesh's rich cultural heritage is showcased through its festivals, traditional music, and dance forms. Visitors can explore the vibrant markets, indulge in delicious street food, and experience the warmth of the local hospitality. With its historical significance and cultural diversity, Uttar Pradesh is a must-visit destination for travelers.",
+    image: "https://example.com/uttar_pradesh.jpg",
+    category: "Uttar Pradesh",
+    idealDays: "7-10 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/uttar_pradesh_1.jpg",
+      "https://example.com/uttar_pradesh_2.jpg",
+      "https://example.com/uttar_pradesh_3.jpg",
+    ],
+  },
+  {
+    id: 62,
+    title: "Uttarakhand",
+    description:
+      "Uttarakhand is known for its scenic landscapes, pilgrimage sites, and adventure activities.",
+    title2:
+      "Uttarakhand, located in northern India, is known for its breathtaking landscapes, pilgrimage sites, and adventure activities. The state is home to famous hill stations like Nainital and Mussoorie, as well as the sacred cities of Haridwar and Rishikesh. Uttarakhand offers a plethora of outdoor activities, including trekking, river rafting, and wildlife safaris. The stunning views of the Himalayas and the serene lakes make Uttarakhand a paradise for nature lovers and adventure enthusiasts alike. Experience the spirituality, natural beauty, and adventure that Uttarakhand has to offer.",
+    image: "https://example.com/uttarakhand.jpg",
+    category: "Uttarakhand",
+    idealDays: "7-10 Days",
+    bestTime: "Mar, Apr, May, Sep, Oct, Nov",
+    content: [
+      "https://example.com/uttarakhand_1.jpg",
+      "https://example.com/uttarakhand_2.jpg",
+      "https://example.com/uttarakhand_3.jpg",
+    ],
+  },
+  {
+    id: 63,
+    title: "West Bengal",
+    description:
+      "West Bengal is known for its cultural diversity, historical significance, and beautiful landscapes.",
+    title2:
+      "West Bengal, located in eastern India, is famous for its cultural diversity, historical significance, and beautiful landscapes. The state is home to the vibrant city of Kolkata, known for its colonial architecture and rich literary heritage. Visitors can explore the serene Sundarbans mangrove forests, the historical town of Santiniketan, and the picturesque hills of Darjeeling. West Bengal's festivals, cuisine, and art forms reflect the state's rich cultural tapestry. Experience the warmth and hospitality of West Bengal, making it a fascinating destination for travelers.",
+    image: "https://example.com/west_bengal.jpg",
+    category: "West Bengal",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/west_bengal_1.jpg",
+      "https://example.com/west_bengal_2.jpg",
+      "https://example.com/west_bengal_3.jpg",
+    ],
+  },
 
-  // {
-  //   id: 164,
-  //   title:
-  //     "Andhra is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   description:
-  //     "Andhra is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Andhra has much to explore and enjoy.",
-  //   image: "https://example.com/andhra.jpg",
-  //   category: "Andhra-pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 565,
-  //   title: "Arunachal",
-  //   description:
-  //     "Arunachal is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Arunachal is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Arunachal has much to explore and enjoy.",
-  //   image: "https://example.com/arunachal.jpg",
-  //   category: "Arunachal-pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/arunachal_1.jpg",
-  //     "https://example.com/arunachal_2.jpg",
-  //     "https://example.com/arunachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 696,
-  //   title: "Assam",
-  //   description:
-  //     "Assam is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Assam is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Assam has much to explore and enjoy.",
-  //   image: "https://example.com/assam.jpg",
-  //   category: "Assam",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/assam_1.jpg",
-  //     "https://example.com/assam_2.jpg",
-  //     "https://example.com/assam_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 647,
-  //   title: "Bihar",
-  //   description:
-  //     "Bihar is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Bihar is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Bihar has much to explore and enjoy.",
-  //   image: "https://example.com/bihar.jpg",
-  //   category: "Bihar",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/bihar_1.jpg",
-  //     "https://example.com/bihar_2.jpg",
-  //     "https://example.com/bihar_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 112,
-  //   title: "Turkey",
-  //   description:
-  //     "Turkey is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Turkey is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Turkey has much to explore and enjoy.",
-  //   image: "https://example.com/turkey.jpg",
-  //   category: "Turkey",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/turkey_1.jpg",
-  //     "https://example.com/turkey_2.jpg",
-  //     "https://example.com/turkey_3.jpg",
-  //   ],
-  // },
+  {
+    id: 164,
+    title:
+      "Andhra is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    description:
+      "Andhra is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Andhra has much to explore and enjoy.",
+    image: "https://example.com/andhra.jpg",
+    category: "Andhra-pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 565,
+    title: "Arunachal",
+    description:
+      "Arunachal is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Arunachal is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Arunachal has much to explore and enjoy.",
+    image: "https://example.com/arunachal.jpg",
+    category: "Arunachal-pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/arunachal_1.jpg",
+      "https://example.com/arunachal_2.jpg",
+      "https://example.com/arunachal_3.jpg",
+    ],
+  },
+  {
+    id: 696,
+    title: "Assam",
+    description:
+      "Assam is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Assam is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Assam has much to explore and enjoy.",
+    image: "https://example.com/assam.jpg",
+    category: "Assam",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/assam_1.jpg",
+      "https://example.com/assam_2.jpg",
+      "https://example.com/assam_3.jpg",
+    ],
+  },
+  {
+    id: 647,
+    title: "Bihar",
+    description:
+      "Bihar is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Bihar is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Bihar has much to explore and enjoy.",
+    image: "https://example.com/bihar.jpg",
+    category: "Bihar",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/bihar_1.jpg",
+      "https://example.com/bihar_2.jpg",
+      "https://example.com/bihar_3.jpg",
+    ],
+  },
+  {
+    id: 112,
+    title: "Turkey",
+    description:
+      "Turkey is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Turkey is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Turkey has much to explore and enjoy.",
+    image: "https://example.com/turkey.jpg",
+    category: "Turkey",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/turkey_1.jpg",
+      "https://example.com/turkey_2.jpg",
+      "https://example.com/turkey_3.jpg",
+    ],
+  },
 
-  // {
-  //   id: 64,
-  //   title: "Andhra",
-  //   description:
-  //     "Andhra is known for its cultural heritage, scenic landscapes, and historical significance.",
-  //   title2:
-  //     "Andhra, a region rich in cultural and historical significance, offers travelers a unique blend of vibrant cities, serene countryside, and significant landmarks. Visitors can explore the beautiful beaches, ancient temples, and bustling markets that define the region.",
-  //   image: "https://example.com/andhra.jpg",
-  //   category: "Andhra Pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 365,
-  //   title: "Arunachal",
-  //   description:
-  //     "Arunachal is known for its beautiful landscapes and diverse culture.",
-  //   title2:
-  //     "Arunachal, a picturesque state in India, offers travelers stunning views of mountain ranges, serene valleys, and vibrant local culture. The state's beauty is further enriched by its traditional festivals and historical landmarks.",
-  //   image: "https://example.com/arunachal.jpg",
-  //   category: "Arunachal-pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/arunachal_1.jpg",
-  //     "https://example.com/arunachal_2.jpg",
-  //     "https://example.com/arunachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 66,
-  //   title: "Assam",
-  //   description:
-  //     "Assam is known for its tea plantations and cultural heritage.",
-  //   title2:
-  //     "Assam is a cultural hub known for its tea plantations, vibrant festivals, and diverse wildlife. The region's lush landscapes and ancient temples make it a fascinating destination for travelers.",
-  //   image: "https://example.com/assam.jpg",
-  //   category: "Assam",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/assam_1.jpg",
-  //     "https://example.com/assam_2.jpg",
-  //     "https://example.com/assam_3.jpg",
-  //   ],
-  // },
+  {
+    id: 64,
+    title: "Andhra",
+    description:
+      "Andhra is known for its cultural heritage, scenic landscapes, and historical significance.",
+    title2:
+      "Andhra, a region rich in cultural and historical significance, offers travelers a unique blend of vibrant cities, serene countryside, and significant landmarks. Visitors can explore the beautiful beaches, ancient temples, and bustling markets that define the region.",
+    image: "https://example.com/andhra.jpg",
+    category: "Andhra Pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 365,
+    title: "Arunachal",
+    description:
+      "Arunachal is known for its beautiful landscapes and diverse culture.",
+    title2:
+      "Arunachal, a picturesque state in India, offers travelers stunning views of mountain ranges, serene valleys, and vibrant local culture. The state's beauty is further enriched by its traditional festivals and historical landmarks.",
+    image: "https://example.com/arunachal.jpg",
+    category: "Arunachal-pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/arunachal_1.jpg",
+      "https://example.com/arunachal_2.jpg",
+      "https://example.com/arunachal_3.jpg",
+    ],
+  },
+  {
+    id: 66,
+    title: "Assam",
+    description:
+      "Assam is known for its tea plantations and cultural heritage.",
+    title2:
+      "Assam is a cultural hub known for its tea plantations, vibrant festivals, and diverse wildlife. The region's lush landscapes and ancient temples make it a fascinating destination for travelers.",
+    image: "https://example.com/assam.jpg",
+    category: "Assam",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/assam_1.jpg",
+      "https://example.com/assam_2.jpg",
+      "https://example.com/assam_3.jpg",
+    ],
+  },
 
-  // //
-  // //
+  //
+  //
 
-  // {
-  //   id: 144,
-  //   title: "Explore the rich culture and heritage of Andhra Pradesh",
-  //   description:
-  //     "Andhra Pradesh, located in southern India, is known for its rich cultural heritage, magnificent temples, and vibrant festivals. Visit the ancient city of Amaravati, explore the temple town of Tirupati, and enjoy the beautiful beaches of Visakhapatnam. The state offers a perfect blend of tradition and modernity, making it a unique destination for travelers.",
-  //   image: "https://example.com/andhra_pradesh.jpg",
-  //   category: "Andhra-Pradesh",
-  //   Idealdays: "5-7 Days",
-  //   Besttime: "Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 135,
-  //   title: "Discover the pristine beauty of Arunachal Pradesh",
-  //   description:
-  //     "Arunachal Pradesh, India's northeastern gem, offers stunning landscapes of rolling hills, dense forests, and serene rivers. Known for its indigenous tribal culture, the state invites visitors to explore monasteries, national parks, and remote villages. Adventure seekers can enjoy trekking, river rafting, and nature trails. Arunachal Pradesh is a haven for nature lovers and cultural enthusiasts.",
-  //   image: "https://example.com/arunachal_pradesh.jpg",
-  //   category: "Arunachal-pradesh",
-  //   Idealdays: "6-8 Days",
-  //   Besttime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/arunachal_1.jpg",
-  //     "https://example.com/arunachal_2.jpg",
-  //     "https://example.com/arunachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 305,
-  //   title: "Assam: Land of Tea Gardens and Scenic Beauty",
-  //   description:
-  //     "Assam, nestled in northeastern India, is famed for its lush tea gardens, diverse wildlife, and the mighty Brahmaputra River. Visit the iconic Kaziranga National Park to spot rhinos, or explore the vibrant culture in Guwahati. The state's scenic beauty and cultural richness make it a must-visit destination for nature and culture lovers.",
-  //   image: "https://example.com/assam.jpg",
-  //   category: "Assam",
-  //   Idealdays: "4-6 Days",
-  //   Besttime: "Nov, Dec, Feb, Mar",
-  //   content: [
-  //     "https://example.com/assam_1.jpg",
-  //     "https://example.com/assam_2.jpg",
-  //     "https://example.com/assam_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 7,
-  //   title: "Bihar: A Spiritual and Historical Journey",
-  //   description:
-  //     "Bihar, the land of ancient history and spirituality, is home to significant Buddhist and Hindu pilgrimage sites. From Bodh Gaya, where Buddha attained enlightenment, to the ruins of the ancient Nalanda University, the state offers a unique glimpse into India's rich history and spiritual heritage.",
-  //   image: "https://example.com/bihar.jpg",
-  //   category: "Bihar",
-  //   Idealdays: "3-5 Days",
-  //   Besttime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/bihar_1.jpg",
-  //     "https://example.com/bihar_2.jpg",
-  //     "https://example.com/bihar_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 8,
-  //   title: "Chhattisgarh: A Land of Waterfalls and Tribes",
-  //   description:
-  //     "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests. It is also home to diverse indigenous tribes, offering a rich cultural experience. Explore the lush landscapes, visit the Chitrakoot and Tirathgarh waterfalls, and discover the state's tribal art and culture.",
-  //   image: "https://example.com/chhattisgarh.jpg",
-  //   category: "Chhattisgarh",
-  //   Idealdays: "4-6 Days",
-  //   Besttime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/chhattisgarh_1.jpg",
-  //     "https://example.com/chhattisgarh_2.jpg",
-  //     "https://example.com/chhattisgarh_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 955,
-  //   title: "Goa: The Land of Sun, Sand, and Sea",
-  //   description:
-  //     "Goa is India's most popular beach destination, known for its golden beaches, vibrant nightlife, and Portuguese heritage. Whether it's relaxing on the beaches of North Goa, exploring the historic churches of Old Goa, or enjoying water sports, Goa offers a perfect blend of leisure and adventure.",
-  //   image: "https://example.com/goa.jpg",
-  //   category: "Goa",
-  //   Idealdays: "3-5 Days",
-  //   Besttime: "Nov, Dec, Jan, Feb",
-  //   content: [
-  //     "https://example.com/goa_1.jpg",
-  //     "https://example.com/goa_2.jpg",
-  //     "https://example.com/goa_3.jpg",
-  //   ],
-  // },
-  // // Continue with the other locations in a similar format...
-  // {
-  //   id: 133,
-  //   title: "Turkey: The Crossroads of Europe and Asia",
-  //   description:
-  //     "Turkey, a transcontinental country straddling Europe and Asia, is known for its rich history, diverse culture, and beautiful landscapes. Visit the historic city of Istanbul, explore the ancient ruins of Ephesus, or relax on the beautiful beaches of the Turkish Riviera. Turkey offers a unique blend of Eastern and Western culture, making it a fascinating destination.",
-  //   image: "https://example.com/turkey.jpg",
-  //   category: "Turkey",
-  //   Idealdays: "5-7 Days",
-  //   Besttime: "Apr, May, Sep, Oct",
-  //   content: [
-  //     "https://example.com/turkey_1.jpg",
-  //     "https://example.com/turkey_2.jpg",
-  //     "https://example.com/turkey_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 110,
-  //   title: "Andhra Pradesh: Rich Culture and Scenic Landscapes",
-  //   description:
-  //     "Andhra Pradesh offers a unique blend of cultural heritage and scenic beauty. From the sacred Tirupati temple to the beautiful beaches of Visakhapatnam, the state is a treasure trove for travelers seeking spirituality, history, and nature. The state's vibrant festivals and mouth-watering cuisine add to its charm.",
-  //   image: "https://example.com/andhra_pradesh.jpg",
-  //   category: "Andhra-pradesh",
-  //   Idealdays: "4-6 Days",
-  //   Besttime: "Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 2,
-  //   title: "Arunachal Pradesh: Land of the Rising Sun",
-  //   description:
-  //     "Arunachal Pradesh is a paradise for nature lovers, with its majestic mountains, lush valleys, and peaceful monasteries. The state is known for its indigenous tribes and vibrant festivals, offering an offbeat experience in India’s northeastern frontier.",
-  //   image: "https://example.com/arunachal_pradesh.jpg",
-  //   category: "Arunachal-pradesh",
-  //   Idealdays: "6-8 Days",
-  //   Besttime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/arunachal_1.jpg",
-  //     "https://example.com/arunachal_2.jpg",
-  //     "https://example.com/arunachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 309,
-  //   title: "Assam: Tea Gardens and Majestic Wildlife",
-  //   description:
-  //     "Assam is known for its sprawling tea gardens, the Brahmaputra River, and the world-famous Kaziranga National Park. The state's vibrant culture, including its festivals like Bihu, adds to the rich experience of visiting this northeastern gem.",
-  //   image: "https://example.com/assam.jpg",
-  //   category: "Assam",
-  //   Idealdays: "4-6 Days",
-  //   Besttime: "Nov, Dec, Feb, Mar",
-  //   content: [
-  //     "https://example.com/assam_1.jpg",
-  //     "https://example.com/assam_2.jpg",
-  //     "https://example.com/assam_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 444,
-  //   title: "Bihar: Ancient History and Spiritual Land",
-  //   description:
-  //     "Bihar is home to numerous historical landmarks and religious sites. The Mahabodhi Temple in Bodh Gaya is a UNESCO World Heritage Site and a significant pilgrimage destination for Buddhists. The ruins of Nalanda University and the Patna Museum offer insights into the state’s rich history.",
-  //   image: "https://example.com/bihar.jpg",
-  //   category: "Bihar",
-  //   Idealdays: "3-5 Days",
-  //   Besttime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/bihar_1.jpg",
-  //     "https://example.com/bihar_2.jpg",
-  //     "https://example.com/bihar_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 485,
-  //   title: "Chhattisgarh: Waterfalls and Tribal Culture",
-  //   description:
-  //     "Chhattisgarh offers a beautiful mix of natural wonders and tribal traditions. The state is dotted with numerous waterfalls, such as Chitrakoot and Tirathgarh. The local tribes’ vibrant art forms and traditions make it a unique destination for cultural enthusiasts.",
-  //   image: "https://example.com/chhattisgarh.jpg",
-  //   category: "Chhattisgarh",
-  //   Idealdays: "4-6 Days",
-  //   Besttime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/chhattisgarh_1.jpg",
-  //     "https://example.com/chhattisgarh_2.jpg",
-  //     "https://example.com/chhattisgarh_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 655,
-  //   title: "Goa: Beaches, Sunsets, and Vibrant Nightlife",
-  //   description:
-  //     "Goa is a haven for beach lovers, party enthusiasts, and history buffs. With its Portuguese heritage, iconic churches, golden sands, and vibrant nightlife, Goa offers a complete experience of relaxation and excitement.",
-  //   image: "https://example.com/goa.jpg",
-  //   category: "Goa",
-  //   Idealdays: "3-5 Days",
-  //   Besttime: "Nov, Dec, Jan, Feb",
-  //   content: [
-  //     "https://example.com/goa_1.jpg",
-  //     "https://example.com/goa_2.jpg",
-  //     "https://example.com/goa_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 197,
-  //   title: "Gujarat: Rich History and Wildlife",
-  //   description:
-  //     "Gujarat is famous for its historical and cultural heritage, including the UNESCO World Heritage Site of Rani ki Vav and the Gir National Park, the only place where Asiatic lions roam freely. The vibrant culture, food, and festivals make it a must-visit state.",
-  //   image: "https://example.com/gujarat.jpg",
-  //   category: "Gujarat",
-  //   Idealdays: "4-7 Days",
-  //   Besttime: "Nov, Dec, Jan, Feb",
-  //   content: [
-  //     "https://example.com/gujarat_1.jpg",
-  //     "https://example.com/gujarat_2.jpg",
-  //     "https://example.com/gujarat_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 288,
-  //   title: "Haryana: Blend of Urban and Rural Experiences",
-  //   description:
-  //     "Haryana, bordering the capital Delhi, offers a mix of modern and rural experiences. The state’s cultural festivals, historical sites, and bustling cities like Gurugram provide a unique travel experience. Visitors can explore heritage sites, enjoy traditional Haryanvi cuisine, and experience the rustic charm of rural Haryana.",
-  //   image: "https://example.com/haryana.jpg",
-  //   category: "Haryana",
-  //   Idealdays: "3-5 Days",
-  //   Besttime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/haryana_1.jpg",
-  //     "https://example.com/haryana_2.jpg",
-  //     "https://example.com/haryana_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 699,
-  //   title: "Himachal Pradesh: Majestic Mountains and Serene Valleys",
-  //   description:
-  //     "Himachal Pradesh is a stunning destination in northern India known for its snow-capped mountains, lush valleys, and peaceful monasteries. Popular destinations like Manali, Shimla, and Dharamshala offer scenic beauty and adventure activities, making it a paradise for nature and adventure lovers.",
-  //   image: "https://example.com/himachal_pradesh.jpg",
-  //   category: "Himachal-Pradesh",
-  //   Idealdays: "5-7 Days",
-  //   Besttime: "Mar, Apr, Sep, Oct",
-  //   content: [
-  //     "https://example.com/himachal_1.jpg",
-  //     "https://example.com/himachal_2.jpg",
-  //     "https://example.com/himachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 108,
-  //   title: "Jharkhand: Waterfalls and Scenic Landscapes",
-  //   description:
-  //     "Jharkhand is known for its picturesque landscapes, waterfalls, and rich tribal culture. Popular attractions include the Hundru Falls, Betla National Park, and the scenic hill stations of Netarhat and Parasnath. Visitors can explore the natural beauty and rich cultural traditions of this eastern state.",
-  //   image: "https://example.com/jharkhand.jpg",
-  //   category: "Jharkhand",
-  //   Idealdays: "3-5 Days",
-  //   Besttime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/jharkhand_1.jpg",
-  //     "https://example.com/jharkhand_2.jpg",
-  //     "https://example.com/jharkhand_3.jpg",
-  //   ],
-  // },
-  // // Repeat the same format for the remaining locations...
-  // {
-  //   id: 134,
-  //   title: "Turkey: The Crossroads of Europe and Asia",
-  //   description:
-  //     "Turkey, a transcontinental country straddling Europe and Asia, is known for its rich history, diverse culture, and beautiful landscapes. Visit the historic city of Istanbul, explore the ancient ruins of Ephesus, or relax on the beautiful beaches of the Turkish Riviera. Turkey offers a unique blend of Eastern and Western culture, making it a fascinating destination.",
-  //   image: "https://example.com/turkey.jpg",
-  //   category: "Turkey",
-  //   Idealdays: "5-7 Days",
-  //   Besttime: "Apr, May, Sep, Oct",
-  //   content: [
-  //     "https://example.com/turkey_1.jpg",
-  //     "https://example.com/turkey_2.jpg",
-  //     "https://example.com/turkey_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 113,
-  //   title:
-  //     "Turkey is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   description:
-  //     "Turkey is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Turkey is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Turkey has much to explore and enjoy.",
-  //   image: "https://example.com/turkey.jpg",
-  //   category: "Turkey",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/turkey_1.jpg",
-  //     "https://example.com/turkey_2.jpg",
-  //     "https://example.com/turkey_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 164,
-  //   title: "Andhra",
-  //   description:
-  //     "Andhra is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Andhra has much to explore and enjoy.",
-  //   image: "https://example.com/andhra.jpg",
-  //   category: "Andhra-pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 65,
-  //   title: "Arunachal",
-  //   description:
-  //     "Arunachal is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
-  //   title2:
-  //     "Arunachal is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Arunachal has much to explore and enjoy.",
-  //   image: "https://example.com/arunachal.jpg",
-  //   category: "Arunachal-pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/arunachal_1.jpg",
-  //     "https://example.com/arunachal_2.jpg",
-  //     "https://example.com/arunachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 66,
-  //   title: "Assam",
-  //   description:
-  //     "Assam is known for its tea plantations and cultural heritage.",
-  //   title2:
-  //     "Assam is a cultural hub known for its tea plantations, vibrant festivals, and diverse wildlife. The region's lush landscapes and ancient temples make it a fascinating destination for travelers.",
-  //   image: "https://example.com/assam.jpg",
-  //   category: "Assam",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/assam_1.jpg",
-  //     "https://example.com/assam_2.jpg",
-  //     "https://example.com/assam_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 4,
-  //   title: "Explore the rich culture and heritage of Andhra Pradesh",
-  //   description:
-  //     "Andhra Pradesh, located in southern India, is known for its rich cultural heritage, magnificent temples, and vibrant festivals. Visit the ancient city of Amaravati, explore the temple town of Tirupati, and enjoy the beautiful beaches of Visakhapatnam. The state offers a perfect blend of tradition and modernity, making it a unique destination for travelers.",
-  //   image: "https://example.com/andhra_pradesh.jpg",
-  //   category: "Andhra-pradesh",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 5,
-  //   title: "Discover the pristine beauty of Arunachal Pradesh",
-  //   description:
-  //     "Arunachal Pradesh, India's northeastern gem, offers stunning landscapes of rolling hills, dense forests, and serene rivers. Known for its indigenous tribal culture, the state invites visitors to explore monasteries, national parks, and remote villages. Adventure seekers can enjoy trekking, river rafting, and nature trails. Arunachal Pradesh is a haven for nature lovers and cultural enthusiasts.",
-  //   image: "https://example.com/arunachal_pradesh.jpg",
-  //   category: "Arunachal Pradesh",
-  //   idealDays: "6-8 Days",
-  //   bestTime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/arunachal_1.jpg",
-  //     "https://example.com/arunachal_2.jpg",
-  //     "https://example.com/arunachal_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 456,
-  //   title: "Assam: Land of Tea Gardens and Scenic Beauty",
-  //   description:
-  //     "Assam, nestled in northeastern India, is famed for its lush tea gardens, diverse wildlife, and the mighty Brahmaputra River. Visit the iconic Kaziranga National Park to spot rhinos, or explore the vibrant culture in Guwahati. The state's scenic beauty and cultural richness make it a must-visit destination for nature and culture lovers.",
-  //   image: "https://example.com/assam.jpg",
-  //   category: "Assam",
-  //   idealDays: "4-6 Days",
-  //   bestTime: "Nov, Dec, Feb, Mar",
-  //   content: [
-  //     "https://example.com/assam_1.jpg",
-  //     "https://example.com/assam_2.jpg",
-  //     "https://example.com/assam_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 777,
-  //   title: "Bihar: A Spiritual and Historical Journey",
-  //   description:
-  //     "Bihar, the land of ancient history and spirituality, is home to significant Buddhist and Hindu pilgrimage sites. From Bodh Gaya, where Buddha attained enlightenment, to the ruins of the ancient Nalanda University, the state offers a unique glimpse into India's rich history and spiritual heritage.",
-  //   image: "https://example.com/bihar.jpg",
-  //   category: "Bihar",
-  //   idealDays: "3-5 Days",
-  //   bestTime: "Oct, Nov, Feb, Mar",
-  //   content: [
-  //     "https://example.com/bihar_1.jpg",
-  //     "https://example.com/bihar_2.jpg",
-  //     "https://example.com/bihar_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 178,
-  //   title: "Chhattisgarh: A Land of Waterfalls and Tribes",
-  //   description:
-  //     "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests. It is also home to diverse indigenous tribes, offering a rich cultural experience. Explore the lush landscapes, visit the Chitrakoot and Tirathgarh waterfalls, and discover the state's tribal art and culture.",
-  //   image: "https://example.com/chhattisgarh.jpg",
-  //   category: "Chhattisgarh",
-  //   idealDays: "4-6 Days",
-  //   bestTime: "Oct, Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/chhattisgarh_1.jpg",
-  //     "https://example.com/chhattisgarh_2.jpg",
-  //     "https://example.com/chhattisgarh_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 945,
-  //   title: "Goa: The Land of Sun, Sand, and Sea",
-  //   description:
-  //     "Goa is India's most popular beach destination, known for its golden beaches, vibrant nightlife, and Portuguese heritage. Whether it's relaxing on the beaches of North Goa, exploring the historic churches of Old Goa, or enjoying water sports, Goa offers a perfect blend of leisure and adventure.",
-  //   image: "https://example.com/goa.jpg",
-  //   category: "Goa",
-  //   idealDays: "3-5 Days",
-  //   bestTime: "Nov, Dec, Jan, Feb",
-  //   content: [
-  //     "https://example.com/goa_1.jpg",
-  //     "https://example.com/goa_2.jpg",
-  //     "https://example.com/goa_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 133,
-  //   title: "Turkey: The Crossroads of Europe and Asia",
-  //   description:
-  //     "Turkey, a transcontinental country straddling Europe and Asia, is known for its rich history, diverse culture, and beautiful landscapes. Visit the historic city of Istanbul, explore the ancient ruins of Ephesus, or relax on the beautiful beaches of the Turkish Riviera. Turkey offers a unique blend of Eastern and Western culture, making it a fascinating destination.",
-  //   image: "https://example.com/turkey.jpg",
-  //   category: "Turkey",
-  //   idealDays: "5-7 Days",
-  //   bestTime: "Apr, May, Sep, Oct",
-  //   content: [
-  //     "https://example.com/turkey_1.jpg",
-  //     "https://example.com/turkey_2.jpg",
-  //     "https://example.com/turkey_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 110,
-  //   title: "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. ",
-  //   description:
-  //     "Andhra Pradesh offers a unique blend of cultural heritage and scenic beauty. From the sacred Tirupati temple to the beautiful beaches of Visakhapatnam, the state is a treasure trove for travelers seeking spirituality, history, and nature. The state's vibrant festivals and mouth-watering cuisine add to its charm.",
-  //   image: "https://example.com/andhra_pradesh.jpg",
-  //   category: "Andhra-pradesh",
-  //   idealDays: "4-6 Days",
-  //   bestTime: "Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
-  // {
-  //   id: 104,
-  //   title: "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. ",
-  //   description:
-  //     "Andhra Pradesh offers a unique blend of cultural heritage and scenic beauty. From the sacred Tirupati temple to the beautiful beaches of Visakhapatnam, the state is a treasure trove for travelers seeking spirituality, history, and nature. The state's vibrant festivals and mouth-watering cuisine add to its charm.",
-  //   image: "https://example.com/andhra_pradesh.jpg",
-  //   category: "Andhra-pradesh",
-  //   idealDays: "4-6 Days",
-  //   bestTime: "Nov, Dec, Jan",
-  //   content: [
-  //     "https://example.com/andhra_1.jpg",
-  //     "https://example.com/andhra_2.jpg",
-  //     "https://example.com/andhra_3.jpg",
-  //   ],
-  // },
+  {
+    id: 144,
+    title: "Explore the rich culture and heritage of Andhra Pradesh",
+    description:
+      "Andhra Pradesh, located in southern India, is known for its rich cultural heritage, magnificent temples, and vibrant festivals. Visit the ancient city of Amaravati, explore the temple town of Tirupati, and enjoy the beautiful beaches of Visakhapatnam. The state offers a perfect blend of tradition and modernity, making it a unique destination for travelers.",
+    image: "https://example.com/andhra_pradesh.jpg",
+    category: "Andhra-Pradesh",
+    Idealdays: "5-7 Days",
+    Besttime: "Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 135,
+    title: "Discover the pristine beauty of Arunachal Pradesh",
+    description:
+      "Arunachal Pradesh, India's northeastern gem, offers stunning landscapes of rolling hills, dense forests, and serene rivers. Known for its indigenous tribal culture, the state invites visitors to explore monasteries, national parks, and remote villages. Adventure seekers can enjoy trekking, river rafting, and nature trails. Arunachal Pradesh is a haven for nature lovers and cultural enthusiasts.",
+    image: "https://example.com/arunachal_pradesh.jpg",
+    category: "Arunachal-pradesh",
+    Idealdays: "6-8 Days",
+    Besttime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/arunachal_1.jpg",
+      "https://example.com/arunachal_2.jpg",
+      "https://example.com/arunachal_3.jpg",
+    ],
+  },
+  {
+    id: 305,
+    title: "Assam: Land of Tea Gardens and Scenic Beauty",
+    description:
+      "Assam, nestled in northeastern India, is famed for its lush tea gardens, diverse wildlife, and the mighty Brahmaputra River. Visit the iconic Kaziranga National Park to spot rhinos, or explore the vibrant culture in Guwahati. The state's scenic beauty and cultural richness make it a must-visit destination for nature and culture lovers.",
+    image: "https://example.com/assam.jpg",
+    category: "Assam",
+    Idealdays: "4-6 Days",
+    Besttime: "Nov, Dec, Feb, Mar",
+    content: [
+      "https://example.com/assam_1.jpg",
+      "https://example.com/assam_2.jpg",
+      "https://example.com/assam_3.jpg",
+    ],
+  },
+  {
+    id: 7,
+    title: "Bihar: A Spiritual and Historical Journey",
+    description:
+      "Bihar, the land of ancient history and spirituality, is home to significant Buddhist and Hindu pilgrimage sites. From Bodh Gaya, where Buddha attained enlightenment, to the ruins of the ancient Nalanda University, the state offers a unique glimpse into India's rich history and spiritual heritage.",
+    image: "https://example.com/bihar.jpg",
+    category: "Bihar",
+    Idealdays: "3-5 Days",
+    Besttime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/bihar_1.jpg",
+      "https://example.com/bihar_2.jpg",
+      "https://example.com/bihar_3.jpg",
+    ],
+  },
+  {
+    id: 8,
+    title: "Chhattisgarh: A Land of Waterfalls and Tribes",
+    description:
+      "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests. It is also home to diverse indigenous tribes, offering a rich cultural experience. Explore the lush landscapes, visit the Chitrakoot and Tirathgarh waterfalls, and discover the state's tribal art and culture.",
+    image: "https://example.com/chhattisgarh.jpg",
+    category: "Chhattisgarh",
+    Idealdays: "4-6 Days",
+    Besttime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/chhattisgarh_1.jpg",
+      "https://example.com/chhattisgarh_2.jpg",
+      "https://example.com/chhattisgarh_3.jpg",
+    ],
+  },
+  {
+    id: 955,
+    title: "Goa: The Land of Sun, Sand, and Sea",
+    description:
+      "Goa is India's most popular beach destination, known for its golden beaches, vibrant nightlife, and Portuguese heritage. Whether it's relaxing on the beaches of North Goa, exploring the historic churches of Old Goa, or enjoying water sports, Goa offers a perfect blend of leisure and adventure.",
+    image: "https://example.com/goa.jpg",
+    category: "Goa",
+    Idealdays: "3-5 Days",
+    Besttime: "Nov, Dec, Jan, Feb",
+    content: [
+      "https://example.com/goa_1.jpg",
+      "https://example.com/goa_2.jpg",
+      "https://example.com/goa_3.jpg",
+    ],
+  },
+  // Continue with the other locations in a similar format...
+  {
+    id: 133,
+    title: "Turkey: The Crossroads of Europe and Asia",
+    description:
+      "Turkey, a transcontinental country straddling Europe and Asia, is known for its rich history, diverse culture, and beautiful landscapes. Visit the historic city of Istanbul, explore the ancient ruins of Ephesus, or relax on the beautiful beaches of the Turkish Riviera. Turkey offers a unique blend of Eastern and Western culture, making it a fascinating destination.",
+    image: "https://example.com/turkey.jpg",
+    category: "Turkey",
+    Idealdays: "5-7 Days",
+    Besttime: "Apr, May, Sep, Oct",
+    content: [
+      "https://example.com/turkey_1.jpg",
+      "https://example.com/turkey_2.jpg",
+      "https://example.com/turkey_3.jpg",
+    ],
+  },
+  {
+    id: 110,
+    title: "Andhra Pradesh: Rich Culture and Scenic Landscapes",
+    description:
+      "Andhra Pradesh offers a unique blend of cultural heritage and scenic beauty. From the sacred Tirupati temple to the beautiful beaches of Visakhapatnam, the state is a treasure trove for travelers seeking spirituality, history, and nature. The state's vibrant festivals and mouth-watering cuisine add to its charm.",
+    image: "https://example.com/andhra_pradesh.jpg",
+    category: "Andhra-pradesh",
+    Idealdays: "4-6 Days",
+    Besttime: "Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 2,
+    title: "Arunachal Pradesh: Land of the Rising Sun",
+    description:
+      "Arunachal Pradesh is a paradise for nature lovers, with its majestic mountains, lush valleys, and peaceful monasteries. The state is known for its indigenous tribes and vibrant festivals, offering an offbeat experience in India’s northeastern frontier.",
+    image: "https://example.com/arunachal_pradesh.jpg",
+    category: "Arunachal-pradesh",
+    Idealdays: "6-8 Days",
+    Besttime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/arunachal_1.jpg",
+      "https://example.com/arunachal_2.jpg",
+      "https://example.com/arunachal_3.jpg",
+    ],
+  },
+  {
+    id: 309,
+    title: "Assam: Tea Gardens and Majestic Wildlife",
+    description:
+      "Assam is known for its sprawling tea gardens, the Brahmaputra River, and the world-famous Kaziranga National Park. The state's vibrant culture, including its festivals like Bihu, adds to the rich experience of visiting this northeastern gem.",
+    image: "https://example.com/assam.jpg",
+    category: "Assam",
+    Idealdays: "4-6 Days",
+    Besttime: "Nov, Dec, Feb, Mar",
+    content: [
+      "https://example.com/assam_1.jpg",
+      "https://example.com/assam_2.jpg",
+      "https://example.com/assam_3.jpg",
+    ],
+  },
+  {
+    id: 444,
+    title: "Bihar: Ancient History and Spiritual Land",
+    description:
+      "Bihar is home to numerous historical landmarks and religious sites. The Mahabodhi Temple in Bodh Gaya is a UNESCO World Heritage Site and a significant pilgrimage destination for Buddhists. The ruins of Nalanda University and the Patna Museum offer insights into the state’s rich history.",
+    image: "https://example.com/bihar.jpg",
+    category: "Bihar",
+    Idealdays: "3-5 Days",
+    Besttime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/bihar_1.jpg",
+      "https://example.com/bihar_2.jpg",
+      "https://example.com/bihar_3.jpg",
+    ],
+  },
+  {
+    id: 485,
+    title: "Chhattisgarh: Waterfalls and Tribal Culture",
+    description:
+      "Chhattisgarh offers a beautiful mix of natural wonders and tribal traditions. The state is dotted with numerous waterfalls, such as Chitrakoot and Tirathgarh. The local tribes’ vibrant art forms and traditions make it a unique destination for cultural enthusiasts.",
+    image: "https://example.com/chhattisgarh.jpg",
+    category: "Chhattisgarh",
+    Idealdays: "4-6 Days",
+    Besttime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/chhattisgarh_1.jpg",
+      "https://example.com/chhattisgarh_2.jpg",
+      "https://example.com/chhattisgarh_3.jpg",
+    ],
+  },
+  {
+    id: 655,
+    title: "Goa: Beaches, Sunsets, and Vibrant Nightlife",
+    description:
+      "Goa is a haven for beach lovers, party enthusiasts, and history buffs. With its Portuguese heritage, iconic churches, golden sands, and vibrant nightlife, Goa offers a complete experience of relaxation and excitement.",
+    image: "https://example.com/goa.jpg",
+    category: "Goa",
+    Idealdays: "3-5 Days",
+    Besttime: "Nov, Dec, Jan, Feb",
+    content: [
+      "https://example.com/goa_1.jpg",
+      "https://example.com/goa_2.jpg",
+      "https://example.com/goa_3.jpg",
+    ],
+  },
+  {
+    id: 197,
+    title: "Gujarat: Rich History and Wildlife",
+    description:
+      "Gujarat is famous for its historical and cultural heritage, including the UNESCO World Heritage Site of Rani ki Vav and the Gir National Park, the only place where Asiatic lions roam freely. The vibrant culture, food, and festivals make it a must-visit state.",
+    image: "https://example.com/gujarat.jpg",
+    category: "Gujarat",
+    Idealdays: "4-7 Days",
+    Besttime: "Nov, Dec, Jan, Feb",
+    content: [
+      "https://example.com/gujarat_1.jpg",
+      "https://example.com/gujarat_2.jpg",
+      "https://example.com/gujarat_3.jpg",
+    ],
+  },
+  {
+    id: 288,
+    title: "Haryana: Blend of Urban and Rural Experiences",
+    description:
+      "Haryana, bordering the capital Delhi, offers a mix of modern and rural experiences. The state’s cultural festivals, historical sites, and bustling cities like Gurugram provide a unique travel experience. Visitors can explore heritage sites, enjoy traditional Haryanvi cuisine, and experience the rustic charm of rural Haryana.",
+    image: "https://example.com/haryana.jpg",
+    category: "Haryana",
+    Idealdays: "3-5 Days",
+    Besttime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/haryana_1.jpg",
+      "https://example.com/haryana_2.jpg",
+      "https://example.com/haryana_3.jpg",
+    ],
+  },
+  {
+    id: 699,
+    title: "Himachal Pradesh: Majestic Mountains and Serene Valleys",
+    description:
+      "Himachal Pradesh is a stunning destination in northern India known for its snow-capped mountains, lush valleys, and peaceful monasteries. Popular destinations like Manali, Shimla, and Dharamshala offer scenic beauty and adventure activities, making it a paradise for nature and adventure lovers.",
+    image: "https://example.com/himachal_pradesh.jpg",
+    category: "Himachal-Pradesh",
+    Idealdays: "5-7 Days",
+    Besttime: "Mar, Apr, Sep, Oct",
+    content: [
+      "https://example.com/himachal_1.jpg",
+      "https://example.com/himachal_2.jpg",
+      "https://example.com/himachal_3.jpg",
+    ],
+  },
+  {
+    id: 108,
+    title: "Jharkhand: Waterfalls and Scenic Landscapes",
+    description:
+      "Jharkhand is known for its picturesque landscapes, waterfalls, and rich tribal culture. Popular attractions include the Hundru Falls, Betla National Park, and the scenic hill stations of Netarhat and Parasnath. Visitors can explore the natural beauty and rich cultural traditions of this eastern state.",
+    image: "https://example.com/jharkhand.jpg",
+    category: "Jharkhand",
+    Idealdays: "3-5 Days",
+    Besttime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/jharkhand_1.jpg",
+      "https://example.com/jharkhand_2.jpg",
+      "https://example.com/jharkhand_3.jpg",
+    ],
+  },
+  // Repeat the same format for the remaining locations...
+  {
+    id: 134,
+    title: "Turkey: The Crossroads of Europe and Asia",
+    description:
+      "Turkey, a transcontinental country straddling Europe and Asia, is known for its rich history, diverse culture, and beautiful landscapes. Visit the historic city of Istanbul, explore the ancient ruins of Ephesus, or relax on the beautiful beaches of the Turkish Riviera. Turkey offers a unique blend of Eastern and Western culture, making it a fascinating destination.",
+    image: "https://example.com/turkey.jpg",
+    category: "Turkey",
+    Idealdays: "5-7 Days",
+    Besttime: "Apr, May, Sep, Oct",
+    content: [
+      "https://example.com/turkey_1.jpg",
+      "https://example.com/turkey_2.jpg",
+      "https://example.com/turkey_3.jpg",
+    ],
+  },
+  {
+    id: 113,
+    title:
+      "Turkey is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    description:
+      "Turkey is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Turkey is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Turkey has much to explore and enjoy.",
+    image: "https://example.com/turkey.jpg",
+    category: "Turkey",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/turkey_1.jpg",
+      "https://example.com/turkey_2.jpg",
+      "https://example.com/turkey_3.jpg",
+    ],
+  },
+  {
+    id: 164,
+    title: "Andhra",
+    description:
+      "Andhra is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Andhra has much to explore and enjoy.",
+    image: "https://example.com/andhra.jpg",
+    category: "Andhra-pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 65,
+    title: "Arunachal",
+    description:
+      "Arunachal is known for its unique charm, offering a rich blend of culture, history, and natural beauty.",
+    title2:
+      "Arunachal is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. Whether it's the vibrant cities, serene countryside, or significant landmarks, Arunachal has much to explore and enjoy.",
+    image: "https://example.com/arunachal.jpg",
+    category: "Arunachal-pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/arunachal_1.jpg",
+      "https://example.com/arunachal_2.jpg",
+      "https://example.com/arunachal_3.jpg",
+    ],
+  },
+  {
+    id: 66,
+    title: "Assam",
+    description:
+      "Assam is known for its tea plantations and cultural heritage.",
+    title2:
+      "Assam is a cultural hub known for its tea plantations, vibrant festivals, and diverse wildlife. The region's lush landscapes and ancient temples make it a fascinating destination for travelers.",
+    image: "https://example.com/assam.jpg",
+    category: "Assam",
+    idealDays: "5-7 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/assam_1.jpg",
+      "https://example.com/assam_2.jpg",
+      "https://example.com/assam_3.jpg",
+    ],
+  },
+  {
+    id: 4,
+    title: "Explore the rich culture and heritage of Andhra Pradesh",
+    description:
+      "Andhra Pradesh, located in southern India, is known for its rich cultural heritage, magnificent temples, and vibrant festivals. Visit the ancient city of Amaravati, explore the temple town of Tirupati, and enjoy the beautiful beaches of Visakhapatnam. The state offers a perfect blend of tradition and modernity, making it a unique destination for travelers.",
+    image: "https://example.com/andhra_pradesh.jpg",
+    category: "Andhra-pradesh",
+    idealDays: "5-7 Days",
+    bestTime: "Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 5,
+    title: "Discover the pristine beauty of Arunachal Pradesh",
+    description:
+      "Arunachal Pradesh, India's northeastern gem, offers stunning landscapes of rolling hills, dense forests, and serene rivers. Known for its indigenous tribal culture, the state invites visitors to explore monasteries, national parks, and remote villages. Adventure seekers can enjoy trekking, river rafting, and nature trails. Arunachal Pradesh is a haven for nature lovers and cultural enthusiasts.",
+    image: "https://example.com/arunachal_pradesh.jpg",
+    category: "Arunachal Pradesh",
+    idealDays: "6-8 Days",
+    bestTime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/arunachal_1.jpg",
+      "https://example.com/arunachal_2.jpg",
+      "https://example.com/arunachal_3.jpg",
+    ],
+  },
+  {
+    id: 456,
+    title: "Assam: Land of Tea Gardens and Scenic Beauty",
+    description:
+      "Assam, nestled in northeastern India, is famed for its lush tea gardens, diverse wildlife, and the mighty Brahmaputra River. Visit the iconic Kaziranga National Park to spot rhinos, or explore the vibrant culture in Guwahati. The state's scenic beauty and cultural richness make it a must-visit destination for nature and culture lovers.",
+    image: "https://example.com/assam.jpg",
+    category: "Assam",
+    idealDays: "4-6 Days",
+    bestTime: "Nov, Dec, Feb, Mar",
+    content: [
+      "https://example.com/assam_1.jpg",
+      "https://example.com/assam_2.jpg",
+      "https://example.com/assam_3.jpg",
+    ],
+  },
+  {
+    id: 777,
+    title: "Bihar: A Spiritual and Historical Journey",
+    description:
+      "Bihar, the land of ancient history and spirituality, is home to significant Buddhist and Hindu pilgrimage sites. From Bodh Gaya, where Buddha attained enlightenment, to the ruins of the ancient Nalanda University, the state offers a unique glimpse into India's rich history and spiritual heritage.",
+    image: "https://example.com/bihar.jpg",
+    category: "Bihar",
+    idealDays: "3-5 Days",
+    bestTime: "Oct, Nov, Feb, Mar",
+    content: [
+      "https://example.com/bihar_1.jpg",
+      "https://example.com/bihar_2.jpg",
+      "https://example.com/bihar_3.jpg",
+    ],
+  },
+  {
+    id: 178,
+    title: "Chhattisgarh: A Land of Waterfalls and Tribes",
+    description:
+      "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests. It is also home to diverse indigenous tribes, offering a rich cultural experience. Explore the lush landscapes, visit the Chitrakoot and Tirathgarh waterfalls, and discover the state's tribal art and culture.",
+    image: "https://example.com/chhattisgarh.jpg",
+    category: "Chhattisgarh",
+    idealDays: "4-6 Days",
+    bestTime: "Oct, Nov, Dec, Jan",
+    content: [
+      "https://example.com/chhattisgarh_1.jpg",
+      "https://example.com/chhattisgarh_2.jpg",
+      "https://example.com/chhattisgarh_3.jpg",
+    ],
+  },
+  {
+    id: 945,
+    title: "Goa: The Land of Sun, Sand, and Sea",
+    description:
+      "Goa is India's most popular beach destination, known for its golden beaches, vibrant nightlife, and Portuguese heritage. Whether it's relaxing on the beaches of North Goa, exploring the historic churches of Old Goa, or enjoying water sports, Goa offers a perfect blend of leisure and adventure.",
+    image: "https://example.com/goa.jpg",
+    category: "Goa",
+    idealDays: "3-5 Days",
+    bestTime: "Nov, Dec, Jan, Feb",
+    content: [
+      "https://example.com/goa_1.jpg",
+      "https://example.com/goa_2.jpg",
+      "https://example.com/goa_3.jpg",
+    ],
+  },
+  {
+    id: 133,
+    title: "Turkey: The Crossroads of Europe and Asia",
+    description:
+      "Turkey, a transcontinental country straddling Europe and Asia, is known for its rich history, diverse culture, and beautiful landscapes. Visit the historic city of Istanbul, explore the ancient ruins of Ephesus, or relax on the beautiful beaches of the Turkish Riviera. Turkey offers a unique blend of Eastern and Western culture, making it a fascinating destination.",
+    image: "https://example.com/turkey.jpg",
+    category: "Turkey",
+    idealDays: "5-7 Days",
+    bestTime: "Apr, May, Sep, Oct",
+    content: [
+      "https://example.com/turkey_1.jpg",
+      "https://example.com/turkey_2.jpg",
+      "https://example.com/turkey_3.jpg",
+    ],
+  },
+  {
+    id: 110,
+    title: "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. ",
+    description:
+      "Andhra Pradesh offers a unique blend of cultural heritage and scenic beauty. From the sacred Tirupati temple to the beautiful beaches of Visakhapatnam, the state is a treasure trove for travelers seeking spirituality, history, and nature. The state's vibrant festivals and mouth-watering cuisine add to its charm.",
+    image: "https://example.com/andhra_pradesh.jpg",
+    category: "Andhra-pradesh",
+    idealDays: "4-6 Days",
+    bestTime: "Nov, Dec, Jan",
+    content: [
+      "https://example.com/andhra_1.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
+  {
+    id: 104,
+    title: "Andhra is a fascinating destination, offering travelers an experience of cultural diversity, historical significance, and breathtaking landscapes. ",
+    description:
+      "Andhra Pradesh offers a unique blend of cultural heritage and scenic beauty. From the sacred Tirupati temple to the beautiful beaches of Visakhapatnam, the state is a treasure trove for travelers seeking spirituality, history, and nature. The state's vibrant festivals and mouth-watering cuisine add to its charm.",
+    image: "https://example.com/andhra_pradesh.jpg",
+    category: "Andhra-pradesh",
+    idealDays: "4-6 Days",
+    bestTime: "Nov, Dec, Jan",
+    content: [
+      "https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/30/125c6ed2946ed87a1da9713efa24207c_1000x1000.jpg",
+      "https://example.com/andhra_2.jpg",
+      "https://example.com/andhra_3.jpg",
+    ],
+  },
 ];
 
 export default packageData;

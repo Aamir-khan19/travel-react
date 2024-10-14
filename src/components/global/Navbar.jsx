@@ -205,8 +205,6 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
           </button>
         </div>
       </div>
-
-      {/* Toggle button */}
     </div>
   );
 };
@@ -334,13 +332,6 @@ const ContactUs = ({ mobile = false }) => {
       >
         Trip Planners
       </button>
-      {/* 
-      <button
-       
-        className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
-      >
-        Trip Planner
-      </button> */}
 
       <RequestQuoteModal
         isRequestQuoteModalOpen={isRequestQuoteModalOpen}
