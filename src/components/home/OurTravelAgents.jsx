@@ -1,10 +1,14 @@
-
-
-
 import React, { useEffect, useRef, useState } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
-import { FaFacebookF, FaInstagram, FaYoutube, FaWhatsapp, FaPhone, FaSearch } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaPhone,
+  FaSearch,
+} from "react-icons/fa";
 
 const OurTravelAgents = () => {
   const ourTravelAgents = [
@@ -14,7 +18,8 @@ const OurTravelAgents = () => {
       phone: "9625624780",
       whatsapp: "9625624780",
       facebook: "",
-      instagram: "https://www.instagram.com/travelsyug_/profilecard/?igsh=aTNudnpyYzltbjhw",
+      instagram:
+        "https://www.instagram.com/travelsyug_/profilecard/?igsh=aTNudnpyYzltbjhw",
       youtube: "",
       contact: "https://travelyuga.com/",
       Address: " N-2, 24th Main, LIC Row Houses, Bengaluru, Karnataka 560078",
@@ -82,7 +87,8 @@ const OurTravelAgents = () => {
       name: "Just Keep Travels",
       phone: "9965539599",
       whatsapp: "9965539599",
-      facebook: "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
+      facebook:
+        "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
       instagram: "https://www.instagram.com/justkeeptravel_official/",
       youtube: "https://www.youtube.com/@alokdiwan6122",
       contact: "https://justkeeptravel.com/",
@@ -139,16 +145,15 @@ const OurTravelAgents = () => {
   const keenSlider = useRef(null);
   const autoSlideInterval = useRef(null);
 
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
   const [currentPhoneModal, setCurrentPhoneModal] = useState(null);
 
-  // Handle input change for search
+  
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
 
-  // Filter the agents based on the search term
   const filteredAgents = ourTravelAgents.filter((agent) =>
     agent.name.toLowerCase().includes(searchTerm)
   );
@@ -202,7 +207,7 @@ const OurTravelAgents = () => {
         keenSlider.current = null;
       }
       if (autoSlideInterval.current) {
-        clearInterval(autoSlideInterval.current); // Clear auto-slide interval on unmount
+        clearInterval(autoSlideInterval.current); 
       }
     };
   }, [searchTerm]);
@@ -219,15 +224,15 @@ const OurTravelAgents = () => {
     }
   };
 
-  const handlePhoneModalOpen = function(i){
-  setIsPhoneModalOpen(true);
-  setCurrentPhoneModal(i);
-  }
+  const handlePhoneModalOpen = function (i) {
+    setIsPhoneModalOpen(true);
+    setCurrentPhoneModal(i);
+  };
 
-  const handlePhoneModalClose = function(){
+  const handlePhoneModalClose = function () {
     setCurrentPhoneModal(null);
     setIsPhoneModalOpen(false);
-  }
+  };
 
   return (
     <section>
@@ -260,10 +265,14 @@ const OurTravelAgents = () => {
                 <div className="keen-slider__slide" key={i}>
                   <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[380px] max-[600px]:min-h-[400px]">
                     <div className="bg-[url('/Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[145px] h-[110px] mx-2 -ml-[15px] -mt-[16px]"></div>
-                
+
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
-                        <img src={agent.imageUrl} alt={agent.name} className="w-auto h-32" />
+                        <img
+                          src={agent.imageUrl}
+                          alt={agent.name}
+                          className="w-auto h-32"
+                        />
                         <div className="flex gap-4 justify-center items-center flex-col">
                           <h1 className="text-xl font-bold">{agent.name}</h1>
                           <p>
@@ -285,48 +294,57 @@ const OurTravelAgents = () => {
 
                       {/* Icons */}
                       <div className="p-2 bg-white rounded-full flex flex-col items-center justify-around">
-                        
                         <a
-                      href={`https://api.whatsapp.com/send/?phone=${agent?.whatsapp}&text&type=phone_number&app_absent=0`}
-                      target="_blank"  
-                       className="text-[#2fb347]">
+                          href={`https://api.whatsapp.com/send/?phone=${agent?.whatsapp}&text&type=phone_number&app_absent=0`}
+                          target="_blank"
+                          className="text-[#2fb347]"
+                        >
                           <FaWhatsapp className="h-6 w-6" />
                         </a>
 
-                          <div className=" relative">
-                            {/* phone modal starts here */}
-                      {(isPhoneModalOpen && (currentPhoneModal == i)) && <div className=" absolute right-[50px] bottom-[-10px] px-4 py-2 bg-[#4267B2] text-white rounded cursor-pointer">
+                        <div className=" relative">
+                          {/* phone modal starts here */}
+                          {isPhoneModalOpen && currentPhoneModal == i && (
+                            <div className=" absolute right-[50px] bottom-[-10px] px-4 py-2 bg-[#4267B2] text-white rounded cursor-pointer">
+                              <p className=" pr-4">{agent?.phone}</p>
 
+                              <button
+                                className="absolute top-[0px] right-[5px] text-white text-3xl"
+                                onClick={handlePhoneModalClose}
+                              >
+                                &times;
+                              </button>
+                            </div>
+                          )}
+                          {/* phone modal ends here  */}
 
-                        <p className=" pr-4">{agent?.phone}</p> 
-
-
-                        <button
-                        className="absolute top-[0px] right-[5px] text-white text-3xl"
-                        onClick={handlePhoneModalClose}
-                        >
-                        &times;
-                        </button>
-                        
+                          <FaPhone
+                            onClick={() => handlePhoneModalOpen(i)}
+                            className="h-6 w-6 text-[#4267B2] cursor-pointer"
+                          />
                         </div>
-                      }
-                         {/* phone modal ends here  */}
 
-                          <FaPhone onClick={()=>handlePhoneModalOpen(i)} className="h-6 w-6 text-[#4267B2] cursor-pointer"  />
-
-                          </div>
-                          
-                        
-
-                        <a href={`${agent?.facebook}`} target="_blank"  className="text-[#4267B2]">
+                        <a
+                          href={`${agent?.facebook}`}
+                          target="_blank"
+                          className="text-[#4267B2]"
+                        >
                           <FaFacebookF className="h-6 w-6" />
                         </a>
 
-                        <a href={`${agent?.instagram}`}  target="_blank" className="text-[#E1306C]">
+                        <a
+                          href={`${agent?.instagram}`}
+                          target="_blank"
+                          className="text-[#E1306C]"
+                        >
                           <FaInstagram className="h-6 w-6" />
                         </a>
 
-                        <a href={`${agent?.youtube}`} target="_blank"  className="text-[#E1306C]">
+                        <a
+                          href={`${agent?.youtube}`}
+                          target="_blank"
+                          className="text-[#E1306C]"
+                        >
                           <FaYoutube className="h-6 w-6" />
                         </a>
                       </div>
@@ -343,12 +361,15 @@ const OurTravelAgents = () => {
         {/* Mobile Slide Controls */}
         <div className="flex sm:hidden justify-center gap-4 mt-8">
           <button
-          
             aria-label="Previous slide"
             onClick={handlePrevSlide}
             className="rounded-full bg-[#01055b] p-4 text-white"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="w-6 h-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              className="w-6 h-6"
+            >
               <path
                 fill="currentColor"
                 d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
@@ -360,7 +381,11 @@ const OurTravelAgents = () => {
             onClick={handleNextSlide}
             className="rounded-full bg-[#01055b] p-4 text-white"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="w-6 h-6">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 16 16"
+              className="w-6 h-6"
+            >
               <path
                 fill="currentColor"
                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
@@ -374,4 +399,3 @@ const OurTravelAgents = () => {
 };
 
 export default OurTravelAgents;
-

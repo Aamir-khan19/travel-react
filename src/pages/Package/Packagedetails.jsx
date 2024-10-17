@@ -35,7 +35,6 @@ const Packagedetails = () => {
   useEffect(() => {
     const pack = packageData.find((obj) => obj.id == id);
 
-     
     setImages(pack?.content || []);
     setPackage(pack);
     window.scrollTo(0, 0);
@@ -74,7 +73,7 @@ const Packagedetails = () => {
       <Navbar />
 
       <div
-        className="relative w-full overflow-hidden h-96"
+        className="relative w-full overflow-hidden h-56"
         style={{
           backgroundImage: `url(${images[currentIndex]})`,
           backgroundAttachment: "fixed",
@@ -107,6 +106,8 @@ const Packagedetails = () => {
                   className="w-full h-96 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                 />
               </div>
+         
+
             ))}
           </div>
           <button
@@ -119,7 +120,7 @@ const Packagedetails = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 bg-white p-8 rounded-lg shadow-xl">
           <div>
-            <h3 className="text-3xl font-semibold mb-4">
+            <h3 className="text-3xl text-blue-900 font-bold  mb-4">
               About {pack?.category || "this destination"}
             </h3>
             <p className="text-gray-700 leading-relaxed mb-6 text-lg">
@@ -127,11 +128,16 @@ const Packagedetails = () => {
                 "This is a detailed description about the package..."}
             </p>
             <div className="flex items-center justify-center">
-              <button onClick={() => setIsModalOpen(true)} className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-900 transition duration-300">
-               
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-blue-800 transition duration-300"
+              >
                 <FaEnvelope className="mr-2" /> ENQUIRE NOW
               </button>
-              <LoginModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+              <LoginModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+              />
             </div>
           </div>
           <div>
@@ -195,14 +201,16 @@ const Packagedetails = () => {
       </div>
 
       <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 w-full max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center gap-4">
-        <button onClick={() => setIsModalOpen(true)}  className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-indigo-900 transition duration-300">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-indigo-900 transition duration-300"
+        >
           <FaPhone className="mr-2" /> CONTACT AGENT
         </button>
         <Link to="/contact">
-       
-        <button className="flex items-center px-8 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-700 transition duration-300">
-          <FaEnvelope className="mr-2" /> ENQUIRE NOW
-        </button>
+          <button className="flex items-center px-8 py-3 bg-gray-800 text-white rounded-lg shadow hover:bg-gray-700 transition duration-300">
+            <FaEnvelope className="mr-2" /> ENQUIRE NOW
+          </button>
         </Link>
       </div>
       <StatsSection />
