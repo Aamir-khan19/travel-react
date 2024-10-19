@@ -16,6 +16,7 @@ import TermandconditionPage from "./pages/TermandconditionPage.jsx";
 import TourPackages from "./pages/TourPackages.jsx";
 import BlogDetail from "./pages/BlogPage/BlogDetail.jsx";
 import Packagedetails from "./pages/Package/Packagedetails.jsx";
+import TripIdeaPage from "./pages/TripIdeaPage.jsx";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -37,7 +38,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/terms" element={<TermandconditionPage/>} />
           <Route path="/blogdetail/:id" element={<BlogDetail/>} />
           <Route path="/package-details/:id" element={<Packagedetails/>} />
-
+          
+          <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
           
         </Routes>
       </div>

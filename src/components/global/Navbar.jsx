@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 import RequestQuoteModal from "../home/RequestQuoteModal";
 import {
@@ -8,6 +8,7 @@ import {
   FaChevronDown,
   FaChevronUp,
 } from "react-icons/fa";
+import tripIdeaItems from "../packages/Allpackages/tripIdeas";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,52 +31,119 @@ const Navbar = () => {
   );
 };
 
-const Logo = () => (
-  <div className="z-50">
+const Logo = () => {
+  const navigate = useNavigate();
+
+  const handleLogoDivClick = function () {
+    // navigate("/");
+    // location.reload();
+  }
+
+  return <div onClick={() => handleLogoDivClick()} className="z-50">
     <img
       className="w-20 cursor-pointer ml-10"
       src="/Images/Homepageimages/logo.png"
       alt="Logo"
     />
   </div>
-);
+}
+
+
+
+
+function TripIdeasComponent() {
+
+  return (<div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center my-4 mx-2 w-[250px] md:w-[600px] gap-5 p-4 bg-white text-gray-700 rounded text-sm">
+
+    {
+      tripIdeaItems?.map((tripIdeaItem, i) => (
+        <div key={i} >
+          <h1 className=" text-start" >
+            <Link to={`/trip-ideas/${tripIdeaItem?.to}/${tripIdeaItem?.id}`} >{tripIdeaItem?.text}</Link>
+            </h1>
+        </div>
+      ))
+    }
+
+  </div>
+  )
+
+}
 
 const NavLinks = ({ menuOpen }) => {
   const [isOnDropDownMenu, setIsOnDropDownMenu] = useState(false);
 
+  const [isTripIdeasVisible, setIsTripIdeasVisible] = useState(false);
+
   return (
     <div
-      className={`duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${
-        menuOpen ? "top-[60px]" : "top-[-500%]"
-      } lg:w-auto w-full flex items-center px-5 lg:px-0`}
+      className={`duration-300 lg:static absolute bg-white lg:min-h-fit left-0 z-40 ${menuOpen ? "top-[60px]" : "top-[-500%]"
+        } lg:w-auto w-full flex items-center px-5 lg:px-0`}
     >
       <ul
-        className={`flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full sm:w-[200px] lg:w-auto ${
-          menuOpen
+        className={`flex font-medium py-3 lg:flex-row flex-col lg:items-center gap-10 w-full lg:w-auto ${menuOpen
             ? "flex flex-col items-center justify-center"
             : "hidden lg:flex"
-        }`}
+          }`}
       >
         <NavLink to="/" text="Home" />
         <NavLink to="/about" text="About" />
-        <button>
+        <button onMouseEnter={() => setIsOnDropDownMenu(true)} onMouseLeave={() => setIsOnDropDownMenu(false)} >
+
+
           <NavLinkWithDropdown
+
             text="Packages"
-            isOnDropDownMenu={isOnDropDownMenu}
-            setIsOnDropDownMenu={setIsOnDropDownMenu}
+          // isOnDropDownMenu={isOnDropDownMenu}
+          // setIsOnDropDownMenu={setIsOnDropDownMenu}
           >
-            <DropdownMenu
-              isOnDropDownMenu={isOnDropDownMenu}
-              setIsOnDropDownMenu={setIsOnDropDownMenu}
-              items={dropdownItems}
-            />
+            {
+              isOnDropDownMenu &&
+
+              <div className=" relative">
+                <div className=" absolute top-0 bg-transparent left-0 right-0 h-10" />
+              </div>
+            }
+
+
+            {
+              isOnDropDownMenu &&
+              <div className=" relative" >
+
+                <div className=" absolute left-1/2 -translate-x-1/2 h-fit w-fit">
+
+                  <DropdownMenu
+                    // isOnDropDownMenu={isOnDropDownMenu}
+                    // setIsOnDropDownMenu={setIsOnDropDownMenu}
+                    items={dropdownItems}
+                  />
+
+                </div>
+              </div>
+
+            }
+
           </NavLinkWithDropdown>
+
         </button>
 
         <NavLink to="/blogs" text="Blogs" />
         <NavLink to="/contact" text="Contact" />
-        <button className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl">
+        <button onMouseEnter={() => setIsTripIdeasVisible(true)} onMouseLeave={() => setIsTripIdeasVisible(false)} className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl relative">
           Trip ideas
+
+
+          {isTripIdeasVisible &&
+
+            <div className=" absolute left-1/2 -translate-x-1/2 top-10 h-fit w-fit">
+              <div className=" absolute bg-transparent left-1/2 -translate-x-1/2 w-[100px] h-4" />
+
+              <TripIdeasComponent />
+
+            </div>
+          }
+
+
         </button>
 
         {menuOpen && <ContactUs mobile />}
@@ -98,28 +166,13 @@ const NavLinkWithDropdown = ({
   isOnDropDownMenu,
   setIsOnDropDownMenu,
 }) => {
-  const handleMouseEnter = () => {
-    const ele = document.querySelector(".custom-showHide");
-    if (ele?.classList.contains("hidden")) {
-      ele.classList.remove("hidden");
-    }
-  };
 
-  const handleMouseLeave = () => {
-    const ele = document.querySelector(".custom-showHide");
-    if (!isOnDropDownMenu && !ele?.classList.contains("hidden")) {
-      setTimeout(() => {
-        ele?.classList.add("hidden");
-      }, 800);
-    }
-  };
 
   return (
-    <li className="relative group">
+    <li className="relative group z-50 md:z-auto">
       <span
         className="hover:text-[#eb6734] text-base font-semibold cursor-pointer"
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+
       >
         {text}
       </span>
@@ -128,7 +181,7 @@ const NavLinkWithDropdown = ({
   );
 };
 
-const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
+const DropdownMenu = ({ items }) => {
   const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => {
@@ -140,33 +193,18 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
     ? items.international
     : items.international.slice(0, 9);
 
-  const handleMouseEnter = () => {
-    const ele = document.querySelector(".custom-showHide");
-    if (ele?.classList.contains("hidden")) {
-      ele.classList.remove("hidden");
-    }
-  };
-
-  const handleMouseLeave = () => {
-    const ele = document.querySelector(".custom-showHide");
-    if (!ele?.classList.contains("hidden")) {
-      ele.classList.add("hidden");
-    }
-  };
-
   return (
     <div
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-      className="absolute z-[100] lg:translate-x-[-30%] md:translate-x-[0%] translate-x-[-50%] sm:translate-x-[10%]  xs:translate-x-[-15%] xs:w-[250px] xs:justify-center  xxs:w-[900px] xxs:items-center  xxs:translate-x-[-40%]    xxs:justify-center  xs:items-center px-2 md:px-3 sm:px-5 md:right-8 sm:left-15 xs:left-15  xxs:left-15 md:left-30 xxs:translate-x-[50%]  left-1/2   lg:left-6 md:w-[500px] md:items-center md:justify-center sm:w-[300px]  sm:justify-center sm:items-center   lg:w-[700px]  bg-white border border-gray-200 rounded-lg  transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide justify-left "
+
+      className="absolute z-[100] lg:translate-x-[-30%] md:translate-x-[0%] translate-x-[-50%] sm:translate-x-[10%]  xs:translate-x-[-15%] xs:w-[250px] xs:justify-center  xxs:w-[900px] xxs:items-center  xxs:translate-x-[-40%]    xxs:justify-center  xs:items-center px-2 md:px-3 sm:px-5 md:right-8 sm:left-15 xs:left-15  xxs:left-15 md:left-30 xxs:translate-x-[50%]  left-1/2   lg:left-6 md:w-[500px] md:items-center md:justify-center sm:w-[300px]  sm:justify-center sm:items-center   lg:w-[700px]  bg-white border border-gray-200 rounded-lg  transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide justify-left"
     >
       <div className="flex flex-col lg:flex-row gap-6">
         {/* Domestic Packages Section */}
-        <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
+        <div>
           <h1 className="font-bold text-bold py-4 text-xl text-[#02173ba4] hover:text-[#3d71cca4]">
             Domestic Packages
           </h1>
-          <ul className="grid text-bold lg:grid-cols-3 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-2">
+          <ul className="grid text-bold lg:grid-cols-3 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-1">
             {visibleIndianItems.map((item, index) => (
               <li key={index}>
                 <Link
@@ -181,11 +219,11 @@ const DropdownMenu = ({ items, isOnDropDownMenu, setIsOnDropDownMenu }) => {
         </div>
 
         {/* International Packages Section */}
-        <div onMouseEnter={() => setIsOnDropDownMenu(true)}>
+        <div>
           <h1 className="font-bold text-bold py-4 text-xl text-[#02173ba4] hover:text-[#3d71cca4]">
             International Packages
           </h1>
-          <ul className="grid text-bold lg:grid-cols-3 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-2">
+          <ul className="grid text-bold lg:grid-cols-3 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-1">
             {visibleInternationalItems.map((item, index) => (
               <li key={index}>
                 <Link
@@ -314,9 +352,8 @@ const ContactUs = ({ mobile = false }) => {
 
   return (
     <div
-      className={`flex items-center gap-6 ${
-        mobile ? "lg:mt-0 lg:hidden" : "hidden lg:flex md:hidden"
-      }`}
+      className={`flex items-center gap-6 ${mobile ? "lg:mt-0 lg:hidden" : "hidden lg:flex md:hidden"
+        }`}
     >
       {/* <Link
         to="/B2BLogin"

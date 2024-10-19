@@ -270,25 +270,7 @@
 //   );
 // };
 
-// const tripIdeaItems = [
-//   { to: `/trip-ideas/Visa-Free-Countries`, text: "Visa Free Countries for Indian Passport Holders in 2024" },
-//   { to: `/trip-ideas/Best-Places-Near-Delhi`, text: "20 Best Places to Visit near Delhi from 50km to 500km" },
-//   { to: `/trip-ideas/Economic-Budget-Places`, text: "Places You Can Enjoy In Economic Budget In India" },
-//   { to: `/trip-ideas/Honeymoon-Destinations`, text: "20 Best Honeymoon Destinations in India for Romantic Couples in 2024" },
-//   { to: `/trip-ideas/Strongest-Air-Forces`, text: "Top 10 Strongest Air Forces of the World" },
-//   { to: `/trip-ideas/Romantic-Hotels-Chennai`, text: "5 Romantic Hotels In Chennai" },
-//   { to: `/trip-ideas/Indian-Trains`, text: "Indian Trains and SL, 1A, 2A, 3A, 2S, CC: Do you know what does it mean?" },
-//   { to: `/trip-ideas/Beautiful-Women-Countries`, text: "10 Countries with the Most Beautiful Women in the World" },
-//   { to: `/trip-ideas/Places-In-Manila`, text: "Top 6 Places to Visit in Manila" },
-//   { to: `/trip-ideas/Dubai-Work-Visa`, text: "Dubai Work Visa" },
-//   { to: `/trip-ideas/Bachelor-Party-Destinations`, text: "25 Best Bachelor Party Destinations in the World" },
-//   { to: `/trip-ideas/Delhi-Airport-Service`, text: "Delhi Airport Launches Baggage Pick-up and Drop Service" },
-//   { to: `/trip-ideas/Breathtaking-Treks`, text: "30 Breathtaking Treks in India that Everyone Must Visit for an Adrenaline Rush" },
-//   { to: `/trip-ideas/Christmas-Celebrations`, text: "Make your Christmas celebration an amazing one this 2024 – Visit these top 15 places in India!" },
-//   { to: `/trip-ideas/International-Honeymoon-Destinations`, text: "Top 15 Lovey Dovey International Honeymoon Destinations for Newlyweds" },
-//   { to: `/trip-ideas/Famous-Temples`, text: "Famous Temples in India that Everyone Must Visit" }
-//   // Add more trip ideas as needed
-// ];
+
 
 
 // const dropdownItems = {
