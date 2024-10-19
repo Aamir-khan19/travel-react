@@ -205,74 +205,71 @@ const tripIdeaItems =[
     
     },
     {
-      id: 10,
-      to: `Interesting-Facts`,
-      text: "10 Interesting Facts About Indian History",
-      content: [
-        {
-            heading: "The Ancient Indus Valley Civilization",
-            image: "images/interesting-facts-1.jpg",
-            information: "The Indus Valley Civilization, thriving around 2500 BCE, is one of the world’s oldest urban cultures, known for its remarkable achievements in city planning and architecture. This ancient civilization, located in present-day Pakistan and northwest India, featured well-organized cities like Mohenjo-Daro and Harappa, characterized by advanced drainage systems, standardized baked brick structures, and a grid-like layout. The inhabitants engaged in trade, agriculture, and craft production, showcasing their ingenuity. Despite its decline around 1900 BCE, the legacy of the Indus Valley Civilization continues to fascinate historians and archaeologists, highlighting the sophistication of early human societies."
-        },
-        {
-            heading: "The Rich Legacy of the Mughal Empire",
-            image: "images/interesting-facts-2.jpg",
-            information: "The Mughal Empire, established in the 16th century, profoundly influenced India’s art, culture, and architecture. Renowned for its magnificent structures, including the iconic Taj Mahal, the empire blended Persian, Indian, and Islamic styles, creating a unique architectural heritage. The Mughals promoted advancements in painting, literature, and textiles, leading to a rich cultural exchange. Emperors like Akbar embraced religious tolerance and established policies promoting harmony among diverse communities. The empire's legacy endures through its artistic contributions, monuments, and the continued appreciation of its historical significance, marking a pivotal period in India’s rich history."
-        },
-        {
-            heading: "The Struggle for Independence",
-            image: "images/interesting-facts-3.jpg",
-            information: "India’s struggle for independence from British rule is a pivotal chapter in its history, characterized by resilience and determination. This movement gained momentum in the early 20th century, marked by non-violent resistance and civil disobedience led by prominent leaders like Mahatma Gandhi. The Salt March and Quit India Movement exemplified the unified call for freedom, inspiring millions. The struggle also saw the participation of diverse groups advocating for rights and justice. On August 15, 1947, India achieved independence, marking the end of colonial rule and igniting a sense of national pride and identity among its citizens."
-        }
-    ]
-    
-    },
-    {
-      id: 11,
-      to: `Best-Street-Food`,
-      text: "Top 10 Street Foods You Must Try in India",
-      content: [
-        {
-            heading: "Spicy Pani Puri from Mumbai",
-            image: "images/street-food-1.jpg",
-            information: "Pani Puri, a beloved street food from Mumbai, tantalizes taste buds with its unique combination of flavors and textures. These small, crispy puris are hollowed out and filled with a spicy mixture of tangy tamarind water, chickpeas, potatoes, and spices. The burst of flavors in each bite, combined with the crunchiness of the puris, creates an exhilarating culinary experience. Often enjoyed as a quick snack or appetizer, Pani Puri is a must-try for food lovers exploring the vibrant street food scene of Mumbai, reflecting the city’s rich culinary heritage and lively culture."
-        },
-        {
-            heading: "Delicious Chaat from Delhi",
-            image: "images/street-food-2.jpg",
-            information: "Delhi's chaat is a delightful culinary experience that embodies the vibrant street food culture of the city. This popular dish is a flavorful blend of crispy fried dough, potatoes, chickpeas, tangy yogurt, and an assortment of spices, creating an explosion of textures and tastes. Each bite delivers a harmonious mix of sweetness, spiciness, and tanginess that leaves a lasting impression. Whether enjoyed at bustling street stalls or local markets, chaat has become a favorite among locals and tourists alike, offering a delicious and memorable taste of Delhi's rich food scene."
-        },
-        {
-            heading: "Vibrant Dhokla from Gujarat",
-            image: "images/street-food-3.jpg",
-            information: "Dhokla is a traditional snack from Gujarat, celebrated for its vibrant color and delightful flavor. This savory steamed cake is made from fermented rice and chickpea flour, resulting in a soft, spongy texture that melts in your mouth. The addition of spices and tempering with mustard seeds, sesame seeds, and green chilies enhances its taste, while garnishing with fresh coriander and grated coconut adds a refreshing touch. Often enjoyed with green chutney or sweet tamarind sauce, dhokla is a popular choice for breakfast, snacks, or even as a light meal, showcasing Gujarat’s rich culinary heritage."
-        }
-    ]
-    
-    },
-    {
-      id: 12,
-      to: `Best-Adventure-Sports`,
-      text: "Top 10 Adventure Sports in India You Shouldn't Miss",
-      content: [
-        {
-            heading: "Skydiving in Aamby Valley",
-            image: "images/adventure-sports-1.jpg",
-            information: "Skydiving in Aamby Valley is an exhilarating adventure that offers breathtaking views of the picturesque landscape below. As you leap from the aircraft, the adrenaline rush is unmatched, providing a unique perspective of the lush greenery, serene lakes, and majestic hills. This thrilling experience is perfect for adventure seekers looking to push their limits and conquer their fears. Professional instructors ensure safety and guidance throughout the jump, making it accessible even for beginners. Whether you're an experienced skydiver or trying it for the first time, Aamby Valley promises a memorable and heart-pounding adventure."
-        },
-        {
-            heading: "Rock Climbing in Hampi",
-            image: "images/adventure-sports-2.jpg",
-            information: "Hampi, a UNESCO World Heritage site, is renowned for its stunning boulder-strewn landscapes, making it a rock climber's paradise. With a diverse range of climbing routes suitable for all skill levels, climbers can challenge themselves against the backdrop of ancient ruins and breathtaking vistas. The unique rock formations offer exciting opportunities for both bouldering and sport climbing, attracting enthusiasts from around the world. After a day of climbing, adventurers can relax and explore Hampi's rich cultural heritage, including its iconic temples and vibrant local markets, creating a perfect blend of adventure and exploration."
-        },
-        {
-            heading: "Scuba Diving in the Andaman Islands",
-            image: "images/adventure-sports-3.jpg",
-            information: "Scuba diving in the Andaman Islands provides an unforgettable underwater experience, where vibrant marine life and crystal-clear waters await. Divers can explore stunning coral reefs teeming with colorful fish, sea turtles, and other fascinating creatures. The warm waters and excellent visibility make it an ideal location for both beginners and experienced divers. Several certified dive schools offer training and guided dives, ensuring safety and an enriching experience. Beyond diving, the pristine beaches and lush tropical scenery create a perfect getaway, making the Andaman Islands a top choice for adventure and relaxation."
-        }
-    ]
-    
-    },
+        "id": 10,
+        "to": "Interesting-Facts",
+        "text": "10 Interesting Facts About Indian History",
+        "content": [
+          {
+            "heading": "The Ancient Indus Valley Civilization",
+            "image": "images/interesting-facts-1.jpg",
+            "information": "The Indus Valley Civilization, thriving around 2500 BCE, is one of the world’s oldest urban cultures, known for its remarkable achievements in city planning and architecture. This ancient civilization, located in present-day Pakistan and northwest India, featured well-organized cities like Mohenjo-Daro and Harappa, characterized by advanced drainage systems, standardized baked brick structures, and a grid-like layout. The inhabitants engaged in trade, agriculture, and craft production, showcasing their ingenuity. Despite its decline around 1900 BCE, the legacy of the Indus Valley Civilization continues to fascinate historians and archaeologists, highlighting the sophistication of early human societies."
+          },
+          {
+            "heading": "The Rich Legacy of the Mughal Empire",
+            "image": "images/interesting-facts-2.jpg",
+            "information": "The Mughal Empire, established in the 16th century, profoundly influenced India’s art, culture, and architecture. Renowned for its magnificent structures, including the iconic Taj Mahal, the empire blended Persian, Indian, and Islamic styles, creating a unique architectural heritage. The Mughals promoted advancements in painting, literature, and textiles, leading to a rich cultural exchange. Emperors like Akbar embraced religious tolerance and established policies promoting harmony among diverse communities. The empire's legacy endures through its artistic contributions, monuments, and the continued appreciation of its historical significance, marking a pivotal period in India’s rich history."
+          },
+          {
+            "heading": "The Struggle for Independence",
+            "image": "images/interesting-facts-3.jpg",
+            "information": "India’s struggle for independence from British rule is a pivotal chapter in its history, characterized by resilience and determination. This movement gained momentum in the early 20th century, marked by non-violent resistance and civil disobedience led by prominent leaders like Mahatma Gandhi. The Salt March and Quit India Movement exemplified the unified call for freedom, inspiring millions. The struggle also saw the participation of diverse groups advocating for rights and justice. On August 15, 1947, India achieved independence, marking the end of colonial rule and igniting a sense of national pride and identity among its citizens."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "to": "Best-Street-Food",
+        "text": "Top 10 Street Foods You Must Try in India",
+        "content": [
+          {
+            "heading": "Spicy Pani Puri from Mumbai",
+            "image": "images/street-food-1.jpg",
+            "information": "Pani Puri, a beloved street food from Mumbai, tantalizes taste buds with its unique combination of flavors and textures. These small, crispy puris are hollowed out and filled with a spicy mixture of tangy tamarind water, chickpeas, potatoes, and spices. The burst of flavors in each bite, combined with the crunchiness of the puris, creates an exhilarating culinary experience. Often enjoyed as a quick snack or appetizer, Pani Puri is a must-try for food lovers exploring the vibrant street food scene of Mumbai, reflecting the city’s rich culinary heritage and lively culture."
+          },
+          {
+            "heading": "Delicious Chaat from Delhi",
+            "image": "images/street-food-2.jpg",
+            "information": "Delhi's chaat is a delightful culinary experience that embodies the vibrant street food culture of the city. This popular dish is a flavorful blend of crispy fried dough, potatoes, chickpeas, tangy yogurt, and an assortment of spices, creating an explosion of textures and tastes. Each bite delivers a harmonious mix of sweetness, spiciness, and tanginess that leaves a lasting impression. Whether enjoyed at bustling street stalls or local markets, chaat has become a favorite among locals and tourists alike, offering a delicious and memorable taste of Delhi's rich food scene."
+          },
+          {
+            "heading": "Vibrant Dhokla from Gujarat",
+            "image": "images/street-food-3.jpg",
+            "information": "Dhokla is a traditional snack from Gujarat, celebrated for its vibrant color and delightful flavor. This savory steamed cake is made from fermented rice and chickpea flour, resulting in a soft, spongy texture that melts in your mouth. The addition of spices and tempering with mustard seeds, sesame seeds, and green chilies enhances its taste, while garnishing with fresh coriander and grated coconut adds a refreshing touch. Often enjoyed with green chutney or sweet tamarind sauce, dhokla is a popular choice for breakfast, snacks, or even as a light meal, showcasing Gujarat’s rich culinary heritage."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "to": "Best-Adventure-Sports",
+        "text": "Top 10 Adventure Sports in India You Shouldn't Miss",
+        "content": [
+          {
+            "heading": "Skydiving in Aamby Valley",
+            "image": "images/adventure-sports-1.jpg",
+            "information": "Skydiving in Aamby Valley is an exhilarating adventure that offers breathtaking views of the picturesque landscape below. As you leap from the aircraft, the adrenaline rush is unmatched, providing a unique perspective of the lush greenery, serene lakes, and majestic hills. This thrilling experience is perfect for adventure seekers looking to push their limits and conquer their fears. Professional instructors ensure safety and guidance throughout the jump, making it accessible even for beginners. Whether you're an experienced skydiver or trying it for the first time, Aamby Valley promises a memorable and heart-pounding adventure."
+          },
+          {
+            "heading": "Rock Climbing in Hampi",
+            "image": "images/adventure-sports-2.jpg",
+            "information": "Hampi, a UNESCO World Heritage site, is renowned for its stunning boulder-strewn landscapes, making it a rock climber's paradise. With a diverse range of climbing routes suitable for all skill levels, climbers can challenge themselves against the backdrop of ancient ruins and breathtaking vistas. The unique rock formations offer exciting opportunities for both bouldering and sport climbing, attracting enthusiasts from around the world. After a day of climbing, adventurers can relax and explore Hampi's rich cultural heritage, including its iconic temples and vibrant local markets, creating a perfect blend of adventure and exploration."
+          },
+          {
+            "heading": "Scuba Diving in the Andaman Islands",
+            "image": "images/adventure-sports-3.jpg",
+            "information": "Scuba diving in the Andaman Islands provides an unforgettable underwater experience, where vibrant marine life and crystal-clear waters await. Divers can explore stunning coral reefs teeming with colorful fish, sea turtles, and other fascinating creatures. The warm waters and excellent visibility make it an ideal location for both beginners and experienced divers. Several certified dive schools offer training and guided dives, ensuring safety and an enriching experience. Beyond diving, the pristine beaches and lush tropical scenery create a perfect getaway, making the Andaman Islands a top choice for adventure and relaxation."
+          }
+        ]
+      },
     {
       id: 13,
       to: `Cultural-Experiences`,
