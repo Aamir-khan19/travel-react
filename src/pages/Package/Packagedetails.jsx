@@ -106,8 +106,6 @@ const Packagedetails = () => {
                   className="w-full h-96 object-cover rounded-lg transition-transform duration-300 hover:scale-105"
                 />
               </div>
-         
-
             ))}
           </div>
           <button
@@ -172,6 +170,7 @@ const Packagedetails = () => {
         <div className="bg-gray-100 py-10">
           <h3 className="text-3xl font-semibold text-center mb-8">
             Frequently Asked Questions
+            
           </h3>
           <div className="max-w-4xl mx-auto">
             {questions.map((item, index) => (

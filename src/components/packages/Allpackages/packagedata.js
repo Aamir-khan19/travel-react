@@ -1278,13 +1278,14 @@ const packageData = [
       "West Bengal, located in eastern India, is famous for its cultural diversity, historical significance, and beautiful landscapes. The state is home to the vibrant city of Kolkata, known for its colonial architecture and rich literary heritage. Visitors can explore the serene Sundarbans mangrove forests, the historical town of Santiniketan, and the picturesque hills of Darjeeling. West Bengal's festivals, cuisine, and art forms reflect the state's rich cultural tapestry. Experience the warmth and hospitality of West Bengal, making it a fascinating destination for travelers. West Bengal’s natural beauty is equally captivating, with destinations like the serene Sundarbans mangrove forests, home to the majestic Royal Bengal tiger, and the picturesque hills of Darjeeling, known for its tea plantations and stunning views of the Himalayas.",
     image:
       "https://media1.thrillophilia.com/filestore/d8q9x21w7anirxwnme1nnq3xavwy_Navadvipa.jpg?w=753&h=450&dpr=2.0",
-    category: "West-Bengal",
-    idealDays: "5-7 Days",
-    bestTime: "Oct, Nov, Dec, Jan",
-    content: [
-      "https://example.com/west_bengal_1.jpg",
-      "https://example.com/west_bengal_2.jpg",
-      "https://example.com/west_bengal_3.jpg",
+      category: "West-Bengal",
+      idealDays: "5-7 Days",
+      bestTime: "Oct, Nov, Dec, Jan",
+      content: [
+        "https://img.traveltriangle.com/blog/wp-content/uploads/2020/01/cover-image-of-Places-To-Visit-In-West-Bengal_13th-jan.jpg",
+        "https://media1.thrillophilia.com/filestore/d8q9x21w7anirxwnme1nnq3xavwy_Navadvipa.jpg?w=753&h=450&dpr=2.0",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD_I5ocWeYCkIDYXzgqem3CetED6R82Ib_nw&s",
+      "https://www.bengaltourism.in/package-tour/vm.jpg",
     ],
   },
 
@@ -1497,16 +1498,16 @@ const packageData = [
     title:
       "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests.",
     title2:
-      "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests. It is also home to diverse indigenous tribes, offering a rich cultural experience. Explore the lush landscapes, visit the Chitrakoot and Tirathgarh waterfalls, and discover the state's tribal art and culture.",
+        "Chhattisgarh is rich in its cultural heritage. The State has a very unique and vibrant culture. There are over 35 big and small colourful tribes spread over the region. Their rhythmic folk music, dances and dramas are a treat to watch and also provide an insight into the culture of the State. The most famous dance-drama of the State is Pandwani, which is a musical narration of the great Hindu epic Mahabharata. Raut Nacha ( folk dance of cowherds), the Panthi and Soowa are some of the other famous dance styles of the region. Chhattisgarh, located in central India, is known for its rich cultural heritage, lush forests, and vibrant tribal communities. It became a state in 2000, carved out of Madhya Pradesh, and its capital is Raipur. The state boasts abundant natural resources, including coal, iron ore, and bauxite, making it a hub for industries like steel and power generation. ",
     image:
       "https://static.wanderon.in/wp-content/uploads/2024/07/famous-places-to-visit-in-baloda-bazar.jpg",
     category: "Chhattisgarh",
     Idealdays: "4-6 Days",
     Besttime: "Oct, Nov, Dec, Jan",
     content: [
-      "https://example.com/chhattisgarh_1.jpg",
-      "https://example.com/chhattisgarh_2.jpg",
-      "https://example.com/chhattisgarh_3.jpg",
+      "https://lh3.googleusercontent.com/p/AF1QipOyd_JnlUkG3I2MtloIq3RFKCBU2OQhcCzmDpf5=s680-w680-h510",
+      "https://growbilliontrees.com/cdn/shop/files/miyawaki-forest.jpg?v=1722572523&width=1500",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDOoCA-b7bhUe8KHLPabiBKfgjKSFP6q-DyA&s",
     ],
   },
   // {
@@ -1606,10 +1607,10 @@ const packageData = [
     id: 485,
     title: "Chhattisgarh: Waterfalls and Tribal Culture",
     title2:
-      "Chhattisgarh offers a beautiful mix of natural wonders and tribal traditions. The state is dotted with numerous waterfalls, such as Chitrakoot and Tirathgarh. The local tribes’ vibrant art forms and traditions make it a unique destination for cultural enthusiasts.",
+      "Chhattisgarh is rich in its cultural heritage. The State has a very unique and vibrant culture. There are over 35 big and small colourful tribes spread over the region. Their rhythmic folk music, dances and dramas are a treat to watch and also provide an insight into the culture of the State. The most famous dance-drama of the State is Pandwani, which is a musical narration of the great Hindu epic Mahabharata. Raut Nacha ( folk dance of cowherds), the Panthi and Soowa are some of the other famous dance styles of the region. Chhattisgarh, located in central India, is known for its rich cultural heritage, lush forests, and vibrant tribal communities. It became a state in 2000, carved out of Madhya Pradesh, and its capital is Raipur. The state boasts abundant natural resources, including coal, iron ore, and bauxite, making it a hub for industries like steel and power generation. Chhattisgarh is also renowned for its biodiversity, home to national parks such as Kanger Valley and Indravati, where species like tigers and leopards roam. The state's cultural diversity is reflected in its vibrant festivals, traditional crafts, and folk music. Bastar Dussehra, a unique 75-day-long festival, is a highlight. Chhattisgarh's ancient temples, such as the famous Bhoramdeo and Mahamaya temples, attract visitors, while its scenic waterfalls and caves, like Chitrakote and Tirathgarh, make it a must-visit destination for nature lovers and adventure seekers alike.",
     image:
       "https://assets-news.housing.com/news/wp-content/uploads/2022/08/03162653/Chhattisgarh9.jpg",
-    category: "Chhattisgarh",
+    category: " Chhattisgarh",
     Idealdays: "4-6 Days",
     Besttime: "Oct, Nov, Dec, Jan",
     content: [
@@ -1854,9 +1855,9 @@ const packageData = [
   // },
   {
     id: 178,
-    title: "Chhattisgarh: A Land of Waterfalls and Tribes",
-    title2:
-      "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests. It is also home to diverse indigenous tribes, offering a rich cultural experience. Explore the lush landscapes, visit the Chitrakoot and Tirathgarh waterfalls, and discover the state's tribal art and culture.",
+   
+    title:
+      "Chhattisgarh, located in central India, is known for its natural beauty, including magnificent waterfalls and dense forests.",
     image:
       "https://assets-news.housing.com/news/wp-content/uploads/2022/08/03162702/Chhattisgarh10.jpg",
     title2:
@@ -1865,9 +1866,9 @@ const packageData = [
     idealDays: "4-6 Days",
     bestTime: "Oct, Nov, Dec, Jan",
     content: [
-      "https://example.com/chhattisgarh_1.jpg",
-      "https://example.com/chhattisgarh_2.jpg",
-      "https://example.com/chhattisgarh_3.jpg",
+      "https://lh3.googleusercontent.com/p/AF1QipOyd_JnlUkG3I2MtloIq3RFKCBU2OQhcCzmDpf5=s680-w680-h510",
+      "https://growbilliontrees.com/cdn/shop/files/miyawaki-forest.jpg?v=1722572523&width=1500",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDOoCA-b7bhUe8KHLPabiBKfgjKSFP6q-DyA&s",
     ],
   },
   // {
