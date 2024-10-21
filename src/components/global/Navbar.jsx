@@ -53,12 +53,12 @@ const Logo = () => {
 
 function TripIdeasComponent() {
 
-  return (<div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center my-4 mx-2 w-[250px] md:w-[600px] gap-5 p-4 bg-white text-gray-700 rounded text-sm">
+  return (<div className="grid grid-cols-1 md:grid-cols-2 justify-between items-center my-4 mx-2 w-[250px] md:w-[600px] gap-5 p-4 bg-white shadow-md border border-gray-300 text-gray-700 rounded text-sm">
 
     {
       tripIdeaItems?.map((tripIdeaItem, i) => (
         <div key={i} >
-          <h1 className=" text-start" >
+          <h1 className=" text-start hover:text-indigo-400" >
             <Link to={`/trip-ideas/${tripIdeaItem?.to}/${tripIdeaItem?.id}`} >{tripIdeaItem?.text}</Link>
             </h1>
         </div>
