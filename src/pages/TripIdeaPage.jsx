@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useParams } from "react-router-dom";
 import tripIdeas from "../components/packages/Allpackages/tripIdeas";
@@ -145,7 +144,7 @@ function TripIdeaPage() {
           >
             <div className="md:w-1/2 flex flex-col items-center md:items-start">
               {/* Display the heading above the image */}
-              <h3 className="text-2xl font-semibold text-indigo-900 mb-4 text-center md:text-start">
+              <h3 className="text-2xl sm:text-sm font-semibold text-indigo-900 mb-4 text-center md:text-start">
                 {content?.heading}
               </h3>
 
@@ -230,7 +229,7 @@ function TripIdeaPage() {
             <button
               disabled={isLoading}
               type="submit"
-              className="bg-gradient-to-r from-blue-500 to-teal-500 text-white font-bold py-3 rounded-lg hover:from-blue-600 hover:to-teal-600 transition-transform duration-300 transform hover:scale-105"
+              className="bg-gradient-to-r bg-blue-900  text-white font-bold py-3 rounded-lg hover:bg-blue-800  transition-transform duration-200 transform hover:scale-85"
             >
               Submit
             </button>
@@ -239,6 +238,7 @@ function TripIdeaPage() {
         {/* Enquiry form ends here  */}
 
         {/* Recommended Posts */}
+
         <div className="mt-8">
           <h3 className="text-3xl font-semibold text-indigo-900 p-4 mb-3 text-center">
             Recommended Trips
@@ -248,26 +248,32 @@ function TripIdeaPage() {
             {tripIdeas?.map((trip, i) => (
               <div
                 key={i}
-                className="keen-slider__slide bg-white border border-gray-200 rounded-lg shadow-lg p-4"
+                className="keen-slider__slide bg-white border border-gray-200 rounded-lg shadow-lg p-4 flex flex-col items-start justify-between"
               >
-                <h4 className="text-xl font-semibold text-gray-800 mb-2">
-                  {trip?.mainHeading}
-                </h4>
-                <img
-                  src={trip?.mainImage}
-                  alt={`Slide ${i + 1}`}
-                  className="w-full object-cover"
-                />
-                <p className="text-gray-600 mb-4 text-center mt-2">
-                  {trip?.text}
-                </p>
+                <div className=" w-full">
+                  <h4 className="text-2xl  text-center font-semibold text-indigo-900 mb-2">
+                    {trip?.mainHeading}
+                  </h4>
 
-                <Link
-                  to={`/trip-ideas/${trip?.to}/${trip?.id}`}
-                  className="text-blue-900 mt-5 hover:underline"
-                >
-                  Read More
-                </Link>
+                  <img
+                    src={trip?.mainImage}
+                    alt={`Slide ${i + 1} `}
+                    className="w-full pt-1 h-[235px] object-cover"
+                  />
+
+                  <p className="p-3 text-lg text-bold mb-4 text-center mt-2">
+                    {trip?.text}
+                  </p>
+                </div>
+
+                <div className=" w-full flex justify-center">
+                  <Link
+                    to={`/trip-ideas/${trip?.to}/${trip?.id}`}
+                    className=" w-full  text-white flex justify-center bg-blue-900 py-2 px-5 rounded-md mt-5 hover:bg-blue-800 transition-colors"
+                  >
+                    Read More
+                  </Link>
+                </div>
               </div>
             ))}
           </div>
