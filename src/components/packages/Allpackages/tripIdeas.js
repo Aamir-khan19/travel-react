@@ -302,23 +302,21 @@ const tripIdeaItems =[
     {
       id: 13,
       to: `Cultural-Experiences`,
-      mainHeading: `Cultural Experiences`,
-      mainImage: "https://wallpaperaccess.com/full/161427.jpg",
-      text: "Top Unique Cultural Experiences in India",
+      text: "Top 10 Unique Cultural Experiences in India",
       content: [
         {
             heading: "Participate in the Festival of Holi",
-            image: "https://wallpaperaccess.com/full/161427.jpg",
+            image: "images/culture-1.jpg",
             information: "Holi, known as the festival of colors, is one of the most vibrant and joyous celebrations in India. Each year, it attracts millions who come together to celebrate love and the arrival of spring. Participants throw colored powders and water at each other, creating a beautiful spectacle of colors and laughter. The festival also includes traditional music, dance, and delicious sweets, fostering a spirit of unity and joy among people of all backgrounds. Experiencing Holi is not just about the colors; it's about embracing the essence of togetherness and cultural heritage."
         },
         {
             heading: "Explore the Rich Traditions of Kerala's Onam",
-            image: "https://www.keralatourism.org/images/festivals/large/20171222121145_317_1.jpg",
+            image: "images/culture-2.jpg",
             information: "Onam is a major harvest festival celebrated in Kerala, marked by a rich tapestry of traditions and cultural activities. Families come together to prepare a grand feast called Onam Sadhya, which consists of a variety of vegetarian dishes served on banana leaves. The festival also features traditional dances, music, and intricate floral decorations called Pookalam. Vibrant boat races and colorful processions add to the festivities, showcasing Kerala's unique heritage. Onam is a time for joy, gratitude, and community bonding, reflecting the rich cultural diversity and traditions of the state."
         },
         {
             heading: "Experience the Spiritual Vibes of Varanasi",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjXwEvEh401L72ccqvWMnvbowVJwbBUMRXbA&s",
+            image: "images/culture-3.jpg",
             information: "Varanasi, one of the world's oldest inhabited cities, is a center of spirituality and ancient traditions. The ghats along the Ganges River are renowned for their daily rituals and ceremonies, where pilgrims come to pray, bathe, and perform last rites. The mesmerizing Ganga Aarti, a nightly ritual of worship with lamps, captivates visitors with its beauty and devotion. Explore the narrow alleys filled with temples, shops, and local delicacies, where history and spirituality intertwine. Varanasi offers a profound experience that deepens your understanding of Indian culture and the spiritual significance of life and death."
         }
     ]
@@ -327,23 +325,21 @@ const tripIdeaItems =[
     {
       id: 14,
       to: `Famous-Landmarks`,
-      mainHeading: `Famous Landmarks`,
-      mainImage: "https://www.thoughtco.com/thmb/1g2-jnNGFo6SMikINMmHOmKsBMI=/3865x2576/filters:fill(auto,1)/sunrise-at-taj-mahal--agra--uttar-pradash--india-583682538-5b91840bc9e77c0050bdc67b.jpg",
-      text: "Top Famous Landmarks in India You Must Visit",
+      text: "Top 10 Famous Landmarks in India You Must Visit",
       content: [
         {
             heading: "Marvel at the Taj Mahal",
-            image: "https://www.thoughtco.com/thmb/1g2-jnNGFo6SMikINMmHOmKsBMI=/3865x2576/filters:fill(auto,1)/sunrise-at-taj-mahal--agra--uttar-pradash--india-583682538-5b91840bc9e77c0050bdc67b.jpg",
+            image: "images/landmarks-1.jpg",
             information: "The Taj Mahal, located in Agra, is an iconic symbol of love and a UNESCO World Heritage Site. Built by Mughal Emperor Shah Jahan in memory of his wife Mumtaz Mahal, this stunning white marble mausoleum is renowned for its intricate carvings and stunning gardens. Visitors are captivated by its architectural beauty, especially during sunrise and sunset when the monument changes colors. The Taj Mahal attracts millions of tourists from around the globe, making it one of the most visited landmarks in India, embodying a rich history and timeless romance."
         },
         {
             heading: "Explore the Forts of Rajasthan",
-            image: "https://imgcld.yatra.com/ytimages/image/upload/t_yt_blog_c_fill_q_auto:good_f_auto_w_800_h_500/v1508495189/The_Jaswant_Thada_Blog.jpg",
+            image: "images/landmarks-2.jpg",
             information: "Rajasthan is famous for its majestic forts, each narrating tales of royal grandeur and valor. Notable among them are the Amber Fort, with its stunning blend of Hindu and Mughal architecture, and Mehrangarh Fort, offering panoramic views of Jodhpur's blue city. These forts are not just architectural marvels but also cultural heritage sites, showcasing intricate carvings, museums, and vibrant history. Visitors can immerse themselves in the rich traditions, explore narrow alleys, and enjoy folk performances that bring the legacy of Rajasthan's kings and queens to life, making it a must-visit destination for history enthusiasts."
         },
         {
             heading: "Visit the Qutub Minar",
-            image: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/201704/647_042717101905.jpg",
+            image: "images/landmarks-3.jpg",
             information: "The Qutub Minar, located in Delhi, stands as the tallest brick minaret in the world, reaching a height of 73 meters. Built in the 12th century, it is a remarkable example of Indo-Islamic architecture, adorned with intricate carvings and verses from the Quran. The minaret is part of the Qutub complex, a UNESCO World Heritage Site, which includes several other historical structures. Visitors can explore the lush gardens surrounding the site and appreciate the blend of architectural styles, rich history, and cultural significance, making the Qutub Minar a fascinating destination for travelers."
         }
     ]
@@ -352,23 +348,21 @@ const tripIdeaItems =[
     {
       id: 15,
       to: `Travel-Insurance`,
-      mainHeading: `Travel Insurance`,
-      mainImage: "https://www.kurnia.com/sites/asia-kurnia/files/2021-10/what%20is%20travel%20insurance.jpg",
       text: "Understanding Travel Insurance in India",
       content: [
         {
             heading: "Importance of Travel Insurance",
-            image: "https://www.kurnia.com/sites/asia-kurnia/files/2021-10/what%20is%20travel%20insurance.jpg",
+            image: "images/insurance-1.jpg",
             information: "Travel insurance is essential for protecting your journey from unforeseen incidents, such as trip cancellations, medical emergencies, lost or delayed baggage, and travel delays. It provides financial coverage and peace of mind, allowing you to focus on enjoying your trip. Without insurance, unexpected events can lead to significant out-of-pocket expenses, impacting your travel plans and overall experience. Whether you're traveling for leisure or business, having travel insurance ensures you are prepared for the unexpected, making it a vital consideration before embarking on any adventure."
         },
         {
             heading: "Types of Travel Insurance Policies",
-            image: "https://static.pbcdn.in/cdn/images/articles/travel/why-buy-travel-insurance.jpg",
+            image: "images/insurance-2.jpg",
             information: "Travel insurance policies come in various types, tailored to meet different travel needs. Key options include single trip insurance, which covers a specific journey; annual multi-trip insurance, ideal for frequent travelers; and specialized medical coverage plans, which provide extra protection for health-related issues abroad. Additionally, policies may include coverage for trip interruption, personal liability, and emergency evacuation. Understanding the differences between these policies is crucial in selecting the right insurance that offers comprehensive protection, ensuring a worry-free travel experience tailored to your unique requirements."
         },
         {
             heading: "Tips for Choosing Travel Insurance",
-            image: "https://www.renewbuy.com/sites/default/files/2021-12/tyravel1.jpg",
+            image: "images/insurance-3.jpg",
             information: "Selecting the right travel insurance involves careful consideration of various factors. Start by assessing your travel destination, duration, and activities to determine necessary coverage. Pay attention to coverage limits, exclusions, and any pre-existing condition clauses to avoid surprises. Research the insurer's claim process and customer reviews to ensure prompt assistance when needed. Comparing different policies and prices can help you find the best deal without compromising essential coverage. Lastly, read the fine print thoroughly to understand what is included in the policy, ensuring adequate protection for your trip."
         }
     ]
@@ -377,23 +371,21 @@ const tripIdeaItems =[
     {
       id: 16,
       to: `Adventure-Travel`,
-      mainHeading: `Adventure Travel`,
-      mainImage: "https://lh3.googleusercontent.com/ajDpsWfq69aajpOw9xICKhTUfp68xreJRWx43LBL-BtzurCn50i5v0Nd8QF3llp4TjgkaXp1N9-44Szc0mZOz2Ks4qbO=w1000",
-      text: "Top Adventure Travel Destinations in India",
+      text: "Top 10 Adventure Travel Destinations in India",
       content: [
         {
             heading: "Thrilling Experiences in Ladakh",
-            image: "https://lh3.googleusercontent.com/ajDpsWfq69aajpOw9xICKhTUfp68xreJRWx43LBL-BtzurCn50i5v0Nd8QF3llp4TjgkaXp1N9-44Szc0mZOz2Ks4qbO=w1000",
+            image: "images/adventure-travel-1.jpg",
             information: "Ladakh is a paradise for adventure seekers, offering thrilling experiences such as high-altitude trekking through breathtaking landscapes, river rafting in the Indus and Zanskar rivers, and exploring ancient monasteries nestled in the mountains. The region's unique terrain and stunning vistas make it ideal for those seeking adrenaline-fueled activities. Visitors can also enjoy camping under the stars, biking along scenic routes, and witnessing the vibrant culture of Ladakhi life. With its dramatic landscapes and rich cultural heritage, Ladakh remains one of the top adventure destinations in India for unforgettable experiences."
         },
         {
             heading: "Wildlife Safari in Jim Corbett National Park",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCJn-gtXpcL2unR4E0SdHYz-Ub44Xy4NPR7Q&s",
+            image: "images/adventure-travel-2.jpg",
             information: "Jim Corbett National Park, renowned for its rich biodiversity, offers thrilling wildlife safaris that attract nature enthusiasts and adventure seekers. Home to the majestic Bengal tiger, visitors have the chance to spot these magnificent creatures, along with elephants, leopards, and numerous bird species. The park's diverse ecosystems, including grasslands, riverine belts, and dense forests, create a unique habitat for wildlife. Guided jeep and elephant safaris provide an exhilarating way to explore the park's beauty while witnessing wildlife in their natural habitat, making it a must-visit destination for adventure and nature lovers."
         },
         {
             heading: "Scenic Trekking in the Western Ghats",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScKb2D6FJ7cfKWNlo3DLmy2tb9wBflbnTDNg&s",
+            image: "images/adventure-travel-3.jpg",
             information: "The Western Ghats, a UNESCO World Heritage Site, boasts scenic trekking routes that traverse lush greenery and rich biodiversity. Adventurers can explore trails that lead to stunning viewpoints, serene waterfalls, and charming hill stations. The region's varied landscapes host diverse flora and fauna, making it a haven for nature lovers and trekkers alike. Popular trekking routes like the Kodachadri Trek and the Kumaraparvat Trek provide opportunities to witness breathtaking views and vibrant ecosystems. Whether you're an experienced trekker or a beginner, the Western Ghats offers a fulfilling adventure in nature's embrace."
         }
     ]
@@ -402,23 +394,21 @@ const tripIdeaItems =[
     {
       id: 17,
       to: `Beach-Destinations`,
-      mainHeading: `Beach Destinations`,
-      mainImage: "https://www.agoda.com/wp-content/uploads/2023/02/North-goa-beaches-things-to-do-in-goa.jpg",
-      text: "Top Beach Destinations in India",
+      text: "Top 10 Beach Destinations in India",
       content: [
         {
             heading: "Pristine Beaches of Goa",
-            image: "https://plus.unsplash.com/premium_photo-1697729701846-e34563b06d47?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Z29hfGVufDB8fDB8fHww",
+            image: "images/beach-1.jpg",
             information: "Goa is renowned for its pristine beaches that stretch along the Arabian Sea, offering a vibrant mix of relaxation and excitement. Tourists flock to popular beaches like Baga, Calangute, and Anjuna for sunbathing, swimming, and various water sports, including parasailing and jet skiing. Goa's lively nightlife adds to its appeal, with beach shacks, bars, and clubs hosting unforgettable parties. Visitors can also indulge in delicious seafood and local Goan cuisine while enjoying stunning sunset views. With its unique blend of culture, adventure, and leisure, Goa remains a top beach destination for travelers."
         },
         {
             heading: "Scenic Beauty of Andaman Islands",
-            image: "https://media.istockphoto.com/id/622418868/photo/aerial-view-of-cinque-island-andaman.jpg?s=612x612&w=0&k=20&c=cC1cgSKC8U3ZFswuxcJuovywisKn0JH-n9C5Og3hyYg=",
+            image: "images/beach-2.jpg",
             information: "The Andaman Islands are a tropical paradise known for their stunning beaches, crystal-clear waters, and vibrant coral reefs. With pristine white sand and lush greenery, beaches like Radhanagar and Vijaynagar offer ideal settings for relaxation and rejuvenation. Visitors can engage in adventure activities such as snorkeling, scuba diving, and kayaking to explore the underwater beauty. The islands also feature lush forests and exotic wildlife, making them perfect for nature enthusiasts. With their serene ambiance and breathtaking landscapes, the Andaman Islands provide a perfect getaway for relaxation and adventure seekers alike."
         },
         {
             heading: "Serene Shores of Varkala",
-            image: "https://roamaround.app/api/getDestinationPicture?placeName=Varkala%20Beach%20Varakala",
+            image: "images/beach-3.jpg",
             information: "Varkala, located in Kerala, is famous for its serene beaches and stunning cliffs overlooking the Arabian Sea. The tranquil ambiance and natural beauty of Varkala attract those seeking peace and relaxation. Visitors can unwind on the sandy shores, enjoy Ayurvedic treatments, and practice yoga while taking in the breathtaking views. The Papanasam Beach is particularly renowned for its spiritual significance and healing properties. With charming cafes, local markets, and picturesque sunsets, Varkala offers a unique blend of relaxation, wellness, and cultural experiences, making it a perfect retreat for travelers."
         }
     ]
@@ -427,23 +417,21 @@ const tripIdeaItems =[
     {
       id: 18,
       to: `Culinary-Experiences`,
-      mainHeading: `Culinary Experiences`,
-      mainImage: "https://blog.travelkhana.com/food/wp-content/uploads/sites/5/2017/04/south-indian.jpg",
-      text: "Top Culinary Experiences in India",
+      text: "Top 10 Culinary Experiences in India",
       content: [
         {
             heading: "Street Food Delights in Delhi",
-            image: "https://onlyinyourstate.in/wp-content/uploads/2018/11/Street-Food-in-Delhi.jpg",
+            image: "images/culinary-1.jpg",
             information: "Delhi is famous for its vibrant street food scene, offering a delightful array of flavors and dishes that showcase the city’s rich culture and heritage. From spicy chaat and crispy samosas to the mouth-watering kebabs and flavorful parathas, every corner presents a new culinary adventure. Iconic locations like Chandni Chowk and Connaught Place are must-visit spots for food enthusiasts. The fusion of spices and ingredients creates an unforgettable taste experience. Whether day or night, Delhi's street food is a true reflection of the city's culinary diversity and a paradise for food lovers."
         },
         {
             heading: "Traditional South Indian Cuisine",
-            image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTinCKGPNr2g5zx4Qet43b2n3rGXhO-_ppJww&s",
+            image: "images/culinary-2.jpg",
             information: "South Indian cuisine is celebrated for its distinctive flavors and traditional dishes, offering a delightful culinary journey. Staples like dosa, idli, and sambar are enjoyed with coconut chutney and spicy pickles, showcasing the region's love for rice and lentils. The use of aromatic spices like mustard seeds, curry leaves, and tamarind creates unique tastes that excite the palate. From hearty meals to light snacks, South Indian cuisine caters to all preferences. Whether savoring a traditional thali or enjoying street food like vada, this cuisine provides a memorable experience for every food lover."
         },
         {
             heading: "Rich Flavors of Punjabi Cuisine",
-            image: "https://www.nativeplanet.com/img/2023/11/a-platter-of-traditional-punjabi-dishes-served-in-ludhiana_1700893871869-1200x675-20231125120802.jpg",
+            image: "images/culinary-3.jpg",
             information: "Punjabi cuisine is renowned for its rich, hearty flavors and diverse offerings that reflect the cultural heritage of North India. Signature dishes like butter chicken, sarson da saag with makki di roti, and chole bhature are celebrated for their robust taste and use of fresh ingredients. The generous use of ghee, cream, and spices creates a comforting and indulgent dining experience. Punjabi meals are often accompanied by a variety of breads, pickles, and lassi, making them truly satisfying. This cuisine captures the essence of India’s culinary tradition and delights food lovers everywhere."
         }
     ]
