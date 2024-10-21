@@ -61,7 +61,7 @@ function TripIdeaPage() {
         setFlashMessage(
           "Form submitted successfully you will be contacted soon"
         );
-        console.log("successfully refgsitered eith us", data);
+        console.log("successfully refgsitered with us", data);
 
         setFormData({ name: "", email: "", phone: "", message: "" });
       })
@@ -144,7 +144,7 @@ function TripIdeaPage() {
           >
             <div className="md:w-1/2 flex flex-col items-center md:items-start">
               {/* Display the heading above the image */}
-              <h3 className="text-2xl sm:text-sm font-semibold text-indigo-900 mb-4 text-center md:text-start">
+              <h3 className="text-2xl  font-semibold text-indigo-900 mb-4 text-center md:text-start">
                 {content?.heading}
               </h3>
 
@@ -153,9 +153,10 @@ function TripIdeaPage() {
                   content?.image ||
                   "https://images.pexels.com/photos/63638/roses-flower-nature-macro-63638.jpeg?cs=srgb&dl=bloom-blossom-flora-63638.jpg&fm=jpg"
                 }
-                className="w-[80%] object-cover rounded-md mb-4"
+                className="  w-[96%} md:w-[95%]   w-[95%] xs:w-[90%] sm:w-[85%] object-cover rounded-md mb-4"
                 alt={content.heading} // Added alt text for accessibility
               />
+
             </div>
 
             <div className="md:w-1/2 flex flex-col justify-between p-4 rounded-md mt-10">
