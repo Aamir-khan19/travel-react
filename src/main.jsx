@@ -19,8 +19,15 @@ import Packagedetails from "./pages/Package/Packagedetails.jsx";
 import TripIdeaPage from "./pages/TripIdeaPage.jsx";
 
 
+
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+import Dashboard from "./pages/Dashboard.jsx";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
+    <Provider store={store}>
+
     <BrowserRouter>
       <div className="font-dm-sans ">
         <Routes>
@@ -40,9 +47,20 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/package-details/:id" element={<Packagedetails/>} />
           
           <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
+
+
+          <Route path="/b2b-signup" element={<SignUp />} />
+
+          <Route path="/b2b-login" element={<SignIn />} />
+
+
+          <Route path="/dashboard" element={<Dashboard />} />
           
         </Routes>
       </div>
     </BrowserRouter>
+
+    </Provider>
+
   </React.StrictMode>
 );

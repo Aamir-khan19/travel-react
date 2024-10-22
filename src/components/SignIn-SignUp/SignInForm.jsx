@@ -1,58 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaUser, FaLock } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { loginAsync } from "../../features/login/loginSlice";
+
 const SignInForm = () => {
+const dispatch = useDispatch();
+const navigate = useNavigate();
+
+const apiErrors = useSelector(state=> state.login.errors);
+const isLoading = useSelector(state => state.login.isLoading);
+
+const tokenState = useSelector(state=> state.login.tokenState);
+
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
-  const [errors, setErrors] = useState({
-    email: "",
-    password: "",
-  });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-    setErrors({ ...errors, [name]: "" });
   };
 
-  const validate = () => {
-    let valid = true;
-    let emailError = "";
-    let passwordError = "";
-
-    if (!formData.email) {
-      emailError = "Email is required";
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      emailError = "Email is invalid";
-      valid = false;
-    }
-
-    if (!formData.password) {
-      passwordError = "Password is required";
-      valid = false;
-    } else if (formData.password.length < 8) {
-      passwordError = "Password must be at least 8 characters";
-      valid = false;
-    }
-
-    setErrors({
-      email: emailError,
-      password: passwordError,
-    });
-
-    return valid;
-  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Form data:", formData);
-    }
+   
+    dispatch(loginAsync(formData));
   };
+
+
+  useEffect(()=>{
+  if(tokenState?.token){
+    navigate("/dashboard");
+  }
+  }, [tokenState]);
 
   return (
     <div className="px-5">
@@ -72,6 +56,10 @@ const SignInForm = () => {
                 </p>
               </div>
 
+              <div className="mb-8">
+              <p className="text-red-500 text-sm mt-1">{!apiErrors?.errors && apiErrors?.message}</p>
+              </div>
+
               <div>
                 <label className="text-gray-800 text-sm mb-2 block">
                   Email
@@ -83,16 +71,14 @@ const SignInForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className={`w-full text-sm text-gray-800 border ${
-                      errors.email ? "border-red-500" : "border-gray-300"
-                    } px-4 py-3 rounded-lg outline-[#01055b]`}
+                    className={`w-full text-sm text-gray-800 border  px-4 py-3 rounded-lg outline-[#01055b]`}
                     placeholder="Enter user Email Id"
                   />
                   <FaUser className="w-[18px] h-[18px] absolute right-4 text-gray-400" />
                 </div>
-                {errors.email && (
-                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-                )}
+              
+                  <p className="text-red-500 text-sm mt-1">{apiErrors?.errors?.email && apiErrors?.errors?.email[0]}</p>
+                
               </div>
 
               <div>
@@ -106,46 +92,19 @@ const SignInForm = () => {
                     value={formData.password}
                     onChange={handleChange}
                     required
-                    className={`w-full text-sm text-gray-800 border ${
-                      errors.password ? "border-red-500" : "border-gray-300"
-                    } px-4 py-3 rounded-lg outline-[#01055b]`}
+                    className={`w-full text-sm text-gray-800 border  px-4 py-3 rounded-lg outline-[#01055b]`}
                     placeholder="Enter password"
                   />
                   <FaLock className="w-[18px] h-[18px] absolute right-4 text-gray-400 cursor-pointer" />
                 </div>
-                {errors.password && (
-                  <p className="text-red-500 text-sm mt-1">{errors.password}</p>
-                )}
-              </div>
-
-              <div className="flex flex-wrap items-center justify-between gap-4">
-                <div className="flex items-center">
-                  <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    className="h-4 w-4 shrink-0 text-[#01055b] focus:ring-[#01055b] border-gray-300 rounded"
-                  />
-                  <label
-                    htmlFor="remember-me"
-                    className="ml-3 block text-sm text-gray-800"
-                  >
-                    Remember me
-                  </label>
-                </div>
-
-                <div className="text-sm">
-                  <a
-                    href="#"
-                    className="text-[#01055b] hover:underline font-semibold"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
+                
+                  <p className="text-red-500 text-sm mt-1">{apiErrors?.errors?.password && apiErrors?.errors?.password[0]}</p>
+                
               </div>
 
               <div className="mt-8">
                 <button
+                disabled={isLoading}
                   type="submit"
                   className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-[#01055b] hover:bg-[#16174b] focus:outline-none"
                 >
@@ -156,7 +115,7 @@ const SignInForm = () => {
               <p className="text-sm mt-8 text-center text-gray-800">
                 Don't have an account?{" "}
                 <Link
-                  to="/signup"
+                  to="/b2b-signup"
                   className="text-[#01055b] font-semibold hover:underline ml-1 whitespace-nowrap"
                 >
                   Register here
@@ -164,6 +123,7 @@ const SignInForm = () => {
                 </Link>
               </p>
             </form>
+
           </div>
           <div className="lg:h-[400px] md:h-[300px] mt-8 md:mt-0">
             <img

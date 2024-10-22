@@ -1,8 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 import { Link } from "react-scroll";
+import { Link as RouterLink } from "react-router-dom";
 
 const Footer = () => {
+ 
   return (
     <footer className="bg-[#01055b] text-white dark:bg-neutral-700 dark:text-white/75 w-full">
       <div className="max-w-7xl mx-auto px-5 py-10 md:py-20">
@@ -45,6 +47,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
+
           <div className="flex flex-col lg:justify-start lg:items-start items-center">
             <h6 className="mb-4 font-semibold uppercase">Quick Links</h6>
             <ul className="flex flex-col lg:justify-start lg:items-start items-center">
@@ -63,6 +66,7 @@ const Footer = () => {
                   International Destination
                 </Link>
               </li>
+
               <li className="mb-4">
                 <a
                   href=""
@@ -71,7 +75,8 @@ const Footer = () => {
                   Packages
                 </a>
               </li>
-              <li>
+
+              <li className=" mb-4">
                 <Link
                   to="domestic"
                   smooth={true}
@@ -81,8 +86,30 @@ const Footer = () => {
                   Domestic Destination
                 </Link>
               </li>
+
+
+              <li>
+                <RouterLink
+                  to="/b2b-login"
+                  smooth={true}
+                  duration={500}
+                  className="text-white dark:text-neutral-200 cursor-pointer"
+                >
+                  Travel agents login
+                </RouterLink>
+              </li>
+
+
             </ul>
           </div>
+
+
+
+          {/* For travel agents links div starts here  */}
+         
+          {/* For travel agents links div ends here  */}
+
+
           <div className="flex flex-col gap-10 lg:justify-start lg:items-start items-center">
             <div className="flex flex-col lg:justify-start lg:items-start items-center">
               <h6 className="mb-4 font-semibold uppercase">Follow Us On</h6>
