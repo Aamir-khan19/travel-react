@@ -1702,7 +1702,7 @@ const packageData = [
       "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Ushri_falls.JPG/1024px-Ushri_falls.JPG",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/43/4f/16/img-20171104-101501-largejpg.jpg?w=500&h=-1&s=1",
       "https://i.pinimg.com/originals/4c/c1/7c/4cc17c9944445008197355e098fe9699.png",
-    ],
+    ], 
   },
 
   // {

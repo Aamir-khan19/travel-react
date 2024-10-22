@@ -188,7 +188,7 @@ function TripIdeaPage() {
           </div>
 
           <h3 className="text-3xl font-bold text-indigo-900 mb-6 text-center">
-            Enquire About This Trip
+            Enquire About Your Trip
           </h3>
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
             <input
@@ -241,7 +241,7 @@ function TripIdeaPage() {
         {/* Recommended Posts */}
 
         <div className="mt-8">
-          <h3 className="text-3xl font-semibold text-indigo-900 p-4 mb-3 text-center">
+          <h3 className="text-4xl font-semibold text-indigo-900 p-4 mb-3 text-center">
             Recommended Trips
           </h3>
 
