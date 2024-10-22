@@ -23,6 +23,7 @@ import TripIdeaPage from "./pages/TripIdeaPage.jsx";
 import { store } from './app/store'
 import { Provider } from 'react-redux'
 import Dashboard from "./pages/Dashboard.jsx";
+import DashboardUsers from "./pages/DashboardUsers.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -55,6 +56,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 
           <Route path="/dashboard" element={<Dashboard />} />
+
+          <Route path="/dashboard-users" element={<DashboardUsers />} />
           
         </Routes>
       </div>
