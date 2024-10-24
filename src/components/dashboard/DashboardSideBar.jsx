@@ -49,15 +49,25 @@ function DashboardSideBar() {
 
         <ul className=' text-center'>
         <li className='md:mx-8 mb-5'>
-            <NavLink to='/dashboard' className={({ isActive }) => `duration-200 ${isActive ? "text-orange-700" : "text-white"}`}>
+            <NavLink to='/dashboard' className={({ isActive }) => `duration-200 ${isActive ? "text-purple-700" : "text-white"}`}>
               Home
             </NavLink>
           </li>
 
 
-          <li className='md:mx-8 mb-5'>
-            <NavLink to='/dashboard-users' className={({ isActive }) => `duration-200 ${isActive ? "text-orange-700" : "text-white"}`}>
+{
+  tokenState?.user?.role == "admin" &&
+         <li className='md:mx-8 mb-5'>
+            <NavLink to='/dashboard-users' className={({ isActive }) => `duration-200 ${isActive ? "text-purple-700" : "text-white"}`}>
               Users
+            </NavLink>
+          </li>
+} 
+
+
+<li className='md:mx-8 mb-5'>
+            <NavLink to='/dashboard-my-account' className={({ isActive }) => `duration-200 ${isActive ? "text-purple-700" : "text-white"}`}>
+              My Account
             </NavLink>
           </li>
           

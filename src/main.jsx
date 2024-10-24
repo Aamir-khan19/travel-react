@@ -25,6 +25,7 @@ import { Provider } from 'react-redux'
 import Dashboard from "./pages/Dashboard.jsx";
 import DashboardUsers from "./pages/DashboardUsers.jsx";
 import DashboardEditUser from "./pages/DashboardEditUser.jsx";
+import DashboardMyAccount from "./pages/DashboardMyAccount.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -61,6 +62,10 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/dashboard-users" element={<DashboardUsers />} />
 
           <Route path="/dashboard-edit-user/:id" element={<DashboardEditUser />} />
+
+
+          <Route path="/dashboard-my-account" element={<DashboardMyAccount />} />
+
           
         </Routes>
       </div>
