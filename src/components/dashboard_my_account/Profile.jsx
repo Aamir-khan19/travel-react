@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 
 const servicesOptions = [
-  'Web Development',
-  'App Development',
-  'Digital Marketing',
-  'SEO Services',
-  'Graphic Design'
+  'B2B Services',
+  'Car Rental',
+  'DMC',
+  'Forex Servies',
+  'Full Service agency',
+  'Hotel and Lodging',
+  'Local Transportation',
+  'Package Booking',
+  'Ticketing',
+  'Visa and Passport'
 ];
 
 const CompanyProfile = () => {
@@ -15,9 +20,9 @@ const CompanyProfile = () => {
     companyAddress: '',
     companyCity: '',
     pinCode: '',
-    companyStatus: 'Sole Proprietorship',
+    companyStatus: '',
     servicesOffered: [],
-    noOfStaff: '1-10',
+    noOfStaff: '',
     aboutCompany: ''
   });
 
@@ -96,6 +101,7 @@ const CompanyProfile = () => {
 
           <label className="block text-gray-700">Company Status</label>
           <select className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.companyStatus} onChange={e => setCompanyDetails({ ...companyDetails, companyStatus: e.target.value })}>
+            <option value="">Company Status</option>
             <option value="Sole Proprietorship">Sole Proprietorship</option>
             <option value="PartnerShip">Partnership</option>
             <option value="LLP">LLP</option>
@@ -142,7 +148,13 @@ const CompanyProfile = () => {
 
       {/* How It Works Section */}
       <div>
-        <h3 className="text-xl font-semibold text-gray-800">Enhance Your Profile: Showcase your expertise by adding a 'How It Works' section</h3>
+      <hr />
+
+      <div>
+        <h1 className=' text-[#594cda] text-2xl'>How it works</h1>
+        <h2 className="text-gray-700">Enhance Your Profile: Showcase your expertise by adding a 'How It Works' section</h2>
+      </div>
+
         <div className="space-y-4 mt-4">
           <label className="block text-gray-700">Title</label>
           <input type="text" placeholder="Title" className="w-full p-3 border border-gray-300 rounded-md" value={howItWorks.title} onChange={e => setHowItWorks({ ...howItWorks, title: e.target.value })} />
@@ -155,21 +167,36 @@ const CompanyProfile = () => {
             <input id="image-upload" type="file" className="hidden" multiple onChange={e => setHowItWorks({ ...howItWorks, images: [...e.target.files] })} />
           </div>
 
-          <button className="bg-purple-600 text-white px-5 py-2 rounded-md float-right">Add</button>
+          <div className=' flex justify-end items-center my-4'>
+       <button className="bg-purple-600 text-white px-5 py-2 rounded-md">Add</button>
+       </div>
         </div>
+      
       </div>
 
       {/* Terms and Conditions Section */}
       <div>
-        <h3 className="text-xl font-semibold text-gray-800">Terms and Conditions</h3>
+        
+      <div>
+        <h1 className=' text-[#594cda] text-2xl'>Terms and Conditions</h1>
+        <h2 className="text-gray-700"> Centralized Compliance: Add Terms & Conditions once for all your itineraries</h2>
+      </div>
+       
         <div className="space-y-4 mt-4">
           <label className="block text-gray-700">Title</label>
-          <input type="text" placeholder="Title" className="w-full p-3 border border-gray-300 rounded-md" value={termsAndConditions.title} onChange={e => setTermsAndConditions({ ...termsAndConditions, title: e.target.value })} />
+          <input type="text" placeholder="Enter Title" className="w-full p-3 border border-gray-300 rounded-md" value={termsAndConditions.title} onChange={e => setTermsAndConditions({ ...termsAndConditions, title: e.target.value })} />
 
           <label className="block text-gray-700">Description</label>
-          <textarea placeholder="Description" className="w-full p-3 border border-gray-300 rounded-md" value={termsAndConditions.description} onChange={e => setTermsAndConditions({ ...termsAndConditions, description: e.target.value })}></textarea>
+          <textarea placeholder="write your description..." className="w-full p-3 border border-gray-300 rounded-md" value={termsAndConditions.description} onChange={e => setTermsAndConditions({ ...termsAndConditions, description: e.target.value })}></textarea>
         </div>
+
+       <div className=' flex justify-end items-center my-4'>
+       <button className="bg-purple-600 text-white px-5 py-2 rounded-md">Add Policies</button>
+       </div>
+        
       </div>
+
+
     </div>
   );
 };

@@ -9,31 +9,22 @@ function MyAccountContent({currentComponent}) {
 
   return (
     <div>
+
+
     {
     (currentComponent == 0) &&
-    <MyPlans/>
-    }
-
-    {
-    (currentComponent == 1) &&
-    <LeadManagement/>
-    }
-
-
-    {
-    (currentComponent == 2) &&
     <Profile/>
     }
 
 
     {
-    (currentComponent == 3) &&
+    (currentComponent == 1) &&
     <Kyc/>
     }
 
 
     {
-    (currentComponent == 4) &&
+    (currentComponent == 2) &&
     <Settings/>
     }
 

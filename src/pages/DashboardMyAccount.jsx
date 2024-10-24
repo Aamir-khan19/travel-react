@@ -15,7 +15,7 @@ function DashboardMyAccount(){
   <DashboardSideBar />
 
   <DashboardContentContainer >
-    <div className=' bg-gray-100 h-[88vh] pt-5'>
+    <div className=' bg-gray-100 pt-5'>
 
    <div className=' pl-2'>
     <h1 className=' text-2xl font-semibold'>My Account</h1>

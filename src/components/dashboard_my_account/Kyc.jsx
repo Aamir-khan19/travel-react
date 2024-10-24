@@ -1,10 +1,14 @@
 import React from 'react'
+import UploadDocuments from './kyc/UploadDocuments'
+import AddressProof from './kyc/AddressProof'
 
 function Kyc() {
   return (
-    <div>
-    Kyc
-   </div>
+   <>
+   <UploadDocuments />
+   <hr />
+   <AddressProof />
+   </>
   )
 }
 

@@ -24,6 +24,8 @@ function DashboardSideBar() {
   return (
     <>
       {/* Hamburger Menu for mobile */}
+
+     
       <div
         className="block lg:hidden p-4 cursor-pointer z-40 fixed top-0 left-0"
         onClick={toggleSidebar}
@@ -82,6 +84,9 @@ function DashboardSideBar() {
           onClick={toggleSidebar}
         ></div>
       )}
+
+
+
     </>
   );
 }
