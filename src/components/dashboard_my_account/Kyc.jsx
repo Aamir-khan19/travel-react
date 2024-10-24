@@ -5,9 +5,9 @@ import AddressProof from './kyc/AddressProof'
 function Kyc() {
   return (
    <>
-   <UploadDocuments />
+   {/* <UploadDocuments /> */}
    <hr />
-   <AddressProof />
+   {/* <AddressProof /> */}
    </>
   )
 }
