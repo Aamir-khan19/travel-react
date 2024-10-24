@@ -19,7 +19,7 @@ function DashboardMyAccount(){
 
    <div className=' pl-2'>
     <h1 className=' text-2xl font-semibold'>My Account</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias ad eligendi ut error voluptatum cupiditate ab! Id animi doloribus vitae eius inventore at cumque magni? Distinctio pariatur ab saepe illum.</p>
+    <p>Effortlessly take control of your account and customize your preferences and settings to your liking.</p>
    </div>
 
    <MyAccountHeader currentComponent={currentComponent} setCurrentComponent={setCurrentComponent} />
