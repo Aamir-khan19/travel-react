@@ -88,6 +88,7 @@ export const usersUpdateAsync = createAsyncThunk(
 
             formData.append("name", formVal?.name);
             formData.append("mobile", formVal?.mobile);
+            formData.append("isAuthorised", formVal?.isAuthorised);
 
             if(formVal?.password){
                 formData.append("password", formVal?.password);
