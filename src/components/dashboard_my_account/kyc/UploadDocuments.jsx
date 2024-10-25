@@ -28,7 +28,7 @@ const UploadDocuments = () => {
           value={registrationProof}
           onChange={(e) => setRegistrationProof(e.target.value)}
         >
-          <option value="">Select Registration Proof</option>
+          <option value="">Select Registration ID</option>
           <option value="GST">GST</option>
           <option value="Current A/C Latest Statement">Current A/C Latest Statement</option>
           <option value="Udyog Aadhar">Udyog Aadhar</option>
@@ -48,7 +48,7 @@ const UploadDocuments = () => {
           type="text"
           id="registrationId"
           className="w-full p-3 border border-gray-300 rounded-md"
-          placeholder="Enter your Registration ID"
+          placeholder="Enter Number"
           value={registrationId}
           onChange={(e) => setRegistrationId(e.target.value)}
         />

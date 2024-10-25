@@ -38,13 +38,13 @@ const AddressProof = () => {
       {/* Registration ID Field */}
       <div className="space-y-2">
         <label htmlFor="registrationId" className="block text-gray-700 font-semibold">
-          Registration ID
+          Address Proof ID
         </label>
         <input
           type="text"
           id="registrationId"
           className="w-full p-3 border border-gray-300 rounded-md"
-          placeholder="Enter Bill Or Receipt Number"
+          placeholder="Enter Number"
           value={registrationId}
           onChange={(e) => setRegistrationId(e.target.value)}
         />
@@ -52,7 +52,7 @@ const AddressProof = () => {
 
       {/* Upload Photo Field */}
       <div className="space-y-2">
-        <label className="block text-gray-700 font-semibold">Upload Elect</label>
+        <label className="block text-gray-700 font-semibold">Upload Photo</label>
         <div className="flex justify-between items-center space-x-4">
           <span className="text-gray-600">Upload Image</span>
           <label htmlFor="image-upload">
