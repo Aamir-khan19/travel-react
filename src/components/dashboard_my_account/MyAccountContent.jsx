@@ -1,6 +1,4 @@
 import React from 'react'
-import MyPlans from './MyPlans'
-import LeadManagement from './LeadManagement'
 import Profile from './Profile'
 import Settings from './Settings'
 import Kyc from './Kyc'

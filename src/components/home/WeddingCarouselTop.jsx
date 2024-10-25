@@ -1,45 +1,53 @@
 import React, { useState, useEffect } from "react";
+import tripImage1 from "/Images/Homepageimages/trip_image1.png";
+import tripImage2 from "/Images/Homepageimages/trip_image2.png";
 
 const WeddingCarouselTop = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = [
     {
-      image:
-        "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      image: tripImage1,
+        // "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 1",
-      title: "Trip Planner 1",
+      title: "Himalayan Circle",
+      link: "https://himalayancircle.com/"
     },
     {
-      image:
-        "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+      image: tripImage2,
+        // "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
       companyName: "Company Name 2",
-      title: "Trip Planner 1",
+      title: "Kamakshi Holidays",
+      link: "https://kamakshiholidays.com"
     },
-    {
-      image:
-        "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Company Name 3",
-      title: "Trip Planner 1",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Company Name 1",
-      title: "Trip Planner 2",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Company Name 2",
-      title: " Trip Planner 2",
-    },
-    {
-      image:
-        "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
-      companyName: "Company Name 3",
-      title: "Trip Planner 3",
-    },
+   
+   
+    // {
+    //   image:
+    //     "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+    //   companyName: "Company Name 3",
+    //   title: "Trip Planner 1",
+    // },
+    // {
+    //   image:
+    //     "https://images.unsplash.com/photo-1519379169146-d4b170447caa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzZ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+    //   companyName: "Company Name 1",
+    //   title: "Trip Planner 2",
+    // },
+    // {
+    //   image:
+    //     "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjB8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+    //   companyName: "Company Name 2",
+    //   title: " Trip Planner 2",
+    // },
+    // {
+    //   image:
+    //     "https://images.unsplash.com/photo-1482575832494-771f74bf6857?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fHdlZGRpbmd8ZW58MHwwfDB8fHww",
+    //   companyName: "Company Name 3",
+    //   title: "Trip Planner 3",
+    // },
+
+
   ];
 
   useEffect(() => {
@@ -71,7 +79,7 @@ const WeddingCarouselTop = () => {
             >
               <p className="lg:text-3xl text-base md:text-xl">{slide.title}</p>
               <p className="p-2 bg-white rounded-xl text-black lg:w-40 w-24 lg:text-base text-sm flex items-center justify-center">
-                Know more
+               <a href={slide?.link} target="_blank">Know more</a> 
               </p>
             </div>
           </div>

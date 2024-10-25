@@ -14,7 +14,9 @@ const servicesOptions = [
 ];
 
 const CompanyProfile = () => {
-  const [companyLogo, setCompanyLogo] = useState(null);
+  const [companyImageUrl, setCompanyImageUrl] = useState(null);
+  const [companyImage, setCompanyImage] = useState({});
+
   const [companyDetails, setCompanyDetails] = useState({
     companyName: '',
     companyAddress: '',
@@ -38,13 +40,14 @@ const CompanyProfile = () => {
   });
 
   const handleLogoUpload = (event) => {
-    setCompanyLogo(URL.createObjectURL(event.target.files[0]));
+    setCompanyImage(event.target.files[0]);
+    setCompanyImageUrl(URL.createObjectURL(event.target.files[0]));
   };
 
   const handleServiceRemove = (service) => {
     setCompanyDetails({
       ...companyDetails,
-      servicesOffered: companyDetails.servicesOffered.filter(item => item !== service)
+      servicesOffered: companyDetails.servicesOffered.filter(item => item != service)
     });
   };
 
@@ -62,7 +65,7 @@ const CompanyProfile = () => {
   };
 
   return (
-    <div className="p-8 space-y-8">
+    <div className="p-8 space-y-8 md:w-[70%]">
       <div>
         <h1 className=' text-[#594cda] text-2xl'>Company Profile</h1>
         <h2 className="text-gray-700">Set or Edit Your Company Information for a Professional Presence</h2>
@@ -74,8 +77,8 @@ const CompanyProfile = () => {
         <div className="flex justify-center">
           <label htmlFor="logo-upload">
             <div className="relative w-64 h-64 border border-gray-300 bg-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-200">
-              {companyLogo ? (
-                <img src={companyLogo} alt="Company Logo" className="object-cover w-full h-full" />
+              {companyImageUrl ? (
+                <img src={companyImageUrl} alt="Company Logo" className="object-cover w-full h-full" />
               ) : (
                 <span className="text-gray-600">Upload Company Logo</span>
               )}

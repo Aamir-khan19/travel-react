@@ -15,7 +15,7 @@ const Settings = () => {
   };
 
   return (
-    <div className=" mx-auto p-6">
+    <div className=" md:w-[70%] p-6 ">
       <h2 className="text-2xl font-bold mb-2">Settings</h2>
       <p className="text-gray-600 mb-6">
         Personalize your information and secure your account with email & mobile verification

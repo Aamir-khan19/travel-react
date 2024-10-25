@@ -6,11 +6,16 @@ import BankDetails from './kyc/BankDetails'
 function Kyc() {
   return (
    <>
+   <div className=' md:w-[70%]'>
+
+  
    <UploadDocuments />
    <hr />
    <AddressProof />
    <hr />
    <BankDetails />
+
+   </div>
    </>
   )
 }

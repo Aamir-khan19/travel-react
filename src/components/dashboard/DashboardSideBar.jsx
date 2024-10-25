@@ -35,7 +35,7 @@ function DashboardSideBar() {
 
       {/* Sidebar */}
       <div
-        className={`fixed top-0 left-0 min-h-screen px-2 lg:px-5 pb-4 bg-gray-800 text-white transition-transform duration-700 z-40 ${
+        className={`fixed top-0 left-0 min-h-screen px-2 lg:px-5 pb-4 lg:min-w-[250px] bg-gray-800 text-white transition-transform duration-700 z-40 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } lg:translate-x-0`}
       >
@@ -51,8 +51,15 @@ function DashboardSideBar() {
 
         <ul className=' text-center'>
         <li className='md:mx-8 mb-5'>
-            <NavLink to='/dashboard' className={({ isActive }) => `duration-200 ${isActive ? "text-purple-700" : "text-white"}`}>
-              Home
+            <NavLink to='/dashboard' className={({ isActive }) => `duration-200 ${isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+              Dashboard
+            </NavLink>
+          </li>
+
+
+        <li className='md:mx-8 mb-5'>
+            <NavLink to='/dashboard-itianaries' className={({ isActive }) => `duration-200 ${isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+              Itineraries
             </NavLink>
           </li>
 
@@ -60,7 +67,7 @@ function DashboardSideBar() {
 {
   tokenState?.user?.role == "admin" &&
          <li className='md:mx-8 mb-5'>
-            <NavLink to='/dashboard-users' className={({ isActive }) => `duration-200 ${isActive ? "text-purple-700" : "text-white"}`}>
+            <NavLink to='/dashboard-users' className={({ isActive }) => `duration-200 ${isActive ? " bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
               Users
             </NavLink>
           </li>
@@ -68,8 +75,28 @@ function DashboardSideBar() {
 
 
 <li className='md:mx-8 mb-5'>
-            <NavLink to='/dashboard-my-account' className={({ isActive }) => `duration-200 ${isActive ? "text-purple-700" : "text-white"}`}>
-              My Account
+            <NavLink to='/dashboard-my-account' className={({ isActive }) => `duration-200 ${isActive ? " bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+             My Account
+            </NavLink>
+          </li>
+
+
+          <li className='md:mx-8 mb-5'>
+            <NavLink to='/dashboard-my-team' className={({ isActive }) => `duration-200 ${isActive ? " bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+              My Team
+            </NavLink>
+          </li>
+
+          <li className='md:mx-8 mb-5'>
+            <NavLink to='/dashboard-my-reviews' className={({ isActive }) => `duration-200 ${isActive ? " bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+              My Reviews
+            </NavLink>
+          </li>
+
+
+          <li className='md:mx-8 mb-5'>
+            <NavLink to='/dashboard-my-report' className={({ isActive }) => `duration-200 ${isActive ? " bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+           My Report
             </NavLink>
           </li>
           

@@ -26,7 +26,7 @@ function DashboardContentContainer({children}) {
   }, [tokenState, navigate]);
 
   return (
-    <div className=" mt-12 lg:mt-0 lg:ml-[205px] pl-2 pt-2">
+    <div className=" mt-12 lg:mt-0 lg:ml-[245px] pl-0 lg:pl-2 pt-2">
        
        {/* Header */}
        <header className="flex justify-between items-center bg-white p-4 shadow">
