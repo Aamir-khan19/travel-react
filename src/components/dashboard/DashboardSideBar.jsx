@@ -58,7 +58,7 @@ function DashboardSideBar() {
 
 
         <li className='md:mx-8 mb-5'>
-            <NavLink to='/dashboard-itianaries' className={({ isActive }) => `duration-200 ${isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
+            <NavLink to='/dashboard-my-itineraries' className={({ isActive }) => `duration-200 ${isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"}`}>
               Itineraries
             </NavLink>
           </li>

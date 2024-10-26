@@ -30,7 +30,7 @@ function DashboardContentContainer({children}) {
        
        {/* Header */}
        <header className="flex justify-between items-center bg-white p-4 shadow">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
+          <h1 className="text-2xl font-bold">Travel n world</h1>
           <div className="relative">
             <button
               onClick={toggleModal}

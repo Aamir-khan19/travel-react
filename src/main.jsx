@@ -26,6 +26,8 @@ import Dashboard from "./pages/Dashboard.jsx";
 import DashboardUsers from "./pages/DashboardUsers.jsx";
 import DashboardEditUser from "./pages/DashboardEditUser.jsx";
 import DashboardMyAccount from "./pages/DashboardMyAccount.jsx";
+import DashboardMyItineraries from "./pages/DashboardMyItineraries.jsx";
+import DashboardMyItinerariesBuilder from "./pages/DashboardMyItinerariesBuilder.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -51,22 +53,16 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           
           <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
 
-
           <Route path="/b2b-signup" element={<SignUp />} />
-
           <Route path="/b2b-login" element={<SignIn />} />
 
-
           <Route path="/dashboard" element={<Dashboard />} />
-
           <Route path="/dashboard-users" element={<DashboardUsers />} />
-
           <Route path="/dashboard-edit-user/:id" element={<DashboardEditUser />} />
-
-
           <Route path="/dashboard-my-account" element={<DashboardMyAccount />} />
+          <Route path="/dashboard-my-itineraries" element={<DashboardMyItineraries />} />
+          <Route path="/dashboard-my-itineraries-builder" element={<DashboardMyItinerariesBuilder />} />
 
-          
         </Routes>
       </div>
     </BrowserRouter>
