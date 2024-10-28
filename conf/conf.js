@@ -1,6 +1,6 @@
 const conf = {
     backendBaseUrl: String("https://travelnworld-expressjs.vercel.app"),
-    laravelBaseUrl: "https://backend.travelnworld.com"
+    laravelBaseUrl: "http://127.0.0.1:8000"
 }
 
 export default conf

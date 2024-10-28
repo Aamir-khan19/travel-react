@@ -1,6 +1,8 @@
 import React from 'react';
 import DashboardSideBar from '../components/dashboard/DashboardSideBar';
 import DashboardContentContainer from '../components/dashboard/DashboardContentContainer';
+import TourSelection from '../components/dashboard_my_itineraries_builder/TourSelection';
+import ItineraryTheme from '../components/dashboard_my_itineraries_builder/ItineraryTheme';
 
 const DashboardMyItinerariesBuilder = () => {
 
@@ -25,13 +27,20 @@ const DashboardMyItinerariesBuilder = () => {
             <input type="radio" name="buildItinerary" className="mr-2" defaultChecked />
             Create New
           </label>
-          <label className="flex items-center">
+
+          <label className="flex items-center md:px-4">
             <input type="radio" name="buildItinerary" className="mr-2" />
             Upload Document (.pdf, .docx files only)
           </label>
-          <label className="flex items-center">
+
+
+          <label className="flex flex-col">
+            <div>
             <input type="radio" name="buildItinerary" className="mr-2" disabled />
-            <span>Copy from library <span className="text-red-500">Coming Soon</span></span>
+            Copy from library
+            </div>
+            
+            <span className=' text-red-500'>Coming Soon</span>
           </label>
         </div>
       </div>
@@ -39,24 +48,36 @@ const DashboardMyItinerariesBuilder = () => {
       <hr className="my-4" />
 
       {/* Itinerary Visibility */}
-      <div className="mb-4">
+      <div className="mb-4 bg-white border rounded border-gray-300 px-2 py-2">
         <h2 className="font-bold text-lg mb-2">
           Itinerary Visibility <span className="text-gray-500">(Control how this itinerary is viewed)</span>
         </h2>
         <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
-          <label className="flex items-center">
+          <label className="flex flex-col">
+            <div>
             <input type="radio" name="visibility" className="mr-2" defaultChecked />
             Public
-            <span className="ml-2 text-gray-500 hidden sm:inline">Visible to everyone</span>
+            </div>
+            
+            <span className="ml-2 text-gray-500 hidden sm:inline text-sm">Visible to everyone</span>
           </label>
-          <label className="flex items-center">
-            <input type="radio" name="visibility" className="mr-2" />
-            Private
-            <span className="ml-2 text-gray-500 hidden sm:inline">Itinerary viewable only by the shared traveler</span>
+
+          <label className="flex flex-col md:px-4">
+          <div>
+          <input type="radio" name="visibility" className="mr-2" />
+          Private
+          </div>
+            
+            <span className="ml-2 text-gray-500 hidden sm:inline text-sm">Itinerary viewable only by the shared traveler</span>
           </label>
-          <label className="flex items-center">
+
+
+          <label className="flex flex-col">
+            <div>
             <input type="radio" name="visibility" className="mr-2" disabled />
-            Password protected <span className="text-red-500 ml-1">Coming Soon</span>
+            Password protected
+            </div>
+            <span className="text-red-500 ml-1">Coming Soon</span>
           </label>
         </div>
       </div>
@@ -64,22 +85,35 @@ const DashboardMyItinerariesBuilder = () => {
       <hr className="my-4" />
 
       {/* Itinerary Type */}
-      <div className="mb-4">
-        <h2 className="font-bold text-lg mb-2">Itinerary Type</h2>
-        <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
-          <label className="flex items-center">
-            <input type="radio" name="itineraryType" className="mr-2" defaultChecked />
-            Flexible departure
-            <span className="ml-2 text-gray-500 hidden sm:inline">Departure dates can be changed by customers</span>
-          </label>
-          <label className="flex items-center">
-            <input type="radio" name="itineraryType" className="mr-2" />
-            Fixed departure
-            <span className="ml-2 text-gray-500 hidden sm:inline">Departure dates cannot be changed by customers</span>
-          </label>
-        </div>
+      <div className="mb-4 bg-white border rounded border-gray-300 px-2 py-2">
+      <h2 className="font-bold text-lg mb-2">Itinerary Type</h2>
+      <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
+
+      <label className="flex flex-col md:pr-4">
+      <div>
+      <input type="radio" name="itineraryType" className="mr-2" defaultChecked />
+      Flexible departure
       </div>
+      <span className="ml-2 text-gray-500 hidden sm:inline text-sm">Departure dates can be changed by customers</span>
+      </label>
+
+      <label className="flex flex-col">
+      <div>
+      <input type="radio" name="itineraryType" className="mr-2" />
+      Fixed departure
+      </div> 
+      <span className="ml-2 text-gray-500 hidden sm:inline text-sm">Departure dates cannot be changed by customers</span>
+      </label>
+      </div>
+      </div>
+
+      <hr className="my-4" />
+
+      <TourSelection />
+
+      {/* <ItineraryTheme /> */}
     </div>
+
 
     </DashboardContentContainer>
 
@@ -88,23 +122,3 @@ const DashboardMyItinerariesBuilder = () => {
 };
 
 export default DashboardMyItinerariesBuilder;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
