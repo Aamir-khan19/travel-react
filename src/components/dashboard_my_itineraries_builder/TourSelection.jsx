@@ -47,14 +47,12 @@ const TourSelection = () => {
   return (
     <div className="flex flex-col md:flex-row gap-4">
 
-      {/* <div className="w-full md:w-1/2">
+      <div className="w-full md:w-1/2">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="tour-destination">
           Tour Destination
         </label>
         <Select
-        onChange={(e)=>{
-          console.log("TourSelection.jsx ", e)
-        }}
+        onChange={(e)=>setTourDestinations(e)}
           id="tour-destination"
           options={destinationOptions}
           styles={customStyles}
@@ -63,7 +61,7 @@ const TourSelection = () => {
           className="rounded-md border-gray-300 shadow-sm"
           classNamePrefix="select"
         />
-      </div> */}
+      </div>
 
       <div className="w-full md:w-1/2">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="itinerary-duration">

@@ -111,7 +111,7 @@ const DashboardMyItinerariesBuilder = () => {
 
       <TourSelection />
 
-      {/* <ItineraryTheme /> */}
+      <ItineraryTheme />
     </div>
 
 
