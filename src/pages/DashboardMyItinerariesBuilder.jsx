@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DashboardSideBar from '../components/dashboard/DashboardSideBar';
 import DashboardContentContainer from '../components/dashboard/DashboardContentContainer';
 import TourSelection from '../components/dashboard_my_itineraries_builder/TourSelection';
 import ItineraryTheme from '../components/dashboard_my_itineraries_builder/ItineraryTheme';
+import UploadModal from '../components/dashboard_my_itineraries_builder/UploadModal';
 
 const DashboardMyItinerariesBuilder = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [itineraryFile, setItineraryFile] = useState({});
 
   return (
 <>
@@ -29,10 +32,13 @@ const DashboardMyItinerariesBuilder = () => {
           </label>
 
           <label className="flex items-center md:px-4">
-            <input type="radio" name="buildItinerary" className="mr-2" />
+            <input type="radio" name="buildItinerary" className="mr-2" onClick={(e)=>setIsModalOpen(true)}
+             />
             Upload Document (.pdf, .docx files only)
           </label>
 
+
+{isModalOpen && <UploadModal setIsModalOpen={setIsModalOpen} setItineraryFile={setItineraryFile} />}
 
           <label className="flex flex-col">
             <div>
@@ -111,7 +117,16 @@ const DashboardMyItinerariesBuilder = () => {
 
       <TourSelection />
 
-      <ItineraryTheme />
+      <hr className='my-4' />
+
+      {/* <ItineraryTheme /> */}
+
+      <hr className='my-4' />
+
+      <div className=' flex justify-center'>
+      <button className=' bg-purple-500 px-4 py-1 rounded-full text-white'>Next</button>
+    </div>
+
     </div>
 
 
