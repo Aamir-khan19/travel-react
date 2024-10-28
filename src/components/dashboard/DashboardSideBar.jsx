@@ -47,7 +47,7 @@ function DashboardSideBar() {
           <p className='text-end'>×</p>
         </div>
 
-        <h2 className="text-xl font-bold mb-6">Dashboard Menu</h2>
+        <h2 className="text-xl font-bold mb-6 p-5">Dashboard Menu</h2>
 
         <ul className="text-center">
           <li className="md:mx-8 mb-5">
