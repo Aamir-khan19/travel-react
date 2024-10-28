@@ -1,14 +1,22 @@
 import React, { useRef, useState } from 'react';
 
-const UploadModal = ({ setIsModalOpen, setItineraryFile }) => {
+const UploadModal = ({ setIsModalOpen, setItineraryFile, createNewRef=null }) => {
     const itineraryFileRef = useRef(null);
 
     const handleModalClose = function(){
-     setIsModalOpen(false);
+     createNewRef.current.checked = true;
+      setIsModalOpen(false);
     }
 
     const handleFileRef = function(){
     itineraryFileRef.current.click();
+    }
+
+
+    const handleItineraryFile = function(e){
+      setItineraryFile(e.target.files[0]);
+
+      setIsModalOpen(false);
     }
 
   return (
@@ -24,7 +32,7 @@ const UploadModal = ({ setIsModalOpen, setItineraryFile }) => {
             <p className="text-indigo-600 font-semibold">Click here to upload .pdf, .docx files only</p>
             <p className="text-gray-600">(Maximum file size: 25 MB)</p>
 
-            <input ref={itineraryFileRef} type="file" className='hidden' onChange={(e)=>setItineraryFile(e.target.files[0])}/>
+            <input ref={itineraryFileRef} type="file" className='hidden' onChange={(e)=>handleItineraryFile(e)} accept='.pdf, .docx, .doc'/>
           </div>
 
         </div>

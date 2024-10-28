@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import DashboardSideBar from '../components/dashboard/DashboardSideBar';
 import DashboardContentContainer from '../components/dashboard/DashboardContentContainer';
 import TourSelection from '../components/dashboard_my_itineraries_builder/TourSelection';
 import ItineraryTheme from '../components/dashboard_my_itineraries_builder/ItineraryTheme';
 import UploadModal from '../components/dashboard_my_itineraries_builder/UploadModal';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const DashboardMyItinerariesBuilder = () => {
+  const createNewRef = useRef(null);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itineraryFile, setItineraryFile] = useState({});
+
+
+  const notify = () => toast.error("Please Fill Tour Destinations",  {
+    position: "bottom-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    draggable: true,
+    pauseOnHover: true
+  });
 
   return (
 <>
@@ -27,7 +41,7 @@ const DashboardMyItinerariesBuilder = () => {
         <h2 className="font-bold text-lg mb-2">Build Itinerary</h2>
         <div className="flex flex-col md:flex-row md:items-center md:space-x-4 space-y-2 md:space-y-0">
           <label className="flex items-center">
-            <input type="radio" name="buildItinerary" className="mr-2" defaultChecked />
+            <input ref={createNewRef} type="radio" name="buildItinerary" className="mr-2" defaultChecked />
             Create New
           </label>
 
@@ -38,7 +52,8 @@ const DashboardMyItinerariesBuilder = () => {
           </label>
 
 
-{isModalOpen && <UploadModal setIsModalOpen={setIsModalOpen} setItineraryFile={setItineraryFile} />}
+
+{isModalOpen && <UploadModal setIsModalOpen={setIsModalOpen} setItineraryFile={setItineraryFile} createNewRef={createNewRef} />}
 
           <label className="flex flex-col">
             <div>
@@ -119,16 +134,17 @@ const DashboardMyItinerariesBuilder = () => {
 
       <hr className='my-4' />
 
-      {/* <ItineraryTheme /> */}
+      <ItineraryTheme />
 
       <hr className='my-4' />
 
       <div className=' flex justify-center'>
-      <button className=' bg-purple-500 px-4 py-1 rounded-full text-white'>Next</button>
+      <button onClick={notify} className=' bg-purple-500 px-4 py-1 rounded-full text-white'>Next</button>
     </div>
 
     </div>
 
+    <ToastContainer />
 
     </DashboardContentContainer>
 
