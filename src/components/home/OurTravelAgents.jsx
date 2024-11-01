@@ -149,7 +149,6 @@ const OurTravelAgents = () => {
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
   const [currentPhoneModal, setCurrentPhoneModal] = useState(null);
 
-  
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
   };
@@ -207,7 +206,7 @@ const OurTravelAgents = () => {
         keenSlider.current = null;
       }
       if (autoSlideInterval.current) {
-        clearInterval(autoSlideInterval.current); 
+        clearInterval(autoSlideInterval.current);
       }
     };
   }, [searchTerm]);
