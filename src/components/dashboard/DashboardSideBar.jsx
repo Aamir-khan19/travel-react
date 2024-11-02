@@ -2,19 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FaHome, FaUser, FaClipboardList, FaUsers, FaUserShield, FaRegChartBar, FaStar, FaFileAlt } from 'react-icons/fa';
-import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { NavLink, useNavigate } from "react-router-dom";
-import {
-  FaHome,
-  FaUser,
-  FaClipboardList,
-  FaUsers,
-  FaUserShield,
-  FaRegChartBar,
-  FaStar,
-  FaFileAlt,
-} from "react-icons/fa";
 
 function DashboardSideBar() {
   const navigate = useNavigate();
