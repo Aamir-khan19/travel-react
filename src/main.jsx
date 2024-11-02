@@ -18,56 +18,68 @@ import BlogDetail from "./pages/BlogPage/BlogDetail.jsx";
 import Packagedetails from "./pages/Package/Packagedetails.jsx";
 import TripIdeaPage from "./pages/TripIdeaPage.jsx";
 
-
-
-import { store } from './app/store'
-import { Provider } from 'react-redux'
+import { store } from "./app/store";
+import { Provider } from "react-redux";
 import Dashboard from "./pages/Dashboard.jsx";
 import DashboardUsers from "./pages/DashboardUsers.jsx";
 import DashboardEditUser from "./pages/DashboardEditUser.jsx";
 import DashboardMyAccount from "./pages/DashboardMyAccount.jsx";
 import DashboardMyItineraries from "./pages/DashboardMyItineraries.jsx";
 import DashboardMyItinerariesBuilder from "./pages/DashboardMyItinerariesBuilder.jsx";
+import DashboardMyreviews from "./pages/DashboardMyreviews.jsx";
+import DashboardMyreport from "./pages/DashboardMyreport.jsx";
+import DashboardMyteam from "./pages/DashboardMyteam.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
+      <BrowserRouter>
+        <div className="font-dm-sans ">
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/B2BLogin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/tour-packages/:name" element={<TourPackages />} />
+            <Route path="/destination" element={<SignUp />} />
+            <Route path="/blogs" element={<Blogs />} />
 
-    <BrowserRouter>
-      <div className="font-dm-sans ">
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/B2BLogin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/tour-packages/:name" element={<TourPackages />} />
-          <Route path="/destination" element={<SignUp />} />
-          <Route path="/blogs" element={<Blogs />} />
-      
-          <Route path="/testimonails" element={<Testimonials />} />
-          <Route path="/privacyPolicy" element={<PrivacyPolicyPage/>} />
-          <Route path="/terms" element={<TermandconditionPage/>} />
-          <Route path="/blogdetail/:id" element={<BlogDetail/>} />
-          <Route path="/package-details/:id" element={<Packagedetails/>} />
-          
-          <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
+            <Route path="/testimonails" element={<Testimonials />} />
+            <Route path="/privacyPolicy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermandconditionPage />} />
+            <Route path="/blogdetail/:id" element={<BlogDetail />} />
+            <Route path="/package-details/:id" element={<Packagedetails />} />
 
-          <Route path="/b2b-signup" element={<SignUp />} />
-          <Route path="/b2b-login" element={<SignIn />} />
+            <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/dashboard-users" element={<DashboardUsers />} />
-          <Route path="/dashboard-edit-user/:id" element={<DashboardEditUser />} />
-          <Route path="/dashboard-my-account" element={<DashboardMyAccount />} />
-          <Route path="/dashboard-my-itineraries" element={<DashboardMyItineraries />} />
-          <Route path="/dashboard-my-itineraries-builder" element={<DashboardMyItinerariesBuilder />} />
+            <Route path="/b2b-signup" element={<SignUp />} />
+            <Route path="/b2b-login" element={<SignIn />} />
 
-        </Routes>
-      </div>
-    </BrowserRouter>
-
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashboard-users" element={<DashboardUsers />} />
+            <Route
+              path="/dashboard-edit-user/:id"
+              element={<DashboardEditUser />}
+            />
+            <Route
+              path="/dashboard-my-account"
+              element={<DashboardMyAccount />}
+            />
+            <Route
+              path="/dashboard-my-itineraries"
+              element={<DashboardMyItineraries />}
+            />
+            <Route
+              path="/dashboard-my-itineraries-builder"
+              element={<DashboardMyItinerariesBuilder />}
+            />
+            {/* <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
+          <Route path="/dashboard-my-report" element={<DashboardMyreport/>} /> 
+          <Route path="/dashboard-my-team" element={<DashboardMyteam/>} />  */}
+          </Routes>
+        </div>
+      </BrowserRouter>
     </Provider>
-
   </React.StrictMode>
 );
