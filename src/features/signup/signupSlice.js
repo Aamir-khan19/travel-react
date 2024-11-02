@@ -12,15 +12,28 @@ export const signupAsync = createAsyncThunk(
     'signup/fetchMessage',
     async (formVal, options) => {
         try {
-            const {name, email, password, password_confirmation} = formVal;
+            const {name, company_name, phone,  email, location, your_requirements} = formVal;
             console.log("signupSlice.js signupAsync formVal", formVal);
 
             const formData = new FormData();
             formData.append("name", name);
+            formData.append("company_name", company_name);
+            formData.append("phone", phone);
             formData.append("email", email);
-            formData.append("password", password);
             
-            formData.append("password_confirmation", password_confirmation);
+            if(location){
+                formData.append("location", location);
+            }
+
+            if(your_requirements){
+                formData.append("your_requirements", your_requirements);
+            }
+
+            const randomFourDigit = Math.floor(1000 + Math.random() * 9000);
+
+            formData.append("password", `Tnw@${randomFourDigit}`);
+            
+            formData.append("password_confirmation", `Tnw@${randomFourDigit}`);
 
             const {data} = await axios.post(`${conf.laravelBaseUrl}/api/signup`, formData);
            

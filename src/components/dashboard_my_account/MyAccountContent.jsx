@@ -3,7 +3,7 @@ import Profile from './Profile'
 import Settings from './Settings'
 import Kyc from './Kyc'
 
-function MyAccountContent({currentComponent}) {
+function MyAccountContent({currentComponent=0}) {
 
   return (
     <div>

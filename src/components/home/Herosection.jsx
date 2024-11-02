@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api";
+import { useDispatch } from "react-redux";
+import { signupAsync } from "../../features/signup/signupSlice";
 
 const Herosection = () => {
+  const dispatch = useDispatch();
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -9,11 +13,11 @@ const Herosection = () => {
 
   const [formData, setFormData] = useState({
     name: "",
-    businessName: "",
+    company_name: "",
     email: "",
     phone: "",
     location: "",
-    yourRequirements: ""
+    your_requirements: ""
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -44,19 +48,9 @@ const Herosection = () => {
 
     console.log("handleFormdata", e);
 
-    const registerBody = {
-      name: formData.name,
-      businessName: formData.businessName,
-      email: formData.email,
-      phone: formData.phone,
-      location: formData.location,
-      yourRequirements: formData.yourRequirements
-    };
-
     setIsLoading(true);
 
-    api
-      .postReq("register", registerBody)
+    dispatch(signupAsync(formData))
       .then((data) => {
         setIsLoading(false);
         setFlashMessage(
@@ -64,7 +58,7 @@ const Herosection = () => {
         );
         console.log("successfully refgsitered eith us", data);
 
-        setFormData({ name: "", businessName: "", email: "", phone: "", location: "", yourRequirements: "" });
+        setFormData({ name: "", company_name: "", email: "", phone: "", location: "", your_requirements: "" });
       })
       .catch((error) => {
         setIsLoading(false);
@@ -147,16 +141,16 @@ const Herosection = () => {
 
 
               <div className="mb-2">
-                <label className="block text-gray-700 font-bold" htmlFor="businessName">
+                <label className="block text-gray-700 font-bold" htmlFor="company_name">
                   Business Name
                 </label>
                 <input
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="businessName"
+                  id="company_name"
                   type="text"
-                  name="businessName"
+                  name="company_name"
                   placeholder="Your business name"
-                  value={formData.businessName}
+                  value={formData.company_name}
                   onChange={handleChange}
               
                 />
@@ -216,7 +210,7 @@ const Herosection = () => {
                   id="location"
                   type="text"
                   name="location"
-                  placeholder="Your business name"
+                  placeholder="Your location"
                   value={formData.location}
                   onChange={handleChange}
               
@@ -227,17 +221,17 @@ const Herosection = () => {
               <div className="mb-2">
                 <label
                   className="block text-gray-700 font-bold"
-                  htmlFor="yourRequirements"
+                  htmlFor="your_requirements"
                 >
                   Your Requirements
                 </label>
 
                 <textarea
-                  value={formData.yourRequirements}
+                  value={formData.your_requirements}
                   onChange={handleChange}
-                  name="yourRequirements"
-                  id="yourRequirements"
-                  placeholder="yourRequirements"
+                  name="your_requirements"
+                  id="your_requirements"
+                  placeholder="Your requirements"
                   className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 ></textarea>
               </div>
