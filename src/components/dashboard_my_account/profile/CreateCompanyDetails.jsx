@@ -101,7 +101,7 @@ function CreateCompanyDetails() {
     {/* Company Details */}
     <div className="space-y-4">
       <label className="block text-gray-700">Company Name</label>
-      <input type="text" placeholder="Company Name" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_name} onChange={e => setCompanyDetails({ ...companyDetails, company_name: e.target.value })} />
+      <input readOnly={true} type="text" placeholder="Company Name" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_name} onChange={e => setCompanyDetails({ ...companyDetails, company_name: e.target.value })} />
 
       <label className="block text-gray-700">Company Address</label>
       <input type="text" placeholder="Company Address" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_address} onChange={e => setCompanyDetails({ ...companyDetails, company_address: e.target.value })} />

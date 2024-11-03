@@ -13,8 +13,6 @@ const CompanyProfile = () => {
   const isLoading = useSelector(state=> state.companies.isLoading);
   const isCompanyCreated = useSelector(state=> state.companies.isCompanyCreated);
 
-  const [companyImageUrl, setCompanyImageUrl] = useState(null);
-  const [companyImage, setCompanyImage] = useState({});
 
   const [howItWorks, setHowItWorks] = useState({
     title: '',
@@ -63,7 +61,7 @@ const CompanyProfile = () => {
 
              :
 
-            company? <UpdateCompanyDetails company={company} />
+            company? <UpdateCompanyDetails />
 
             :
 

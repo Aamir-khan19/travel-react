@@ -80,24 +80,45 @@ export const usersStoreAsync = createAsyncThunk(
 // Update a user
 export const usersUpdateAsync = createAsyncThunk(
     'users/Update',
-    async ({ id, formVal, image = null }, options) => {
+    async (formVal, options) => {
         try {
             const tokenObj = JSON.parse(localStorage.getItem('token'));
-            const formData = new FormData();
-            console.log("userSlice.js userUpdateAsync formVal", formVal, image);
 
-            formData.append("name", formVal?.name);
-            formData.append("mobile", formVal?.mobile);
-            formData.append("isAuthorised", formVal?.isAuthorised);
+            const {name, company_name, phone, location, your_requirements, gender, preferred_language, isAuthorised } = formVal;
+
+            const formData = new FormData();
+            formData.append("name", name);
+            formData.append("company_name", company_name);
+            formData.append("phone", phone);
+            
+            if(formVal?.location){
+                formData.append("location", location);
+            }
+            
+            if(formVal?.your_requirements){
+                formData.append("your_requirements", your_requirements);
+            }
+           
+            if(formVal?.gender){
+                formData.append("gender", gender);
+            }
+           
+            if(formVal?.preferred_language){
+                formData.append("preferred_language", preferred_language);
+            }
+
+           if(formVal?.isAuthorised){
+            formData.append("isAuthorised", isAuthorised);
+           }
+            
 
             if(formVal?.password){
                 formData.append("password", formVal?.password);
                 formData.append("password_confirmation", formVal?.password_confirmation);
             }
             
-
-            if(image){
-                formData.append("image", image)
+            if(formVal?.profileImage){
+                formData.append("user_image", formVal.profileImage)
             }
 
             formData.append("_method", "PUT");
@@ -106,7 +127,7 @@ export const usersUpdateAsync = createAsyncThunk(
 
             // const updatedFormVal = { ...formVal, _method: "PUT" };
 
-            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/user/${id}`, formData, {
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/user/${formVal?.id}`, formData, {
                 headers: {
                     Authorization: "Bearer " + tokenObj?.token
                 }
@@ -159,6 +180,8 @@ const usersSlice = createSlice({
             state.flashMessage = ""
         },
         setUser: (state, action)=>{
+            console.log("usersSlice.js action.payload ", action.payload);
+
             state.user = state?.users?.find((user)=> user.id == action.payload);
         }
     },
@@ -216,9 +239,11 @@ const usersSlice = createSlice({
                 state.isUserUpdated = true;
                 console.log("userSlcie.js userStoreAsync action.payload", action?.payload);
                 state.flashMessage = `User "${action.payload?.updatedUser?.name}" updated successfully`;
-                 
+                
+                state.user = action?.payload?.updatedUser;
+
                 const index = state.users?.findIndex(user => user.id == action.payload?.updatedUser?.id);
-                if (index !== -1) {
+                if (index != -1) {
                     console.log("leadsSlcie.js leads", state.leads);
                   state.users[index] = action.payload?.updatedUser;
                 }

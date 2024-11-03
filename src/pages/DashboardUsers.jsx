@@ -51,12 +51,13 @@ function DashboardUsers() {
             <tr className='text-nowrap'>
             <th className='px-3 py-2 border-2 border-gray-500 text-right'>S no.</th>
             <th className='px-3 py-2 border-2 border-gray-500 text-right'>Name</th>
-              <th className='px-3 py-2 border-2 border-gray-500 text-right'>Profile</th>
+            <th className='px-3 py-2 border-2 border-gray-500 text-right'>Profile</th>
+            <th className='px-3 py-2 border-2 border-gray-500 text-right'>Company name</th>
               {/* <th className='px-3 py-2 border-2 border-gray-500 text-right'>Status</th> */}
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Role</th>
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Is Authorised</th>
               {/* <th className='px-3 py-2 border-2 border-gray-500 text-right'>Whatsapp</th> */}
-              <th className='px-3 py-2 border-2 border-gray-500 text-right'>Mobile</th>
+              <th className='px-3 py-2 border-2 border-gray-500 text-right'>Phone</th>
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Actions</th>
             </tr>
           </thead>
@@ -69,11 +70,11 @@ function DashboardUsers() {
 
                 <td className='px-3 py-2 border border-gray-500'>
                 {
-                  (user?.profile_image)? 
+                  (user?.your_photo)? 
                   <div className=' flex justify-center items-center'>
 
                   <img
-                  src={conf.serverBaseUrl+"/storage/"+user?.profile_image || '?'}
+                  src={conf.laravelBaseUrl+"/storage/"+user?.your_photo}
                   alt="Profile"
                   className="w-10 h-10 object-cover rounded-full"
                   />
@@ -86,11 +87,12 @@ function DashboardUsers() {
                 } 
                 </td>
                 
+                <td className='px-3 py-2 border border-gray-500'>{user?.company_name}</td>
                 
                 <td className='px-3 py-2 border border-gray-500'>{user?.role}</td>
                 <td className='px-3 py-2 border border-gray-500'>{user?.isAuthorised? "YES" : "NO"}</td>
                
-                <td className='px-3 py-2 border border-gray-500'>{user?.mobile}</td>
+                <td className='px-3 py-2 border border-gray-500'>{user?.phone}</td>
 
                 <td className='px-3 py-2 border border-gray-500'>
                {((JSON.parse(localStorage.getItem("token"))?.user?.id == user?.id) || (JSON.parse(localStorage.getItem("token"))?.user?.role == "admin")) &&  
