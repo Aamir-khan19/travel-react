@@ -1,50 +1,51 @@
 import React, { useEffect, useState } from "react";
-import { FaUser, FaLock } from "react-icons/fa";
+import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginAsync } from "../../features/login/loginSlice";
 
 const SignInForm = () => {
-const dispatch = useDispatch();
-const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-const apiErrors = useSelector(state=> state.login.errors);
-const isLoading = useSelector(state => state.login.isLoading);
-
-const tokenState = useSelector(state=> state.login.tokenState);
+  const apiErrors = useSelector((state) => state.login.errors);
+  const isLoading = useSelector((state) => state.login.isLoading);
+  const tokenState = useSelector((state) => state.login.tokenState);
 
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
+  const [showPassword, setShowPassword] = useState(true);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-   
     dispatch(loginAsync(formData));
   };
 
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
 
-  useEffect(()=>{
-  if(tokenState?.token){
-    navigate("/dashboard");
-  }
-  }, [tokenState]);
+  useEffect(() => {
+    if (tokenState?.token) {
+      navigate("/dashboard");
+    }
+  }, [tokenState, navigate]);
 
   return (
     <div className="px-5">
-      <div className="min-h-screen flex  flex-col items-center justify-center md:w-full sm:w-full ">
-        <div className="grid md:grid-cols-2 grid-cols-1 items-center   justify-center gap-4 m w-full  flex-col  sm:w-full  max-w-7xl  mx-auto o md:py-20  py-10 ">
+      <div className="min-h-screen flex flex-col items-center justify-center md:w-full sm:w-full">
+        <div className="grid md:grid-cols-2 grid-cols-1 items-center justify-center gap-4 w-full flex-col sm:w-full max-w-7xl mx-auto md:py-20 py-10">
           <div className="border border-gray-300 rounded-lg p-5 w-full mx-auto md:mx-0">
             <form
-              className="space-y-4  w-full  md:w-full sm:w-full"
+              className="space-y-4 w-full md:w-full sm:w-full"
               onSubmit={handleSubmit}
             >
               <div className="mb-8">
@@ -57,7 +58,9 @@ const tokenState = useSelector(state=> state.login.tokenState);
               </div>
 
               <div className="mb-8">
-              <p className="text-red-500 text-sm mt-1">{!apiErrors?.errors && apiErrors?.message}</p>
+                <p className="text-red-500 text-sm mt-1">
+                  {!apiErrors?.errors && apiErrors?.message}
+                </p>
               </div>
 
               <div>
@@ -71,14 +74,14 @@ const tokenState = useSelector(state=> state.login.tokenState);
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className={`w-full text-sm text-gray-800 border  px-4 py-3 rounded-lg outline-[#01055b]`}
+                    className="w-full text-sm text-gray-800 border px-4 py-3 rounded-lg outline-[#01055b]"
                     placeholder="Enter user Email Id"
                   />
                   <FaUser className="w-[18px] h-[18px] absolute right-4 text-gray-400" />
                 </div>
-              
-                  <p className="text-red-500 text-sm mt-1">{apiErrors?.errors?.email && apiErrors?.errors?.email[0]}</p>
-                
+                <p className="text-red-500 text-sm mt-1">
+                  {apiErrors?.errors?.email && apiErrors?.errors?.email[0]}
+                </p>
               </div>
 
               <div>
@@ -88,23 +91,34 @@ const tokenState = useSelector(state=> state.login.tokenState);
                 <div className="relative flex items-center">
                   <input
                     name="password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     value={formData.password}
                     onChange={handleChange}
                     required
-                    className={`w-full text-sm text-gray-800 border  px-4 py-3 rounded-lg outline-[#01055b]`}
+                    className="w-full text-sm text-gray-800 border px-4 py-3 rounded-lg outline-[#01055b]"
                     placeholder="Enter password"
                   />
-                  <FaLock className="w-[18px] h-[18px] absolute right-4 text-gray-400 cursor-pointer" />
+                  {!showPassword ? (
+                    <FaEyeSlash
+                      onClick={togglePasswordVisibility}
+                      className="w-[18px] h-[18px] absolute right-4 text-gray-400 cursor-pointer"
+                    />
+                  ) : (
+                    <FaEye
+                      onClick={togglePasswordVisibility}
+                      className="w-[18px] h-[18px] absolute right-4 text-gray-400 cursor-pointer"
+                    />
+                  )}
                 </div>
-                
-                  <p className="text-red-500 text-sm mt-1">{apiErrors?.errors?.password && apiErrors?.errors?.password[0]}</p>
-                
+                <p className="text-red-500 text-sm mt-1">
+                  {apiErrors?.errors?.password &&
+                    apiErrors?.errors?.password[0]}
+                </p>
               </div>
 
               <div className="mt-8">
                 <button
-                disabled={isLoading}
+                  disabled={isLoading}
                   type="submit"
                   className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-[#01055b] hover:bg-[#16174b] focus:outline-none"
                 >
@@ -119,11 +133,9 @@ const tokenState = useSelector(state=> state.login.tokenState);
                   className="text-[#01055b] font-semibold hover:underline ml-1 whitespace-nowrap"
                 >
                   Register here
-                  
                 </Link>
               </p>
             </form>
-
           </div>
           <div className="lg:h-[400px] md:h-[300px] mt-8 md:mt-0">
             <img
@@ -135,6 +147,7 @@ const tokenState = useSelector(state=> state.login.tokenState);
         </div>
       </div>
     </div>
+
   );
 };
 
