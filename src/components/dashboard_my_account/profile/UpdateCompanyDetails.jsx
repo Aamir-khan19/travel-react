@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
-import { companiesStoreAsync, companiesUpdateAsync } from '../../../features/company/companySlice';
+import {  companiesUpdateAsync } from '../../../features/company/companySlice';
 import conf from '../../../../conf/conf';
 
 const servicesOptions = [

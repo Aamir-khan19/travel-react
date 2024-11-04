@@ -3,6 +3,7 @@ import CreateCompanyDetails from './profile/CreateCompanyDetails';
 import { useDispatch, useSelector } from 'react-redux';
 import { companiesIndexAsync, setCompany } from '../../features/company/companySlice';
 import UpdateCompanyDetails from './profile/UpdateCompanyDetails';
+import { setUser, usersIndexAsync } from '../../features/users/usersSlice';
 
 const CompanyProfile = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,8 @@ const CompanyProfile = () => {
   const tokenState = useSelector(state=> state.login.tokenState);
   const isLoading = useSelector(state=> state.companies.isLoading);
   const isCompanyCreated = useSelector(state=> state.companies.isCompanyCreated);
+
+  const users = useSelector(state=> state.users.users);
 
 
   const [howItWorks, setHowItWorks] = useState({
@@ -38,6 +41,21 @@ const CompanyProfile = () => {
     }
 
   }, [isCompanyCreated]);
+
+
+
+  useEffect(()=>{
+    if(users.length == 0){
+      dispatch(usersIndexAsync())
+      .then(()=>{
+      dispatch(setUser(tokenState?.user?.id));
+      })
+    }
+    else{
+      dispatch(setUser(tokenState?.user?.id));
+    }
+  
+  }, [])
 
 
   console.log("Profile.jsx company", company, companies);

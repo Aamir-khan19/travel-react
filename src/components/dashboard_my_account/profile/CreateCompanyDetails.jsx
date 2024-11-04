@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 import { companiesStoreAsync } from '../../../features/company/companySlice';
 
@@ -18,6 +18,7 @@ const servicesOptions = [
 
 function CreateCompanyDetails() {
     const dispatch = useDispatch();  
+    const user = useSelector(state => state.users.user);
 
     const [companyImageUrl, setCompanyImageUrl] = useState(null);
     const [companyImage, setCompanyImage] = useState({});
@@ -48,10 +49,8 @@ function CreateCompanyDetails() {
       else{
         dispatch(companiesStoreAsync({...companyDetails}));
       }
-
      
     };
-
 
 
     const customStyles = {
@@ -77,9 +76,10 @@ function CreateCompanyDetails() {
       };
 
 
+
       useEffect(()=>{
-      console.log("CreateCompanyDetails.jsx companyDetails.services_offered", companyDetails.services_offered);
-      }, [companyDetails]);
+      setCompanyDetails({...companyDetails, company_name: user?.company_name || ''})
+      }, [user])
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
