@@ -82,7 +82,7 @@ function CreateCompanyDetails() {
       }, [user])
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="flex flex-col items-center lg:items-start gap-8">
     {/* Company Logo */}
     <div className="flex justify-center">
       <label htmlFor="logo-upload">

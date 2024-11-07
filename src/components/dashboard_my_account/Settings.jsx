@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setUser, usersIndexAsync, usersUpdateAsync } from '../../features/users/usersSlice';
+import { setFlashMessage, setUser, usersIndexAsync, usersUpdateAsync } from '../../features/users/usersSlice';
 import conf from '../../../conf/conf';
 
 const Settings = () => {
@@ -8,6 +8,7 @@ const Settings = () => {
   const users = useSelector(state=> state.users.users);
   const user = useSelector(state => state.users.user);
   const isLoading = useSelector(state=> state.users.isLoading);
+  const flashMessage = useSelector(state => state.users.flashMessage);
 
   const tokenState = useSelector(state=> state.login.tokenState);
 
@@ -76,6 +77,17 @@ const Settings = () => {
     });
   }, [user]);
 
+
+
+  useEffect(()=>{
+    if(flashMessage){
+      setTimeout(()=>{
+        dispatch(setFlashMessage());
+      }, 5000)
+      
+    }
+    }, [flashMessage]);
+
   return (
     <div className=" md:w-[70%] p-6 ">
 {
@@ -90,6 +102,15 @@ isLoading?
 
 
     <div>
+
+{
+    flashMessage && 
+<div>
+   <hr />
+   <p className=" text-center text-green-500 text-3xl font-bold">{flashMessage}</p>
+  <hr />
+   </div>
+  }
 
       <h2 className="text-2xl font-bold mb-2">Settings</h2>
       <p className="text-gray-600 mb-6">

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CreateCompanyDetails from './profile/CreateCompanyDetails';
 import { useDispatch, useSelector } from 'react-redux';
-import { companiesIndexAsync, setCompany } from '../../features/company/companySlice';
+import { companiesIndexAsync, setCompany, setFlashMessage } from '../../features/company/companySlice';
 import UpdateCompanyDetails from './profile/UpdateCompanyDetails';
 import { setUser, usersIndexAsync } from '../../features/users/usersSlice';
 
@@ -13,6 +13,8 @@ const CompanyProfile = () => {
   const tokenState = useSelector(state=> state.login.tokenState);
   const isLoading = useSelector(state=> state.companies.isLoading);
   const isCompanyCreated = useSelector(state=> state.companies.isCompanyCreated);
+
+  const flashMessage = useSelector(state => state.companies.flashMessage);
 
   const users = useSelector(state=> state.users.users);
 
@@ -61,9 +63,31 @@ const CompanyProfile = () => {
   console.log("Profile.jsx company", company, companies);
 
 
+  useEffect(()=>{
+  if(flashMessage){
+    setTimeout(()=>{
+      dispatch(setFlashMessage());
+    }, 5000)
+    
+  }
+  }, [flashMessage]);
+
+
   return (
     <div className="p-8 space-y-8 md:w-[70%]">
     
+
+  {
+    flashMessage && 
+<div>
+   <hr />
+   <p className=" text-center text-green-500 text-3xl font-bold">{flashMessage}</p>
+  <hr />
+   </div>
+  } 
+
+    
+
       <div>
         <h1 className=' text-[#594cda] text-2xl'>Company Profile</h1>
         <h2 className="text-gray-700">Set or Edit Your Company Information for a Professional Presence</h2>
@@ -79,14 +103,25 @@ const CompanyProfile = () => {
 
              :
 
-            company? <UpdateCompanyDetails />
+            company?
+            
+              
+<UpdateCompanyDetails />
+           
+            
 
             :
 
+           
+              
             <CreateCompanyDetails />
+           
       }
       
        
+       
+
+      
       
      
 

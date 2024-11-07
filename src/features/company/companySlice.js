@@ -237,7 +237,7 @@ const companiesSlice = createSlice({
             .addCase(companiesUpdateAsync.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isCompanyUpdated = true;
-                state.flashMessage = `Company "${action.payload?.updatedCompany?.name}" updated successfully`;
+                state.flashMessage = `Company "${action.payload?.updatedCompany?.company_name}" updated successfully`;
                  
                 state.company = action.payload?.updatedCompany
             })
