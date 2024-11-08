@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
 import { companiesStoreAsync } from '../../../features/company/companySlice';
 
@@ -18,6 +18,7 @@ const servicesOptions = [
 
 function CreateCompanyDetails() {
     const dispatch = useDispatch();  
+    const user = useSelector(state => state.users.user);
 
     const [companyImageUrl, setCompanyImageUrl] = useState(null);
     const [companyImage, setCompanyImage] = useState({});
@@ -48,10 +49,8 @@ function CreateCompanyDetails() {
       else{
         dispatch(companiesStoreAsync({...companyDetails}));
       }
-
      
     };
-
 
 
     const customStyles = {
@@ -77,12 +76,13 @@ function CreateCompanyDetails() {
       };
 
 
+
       useEffect(()=>{
-      console.log("CreateCompanyDetails.jsx companyDetails.services_offered", companyDetails.services_offered);
-      }, [companyDetails]);
+      setCompanyDetails({...companyDetails, company_name: user?.company_name || ''})
+      }, [user])
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <div className="flex flex-col items-center lg:items-start gap-8">
     {/* Company Logo */}
     <div className="flex justify-center">
       <label htmlFor="logo-upload">
@@ -101,7 +101,7 @@ function CreateCompanyDetails() {
     {/* Company Details */}
     <div className="space-y-4">
       <label className="block text-gray-700">Company Name</label>
-      <input type="text" placeholder="Company Name" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_name} onChange={e => setCompanyDetails({ ...companyDetails, company_name: e.target.value })} />
+      <input readOnly={true} type="text" placeholder="Company Name" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_name} onChange={e => setCompanyDetails({ ...companyDetails, company_name: e.target.value })} />
 
       <label className="block text-gray-700">Company Address</label>
       <input type="text" placeholder="Company Address" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_address} onChange={e => setCompanyDetails({ ...companyDetails, company_address: e.target.value })} />

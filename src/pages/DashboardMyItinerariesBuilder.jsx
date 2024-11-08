@@ -13,7 +13,6 @@ const DashboardMyItinerariesBuilder = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itineraryFile, setItineraryFile] = useState({});
 
-
   const notify = () => toast.error("Please Fill Tour Destinations",  {
     position: "bottom-right",
     autoClose: 5000,
@@ -22,6 +21,7 @@ const DashboardMyItinerariesBuilder = () => {
     draggable: true,
     pauseOnHover: true
   });
+
 
   return (
 <>

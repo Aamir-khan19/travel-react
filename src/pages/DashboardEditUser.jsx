@@ -15,7 +15,12 @@ const DashboardEditUser = () => {
 
 const [formData, setFormData] = useState({
     name: "",
-    mobile: "",
+    company_name: "",
+    phone: "",
+    location: "",
+    your_requirements: "",
+    gender: "",
+    preferred_language: "",
     password: "",
     password_confirmation: "",
     isAuthorised: ""
@@ -42,7 +47,7 @@ const [formData, setFormData] = useState({
 
   useEffect(() => {
     if (user) {
-     setFormData(preVal=> ({...preVal, name: user?.name, mobile: user?.mobile || "", isAuthorised: user?.isAuthorised}));
+     setFormData(preVal=> ({ name: user?.name, company_name: user?.company_name, phone: user?.phone, location: user?.location || "", your_requirements: user?.your_requirements || "", gender: user?.gender || "", preferred_language: user?.preferred_language || "", isAuthorised: user?.isAuthorised}));
     }
 
   }, [user]);
@@ -51,13 +56,12 @@ const [formData, setFormData] = useState({
     e.preventDefault();
 
     if(profileImage?.name){
-      dispatch(usersUpdateAsync({ id, formVal: formData, image: profileImage}));
+      dispatch(usersUpdateAsync({...user, ...formData, profileImage}));
     }
     else{
-      dispatch(usersUpdateAsync({ id, formVal: formData}));
+      dispatch(usersUpdateAsync({...user, ...formData}));
     }
 
-    
   };
 
   useEffect(() => {
@@ -99,16 +103,90 @@ const [formData, setFormData] = useState({
         </div>
 
         <div className="flex flex-col">
-          <label className="text-lg font-semibold mb-2">Mobile</label>
+          <label className="text-lg font-semibold mb-2">Company name</label>
           <input
             type="text"
-            name="mobile"
-            value={formData?.mobile}
+            name="company_name"
+            value={formData?.company_name}
             onChange={(e)=>handleChange(e)}
             className="border rounded-md p-2"
-            placeholder="Enter mobile number"
+            placeholder="Enter company name"
           />
-          <p className='text-sm text-red-500'>{apiErrors?.errors?.mobile && apiErrors.errors.mobile[0]}</p>
+         
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.company_name && apiErrors.errors.company_name[0]}</p>
+        </div>
+
+        <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Phone</label>
+          <input
+            type="number"
+            name="phone"
+            value={formData?.phone}
+            onChange={(e)=>handleChange(e)}
+            className="border rounded-md p-2"
+            placeholder="Enter phone number"
+          />
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.phone && apiErrors.errors.phone[0]}</p>
+        </div>
+
+
+        <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Location</label>
+          <input
+            type="text"
+            name="location"
+            value={formData?.location}
+            onChange={(e)=>handleChange(e)}
+            className="border rounded-md p-2"
+            placeholder="Enter location"
+          />
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.location && apiErrors.errors.location[0]}</p>
+        </div>
+
+
+        <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Your requirements</label>
+        
+          <textarea
+          value={formData?.your_requirements}
+          onChange={(e)=>handleChange(e)}
+          className="border rounded-md p-2"
+          placeholder="Your requirements"
+          name="your_requirements"></textarea>
+
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.your_requirements && apiErrors.errors.your_requirements[0]}</p>
+        </div>
+
+
+        <div>
+          <label className="block font-medium text-gray-700 mb-1">Gender</label>
+          <select 
+           value={formData?.gender}
+           onChange={(e)=> handleChange(e)}
+          name="gender"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+            
+          >
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+
+        <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Preferred language</label>
+          <input
+            type="text"
+            name="preferred_language"
+            value={formData?.preferred_language}
+            onChange={(e)=>handleChange(e)}
+            className="border rounded-md p-2"
+            placeholder="Preferred language"
+          />
+         
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.preferred_language && apiErrors.errors.preferred_language[0]}</p>
         </div>
 
 
