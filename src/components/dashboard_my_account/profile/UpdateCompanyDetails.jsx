@@ -34,7 +34,8 @@ function UpdateCompanyDetails() {
       company_status: '',
       services_offered: [],
       number_of_staff: '',
-      about_company: ''
+      about_company: '',
+      company_website: ''
     });
   
   
@@ -81,8 +82,12 @@ function UpdateCompanyDetails() {
       };
 
 
+
+      console.log("UpdateCompanyDetails.jsx logo");
+
+
       useEffect(()=>{
-        setCompanyDetails((preVal)=> ({...preVal, company_name: company?.company_name, company_address: company?.company_address, company_city: company?.company_city, pin_code: company?.pin_code, company_status: company?.company_status, services_offered: company?.services_offered, number_of_staff: company?.number_of_staff, about_company: company?.about_company}));
+        setCompanyDetails((preVal)=> ({...preVal, company_name: company?.company_name, company_address: company?.company_address, company_city: company?.company_city, pin_code: company?.pin_code, company_website: company?.company_website || "", company_status: company?.company_status || "", services_offered: company?.services_offered || "", number_of_staff: company?.number_of_staff || "", about_company: company?.about_company || ""}));
       console.log("UpdateCompanyDetails.jsx companyDetails.services_offered", companyDetails.services_offered);
       }, [company]);
 
@@ -94,7 +99,7 @@ function UpdateCompanyDetails() {
       <label htmlFor="logo-upload">
         <div className="relative w-64 h-64 border border-gray-300 bg-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-200">
           {companyImageUrl || company?.company_logo ? (
-            <img src={companyImageUrl || `${conf?.laravelBaseUrl}/storage/${company?.company_logo}`} alt="Company Logo" className="object-cover w-full h-full" />
+            <img src={companyImageUrl || company?.company_logo} alt="Company Logo" className="object-cover w-full h-full" />
           ) : (
             <span className="text-gray-600">Upload Company Logo</span>
           )}
@@ -117,6 +122,13 @@ function UpdateCompanyDetails() {
 
       <label className="block text-gray-700">Pin Code / Zip Code</label>
       <input type="text" placeholder="Pin Code / Zip Code" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.pin_code} onChange={e => setCompanyDetails({ ...companyDetails, pin_code: e.target.value })} />
+
+    
+      
+      <label className="block text-gray-700">Company Website</label>
+      <input type="text" placeholder="Company Website" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_website} onChange={e => setCompanyDetails({ ...companyDetails, company_website: e.target.value })} />
+
+
 
       <label className="block text-gray-700">Company Status</label>
       <select className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_status} onChange={e => setCompanyDetails({ ...companyDetails, company_status: e.target.value })}>

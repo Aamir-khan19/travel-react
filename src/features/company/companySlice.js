@@ -64,7 +64,7 @@ export const companiesStoreAsync = createAsyncThunk(
             const tokenObj = JSON.parse(localStorage.getItem('token'));
 
             console.log("CompanySlice.js formVal", formVal);
-            const {company_name, company_address, company_city, pin_code, company_status, services_offered, number_of_staff, about_company} = formVal;
+            const {company_name, company_address, company_city, pin_code, company_status, services_offered, number_of_staff, about_company, company_website} = formVal;
 
             const formData = new FormData();
             formData.append("company_name", company_name);
@@ -76,6 +76,10 @@ export const companiesStoreAsync = createAsyncThunk(
             formData.append("services_offered_string", JSON.stringify(services_offered));
             formData.append("number_of_staff", number_of_staff);
             formData.append("about_company", about_company);
+
+            if(company_website){
+                formData.append("company_website", company_website);
+            }
 
 
             if(formVal?.company_image){
@@ -104,7 +108,7 @@ export const companiesUpdateAsync = createAsyncThunk(
         try {
             const tokenObj = JSON.parse(localStorage.getItem('token'));
 
-            const {company_name, company_address, company_city, pin_code, company_status, services_offered, number_of_staff, about_company} = formVal;
+            const {company_name, company_address, company_city, pin_code, company_status, services_offered, number_of_staff, about_company, company_website} = formVal;
 
             const formData = new FormData();
         
@@ -118,6 +122,9 @@ export const companiesUpdateAsync = createAsyncThunk(
             formData.append("number_of_staff", number_of_staff);
             formData.append("about_company", about_company);
 
+            if(company_website){
+                formData.append("company_website", company_website);
+            }
 
             if(formVal?.company_image){
                 formData.append("company_image", formVal.company_image);

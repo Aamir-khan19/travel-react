@@ -31,7 +31,8 @@ function CreateCompanyDetails() {
       company_status: '',
       services_offered: [],
       number_of_staff: '',
-      about_company: ''
+      about_company: '',
+      company_website: ''
     });
   
   
@@ -111,6 +112,11 @@ function CreateCompanyDetails() {
 
       <label className="block text-gray-700">Pin Code / Zip Code</label>
       <input type="text" placeholder="Pin Code / Zip Code" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.pin_code} onChange={e => setCompanyDetails({ ...companyDetails, pin_code: e.target.value })} />
+
+
+      <label className="block text-gray-700">Company Website</label>
+      <input type="text" placeholder="Company Website" className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_website} onChange={e => setCompanyDetails({ ...companyDetails, company_website: e.target.value })} />
+
 
       <label className="block text-gray-700">Company Status</label>
       <select className="w-full p-3 border border-gray-300 rounded-md" value={companyDetails.company_status} onChange={e => setCompanyDetails({ ...companyDetails, company_status: e.target.value })}>

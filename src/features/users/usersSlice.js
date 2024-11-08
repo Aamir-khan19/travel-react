@@ -90,6 +90,22 @@ export const usersUpdateAsync = createAsyncThunk(
             formData.append("name", name);
             formData.append("company_name", company_name);
             formData.append("phone", phone);
+
+            if(formVal?.whatsapp){
+                formData?.append("whatsapp", formVal?.whatsapp);
+            }
+
+            if(formVal?.facebook){
+                formData?.append("facebook", formVal?.facebook);
+            }
+
+            if(formVal?.instagram){
+                formData?.append("instagram", formVal?.instagram);
+            }
+
+            if(formVal?.youtube){
+                formData?.append("youtube", formVal?.youtube);
+            }
             
             if(formVal?.location){
                 formData.append("location", location);

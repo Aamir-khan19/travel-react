@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setFlashMessage, setUser, usersIndexAsync, usersUpdateAsync } from '../../features/users/usersSlice';
 import conf from '../../../conf/conf';
+import PasswordReset from './settings/PasswordReset';
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -72,6 +73,10 @@ const Settings = () => {
       name: user?.name || "", 
       email: user?.email || "", 
       phone: user?.phone || "", 
+      whatsapp: user?.whatsapp || "",
+      facebook: user?.facebook || "",
+      instagram: user?.facebook || "",
+      youtube: user?.youtube || "",
       gender: user?.gender || "", 
       preferred_language: user?.preferred_language || ""
     });
@@ -150,8 +155,6 @@ isLoading?
             required 
           />
 
-
-{/* <input type="checkbox" checked={something} onChange={e => setSomething(e.target.checked)} /> */}
         </div>
 
         <div>
@@ -180,6 +183,70 @@ isLoading?
             required 
           />
         </div>
+
+
+        <div>
+          <label className="block font-medium text-gray-700 mb-1">Whatsapp</label>
+          <input
+           value={userDetails?.whatsapp}
+           onChange={(e)=> handleUserDetails(e)} 
+            type="number" 
+            name="whatsapp"
+            placeholder="Enter Your Whatsapp Number" 
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+            
+          />
+        </div>
+
+
+      
+        <div>
+          <label className="block font-medium text-gray-700 mb-1">Facebook</label>
+          <input 
+          value={userDetails?.facebook}
+          onChange={(e)=> handleUserDetails(e)}
+            type="text" 
+            name="facebook"
+            placeholder="Enter Your Facebook link" 
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+            
+          />
+
+        </div>
+
+
+
+        <div>
+          <label className="block font-medium text-gray-700 mb-1">Instagram</label>
+          <input 
+          value={userDetails?.instagram}
+          onChange={(e)=> handleUserDetails(e)}
+            type="text" 
+            name="instagram"
+            placeholder="Enter Your Instagram link" 
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+            
+          />
+
+        </div>
+
+
+
+        <div>
+          <label className="block font-medium text-gray-700 mb-1">Youtube</label>
+          <input 
+          value={userDetails?.youtube}
+          onChange={(e)=> handleUserDetails(e)}
+            type="text" 
+            name="youtube"
+            placeholder="Enter Your Yotube link" 
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" 
+            required 
+          />
+
+        </div>
+      
+
 
         <div>
           <label className="block font-medium text-gray-700 mb-1">Gender</label>
@@ -217,12 +284,18 @@ isLoading?
           Save Changes
         </button>
       </div>
+
+
+<hr />
+
+      <PasswordReset />
       </form>
 
       </div>
       
       }
 
+     
     </div>
   );
 };
