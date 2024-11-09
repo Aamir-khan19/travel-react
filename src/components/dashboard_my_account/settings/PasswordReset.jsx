@@ -1,18 +1,42 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { usersUpdateAsync } from '../../../features/users/usersSlice';
 
-export default function PasswordReset() {
+export default function PasswordReset({user}) {
+  const dispatch = useDispatch();
+  const apiErrors = useSelector((state) => state.users.errors);
+
   const [password, setPassword] = useState('');
+  const [passwordReqErr, setPasswordReqErr] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [toggle, setToggle] = useState(false);
 
-  const apiErrors = useSelector((state) => state.login.errors);
+  console.log("PasswordReset.jsx  user", user);
 
-
+  const handlePasswordReset = function(){
+    if(password){
+    dispatch(usersUpdateAsync({id: user?.id, password: password, password_confirmation: password, name: user?.name, company_name: user?.company_name, phone: user?.phone}));
+    }
+    else{
+    setPasswordReqErr("Password can't be empty");
+    }
+  }
+ 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
+
+
+  useEffect(()=>{
+   if(apiErrors?.errors?.password &&
+    apiErrors?.errors?.password[0]){
+      setToggle(true);
+    }
+    else{
+      setToggle(false);
+    }
+  }, [apiErrors]);
 
   return (
     <div className="flex flex-col">
@@ -55,7 +79,10 @@ New Password
 name="password"
 type={showPassword ? "text" : "password"}
 value={password}
-onChange={(e)=> setPassword(e.target.value)}
+onChange={(e)=>{
+  setPasswordReqErr("");
+  setPassword(e.target.value);
+} }
 required
 className="w-full text-sm text-gray-800 border px-4 py-3 rounded-lg outline-[#01055b]"
 placeholder="Reset your password"
@@ -75,11 +102,15 @@ className="w-[18px] h-[18px] absolute right-4 text-gray-400 cursor-pointer"
 <p className="text-red-500 text-sm mt-1">
 {apiErrors?.errors?.password &&
 apiErrors?.errors?.password[0]}
+
+{
+  passwordReqErr
+}
 </p>
 
 
 <div className=' flex justify-end items-center'>
-<button type='button' className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
+<button onClick={handlePasswordReset} type='button' className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-opacity-50">
 Save Password
 </button>
 </div>

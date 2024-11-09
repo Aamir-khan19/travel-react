@@ -204,6 +204,7 @@ const usersSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(usersIndexAsync.pending, (state) => {
+                state.errors = {};
                 state.isLoading = true;
             })
             .addCase(usersIndexAsync.fulfilled, (state, action) => {
@@ -220,6 +221,7 @@ const usersSlice = createSlice({
             })
 
             .addCase(usersShowAsync.pending, (state) => {
+                  state.errors = {};
                   state.isLoading = true;
             })
             .addCase(usersShowAsync.fulfilled, (state, action) => {
@@ -232,6 +234,7 @@ const usersSlice = createSlice({
             })
 
             .addCase(usersStoreAsync.pending, (state) => {
+                state.errors = {};
                 state.isLoading = true;
             })
             .addCase(usersStoreAsync.fulfilled, (state, action) => {
@@ -248,6 +251,7 @@ const usersSlice = createSlice({
             })
 
             .addCase(usersUpdateAsync.pending, (state) => {
+                state.errors = {};
                 state.isLoading = true;
             })
             .addCase(usersUpdateAsync.fulfilled, (state, action) => {
@@ -270,6 +274,7 @@ const usersSlice = createSlice({
             })
 
             .addCase(usersDestroyAsync.pending, (state) => {
+                state.errors = {};
                 state.isLoading = true;
             })
             .addCase(usersDestroyAsync.fulfilled, (state, action) => {

@@ -20,6 +20,10 @@ const Settings = () => {
     name: "",
     email: "",
     phone: "",
+    whatsapp: "",
+    facebook: "",
+    instagram: "",
+    youtube: "",
     gender: "",
     preferred_language: ""
   })
@@ -288,7 +292,7 @@ isLoading?
 
 <hr />
 
-      <PasswordReset />
+      <PasswordReset user={user} />
       </form>
 
       </div>
