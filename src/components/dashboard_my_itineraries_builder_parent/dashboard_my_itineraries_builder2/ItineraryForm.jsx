@@ -1,10 +1,52 @@
 import React, { useState } from 'react';
-import Select from 'react-select';
+import ItineraryVisibility from './itinerary_form/ItineraryVisibility';
+import ItineraryType from './itinerary_form/ItineraryType';
+import ItineraryDuration from './itinerary_form/ItineraryDuration';
+import TourDestination from './itinerary_form/TourDestination';
+import ItineraryTheme from './itinerary_form/ItineraryTheme';
 
-const TourSelection = () => {
-  const [tourDestinations, setTourDestinations] = useState([]);
+const ItineraryForm = () => {
+  const [title, setTitle] = useState('');
+  const [visibility, setVisibility] = useState('');
+  const [type, setType] = useState('');
+  const [duration, setDuration] = useState('');
+  const [selectedDestinations, setSelectedDestinations] = useState([]);
+  const [selectedThemes, setSelectedThemes] = useState([]);
 
-  // Options for Tour Destinations
+  const visibilityOptions = [
+    { value: 'Public', label: 'Public' },
+    { value: 'Private', label: 'Private' }
+  ];
+
+  const typeOptions = [
+    { value: 'Flexible', label: 'Flexible' },
+    { value: 'Fixed', label: 'Fixed' }
+  ];
+
+  const durationOptions = [
+    { value: '2D/1N', label: '2D/1N' },
+    { value: '3D/2N', label: '3D/2N' },
+    { value: '4D/3N', label: '4D/3N' },
+    { value: '5D/4N', label: '5D/4N' },
+    { value: '6D/5N', label: '6D/5N' },
+    { value: '7D/6N', label: '7D/6N' },
+    { value: '8D/7N', label: '8D/7N' },
+    { value: '9D/8N', label: '9D/8N' },
+    { value: '10D/9N', label: '10D/9N' },
+    { value: '11D/10N', label: '11D/10N' },
+    { value: '12D/11N', label: '12D/11N' },
+    { value: '13D/12N', label: '13D/12N' },
+    { value: '14D/13N', label: '14D/13N' },
+    { value: '15D/14N', label: '15D/14N' },
+    { value: '16D/15N', label: '16D/15N' },
+    { value: '17D/16N', label: '17D/16N' },
+    { value: '18D/17N', label: '18D/17N' },
+    { value: '19D/18N', label: '19D/18N' },
+    { value: '20D/19N', label: '20D/19N' },
+    { value: '21D/20N', label: '21D/20N' },
+    { value: '22D/21N', label: '22D/21N' }
+  ];
+
   const destinationOptions = [
     // Top 50 Indian Tourist Destinations
     { value: 'Shimla, India', label: 'Shimla, India' },
@@ -109,90 +151,68 @@ const TourSelection = () => {
     { value: 'Lima, Peru', label: 'Lima, Peru' },
 ];
 
-
-  // Options for Itinerary Durations
-  const itineraryOptions = [
-    { value: '2D/1N', label: '2D/1N' },
-    { value: '3D/2N', label: '3D/2N' },
-    { value: '4D/3N', label: '4D/3N' },
-    { value: '5D/4N', label: '5D/4N' },
-    { value: '6D/5N', label: '6D/5N' },
-    { value: '7D/6N', label: '7D/6N' },
-    { value: '8D/7N', label: '8D/7N' },
-    { value: '9D/8N', label: '9D/8N' },
-    { value: '10D/9N', label: '10D/9N' },
-    { value: '11D/10N', label: '11D/10N' },
-    { value: '12D/11N', label: '12D/11N' },
-    { value: '13D/12N', label: '13D/12N' },
-    { value: '14D/13N', label: '14D/13N' },
-    { value: '15D/14N', label: '15D/14N' },
-    { value: '16D/15N', label: '16D/15N' },
-    { value: '17D/16N', label: '17D/16N' },
-    { value: '18D/17N', label: '18D/17N' },
-    { value: '19D/18N', label: '19D/18N' },
-    { value: '20D/19N', label: '20D/19N' },
-    { value: '21D/20N', label: '21D/20N' },
-    { value: '22D/21N', label: '22D/21N' }
+  const themeOptions = [
+    { value: 'Adventure', label: 'Adventure' },
+    { value: 'Art', label: 'Art' },
+    { value: 'Backpacking', label: 'Backpacking' },
+    { value: 'Beach', label: 'Beach' },
+    { value: 'Culture', label: 'Culture' },
+    { value: 'Desert', label: 'Desert' },
+    { value: 'Eco-Friendly', label: 'Eco-Friendly' },
+    { value: 'Family Holidays', label: 'Family Holidays' },
+    { value: 'Festivals', label: 'Festivals' },
+    { value: 'Food', label: 'Food' },
+    { value: 'Hills', label: 'Hills' },
+    { value: 'History', label: 'History' },
+    { value: 'Honeymoon', label: 'Honeymoon' },
+    { value: 'Luxury', label: 'Luxury' },
+    { value: 'Pilgrimage', label: 'Pilgrimage' },
+    { value: 'Road Trips', label: 'Road Trips' },
+    { value: 'Romance', label: 'Romance' },
+    { value: 'Solo trips', label: 'Solo trips' },
+    { value: 'Trekking', label: 'Trekking' },
+    { value: 'Wellness', label: 'Wellness' },
+    { value: 'Wildlife', label: 'Wildlife' },
+    { value: 'Yoga', label: 'Yoga' }
   ];
 
-
- 
-
-  const customStyles = {
-    option: (provided, state) => ({
-      ...provided,
-      backgroundColor: state.isSelected ? '#7C3AED' : provided.backgroundColor, // Purple background when selected
-      color: state.isSelected ? 'white' : 'black',                             // White text when selected
-    }),
-    multiValue: (provided) => ({
-      ...provided,
-      backgroundColor: '#7C3AED', // Purple background for selected items
-      color: 'white',
-    }),
-    multiValueLabel: (provided) => ({
-      ...provided,
-      color: 'white',
-    }),
-    multiValueRemove: (provided) => ({
-      ...provided,
-      color: 'white',
-      '&:hover': { backgroundColor: '#5B21B6' }, // Darker purple on hover
-    }),
-  };
-
   return (
-    <div className="flex flex-col md:flex-row gap-4">
-
-      <div className="w-full md:w-1/2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="tour-destination">
-          Tour Destination
-        </label>
-        <Select
-        onChange={(e)=>setTourDestinations(e)}
-          id="tour-destination"
-          options={destinationOptions}
-          styles={customStyles}
-          isMulti
-          placeholder="Select Destinations"
-          className="rounded-md border-gray-300 shadow-sm"
-          classNamePrefix="select"
+    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
+      <h2 className="text-lg font-semibold text-gray-800 mb-2">Itinerary Details</h2>
+      <p className="text-sm text-gray-600 mb-4">Enter the details of your itinerary.</p>
+      
+      <label className="block text-gray-700 mb-2">
+        Title
+        <input
+          type="text"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          placeholder="Enter itinerary title"
+          className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm"
         />
-      </div>
+      </label>
 
-      <div className="w-full md:w-1/2">
-        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="itinerary-duration">
-          Itinerary Duration*
-        </label>
-        <Select
-          id="itinerary-duration"
-          options={itineraryOptions}
-          placeholder="Select Duration"
-          className="rounded-md border-gray-300 shadow-sm"
-          classNamePrefix="select"
-        />
+     
+     <ItineraryVisibility visibilityOptions={visibilityOptions} visibility={visibility} setVisibility={setVisibility} />
+     
+
+    <ItineraryType type={type} setType={setType} typeOptions={typeOptions} />
+
+     
+    <ItineraryDuration duration={duration} setDuration={setDuration} durationOptions={durationOptions} />
+   
+
+    <TourDestination destinationOptions={destinationOptions} selectedDestinations={selectedDestinations} setSelectedDestinations={setSelectedDestinations} />
+
+    <ItineraryTheme selectedThemes={selectedThemes} themeOptions={themeOptions} setSelectedThemes={selectedThemes} />
+
+      <div className="flex space-x-2 mt-6">
+        <button className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200">Preview</button>
+        <button className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600">Draft</button>
+        <button className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
       </div>
     </div>
   );
 };
 
-export default TourSelection;
+export default ItineraryForm;
