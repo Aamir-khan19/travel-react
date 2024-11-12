@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice, current } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import conf from "../../../conf/conf";
 
@@ -11,13 +11,13 @@ const initialState = {
     errors: {},
     flashMessage: "",
     itinerary: {},
-    itinerayForm: {
+    itineraryForm: {
         title: "",
-        visibility: "",
-        type: "",
-        duration: "",
-        selectedDestinations: "",
-        selectedThemes: ""
+        visibility: "public",
+        type: "flexible",
+        duration: {},
+        selectedDestinations: [],
+        selectedThemes: []
     }
 };
 
@@ -197,6 +197,14 @@ const itinerariesSlice = createSlice({
             console.log("setComapny action.payload", action.payload);
 
             state.itinerary = state?.itineraries?.find((itinerary)=> itinerary.user_id == action.payload);
+        },
+
+        setItineraryForm: (state, action)=>{
+            console.log("itineararySlice.js setItineararyForm actim.paload", action.payload);
+
+            let newItineraryForm = {...state.itineraryForm, ...action?.payload};
+
+            state.itineraryForm = newItineraryForm;
         }
     },
     extraReducers: (builder) => {
@@ -277,7 +285,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

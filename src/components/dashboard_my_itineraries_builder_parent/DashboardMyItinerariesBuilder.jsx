@@ -6,8 +6,15 @@ import ItineraryTheme from './dashboard_my_itineraries_builder/ItineraryTheme';
 import UploadModal from './dashboard_my_itineraries_builder/UploadModal';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch, useSelector } from 'react-redux';
+import { setItineraryForm } from '../../features/itinerary/itinerarySlice';
 
 const DashboardMyItinerariesBuilder = (props) => {
+  const dispatch = useDispatch();
+  const itineraryForm = useSelector(state => state.itineraries.itineraryForm);
+
+  console.log("DashboardMyitinearariesBuilder.jsx itineraryForm redux", itineraryForm);
+
   const createNewRef = useRef(null);
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -23,6 +30,7 @@ const DashboardMyItinerariesBuilder = (props) => {
       pauseOnHover: true,
     });
   };
+
 
   return (
     <>
@@ -93,8 +101,8 @@ const DashboardMyItinerariesBuilder = (props) => {
                     name="visibility"
                     className="mr-2"
                     value="public"
-                    checked={props.visibility === 'public'}
-                    onChange={() => props.setVisibility('public')}
+                    checked={itineraryForm.visibility === 'public'}
+                    onChange={() => dispatch(setItineraryForm({visibility: 'public'}))}
                   />
                   Public
                 </div>
@@ -108,8 +116,8 @@ const DashboardMyItinerariesBuilder = (props) => {
                     name="visibility"
                     className="mr-2"
                     value="private"
-                    checked={props.visibility === 'private'}
-                    onChange={() => props.setVisibility('private')}
+                    checked={itineraryForm.visibility === 'private'}
+                    onChange={() => dispatch(dispatch(setItineraryForm({visibility: 'private'})))}
                   />
                   Private
                 </div>
@@ -141,8 +149,8 @@ const DashboardMyItinerariesBuilder = (props) => {
                     name="itineraryType"
                     className="mr-2"
                     value="flexible"
-                    checked={props.type === 'flexible'}
-                    onChange={() => props.setType('flexible')}
+                    checked={itineraryForm.type === 'flexible'}
+                    onChange={() => dispatch(setItineraryForm({type: 'flexible'}))}
                   />
                   Flexible departure
                 </div>
@@ -158,8 +166,8 @@ const DashboardMyItinerariesBuilder = (props) => {
                     name="itineraryType"
                     className="mr-2"
                     value="fixed"
-                    checked={props.type === 'fixed'}
-                    onChange={() => props.setType('fixed')}
+                    checked={itineraryForm.type === 'fixed'}
+                    onChange={() => dispatch(setItineraryForm({type: 'fixed'}))}
                   />
                   Fixed departure
                 </div>
@@ -172,11 +180,11 @@ const DashboardMyItinerariesBuilder = (props) => {
 
           <hr className="my-4" />
 
-          <TourSelection selectedDestinations={props.selectedDestinations} setSelectedDestinations={props.setSelectedDestinations} />
+          <TourSelection />
 
           <hr className="my-4" />
 
-          <ItineraryTheme selectedThemes={props.selectedThemes} setSelectedThemes={props.setSelectedThemes} />
+          <ItineraryTheme />
 
           <hr className="my-4" />
 

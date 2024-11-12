@@ -1,7 +1,13 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
+import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
+import destinationOptions from '../../destinationOptions';
 
-function TourDestination({destinationOptions, selectedDestinations, setSelectedDestinations}) {
+function TourDestination() {
+  const dispatch = useDispatch();
+  const itineraryForm = useSelector(state => state.itineraries.itineraryForm);
+
 
     const customStyles = {
         option: (provided, state) => ({
@@ -25,6 +31,8 @@ function TourDestination({destinationOptions, selectedDestinations, setSelectedD
         }),
       };
 
+      console.log("TourDestinations.jsx destination", itineraryForm?.selectedDestinations)
+
   return (
     <label className="block text-gray-700 mb-2">
     Tour Destination
@@ -32,8 +40,8 @@ function TourDestination({destinationOptions, selectedDestinations, setSelectedD
     styles={customStyles}
       isMulti
       options={destinationOptions}
-      value={selectedDestinations}
-      onChange={(e)=>setSelectedDestinations(e)}
+      value={itineraryForm?.selectedDestinations}
+      onChange={(e)=>dispatch(setItineraryForm({selectedDestinations: e}))}
       className="mt-1"
       placeholder="Select Destinations"
     />
