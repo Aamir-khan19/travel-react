@@ -22,6 +22,8 @@ const Itinerary = () => {
   const [cityName, setCityName] = useState("");
   const [cityNameReqErr, setCityNameReqErr] = useState("");
 
+
+  // handleNext function starts here
   const handleNext = () => {
     console.log("handleNext currentDayIndex days.length", currentDayIndex, daysData?.length);
    
@@ -38,14 +40,25 @@ const Itinerary = () => {
       dispatch(setDaysInformation({day: `${currentDayIndex+1}`, cityName: cityName}));
       
       setCityName("");
+
+      if(daysInformation[currentDayIndex]?.cityName){
+      // setCityName(daysInformation[currentDayIndex]?.cityName);
+      }
+
     } else {
       dispatch(setDaysInformation({day: `${currentDayIndex+1}`, cityName: cityName}));
+
+      if(daysInformation[currentDayIndex]?.cityName){
+        // setCityName(daysInformation[currentDayIndex]?.cityName);
+        }
+
       setIsEnd(true);
     }
   };
+  // handleNext function ends here
 
 
-
+// direct navigate to particular day function starts here
   const handleCurrentDayIndex = function(index){
     setCityNameReqErr("");
 
@@ -54,49 +67,60 @@ const Itinerary = () => {
         let cityExists = daysInformation.find((element)=> element?.day == (i+1) );
         
         if(!cityExists){
+          setCityName("");
          setCityNameReqErr(`Please enter city name for day ${i+1}`);
          setCurrentDayIndex(i);
           return;
         }
       }
+
+      if(daysInformation[index]?.cityName){
+        // setCityName(daysInformation[index]?.cityName)
+        }
     }
+
+    if(index == 0){
+      if(daysInformation[index]?.cityName){
+        // setCityName(daysInformation[index]?.cityName)
+      } 
+    }
+
     setCurrentDayIndex(index);
   }
+  // direct navigate to particular day function ends here
 
  
   console.log("Itinerary.jsx itineararyForm ", itineraryForm);
 
-  useEffect(()=>{
-  if(itineraryForm?.duration?.value){
-    console.log("itinerarForm.jsx", itineraryForm?.duration?.value);
-
-    let days = itineraryForm?.duration?.value?.split("/");
-
-    let daysValue = Number(days[0]?.replace("D", ""));
-
-    let newDaysData = [];
-
-    for (let index = 0; index < daysValue; index++) {
-
-        console.log("itinerary.jsx ", index, daysValue);
-        
-        newDaysData?.push({id: (index+1), day: (index+1), title: `Day ${(index+1)} Information` });
-
+  // useEffect starts here 
+  useEffect(() => {
+    if (itineraryForm?.duration?.value) {
+      let daysValue = Number(itineraryForm?.duration?.value?.split("/")[0]?.replace("D", ""));
+      let newDaysData = Array.from({ length: daysValue }, (_, i) => ({
+        id: i + 1,
+        day: i + 1,
+        title: `Day ${i + 1} Information`
+      }));
+      setDaysData(newDaysData);
+      setCurrentDayIndex(0);
+      dispatch(setSliceDaysInformation(daysValue));
     }
+  }, [itineraryForm, dispatch]);
+  // useEffect ends here 
 
-    setDaysData(newDaysData);
-    setCurrentDayIndex(0);
-    dispatch(setSliceDaysInformation(daysValue));
 
-  }
-  }, [itineraryForm])
+  // useEffect starts here
+  useEffect(()=>{
+  // if((daysInformation?.length - 1) == currentDayIndex){
+   if(daysInformation[currentDayIndex]?.cityName){
+    setCityName(daysInformation[currentDayIndex]?.cityName)
+   }
+  // }
+  }, [daysInformation, currentDayIndex]);
+  // useEffect ends here
 
   return (
     <div className=" md:min-h-screen">
-
-<button onClick={()=>{
-  console.log("lol", daysData)
-}}>see days data</button>      
 
           <div className="bg-white shadow rounded-lg p-6">
             <div className="flex">
@@ -131,7 +155,7 @@ const Itinerary = () => {
                     placeholder="Enter city name"
                   />
 
-                  <p className=' text-sm text-red-500 w-[200px]'>{cityNameReqErr}</p>
+                  <p className=' text-sm text-red-500 w-[250px]'>{cityNameReqErr}</p>
                 </div>
                
 
