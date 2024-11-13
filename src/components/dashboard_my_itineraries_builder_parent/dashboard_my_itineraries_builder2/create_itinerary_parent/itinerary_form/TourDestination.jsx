@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import Select from 'react-select';
-import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
-import destinationOptions from '../../destinationOptions';
+import { setItineraryForm } from '../../../../../features/itinerary/itinerarySlice';
+import destinationOptions from '../../../destinationOptions';
 
 function TourDestination() {
   const dispatch = useDispatch();

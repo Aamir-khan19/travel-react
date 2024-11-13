@@ -1,7 +1,7 @@
 import React from 'react'
 import DashboardSideBar from "../dashboard/DashboardSideBar";
 import DashboardContentContainer from '../dashboard/DashboardContentContainer';
-import ItineraryForm from './dashboard_my_itineraries_builder2/ItineraryForm';
+import CreateItineraryParent from './dashboard_my_itineraries_builder2/CreateItineraryParent';
 
 function DashboardMyitinerariesBuilder2() {
   return (
@@ -9,7 +9,7 @@ function DashboardMyitinerariesBuilder2() {
     <DashboardSideBar />
 
     <DashboardContentContainer>
-        <ItineraryForm />
+       <CreateItineraryParent />
     </DashboardContentContainer>
     </>
   )

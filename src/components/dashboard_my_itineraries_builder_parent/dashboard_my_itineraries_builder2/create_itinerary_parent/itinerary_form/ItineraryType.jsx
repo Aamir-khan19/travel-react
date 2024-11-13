@@ -1,7 +1,7 @@
 import React from 'react'
-import typeOptions from "../../typeOptions";
+import typeOptions from "../../../typeOptions";
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
+import { setItineraryForm } from '../../../../../features/itinerary/itinerarySlice';
 
 function ItineraryType() {
 const dispatch = useDispatch();

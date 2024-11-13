@@ -1,8 +1,8 @@
 import React from 'react'
 import Select from 'react-select';
-import themeOptions from "../../themeOptions";
+import themeOptions from "../../../themeOptions";
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
+import { setItineraryForm } from '../../../../../features/itinerary/itinerarySlice';
 
 function ItineraryTheme() {
 const dispatch = useDispatch();

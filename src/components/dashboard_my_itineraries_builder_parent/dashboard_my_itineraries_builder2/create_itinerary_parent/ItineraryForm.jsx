@@ -5,7 +5,7 @@ import ItineraryDuration from './itinerary_form/ItineraryDuration';
 import TourDestination from './itinerary_form/TourDestination';
 import ItineraryTheme from './itinerary_form/ItineraryTheme';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryForm } from '../../../features/itinerary/itinerarySlice';
+import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
 
 const ItineraryForm = () => {
   const dispatch = useDispatch();
@@ -13,8 +13,8 @@ const ItineraryForm = () => {
   
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg">
-      <h2 className="text-lg font-semibold text-gray-800 mb-2">Itinerary Details</h2>
+    <div className="w-full md:max-w-[350px] p-6 bg-white shadow-md rounded-lg border border-gray-500">
+      <h2 className="text-2xl font-semibold text-gray-800 mb-2">Itinerary Details</h2>
       <p className="text-sm text-gray-600 mb-4">Enter the details of your itinerary.</p>
       
       <label className="block text-gray-700 mb-2">
@@ -42,11 +42,7 @@ const ItineraryForm = () => {
 
     <ItineraryTheme />
 
-      <div className="flex space-x-2 mt-6">
-        <button className="px-4 py-2 bg-purple-100 text-purple-700 rounded-lg hover:bg-purple-200">Preview</button>
-        <button className="px-4 py-2 bg-purple-500 text-white rounded-lg hover:bg-purple-600">Draft</button>
-        <button className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
-      </div>
+     
     </div>
   );
 };

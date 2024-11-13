@@ -1,8 +1,8 @@
 import React from 'react';
-import durationOptions from "../../durationOptions";
+import durationOptions from "../../../durationOptions";
 import Select from 'react-select';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
+import { setItineraryForm } from '../../../../../features/itinerary/itinerarySlice';
 
 function ItineraryDuration() {
   const dispatch = useDispatch();

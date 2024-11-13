@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import conf from "../../../conf/conf";
+import { act } from "react";
 
 // Initial state for itineraries
 const initialState = {
@@ -18,6 +19,9 @@ const initialState = {
         duration: {},
         selectedDestinations: [],
         selectedThemes: []
+    },
+    itineraryDetails: {
+        daysInformation: []
     }
 };
 
@@ -205,6 +209,12 @@ const itinerariesSlice = createSlice({
             let newItineraryForm = {...state.itineraryForm, ...action?.payload};
 
             state.itineraryForm = newItineraryForm;
+        },
+
+        setItineraryDetails: (state, action) => {
+            let newItineraryDetails = {...state.itineraryDetails, ...action?.payload};
+
+            state.itineraryDetails = newItineraryDetails;
         }
     },
     extraReducers: (builder) => {
@@ -285,7 +295,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

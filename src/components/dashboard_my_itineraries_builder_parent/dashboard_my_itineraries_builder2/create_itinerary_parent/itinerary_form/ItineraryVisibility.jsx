@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import visibilityOptions from "../../visibilityOptions";
-import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
+import visibilityOptions from "../../../visibilityOptions";
+import { setItineraryForm } from '../../../../../features/itinerary/itinerarySlice';
 
 function ItineraryVisibility() {
   const dispatch = useDispatch();
