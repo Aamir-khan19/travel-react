@@ -21,8 +21,9 @@ const initialState = {
         selectedThemes: []
     },
     itineraryDetails: {
-        daysInformation: []
-    }
+        
+    },
+    daysInformation: []
 };
 
 // Fetch all itineraries
@@ -212,9 +213,38 @@ const itinerariesSlice = createSlice({
         },
 
         setItineraryDetails: (state, action) => {
-            let newItineraryDetails = {...state.itineraryDetails, ...action?.payload};
+          
+        },
 
-            state.itineraryDetails = newItineraryDetails;
+        setDaysInformation: (state, action)=>{
+            let elementIndex = state.daysInformation.findIndex((element)=> element?.day == action?.payload?.day);
+
+            console.log("itinerarySlice.js action.payload setDaysInformation", action?.payload, elementIndex);
+
+            if(elementIndex != -1){
+                console.log("itinerarySlice.js action.payload setDaysInformation 2", action?.payload, elementIndex);
+             let newDaysInformation = [...state.daysInformation];
+
+             newDaysInformation?.splice(elementIndex, 1, action?.payload);
+
+             state.daysInformation = newDaysInformation;
+            }
+            else{
+                state.daysInformation = [...(state.daysInformation || []), action?.payload];
+            }
+        },
+
+        setSliceDaysInformation: (state, action) => {
+            if (state?.daysInformation?.length > action?.payload) {
+                console.log("itinerarSlice.js setSliceDaysInformation", state.daysInformation.length, action?.payload);
+        
+                // Assign the result of slice to newDaysInformation
+                let newDaysInformation = state.daysInformation.slice(0, Number(action?.payload));
+        
+                console.log("newDaysInformation sliceDAysinformation", newDaysInformation);
+        
+                state.daysInformation = newDaysInformation;
+            }
         }
     },
     extraReducers: (builder) => {
@@ -295,7 +325,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

@@ -1,7 +1,7 @@
 // Itinerary.js
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryDetails } from '../../../../../features/itinerary/itinerarySlice';
+import { setDaysInformation, setSliceDaysInformation } from '../../../../../features/itinerary/itinerarySlice';
 // import Inclusion from './Inclusion';
 
 
@@ -9,7 +9,7 @@ const Itinerary = () => {
     const dispatch = useDispatch();
 
     const itineraryForm = useSelector(state => state.itineraries.itineraryForm);
-    const itineraryDetails = useSelector(state => state.itineraries.itineraryDetails);
+    const daysInformation = useSelector(state => state.itineraries.daysInformation);
 
     const [daysData, setDaysData] = useState([
         { id: 1, day: 1, title: 'Day 1 Information' },
@@ -18,7 +18,6 @@ const Itinerary = () => {
     
   const [currentDayIndex, setCurrentDayIndex] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
-  const currentDay = daysData[currentDayIndex];
 
   const [cityName, setCityName] = useState("");
   const [cityNameReqErr, setCityNameReqErr] = useState("");
@@ -36,11 +35,11 @@ const Itinerary = () => {
 
     if (currentDayIndex < daysData.length - 1) {
       setCurrentDayIndex(currentDayIndex+1);
-      dispatch(setItineraryDetails({daysInformation: [...itineraryDetails?.daysInformation, {day: `${currentDayIndex+1}`, city: cityName}]}));
+      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, cityName: cityName}));
       
       setCityName("");
     } else {
-      dispatch(setItineraryDetails({daysInformation: [...itineraryDetails?.daysInformation, {day: `${currentDayIndex+1}`, city: cityName}]}));
+      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, cityName: cityName}));
       setIsEnd(true);
     }
   };
@@ -52,7 +51,7 @@ const Itinerary = () => {
 
     if(index != 0){
       for (let i = 0; i <= index; i++) {
-        let cityExists = itineraryDetails?.daysInformation.find((element)=> element?.day == (i+1) );
+        let cityExists = daysInformation.find((element)=> element?.day == (i+1) );
         
         if(!cityExists){
          setCityNameReqErr(`Please enter city name for day ${i+1}`);
@@ -86,6 +85,8 @@ const Itinerary = () => {
     }
 
     setDaysData(newDaysData);
+    setCurrentDayIndex(0);
+    dispatch(setSliceDaysInformation(daysValue));
 
   }
   }, [itineraryForm])
@@ -116,7 +117,7 @@ const Itinerary = () => {
               </div>
 
               <div className="w-3/4 pl-6">
-                <h2 className="text-xl font-semibold mb-4 bg-purple-400 rounded-lg px-4 py-2  text-white">{currentDay?.title}</h2>
+                <h2 className="text-xl font-semibold mb-4 bg-purple-400 rounded-lg px-4 py-2  text-white">{ daysData[currentDayIndex]?.title}</h2>
                 <div className="mb-4">
                   <label className=" bg-gray-500 px-2 py-1 rounded-t-md inline-block text-white">City</label>
                   
