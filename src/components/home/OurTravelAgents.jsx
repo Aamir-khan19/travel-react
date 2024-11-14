@@ -234,6 +234,19 @@ const OurTravelAgents = () => {
   };
 
   return (
+    <>
+  {
+    false?  <div className=' flex justify-center h-[50vh] items-center'>
+
+    <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+
+    </div>
+
+
+:
+
+
+
     <section>
       <div className="mx-auto relative max-w-[1340px] px-4 sm:px-6 lg:ps-8">
         <div className="flex flex-col sm:flex-row items-center justify-between mx-auto mb-8 sm:mb-16">
@@ -394,6 +407,12 @@ const OurTravelAgents = () => {
         </div>
       </div>
     </section>
+
+
+}
+
+
+</>
   );
 };
 
