@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutAsync } from '../../features/login/loginSlice';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaUser } from 'react-icons/fa';
 
 function DashboardContentContainer({children}) {
   const navigate = useNavigate();
@@ -41,9 +42,19 @@ function DashboardContentContainer({children}) {
 
             {/* Modal */}
             {isModalOpen && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border rounded shadow-lg z-10">
+              <div className="absolute right-0 mt-2 bg-white border rounded shadow-lg z-10">
                 <div className="p-4">
-                    <h3 className=' text-gray-600 my-2'>{tokenState?.user?.email}</h3>
+
+                  <div className=' border-b border-gray-600 px-2 mb-2'>
+                  <h2 className=' text-gray-700 my-1'>{tokenState?.user?.name}</h2>
+                  <h3 className=' text-gray-600 my-1 text-sm'>{tokenState?.user?.email}</h3>
+                  </div>
+
+<div className=' flex justify-start items-center my-2 gap-2'>
+<FaUser /> <Link to="/dashboard-my-account">My Account</Link>
+</div>
+               
+                  
                   <button
                     className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded focus:outline-none"
                     onClick={handleLogout}
