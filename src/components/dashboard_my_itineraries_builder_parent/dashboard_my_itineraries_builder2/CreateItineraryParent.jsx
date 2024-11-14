@@ -14,7 +14,7 @@ function CreateItineraryParent() {
 
     <div className='border border-gray-400 rounded-md pb-5 bg-white w-[99%] mx-auto'>
 
-    <div className=' my-2  flex flex-col items-center justify-between md:flex-row md:justify-between md:items-start p-5'>
+    <div className=' my-2 flex flex-col items-center justify-between md:flex-row md:justify-between md:items-start p-5'>
    
    <CreateItinerary />
      

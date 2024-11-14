@@ -21,7 +21,8 @@ const initialState = {
         selectedThemes: []
     },
     itineraryDetails: {
-        
+        inclusion: "",
+        exclusion: ""
     },
     daysInformation: []
 };
@@ -213,7 +214,9 @@ const itinerariesSlice = createSlice({
         },
 
         setItineraryDetails: (state, action) => {
-          
+          let newItineraryDetails = {...state.itineraryDetails, ...action?.payload};
+
+          state.itineraryDetails = newItineraryDetails;
         },
 
         setDaysInformation: (state, action)=>{

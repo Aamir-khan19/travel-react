@@ -21,6 +21,15 @@ const DashboardMyItinerariesBuilder = (props) => {
   const [itineraryFile, setItineraryFile] = useState({});
 
   const notify = () => {
+    
+  };
+
+
+
+  function handleItineraryBuilderComponent(){
+  console.log("DashobardMyitinearbuilder", itineraryForm);
+
+  if(itineraryForm?.selectedDestinations?.length == 0){
     toast.error("Please Fill Tour Destinations", {
       position: "bottom-right",
       autoClose: 5000,
@@ -29,8 +38,43 @@ const DashboardMyItinerariesBuilder = (props) => {
       draggable: true,
       pauseOnHover: true,
     });
-  };
 
+    return;
+  }
+
+  if(!itineraryForm?.duration?.value){
+      toast.error("Please Select Itinerary Duration", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+  
+      return;
+  }
+
+
+
+  if(itineraryForm?.selectedThemes?.length == 0){
+    toast.error("Please Select Itinerary Theme", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+
+    return;
+  }
+
+
+  props.setCurrentItineraryBuilderComp(2)
+  }
+
+  
 
   return (
     <>
@@ -190,7 +234,7 @@ const DashboardMyItinerariesBuilder = (props) => {
 
           <div className="flex justify-center">
             <button
-              onClick={() => props.setCurrentItineraryBuilderComp(2)}
+              onClick={handleItineraryBuilderComponent}
               className="bg-purple-500 px-4 py-1 rounded-full text-white"
             >
               Next
