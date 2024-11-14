@@ -99,7 +99,7 @@ function UpdateCompanyDetails() {
       <label htmlFor="logo-upload">
         <div className="relative w-64 h-64 border border-gray-300 bg-gray-100 flex items-center justify-center cursor-pointer hover:bg-gray-200">
           {companyImageUrl || company?.company_logo ? (
-            <img src={companyImageUrl || ""} alt="Company Logo" className="object-contain w-full h-full" />
+            <img src={companyImageUrl || `${conf?.laravelBaseUrl}/${company?.company_logo}`} alt="Company Logo" className="object-contain w-full h-full" />
           ) : (
             <span className="text-gray-600">Upload Company Logo</span>
           )}

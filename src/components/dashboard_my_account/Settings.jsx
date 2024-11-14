@@ -134,7 +134,7 @@ isLoading?
             className="w-36 h-36 flex items-center justify-center border-2 border-dashed border-gray-400 bg-gray-100 cursor-pointer rounded-lg overflow-hidden"
           >
             {user?.your_photo || profileImageUrl ? (
-              <img src={profileImageUrl || `${conf?.laravelBaseUrl}/storage/${user?.your_photo}`} alt="Uploaded Profile" className="w-full h-full object-cover" />
+              <img src={profileImageUrl || `${conf?.laravelBaseUrl}/${user?.your_photo}`} alt="Uploaded Profile" className="w-full h-full object-cover" />
             ) : (
               <span className="text-gray-500">Select Image</span>
             )}
@@ -245,7 +245,7 @@ isLoading?
             name="youtube"
             placeholder="Enter Your Yotube link" 
             className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500" 
-            required 
+      
           />
 
         </div>

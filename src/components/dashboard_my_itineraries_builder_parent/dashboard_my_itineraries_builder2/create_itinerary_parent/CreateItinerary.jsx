@@ -20,11 +20,11 @@ function CreateItinerary() {
     }
 
     {
-      (currentComponent==1) && <Inclusion />
+      (currentComponent==1) && <Inclusion setCurrentComponent={setCurrentComponent} />
     }
 
     {
-      (currentComponent==2) && <Exclusion />
+      (currentComponent==2) && <Exclusion setCurrentComponent={setCurrentComponent} />
     }
 
 </div>
