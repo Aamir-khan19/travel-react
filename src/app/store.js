@@ -4,6 +4,7 @@ import signupReducer from '../features/signup/signupSlice'
 import usersReducer from '../features/users/usersSlice'
 import companiesReducer from '../features/company/companySlice'
 import itinerariesReducer from '../features/itinerary/itinerarySlice'
+import publicReducer from '../features/public/publicSlice'
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
     signup: signupReducer,
     users: usersReducer,
     companies: companiesReducer,
-    itineraries: itinerariesReducer
+    itineraries: itinerariesReducer,
+    public: publicReducer
   },
 })

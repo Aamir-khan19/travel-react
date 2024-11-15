@@ -9,8 +9,25 @@ import {
   FaPhone,
   FaSearch,
 } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
+import { publicGetCompaniesAsync } from "../../features/public/publicSlice";
 
 const OurTravelAgents = () => {
+  const dispatch = useDispatch();
+  const companies = useSelector(state => state.public.companies);
+  const isLoading = useSelector(state => state.public.isLoading);
+
+
+  useEffect(()=>{
+    if(companies?.length == 0){
+      dispatch(publicGetCompaniesAsync())
+    }
+    }, [])
+
+
+    console.log("OurTravelAgents.jsx companies public", companies);
+
+
   const ourTravelAgents = [
     {
       imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
@@ -232,6 +249,10 @@ const OurTravelAgents = () => {
     setCurrentPhoneModal(null);
     setIsPhoneModalOpen(false);
   };
+
+
+
+
 
   return (
     <>

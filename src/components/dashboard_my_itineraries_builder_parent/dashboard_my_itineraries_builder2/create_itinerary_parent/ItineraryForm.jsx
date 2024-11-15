@@ -6,6 +6,10 @@ import TourDestination from './itinerary_form/TourDestination';
 import ItineraryTheme from './itinerary_form/ItineraryTheme';
 import { useDispatch, useSelector } from 'react-redux';
 import { setItineraryForm } from '../../../../features/itinerary/itinerarySlice';
+import DestinationThumbnail from './itinerary_form/DestinationThumbnail';
+import DestinationImages from './itinerary_form/DestinationImages';
+import MetaTitle from './itinerary_form/MetaTitle';
+import MetaDescription from './itinerary_form/MetaDescription';
 
 const ItineraryForm = () => {
   const dispatch = useDispatch();
@@ -28,6 +32,9 @@ const ItineraryForm = () => {
         />
       </label>
 
+<MetaTitle />
+
+<MetaDescription />
      
      <ItineraryVisibility />
      
@@ -42,6 +49,9 @@ const ItineraryForm = () => {
 
     <ItineraryTheme />
 
+    <DestinationThumbnail />
+
+    <DestinationImages />
      
     </div>
   );

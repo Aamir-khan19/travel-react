@@ -14,12 +14,20 @@ const initialState = {
     itinerary: {},
     itineraryForm: {
         title: "",
+        metaTitle: "",
+        metaDescription: "",
         visibility: "public",
         type: "flexible",
         duration: {},
         selectedDestinations: [],
         selectedThemes: []
     },
+    
+    // file handling states 
+    destinationThumbnail: {},
+    destinationImages: [],
+   // file handling states
+
     itineraryDetails: {
         inclusion: "",
         exclusion: ""
@@ -248,6 +256,15 @@ const itinerariesSlice = createSlice({
         
                 state.daysInformation = newDaysInformation;
             }
+        },
+
+
+        setDestinationThumbnail: (state, action)=>{
+            state.destinationThumbnail = action.payload;
+        },
+
+        setDestinationImages: (state, action) =>{
+            state.destinationImages = action.payload;
         }
     },
     extraReducers: (builder) => {
@@ -328,7 +345,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 
