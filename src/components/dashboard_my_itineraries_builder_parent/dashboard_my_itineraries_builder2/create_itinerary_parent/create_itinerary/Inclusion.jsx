@@ -11,24 +11,27 @@ const Inclusion = ({setCurrentComponent}) => {
 
   const modules = {
     toolbar: [
-      [{ 'bold': true }, { 'italic': true }, { 'underline': true }],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      [{ 'list': 'ordered' }],
     ],
   };
 
 
   const handleBack = function(){
-  setCurrentComponent(0)
+  setCurrentComponent(1)
   }
 
   const handleNext = function(){
-  setCurrentComponent(2)
+  setCurrentComponent(3)
   }
 
 
   return (
 
     <>  
+
+<button onClick={()=>{
+  console.log("dwatils text -> ", itineraryDetails?.inclusion);
+}}>detail text</button>
    
 
     <div className="p-4 mb-10 md:mb-2">

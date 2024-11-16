@@ -12,21 +12,22 @@ function CreateItineraryHeader({setCurrentComponent, currentComponent}) {
        </li>
 
        <li>
-       <button onClick={()=>setCurrentComponent(1)} className={` font-semibold ${(currentComponent== 1)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Inclusion</button>
+         <button onClick={()=>setCurrentComponent(1)} className={` font-semibold ${(currentComponent== 1)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Destination Details</button>
        </li>
 
        <li>
-       <button onClick={()=>setCurrentComponent(2)} className={` font-semibold ${(currentComponent== 2)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Exclusion</button>
+       <button onClick={()=>setCurrentComponent(2)} className={` font-semibold ${(currentComponent== 2)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Inclusion</button>
        </li>
 
        <li>
-       <button onClick={()=>setCurrentComponent(3)} className={` font-semibold ${(currentComponent== 3)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Price</button>
+       <button onClick={()=>setCurrentComponent(3)} className={` font-semibold ${(currentComponent== 3)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Exclusion</button>
        </li>
-
 
        <li>
-       <button onClick={()=>setCurrentComponent(4)} className={` font-semibold ${(currentComponent== 4)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Terms and conditions</button>
+       <button onClick={()=>setCurrentComponent(4)} className={` font-semibold ${(currentComponent== 4)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Price</button>
        </li>
+
+
      </ul>
     </div>
     

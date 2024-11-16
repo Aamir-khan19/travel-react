@@ -38,7 +38,6 @@ function TourDestination() {
     Tour Destination
     <Select
     styles={customStyles}
-      isMulti
       options={destinationOptions}
       value={itineraryForm?.selectedDestinations}
       onChange={(e)=>dispatch(setItineraryForm({selectedDestinations: e}))}

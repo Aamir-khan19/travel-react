@@ -19,37 +19,37 @@ const Itinerary = ({setCurrentComponent}) => {
   const [currentDayIndex, setCurrentDayIndex] = useState(0);
   const [isEnd, setIsEnd] = useState(false);
 
-  const [cityName, setCityName] = useState("");
-  const [cityNameReqErr, setCityNameReqErr] = useState("");
+  const [locationName, setLocationName] = useState("");
+  const [locationNameReqErr, setLocationNameReqErr] = useState("");
 
 
   // handleNext function starts here
   const handleNext = () => {
     console.log("handleNext currentDayIndex days.length", currentDayIndex, daysData?.length);
    
-    setCityNameReqErr("");
+    setLocationNameReqErr("");
 
-    if(!cityName?.trim()){
-     setCityNameReqErr("Please enter the city name");
+    if(!locationName?.trim()){
+     setLocationNameReqErr("Please enter the location name");
 
      return;
     }
 
     if (currentDayIndex < daysData.length - 1) {
       setCurrentDayIndex(currentDayIndex+1);
-      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, cityName: cityName}));
+      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, locationName: locationName}));
       
-      setCityName("");
+      setLocationName("");
 
-      if(daysInformation[currentDayIndex]?.cityName){
-      // setCityName(daysInformation[currentDayIndex]?.cityName);
+      if(daysInformation[currentDayIndex]?.locationName){
+      // setLocationName(daysInformation[currentDayIndex]?.locationName);
       }
 
     } else {
-      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, cityName: cityName}));
+      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, locationName: locationName}));
 
-      if(daysInformation[currentDayIndex]?.cityName){
-        // setCityName(daysInformation[currentDayIndex]?.cityName);
+      if(daysInformation[currentDayIndex]?.locationName){
+        // setLocationName(daysInformation[currentDayIndex]?.locationName);
         }
       setCurrentComponent(1);
       setIsEnd(true);
@@ -60,28 +60,28 @@ const Itinerary = ({setCurrentComponent}) => {
 
 // direct navigate to particular day function starts here
   const handleCurrentDayIndex = function(index){
-    setCityNameReqErr("");
+    setLocationNameReqErr("");
 
     if(index != 0){
       for (let i = 0; i <= index; i++) {
-        let cityExists = daysInformation.find((element)=> element?.day == (i+1) );
+        let locationExists = daysInformation.find((element)=> element?.day == (i+1) );
         
-        if(!cityExists){
-          setCityName("");
-         setCityNameReqErr(`Please enter city name for day ${i+1}`);
+        if(!locationExists){
+          setLocationName("");
+         setLocationNameReqErr(`Please enter location name for day ${i+1}`);
          setCurrentDayIndex(i);
           return;
         }
       }
 
-      if(daysInformation[index]?.cityName){
-        // setCityName(daysInformation[index]?.cityName)
+      if(daysInformation[index]?.locationName){
+        // setLocationName(daysInformation[index]?.locationName)
         }
     }
 
     if(index == 0){
-      if(daysInformation[index]?.cityName){
-        // setCityName(daysInformation[index]?.cityName)
+      if(daysInformation[index]?.locationName){
+        // setLocationName(daysInformation[index]?.locationName)
       } 
     }
 
@@ -112,8 +112,8 @@ const Itinerary = ({setCurrentComponent}) => {
   // useEffect starts here
   useEffect(()=>{
   // if((daysInformation?.length - 1) == currentDayIndex){
-   if(daysInformation[currentDayIndex]?.cityName){
-    setCityName(daysInformation[currentDayIndex]?.cityName)
+   if(daysInformation[currentDayIndex]?.locationName){
+    setLocationName(daysInformation[currentDayIndex]?.locationName)
    }
   // }
   }, [daysInformation, currentDayIndex]);
@@ -171,19 +171,29 @@ const Itinerary = ({setCurrentComponent}) => {
               <div className="md:w-3/4 md:pl-6">
                 <h2 className="text-xl font-semibold mb-4 bg-purple-400 rounded-lg px-4 py-2  text-white">{ daysData[currentDayIndex]?.title}</h2>
                 <div className="mb-4">
-                  <label className=" bg-gray-500 px-2 py-1 rounded-t-md inline-block text-white">City</label>
+                  <label className=" bg-gray-500 px-2 py-1 rounded-t-md inline-block text-white">Location</label>
                   
                   <p className="text-gray-500 my-4">Craft extraordinary journeys by selecting the perfect destination for travelers.</p>
                   
                   <input
-                  value={cityName}
-                  onChange={(e)=>setCityName(e.target.value)}
+                  value={locationName}
+                  onChange={(e)=>setLocationName(e.target.value)}
                     type="text"
                     className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Enter city name"
+                    placeholder="Enter location title"
                   />
 
-                  <p className=' text-sm text-red-500 w-[250px]'>{cityNameReqErr}</p>
+                  <p className=' text-sm text-red-500 w-[250px]'>{locationNameReqErr}</p>
+
+
+                  <textarea
+                  
+                  type="text"
+                  className=" mt-5 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  placeholder="Enter location description"
+                   ></textarea>
+<p className=' text-sm text-red-500 w-[250px]'>{locationNameReqErr}</p>
+
                 </div>
                
 

@@ -12,19 +12,18 @@ const Exclusion = ({setCurrentComponent}) => {
 
   const modules = {
     toolbar: [
-      [{ 'bold': true }, { 'italic': true }, { 'underline': true }],
-      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+      [{ 'list': 'ordered' }],
     ],
   };
 
 
 
   const handleBack = function(){
-    setCurrentComponent(1)
+    setCurrentComponent(2)
     }
   
     const handleNext = function(){
-    setCurrentComponent(3)
+    setCurrentComponent(4)
     }
 
   return (
@@ -33,7 +32,7 @@ const Exclusion = ({setCurrentComponent}) => {
 
     <div className="p-4 mb-10 md:mb-2">
 
-      <label className="block text-lg font-bold mb-2">Inclusion</label>
+      <label className="block text-lg font-bold mb-2">Exclusion</label>
       <ReactQuill
         theme="snow"
         value={itineraryDetails?.exclusion}

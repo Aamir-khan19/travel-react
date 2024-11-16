@@ -45,8 +45,7 @@ const TourSelection = () => {
           id="tour-destination"
           options={destinationOptions}
           styles={customStyles}
-          isMulti
-          placeholder="Select Destinations"
+          placeholder="Select Destination"
           className="rounded-md border-gray-300 shadow-sm"
           classNamePrefix="select"
         />

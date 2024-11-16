@@ -19,10 +19,12 @@ const initialState = {
         visibility: "public",
         type: "flexible",
         duration: {},
-        selectedDestinations: [],
+        selectedDestinations: {},
         selectedThemes: []
     },
     
+
+    destinationDetailText: "",
     // file handling states 
     destinationThumbnail: {},
     destinationImages: [],
@@ -32,7 +34,14 @@ const initialState = {
         inclusion: "",
         exclusion: ""
     },
-    daysInformation: []
+
+    daysInformation: [],
+
+    priceRange: {
+        currency: "₹",
+        minPrice: "",
+        maxPrice: "",
+      },
 };
 
 // Fetch all itineraries
@@ -258,6 +267,9 @@ const itinerariesSlice = createSlice({
             }
         },
 
+        setDestinationDetailText: (state, action)=>{
+        state.destinationDetailText = action?.payload
+        },
 
         setDestinationThumbnail: (state, action)=>{
             state.destinationThumbnail = action.payload;
@@ -265,7 +277,11 @@ const itinerariesSlice = createSlice({
 
         setDestinationImages: (state, action) =>{
             state.destinationImages = action.payload;
-        }
+        },
+
+        setPriceRange: (state, action) => {
+            state.priceRange = { ...state.priceRange, ...action.payload };
+          },
     },
     extraReducers: (builder) => {
         builder
@@ -345,7 +361,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages, setDestinationDetailText, setPriceRange } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 
