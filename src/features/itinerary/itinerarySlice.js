@@ -15,11 +15,12 @@ const initialState = {
     itineraryForm: {
         title: "",
         metaTitle: "",
+        keyword: "",
         metaDescription: "",
         visibility: "public",
         type: "flexible",
         duration: {},
-        selectedDestinations: {},
+        selectedDestination: {},
         selectedThemes: []
     },
     
@@ -29,6 +30,12 @@ const initialState = {
     destinationThumbnail: {},
     destinationImages: [],
    // file handling states
+
+   hotelDetails: [
+    { type: "Super Deluxe", name: "", roomType: "", price: "", discount: "" },
+    { type: "Deluxe", name: "", roomType: "", price: "", discount: "" },
+    { type: "Standard", name: "", roomType: "", price: "", discount: "" },
+  ],
 
     itineraryDetails: {
         inclusion: "",
@@ -282,6 +289,17 @@ const itinerariesSlice = createSlice({
         setPriceRange: (state, action) => {
             state.priceRange = { ...state.priceRange, ...action.payload };
           },
+
+          setHotelDetails: (state, action) => {
+            const { index, field, value } = action.payload;
+
+            console.log("ItinearaySlice.js action.payload ", index, field, value);
+
+            state.hotelDetails[index] = {
+              ...state.hotelDetails[index],
+              [field]: value,
+            };
+          },
     },
     extraReducers: (builder) => {
         builder
@@ -361,7 +379,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages, setDestinationDetailText, setPriceRange } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages, setDestinationDetailText, setPriceRange, setHotelDetails } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

@@ -41,7 +41,7 @@ const TourSelection = () => {
           Tour Destination <span className=' text-red-500'>*</span>
         </label>
         <Select
-        onChange={(e)=>dispatch(setItineraryForm({selectedDestinations: e}))}
+        onChange={(e)=>dispatch(setItineraryForm({selectedDestination: e}))}
           id="tour-destination"
           options={destinationOptions}
           styles={customStyles}

@@ -24,7 +24,7 @@ function CreateItineraryHeader({setCurrentComponent, currentComponent}) {
        </li>
 
        <li>
-       <button onClick={()=>setCurrentComponent(4)} className={` font-semibold ${(currentComponent== 4)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Price</button>
+       <button onClick={()=>setCurrentComponent(4)} className={` font-semibold ${(currentComponent== 4)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Hotel Details</button>
        </li>
 
 

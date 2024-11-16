@@ -12,7 +12,8 @@ const Exclusion = ({setCurrentComponent}) => {
 
   const modules = {
     toolbar: [
-      [{ 'list': 'ordered' }],
+      [{ 'bold': true }, { 'italic': true }, { 'underline': true }],
+      [{ 'list': 'ordered' }, { 'list': 'bullet' }],
     ],
   };
 

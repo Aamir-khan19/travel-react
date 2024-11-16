@@ -21,7 +21,7 @@ const PriceComponent = ({setCurrentComponent}) => {
 
 
   const handleBack = function(){
-    setCurrentComponent(3)
+    setCurrentComponent(4)
     }
 
   return (

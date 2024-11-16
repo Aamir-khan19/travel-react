@@ -10,6 +10,7 @@ import DestinationThumbnail from './itinerary_form/DestinationThumbnail';
 import DestinationImages from './itinerary_form/DestinationImages';
 import MetaTitle from './itinerary_form/MetaTitle';
 import MetaDescription from './itinerary_form/MetaDescription';
+import Keyword from './itinerary_form/Keyword';
 
 const ItineraryForm = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,8 @@ const ItineraryForm = () => {
       </label>
 
 <MetaTitle />
+
+<Keyword />
 
 <MetaDescription />
      

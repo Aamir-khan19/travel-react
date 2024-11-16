@@ -6,6 +6,7 @@ import Inclusion from './create_itinerary/Inclusion';
 import Exclusion from './create_itinerary/Exclusion';
 import DestinationDetails from './create_itinerary/DestinationDetails';
 import PriceComponent from './create_itinerary/PriceComponent';
+import HotelDetails from './create_itinerary/HotelDetails';
 
 function CreateItinerary() {
     const [currentComponent, setCurrentComponent] = useState(0);
@@ -34,7 +35,11 @@ function CreateItinerary() {
     }
 
     {
-      (currentComponent == 4) && <PriceComponent setCurrentComponent={setCurrentComponent} />
+      (currentComponent == 4) && <HotelDetails setCurrentComponent={setCurrentComponent} />
+    }
+
+    {
+      (currentComponent == 5) && <PriceComponent setCurrentComponent={setCurrentComponent} />
     }
 
 </div>
