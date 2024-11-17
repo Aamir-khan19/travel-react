@@ -39,8 +39,8 @@ function TourDestination() {
     <Select
     styles={customStyles}
       options={destinationOptions}
-      value={itineraryForm?.selectedDestinations}
-      onChange={(e)=>dispatch(setItineraryForm({selectedDestinations: e}))}
+      value={itineraryForm?.selectedDestination}
+      onChange={(e)=>dispatch(setItineraryForm({selectedDestination: e}))}
       className="mt-1"
       placeholder="Select Destinations"
     />
