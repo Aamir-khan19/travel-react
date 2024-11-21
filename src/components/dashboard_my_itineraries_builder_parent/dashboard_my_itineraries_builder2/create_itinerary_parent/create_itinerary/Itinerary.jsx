@@ -22,12 +22,16 @@ const Itinerary = ({setCurrentComponent}) => {
   const [locationName, setLocationName] = useState("");
   const [locationNameReqErr, setLocationNameReqErr] = useState("");
 
+  const [locationDetail, setLocationDetail] = useState("");
+  const [locationDetailReqErr, setLocationDetailReqErr] = useState("");
+
 
   // handleNext function starts here
   const handleNext = () => {
     console.log("handleNext currentDayIndex days.length", currentDayIndex, daysData?.length);
    
     setLocationNameReqErr("");
+    setLocationDetailReqErr("");
 
     if(!locationName?.trim()){
      setLocationNameReqErr("Please enter the location name");
@@ -35,22 +39,22 @@ const Itinerary = ({setCurrentComponent}) => {
      return;
     }
 
+    if(!locationDetail?.trim()){
+      setLocationDetailReqErr("Please enter the location description");
+ 
+      return;
+     }
+
     if (currentDayIndex < daysData.length - 1) {
       setCurrentDayIndex(currentDayIndex+1);
-      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, locationName: locationName}));
+      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, locationName: locationName, locationDetail: locationDetail}));
       
       setLocationName("");
-
-      if(daysInformation[currentDayIndex]?.locationName){
-      // setLocationName(daysInformation[currentDayIndex]?.locationName);
-      }
+      setLocationDetail("");
 
     } else {
-      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, locationName: locationName}));
+      dispatch(setDaysInformation({day: `${currentDayIndex+1}`, locationName: locationName, locationDetail: locationDetail}));
 
-      if(daysInformation[currentDayIndex]?.locationName){
-        // setLocationName(daysInformation[currentDayIndex]?.locationName);
-        }
       setCurrentComponent(1);
       setIsEnd(true);
     }
@@ -68,21 +72,14 @@ const Itinerary = ({setCurrentComponent}) => {
         
         if(!locationExists){
           setLocationName("");
+          setLocationDetail("");
+          setLocationDetailReqErr(`Please enter localtion description for day ${i+1}`);
          setLocationNameReqErr(`Please enter location name for day ${i+1}`);
          setCurrentDayIndex(i);
           return;
         }
       }
 
-      if(daysInformation[index]?.locationName){
-        // setLocationName(daysInformation[index]?.locationName)
-        }
-    }
-
-    if(index == 0){
-      if(daysInformation[index]?.locationName){
-        // setLocationName(daysInformation[index]?.locationName)
-      } 
     }
 
     setCurrentDayIndex(index);
@@ -112,8 +109,9 @@ const Itinerary = ({setCurrentComponent}) => {
   // useEffect starts here
   useEffect(()=>{
   // if((daysInformation?.length - 1) == currentDayIndex){
-   if(daysInformation[currentDayIndex]?.locationName){
-    setLocationName(daysInformation[currentDayIndex]?.locationName)
+   if(daysInformation[currentDayIndex]?.locationName && daysInformation[currentDayIndex]?.locationDetail){
+    setLocationName(daysInformation[currentDayIndex]?.locationName);
+    setLocationDetail(daysInformation[currentDayIndex]?.locationDetail);
    }
   // }
   }, [daysInformation, currentDayIndex]);
@@ -187,12 +185,13 @@ const Itinerary = ({setCurrentComponent}) => {
 
 
                   <textarea
-                  
+                  value={locationDetail}
+                  onChange={(e)=>setLocationDetail(e.target.value)}
                   type="text"
                   className=" mt-5 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   placeholder="Enter location description"
                    ></textarea>
-<p className=' text-sm text-red-500 w-[250px]'>{locationNameReqErr}</p>
+<p className=' text-sm text-red-500 w-[250px]'>{locationDetailReqErr}</p>
 
                 </div>
                

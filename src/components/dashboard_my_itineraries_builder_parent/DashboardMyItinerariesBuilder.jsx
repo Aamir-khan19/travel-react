@@ -20,17 +20,13 @@ const DashboardMyItinerariesBuilder = (props) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [itineraryFile, setItineraryFile] = useState({});
 
-  const notify = () => {
-    
-  };
-
 
 
   function handleItineraryBuilderComponent(){
   console.log("DashobardMyitinearbuilder", itineraryForm);
 
-  if(itineraryForm?.selectedDestinations?.length == 0){
-    toast.error("Please Fill Tour Destinations", {
+  if(!itineraryForm?.selectedDestination?.value){
+    toast.error("Please Fill Tour Destination", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -71,7 +67,7 @@ const DashboardMyItinerariesBuilder = (props) => {
   }
 
 
-  props.setCurrentItineraryBuilderComp(2)
+  props.setCurrentItineraryBuilderComp(2);
   }
 
   

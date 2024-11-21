@@ -111,9 +111,10 @@ const HotelDetails = ({setCurrentComponent}) => {
     </button>
     
 
-      <button onClick={handleNext} className="flex items-center text-blue-600 font-semibold underline hover:text-blue-800 mb-4">
+      {/* <button onClick={handleNext} className="flex items-center text-blue-600 font-semibold underline hover:text-blue-800 mb-4">
       Next <HiChevronRight className="ml-1" />
-    </button>
+    </button> */}
+
     </div>
 
 

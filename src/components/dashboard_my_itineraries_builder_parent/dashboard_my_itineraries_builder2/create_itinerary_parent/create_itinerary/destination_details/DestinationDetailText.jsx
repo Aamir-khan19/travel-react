@@ -18,7 +18,7 @@ const DestinationDetailText = () => {
       [{ indent: '-1' }, { indent: '+1' }], // Indentation
       [{ align: [] }], // Alignment
       ['blockquote', 'code-block'], // Block elements
-      ['link', 'image', 'video'], // Insert options
+      ['link'], // Insert options
       ['clean'], // Remove formatting
     ],
   };
@@ -37,9 +37,7 @@ const DestinationDetailText = () => {
     'align',
     'blockquote',
     'code-block',
-    'link',
-    'image',
-    'video',
+    'link'
   ];
 
   return (

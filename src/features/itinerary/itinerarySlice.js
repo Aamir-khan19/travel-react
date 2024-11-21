@@ -1,10 +1,10 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import conf from "../../../conf/conf";
-import { act } from "react";
 
 // Initial state for itineraries
 const initialState = {
+    aamir: "initial bhendor",
     isLoading: false,
     itineraries: [],
     isItineraryCreated: false,
@@ -12,6 +12,8 @@ const initialState = {
     errors: {},
     flashMessage: "",
     itinerary: {},
+
+
     itineraryForm: {
         title: "",
         metaTitle: "",
@@ -23,32 +25,26 @@ const initialState = {
         selectedDestination: {},
         selectedThemes: []
     },
-    
+
+     // file handling states 
+     destinationThumbnail: {},
+     destinationImages: [],
+    // file handling states
+
+    daysInformation: [],
 
     destinationDetailText: "",
-    // file handling states 
-    destinationThumbnail: {},
-    destinationImages: [],
-   // file handling states
-
-   hotelDetails: [
-    { type: "Super Deluxe", name: "", roomType: "", price: "", discount: "" },
-    { type: "Deluxe", name: "", roomType: "", price: "", discount: "" },
-    { type: "Standard", name: "", roomType: "", price: "", discount: "" },
-  ],
 
     itineraryDetails: {
         inclusion: "",
         exclusion: ""
     },
 
-    daysInformation: [],
-
-    priceRange: {
-        currency: "₹",
-        minPrice: "",
-        maxPrice: "",
-      },
+   hotelDetails: [
+    { type: "Super Deluxe", name: "", roomType: "", price: "", discount: "" },
+    { type: "Deluxe", name: "", roomType: "", price: "", discount: "" },
+    { type: "Standard", name: "", roomType: "", price: "", discount: "" },
+  ],
 };
 
 // Fetch all itineraries
@@ -286,10 +282,6 @@ const itinerariesSlice = createSlice({
             state.destinationImages = action.payload;
         },
 
-        setPriceRange: (state, action) => {
-            state.priceRange = { ...state.priceRange, ...action.payload };
-          },
-
           setHotelDetails: (state, action) => {
             const { index, field, value } = action.payload;
 
@@ -379,7 +371,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages, setDestinationDetailText, setPriceRange, setHotelDetails } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages, setDestinationDetailText, setPriceRange, setHotelDetails, setAamir } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

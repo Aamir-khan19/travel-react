@@ -1,8 +1,130 @@
 import React from 'react'
 import ItineraryForm from './create_itinerary_parent/ItineraryForm'
 import CreateItinerary from './create_itinerary_parent/CreateItinerary'
+import { useDispatch, useSelector } from 'react-redux'
+import { toast, ToastContainer } from 'react-toastify';
 
 function CreateItineraryParent() {
+const dispatch = useDispatch();
+const itineraryForm = useSelector(state => state.itineraries.itineraryForm);
+const daysInformation = useSelector(state => state.itineraries.daysInformation);
+const destinationDetailText = useSelector(state => state.itineraries.destinationDetailText);
+const itineraryDetails = useSelector(state => state.itineraries.itineraryDetails);
+const hotelDetails = useSelector(state => state.itineraries.hotelDetails);
+const destinationThumbnail = useSelector(state=> state.itineraries.destinationThumbnail);
+const destinationImages = useSelector(state => state.itineraries.destinationImages);
+
+
+const handleCreateItineraryAndItineraryForm = function(){
+  console.log("CreateItineraryForm.jsx itineararForm", itineraryForm, "daysInformation", daysInformation, "destinationDetailText",  destinationDetailText, "itineariesDetails", itineraryDetails, "hotelDetails ", hotelDetails, "destinationThumbanil", destinationThumbnail, "destinationImages", destinationImages);
+
+
+  if(!itineraryForm?.title){
+    toast.error("Please Fill Itinerary Title", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    
+    return;
+  }
+
+
+  if(!itineraryForm?.visibility){
+    toast.error("Please Select Itinerary Visibility", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+
+    return;
+  }
+
+  if(!itineraryForm?.type){
+    toast.error("Please Select Itinerary Type", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    return;
+  }
+
+  if(!itineraryForm?.duration){
+    toast.error("Please Select Itinerary Duration", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    return;
+  }
+
+
+  if(!itineraryForm?.selectedDestination){
+    toast.error("Please Select Itinerary Destination", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    return;
+  }
+
+  if(!itineraryForm?.selectedThemes){
+    toast.error("Please Select Itinerary Theme", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    return;
+  }
+
+
+  if(!destinationThumbnail?.name){
+    toast.error("Please Select Destination Thumbnail", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    return;
+  }
+
+
+  if(destinationImages?.length == 0){
+    toast.error("Please Select Destination Images", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+    return;
+  }
+  
+
+
+}
+
   return (
     <>
 
@@ -30,7 +152,7 @@ function CreateItineraryParent() {
 
      {/* Publish button div starts here  */}
     <div className=" hidden md:flex justify-center space-x-2 mt-6">
-    <button className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
+    <button onClick={()=>handleCreateItineraryAndItineraryForm()} className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
     </div>
    {/* Publish button div ends here  */}
 
@@ -38,7 +160,7 @@ function CreateItineraryParent() {
 
    
 
-   
+   <ToastContainer />
 
     </div>
     </>

@@ -22,7 +22,7 @@ function DestinationDetails({setCurrentComponent}) {
 
 
 
-      <div className=' mt-16 flex justify-between'>
+      <div className=' mt-20 flex justify-between'>
 <button onClick={handleBack} className="flex items-center text-blue-600 font-semibold underline hover:text-blue-800 mb-4">
 <HiChevronLeft className="mr-1" /> Back
 </button>
