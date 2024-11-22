@@ -219,6 +219,68 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9010201383,",
       email: "sharansharan1530@gmail.com",
     },
+    {
+      name: "Ryan Tour and Travels",
+      phone: "6265433713",
+      email: "andrewmacfarland78@gmail.com",
+    },
+     
+    {
+      name: "Aastha Travels",
+      phone: "9993555200",
+      email: "aasthatravelsbhilai@gmail.com",
+    },
+    {
+      name: "Devshanta Tours & Travels",
+      phone: "9826133289",
+      email: "aasthatravelsbhilai@gmail.com",
+    },
+
+    {
+      name: "Deep Tours and Travels",
+      phone: "9827177456",
+      email: "chandradeep.warde@gmail.com",
+    },
+
+    {
+      name: "Chandrak Tour's and  Travels",
+      phone: "7828965347",
+      email: "chandrakartours@gmail.com",
+    },
+    {
+      name: "DEV's Travels",
+      phone: "9898019990",
+      email: "devtravels9990@gmail.com",
+    },
+
+     {
+      name: "Baanvi Tour And Travel! ",
+      phone: "9893586264",
+      email: "baanvitoursandtravels@gmail.com",
+    },
+     {
+      name: "Jayhind's Tour's and Travels",
+      phone: "7575872160",
+      email: "Monumanihar1785@gmail.com",
+    },
+    
+    {
+      name: "Dev Travels",
+      phone: " 8461848287",
+      email: "devpatel11295@gmail.com",
+    },
+
+    {
+      name: "ADIL TRAVEL AND TOURISM.",
+      phone: "9039309252",
+      email: "xyz@gmail.com",
+    },
+
+    {
+      name: "info@eltour,in",
+      phone: "6261792258",
+      email:  "info@eltour,in",
+    },
   ];
 
   const sliderContainer = useRef(null);
