@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ItineraryForm from './create_itinerary_parent/ItineraryForm'
 import CreateItinerary from './create_itinerary_parent/CreateItinerary'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast, ToastContainer } from 'react-toastify';
+import { itinerariesStoreAsync } from '../../../features/itinerary/itinerarySlice';
 
 function CreateItineraryParent() {
 const dispatch = useDispatch();
@@ -11,15 +12,21 @@ const daysInformation = useSelector(state => state.itineraries.daysInformation);
 const destinationDetailText = useSelector(state => state.itineraries.destinationDetailText);
 const itineraryDetails = useSelector(state => state.itineraries.itineraryDetails);
 const hotelDetails = useSelector(state => state.itineraries.hotelDetails);
-const destinationThumbnail = useSelector(state=> state.itineraries.destinationThumbnail);
-const destinationImages = useSelector(state => state.itineraries.destinationImages);
+// const destinationThumbnail = useSelector(state=> state.itineraries.destinationThumbnail);
+// const destinationImages = useSelector(state => state.itineraries.destinationImages);
+const [destinationThumbnail, setDestinationThumbnail] = useState({});
+const [destinationImages, setDestinationImages] = useState([]);
 
 
 const handleCreateItineraryAndItineraryForm = function(){
+  console.log("destinationthumbnail CreateIrtinearayPraent.jsx", destinationThumbnail);
+  console.log("Destination Images CreateItinearaParent.jsx", destinationImages);
+
+
   console.log("CreateItineraryForm.jsx itineararForm", itineraryForm, "daysInformation", daysInformation, "destinationDetailText",  destinationDetailText, "itineariesDetails", itineraryDetails, "hotelDetails ", hotelDetails, "destinationThumbanil", destinationThumbnail, "destinationImages", destinationImages);
 
 
-  if(!itineraryForm?.title){
+  if(!itineraryForm?.title?.trim()){
     toast.error("Please Fill Itinerary Title", {
       position: "bottom-right",
       autoClose: 5000,
@@ -33,7 +40,7 @@ const handleCreateItineraryAndItineraryForm = function(){
   }
 
 
-  if(!itineraryForm?.visibility){
+  if(!itineraryForm?.visibility?.trim()){
     toast.error("Please Select Itinerary Visibility", {
       position: "bottom-right",
       autoClose: 5000,
@@ -46,7 +53,7 @@ const handleCreateItineraryAndItineraryForm = function(){
     return;
   }
 
-  if(!itineraryForm?.type){
+  if(!itineraryForm?.type?.trim()){
     toast.error("Please Select Itinerary Type", {
       position: "bottom-right",
       autoClose: 5000,
@@ -58,7 +65,7 @@ const handleCreateItineraryAndItineraryForm = function(){
     return;
   }
 
-  if(!itineraryForm?.duration){
+  if(!itineraryForm?.duration?.value){
     toast.error("Please Select Itinerary Duration", {
       position: "bottom-right",
       autoClose: 5000,
@@ -71,7 +78,7 @@ const handleCreateItineraryAndItineraryForm = function(){
   }
 
 
-  if(!itineraryForm?.selectedDestination){
+  if(!itineraryForm?.selectedDestination?.value){
     toast.error("Please Select Itinerary Destination", {
       position: "bottom-right",
       autoClose: 5000,
@@ -83,7 +90,7 @@ const handleCreateItineraryAndItineraryForm = function(){
     return;
   }
 
-  if(!itineraryForm?.selectedThemes){
+  if(itineraryForm?.selectedThemes?.length == 0){
     toast.error("Please Select Itinerary Theme", {
       position: "bottom-right",
       autoClose: 5000,
@@ -123,7 +130,177 @@ const handleCreateItineraryAndItineraryForm = function(){
   
 
 
+
+  if (itineraryForm?.duration?.value) {
+    let daysValue = Number(itineraryForm?.duration?.value?.split("/")[0]?.replace("D", ""));
+ 
+    if(daysInformation?.length != daysValue){
+      toast.error("Please Fill All Days Itinerary", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+
+     return;
+    }
+  }
+
+
+  if(!destinationDetailText?.trim()){
+    toast.error("Please write something about destination", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+
+    return;
+  }
+
+
+  if(!itineraryDetails?.inclusion?.trim()){
+    toast.error("Please add inclusion", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+
+    return;
+  }
+
+
+  if(!itineraryDetails?.exclusion?.trim()){
+    toast.error("Please add inclusion", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+
+    return;
+  }
+
+  if(!hotelDetails[0]?.name || !hotelDetails[0]?.price){
+    if(!hotelDetails[0]?.name){
+      toast.error("Please input super deluxe hotel name", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }
+
+    if(!hotelDetails[0]?.price){
+      toast.error("Please input super deluxe hotel price", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }
+
+    return;
+
+  }
+
+
+
+  if(!hotelDetails[1]?.name || !hotelDetails[1]?.price){
+    if(!hotelDetails[1]?.name){
+      toast.error("Please input deluxe hotel name", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }
+
+    if(!hotelDetails[1]?.price){
+      toast.error("Please input deluxe hotel price", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }
+
+    return;
+
+  }
+
+
+
+  if(!hotelDetails[2]?.name || !hotelDetails[2]?.price){
+    if(!hotelDetails[2]?.name){
+      toast.error("Please input standard hotel name", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }
+
+    if(!hotelDetails[2]?.price){
+      toast.error("Please input standard hotel price", {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }
+
+    return;
+
+  }
+
+let itineraryPayloadObject = {
+  days_information_string: JSON.stringify(daysInformation),
+ destination_detail:  destinationDetailText,
+ inclusion: itineraryDetails?.inclusion,
+ exclusion: itineraryDetails?.exclusion,
+ hotel_details_string: JSON.stringify(hotelDetails),
+ title: itineraryForm?.title,
+ meta_title: itineraryForm?.metaTitle,
+ keyword: itineraryForm?.keyword,
+ meta_description: itineraryForm?.metaDescription,
+ itinerary_visibility: itineraryForm?.visibility,
+ itinerary_type: itineraryForm?.type,
+ duration_string: JSON.stringify(itineraryForm?.duration),
+ selected_destination_string: JSON.stringify(itineraryForm?.selectedDestination),
+ itinerary_theme_string: JSON.stringify(itineraryForm?.selectedThemes),
+ destination_thumbnail_file: destinationThumbnail,
+ destination_images_files: destinationImages
+};
+
+
+
+dispatch(itinerariesStoreAsync(itineraryPayloadObject));
+
 }
+
+
 
   return (
     <>
@@ -140,11 +317,11 @@ const handleCreateItineraryAndItineraryForm = function(){
    
    <CreateItinerary />
      
-   <ItineraryForm />
+   <ItineraryForm setDestinationThumbnail={setDestinationThumbnail} setDestinationImages={setDestinationImages} destinationThumbnail={destinationThumbnail}/>
    
 
     <div className="flex space-x-2 mt-6 md:hidden">
-    <button className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
+    <button onClick={()=>handleCreateItineraryAndItineraryForm()} className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
     </div>
 
 

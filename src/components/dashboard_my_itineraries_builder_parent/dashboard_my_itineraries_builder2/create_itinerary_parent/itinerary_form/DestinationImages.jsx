@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setDestinationImages } from '../../../../../features/itinerary/itinerarySlice';
+import React from 'react';
 
-function DestinationImages() {
-    const dispatch = useDispatch();
-    // const destinationImages = useSelector(state => state.itineraries.destinationImages);
+function DestinationImages({setDestinationImages}) {
 
     const handleDestinationImages = function(e){
-    dispatch(setDestinationImages(e.target.files));
+    if(e.target.files.length > 0){
+      setDestinationImages(e.target.files);
+
+     }else{
+      setDestinationImages([]);
+     }
+     
     }
 
   return (
@@ -19,6 +21,7 @@ function DestinationImages() {
     <input
     multiple
           type="file"
+          name="destination_images_files"
           accept="image/*"
           onChange={(e)=>handleDestinationImages(e)}
         />

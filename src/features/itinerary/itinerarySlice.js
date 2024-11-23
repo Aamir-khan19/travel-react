@@ -4,7 +4,6 @@ import conf from "../../../conf/conf";
 
 // Initial state for itineraries
 const initialState = {
-    aamir: "initial bhendor",
     isLoading: false,
     itineraries: [],
     isItineraryCreated: false,
@@ -93,33 +92,57 @@ export const itinerariesShowAsync = createAsyncThunk(
 // Create a new itinerary
 export const itinerariesStoreAsync = createAsyncThunk(
     'itineraries/Store',
-    async (formVal, options) => {
+    async (itineraryPayloadObject, options) => {
         try {
             const tokenObj = JSON.parse(localStorage.getItem('token'));
 
-            console.log("ItinerarySlice.js formVal", formVal);
-            const {itinerary_name, itinerary_address, itinerary_city, pin_code, itinerary_status, services_offered, number_of_staff, about_itinerary, itinerary_website} = formVal;
+       // Destructure the object properties
+const {
+    days_information_string,
+    destination_detail,
+    inclusion,
+    exclusion,
+    hotel_details_string,
+    title,
+    meta_title,
+    keyword,
+    meta_description,
+    itinerary_visibility,
+    itinerary_type,
+    duration_string,
+    selected_destination_string,
+    itinerary_theme_string,
+    destination_thumbnail_file,
+    destination_images_files,
+  } = itineraryPayloadObject;
+  
+  // Create a new FormData instance
+  const formData = new FormData();
+  
+  // Append each property to the FormData
+  formData.append("days_information_string", days_information_string);
+  formData.append("destination_detail", destination_detail);
+  formData.append("inclusion", inclusion);
+  formData.append("exclusion", exclusion);
+  formData.append("hotel_details_string", hotel_details_string);
+  formData.append("title", title);
+  formData.append("meta_title", meta_title);
+  formData.append("keyword", keyword);
+  formData.append("meta_description", meta_description);
+  formData.append("itinerary_visibility", itinerary_visibility);
+  formData.append("itinerary_type", itinerary_type);
+  formData.append("duration_string", duration_string);
+  formData.append("selected_destination_string", selected_destination_string);
+  formData.append("itinerary_theme_string", itinerary_theme_string);
+  
+  // Append file objects
+  formData.append("destination_thumbnail_file", destination_thumbnail_file);
+  
+  // If `destination_images_files` is an array of files, append each file individually
 
-            const formData = new FormData();
-            formData.append("itinerary_name", itinerary_name);
-            formData.append("itinerary_address", itinerary_address);
-            formData.append("itinerary_city", itinerary_city);
-            formData.append("pin_code", pin_code);
-            formData.append("itinerary_status", itinerary_status);
-            console.log("services_offered comaplySlcie.js is arr-> ", JSON.stringify(services_offered));
-            formData.append("services_offered_string", JSON.stringify(services_offered));
-            formData.append("number_of_staff", number_of_staff);
-            formData.append("about_itinerary", about_itinerary);
-
-            if(itinerary_website){
-                formData.append("itinerary_website", itinerary_website);
-            }
-
-
-            if(formVal?.itinerary_image){
-                formData.append("itinerary_image", formVal.itinerary_image);
-            }
-
+  for(var i = 0 ; i < destination_images_files?.length; i++){
+    formData.append('destination_images_files', destination_images_files[i]);
+}  
 
             const { data } = await axios.post(`${conf.laravelBaseUrl}/api/itinerary`, formData, {
                 headers: {
@@ -127,6 +150,7 @@ export const itinerariesStoreAsync = createAsyncThunk(
                 }
             });
 
+            console.log("itinerarySlice.js itinerariesStoreAsync data ->", data);
             return data;
         } catch (error) {
             console.log("itinerariesSlice.js itinerariesStoreAsync error", error);
@@ -210,9 +234,6 @@ const itinerariesSlice = createSlice({
     name: 'itineraries',
     initialState,
     reducers: {
-        setIsItineraryCreated: (state, action) => {
-            state.isItineraryCreated = false;
-        },
         setIsItineraryUpdated: (state, action) => {
             state.isItineraryUpdated = false;
         },
@@ -336,6 +357,7 @@ const itinerariesSlice = createSlice({
                 state.itineraries.push(action.payload);
             })
             .addCase(itinerariesStoreAsync.rejected, (state, action) => {
+                console.log("itineararSlice.js itinearariesStoreAsync.rejected", action.payload);
                 state.errors = action.payload;
                 state.isLoading = false;
             })

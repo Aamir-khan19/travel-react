@@ -1,19 +1,23 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { setDestinationThumbnail } from '../../../../../features/itinerary/itinerarySlice';
+import { useDispatch} from 'react-redux'
 
-function DestinationThumbnail() {
-    const dispatch = useDispatch();
-    const destinationThumbnail = useSelector(state => state.itineraries.destinationThumbnail);
-   
+function DestinationThumbnail({setDestinationThumbnail, destinationThumbnail}) {
     const [destinationThumbnailUrl, setDestinationThumbnailUrl] = useState(null);
 
-
     const handleDestinationThumbnail = function(e){
-    dispatch(setDestinationThumbnail(e.target.files[0]));
-
+    if(e.target.files.length > 0){
+      console.log("e.target.files[0", e.target.files[0])
+      setDestinationThumbnail(e.target.files[0]);
+      
     setDestinationThumbnailUrl(URL.createObjectURL(e.target.files[0]));
+
+     }else{
+      setDestinationThumbnail({});
+      setDestinationThumbnailUrl(null);
+     }
+
     }
+
 
   return (
     <>

@@ -12,7 +12,7 @@ import MetaTitle from './itinerary_form/MetaTitle';
 import MetaDescription from './itinerary_form/MetaDescription';
 import Keyword from './itinerary_form/Keyword';
 
-const ItineraryForm = () => {
+const ItineraryForm = ({setDestinationThumbnail, setDestinationImages, destinationThumbnail}) => {
   const dispatch = useDispatch();
   const itineraryForm = useSelector(state => state.itineraries.itineraryForm);
   
@@ -52,9 +52,9 @@ const ItineraryForm = () => {
 
     <ItineraryTheme />
 
-    <DestinationThumbnail />
+    <DestinationThumbnail setDestinationThumbnail={setDestinationThumbnail} destinationThumbnail={destinationThumbnail} />
 
-    <DestinationImages />
+    <DestinationImages setDestinationImages={setDestinationImages} />
      
     </div>
   );
