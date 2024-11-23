@@ -281,6 +281,87 @@ const FreeRegisteredTravelAgents = () => {
       phone: "6261792258",
       email:  "info@eltour,in",
     },
+
+    {
+      name: "EL Tour-Travel",
+      phone: "6261792258",
+      email:  "info@eltour.in",
+    },
+
+    {
+      name: "Mallick Tour & Travels",
+      phone: "8357979333",
+      email:  "sarfrajmallick0786@gmail.com",
+    },
+     
+    {
+      name: " Sahu Tour & Travels",
+      phone: "7024198823",
+      email:  "pk0678003@gmail.com",
+    },
+
+    {
+      name: " Shri Sai Kripa Tour & Travels",
+      phone: "7024198823",
+      email:  "kumartulesh98@gmail.com",
+    },
+
+    
+    {
+      name: "  Unite Travels",
+      phone: "7024198823",
+      email:  "kumartulesh98@gmail.com",
+    },
+
+    {
+      name: " Krishna Tour's & Travels",
+      phone: "7024198823",
+      email:  "reeyansha@gmail.com",
+    },
+
+    {
+      name: " Krishna Tour's & Travels",
+      phone: "7024198823",
+      email:  "reeyansha@gmail.com",
+    },
+
+    {
+      name: "Comfort Cabs",
+      phone: "70008 31922 ",
+      email:  "himanchal09yadav@gmail.com ",
+    },
+
+
+    {
+      name: " Global Holidays Maker",
+      phone: "9755523444",
+      email:  "support@mahaveer.agency",
+    },
+    {
+      name: " CRGB Kiosk Urkura",
+      phone: " 7000484490",
+      email:  "crgburkura@gmail.com",
+    },
+
+    {
+      name: "Awesome Trips",
+      phone: "9589977570",
+      email:  "info@awsometrips.com",
+    },
+
+    {
+      name: "Bhilai Durg",
+      phone: "9111155995",
+      email:  "xyz@gmail.com",
+    },
+
+    {
+      name: "SB Holidays",
+      phone: "9424100220",
+      email:  "sbholidays2007@gmail.com",
+    },
+
+
   ];
 
   const sliderContainer = useRef(null);
