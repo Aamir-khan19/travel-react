@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useEffect, useRef, useState } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
@@ -219,6 +215,145 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9010201383,",
       email: "sharansharan1530@gmail.com",
     },
+    {
+      name: "Ryan Tour and Travels",
+      phone: "6265433713",
+      email: "andrewmacfarland78@gmail.com",
+    },
+
+    {
+      name: "Aastha Travels",
+      phone: "9993555200",
+      email: "aasthatravelsbhilai@gmail.com",
+    },
+    {
+      name: "Devshanta Tours & Travels",
+      phone: "9826133289",
+      email: "aasthatravelsbhilai@gmail.com",
+    },
+
+    {
+      name: "Deep Tours and Travels",
+      phone: "9827177456",
+      email: "chandradeep.warde@gmail.com",
+    },
+
+    {
+      name: "Chandrak Tour's and  Travels",
+      phone: "7828965347",
+      email: "chandrakartours@gmail.com",
+    },
+    {
+      name: "DEV's Travels",
+      phone: "9898019990",
+      email: "devtravels9990@gmail.com",
+    },
+
+    {
+      name: "Baanvi Tour And Travel! ",
+      phone: "9893586264",
+      email: "baanvitoursandtravels@gmail.com",
+    },
+    {
+      name: "Jayhind's Tour's and Travels",
+      phone: "7575872160",
+      email: "Monumanihar1785@gmail.com",
+    },
+
+    {
+      name: "Dev Travels",
+      phone: " 8461848287",
+      email: "devpatel11295@gmail.com",
+    },
+
+    {
+      name: "ADIL TRAVEL AND TOURISM.",
+      phone: "9039309252",
+      email: "xyz@gmail.com",
+    },
+
+    {
+      name: "info@eltour,in",
+      phone: "6261792258",
+      email: "info@eltour,in",
+    },
+
+    {
+      name: "EL Tour-Travel",
+      phone: "6261792258",
+      email: "info@eltour.in",
+    },
+
+    {
+      name: "Mallick Tour & Travels",
+      phone: "8357979333",
+      email: "sarfrajmallick0786@gmail.com",
+    },
+
+    {
+      name: "Sahu Tour & Travels",
+      phone: "7024198823",
+      email: "pk0678003@gmail.com",
+    },
+
+    {
+      name: "Shri Sai Kripa Tour & Travels",
+      phone: "7024198823",
+      email: "kumartulesh98@gmail.com",
+    },
+
+    {
+      name: "  Unite Travels",
+      phone: "7024198823",
+      email: "kumartulesh98@gmail.com",
+    },
+
+    {
+      name: " Krishna Tour's & Travels",
+      phone: "7024198823",
+      email: "reeyansha@gmail.com",
+    },
+
+    // {
+    //   name: " Krishna Tour's & Travels",
+    //   phone: "7024198823",
+    //   email:  "reeyansha@gmail.com",
+    // },
+
+    {
+      name: "Comfort Cabs",
+      phone: "70008 31922 ",
+      email: "himanchal09yadav@gmail.com ",
+    },
+
+    {
+      name: " Global Holidays Maker",
+      phone: "9755523444",
+      email: "support@mahaveer.agency",
+    },
+    {
+      name: " CRGB Kiosk Urkura",
+      phone: " 7000484490",
+      email: "crgburkura@gmail.com",
+    },
+
+    {
+      name: "Awesome Trips",
+      phone: "9589977570",
+      email: "info@awsometrips.com",
+    },
+
+    {
+      name: "Bhilai Durg",
+      phone: "9111155995",
+      email: "xyz@gmail.com",
+    },
+
+    {
+      name: "SB Holidays",
+      phone: "9424100220",
+      email: "sbholidays2007@gmail.com",
+    },
   ];
 
   const sliderContainer = useRef(null);
@@ -330,12 +465,16 @@ const FreeRegisteredTravelAgents = () => {
                         <div className="flex gap-5 sm:justify-start justify-center sm:items-start items-center flex-col">
                           <h1 className="text-xl font-bold">{item.name}</h1>
                           <p className="">
-                            <span className="font-semibold text-xl">Mobile - </span>
+                            <span className="font-semibold text-xl">
+                              Mobile -{" "}
+                            </span>
                             <span className="absolute h-7 mt-1 w-14 blur-sm backdrop:blur-sm bg-gray-500"></span>
                             {item.phone}
                           </p>
                           <p className="flex items-center ">
-                            <span className="font-semibold text-xl">Email - </span>
+                            <span className="font-semibold text-xl">
+                              Email -{" "}
+                            </span>
                             <span className="absolute h-7 left-24 mt-1 w-32 blur-sm backdrop:blur-sm bg-gray-500"></span>
                             {item.email}
                           </p>
