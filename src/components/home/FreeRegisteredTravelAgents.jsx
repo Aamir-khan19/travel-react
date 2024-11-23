@@ -319,11 +319,12 @@ const FreeRegisteredTravelAgents = () => {
       email:  "reeyansha@gmail.com",
     },
 
-    {
-      name: " Krishna Tour's & Travels",
-      phone: "7024198823",
-      email:  "reeyansha@gmail.com",
-    },
+    // {
+    //   name: " Krishna Tour's & Travels",
+    //   phone: "7024198823",
+    //   email:  "reeyansha@gmail.com",
+    // },
+
 
     {
       name: "Comfort Cabs",
