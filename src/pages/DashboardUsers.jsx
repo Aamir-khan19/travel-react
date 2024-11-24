@@ -45,7 +45,7 @@ function DashboardUsers() {
   <DashboardSideBar />
 
   <DashboardContentContainer >
-     <div className='overflow-auto pt-5'>
+     <div className='overflow-auto py-5'>
         <table className='text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400 mx-auto w-[90%]'>
           <thead className='text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr className='text-nowrap'>
@@ -90,7 +90,7 @@ function DashboardUsers() {
                 <td className='px-3 py-2 border border-gray-500'>{user?.company_name}</td>
                 
                 <td className='px-3 py-2 border border-gray-500'>{user?.role}</td>
-                <td className='px-3 py-2 border border-gray-500'>{user?.isAuthorised? "YES" : "NO"}</td>
+                <td className='px-3 py-2 border border-gray-500'>{user?.is_authorised? "YES" : "NO"}</td>
                
                 <td className='px-3 py-2 border border-gray-500'>{user?.phone}</td>
 

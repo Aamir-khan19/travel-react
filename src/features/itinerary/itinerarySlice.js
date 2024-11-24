@@ -141,7 +141,7 @@ const {
   // If `destination_images_files` is an array of files, append each file individually
 
   for(var i = 0 ; i < destination_images_files?.length; i++){
-    formData.append('destination_images_files', destination_images_files[i]);
+    formData.append('destination_images_files[]', destination_images_files[i]);
 }  
 
             const { data } = await axios.post(`${conf.laravelBaseUrl}/api/itinerary`, formData, {
