@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setPriceRange } from "../../../../../features/itinerary/itinerarySlice";
+// import { setPriceRange } from "../../../../../features/itinerary/itinerarySlice";
 import { HiChevronLeft } from "react-icons/hi";
 
 const PriceComponent = ({setCurrentComponent}) => {

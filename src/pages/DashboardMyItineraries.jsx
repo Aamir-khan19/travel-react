@@ -1,11 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import DashboardSideBar from '../components/dashboard/DashboardSideBar'
 import DashboardContentContainer from '../components/dashboard/DashboardContentContainer'
 import SearchComponent from '../components/dashboard_my_itineraries/SearchComponent'
 import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { itinerariesUserItinerariesAsync } from '../features/itinerary/itinerarySlice'
+import UserItineraries from "../components/dashboard_my_itineraries/UserItineraries"
 
 function DashboardMyItineraries() {
-  
+const dispatch = useDispatch();
+const userItineraries = useSelector(state => state.itineraries.userItineraries);
+
+
+useEffect(()=>{
+if(userItineraries?.length == 0){
+  dispatch(itinerariesUserItinerariesAsync())
+}
+}, [])
+
+console.log("DashboardMyItineraries.jsx itineraries", userItineraries);
 
   return (
    <>
@@ -29,6 +42,8 @@ function DashboardMyItineraries() {
 
 
    <SearchComponent />
+
+   <UserItineraries />
 
  </div>
    </DashboardContentContainer>

@@ -1,14 +1,19 @@
-import React, { useState } from 'react'
-import ItineraryForm from './create_itinerary_parent/ItineraryForm'
-import CreateItinerary from './create_itinerary_parent/CreateItinerary'
+import React, { useEffect, useState } from 'react'
+import ItineraryForm from '../components/dashboard_update_itinerary_parent/ItineraryForm';
 import { useDispatch, useSelector } from 'react-redux'
 import { toast, ToastContainer } from 'react-toastify';
-import { itinerariesStoreAsync, resetItinerary } from '../../../features/itinerary/itinerarySlice';
-import { useNavigate } from 'react-router-dom';
+import { itinerariesUpdateAsync, itinerariesUserItinerariesAsync, resetItinerary, setItinerary } from '../features/itinerary/itinerarySlice';
+import { useNavigate, useParams } from 'react-router-dom';
+import DashboardSideBar from '../components/dashboard/DashboardSideBar';
+import DashboardContentContainer from "../components/dashboard/DashboardContentContainer";
+import UpdateItinerary from '../components/dashboard_update_itinerary_parent/UpdateItinerary';
 
-function CreateItineraryParent() {
+function DashboardUpdateItineraryParent(){
 const dispatch = useDispatch();
 const navigate = useNavigate();
+const {id} = useParams();
+
+const userItineraries = useSelector(state => state.itineraries.userItineraries);
 
 const itineraryForm = useSelector(state => state.itineraries.itineraryForm);
 const daysInformation = useSelector(state => state.itineraries.daysInformation);
@@ -21,7 +26,7 @@ const [destinationThumbnail, setDestinationThumbnail] = useState({});
 const [destinationImages, setDestinationImages] = useState([]);
 
 
-const handleCreateItineraryAndItineraryForm = function(){
+const handleUpdateItineraryAndItineraryForm = function(){
   console.log("destinationthumbnail CreateIrtinearayPraent.jsx", destinationThumbnail);
   console.log("Destination Images CreateItinearaParent.jsx", destinationImages);
 
@@ -95,32 +100,6 @@ const handleCreateItineraryAndItineraryForm = function(){
 
   if(itineraryForm?.selectedThemes?.length == 0){
     toast.error("Please Select Itinerary Theme", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      draggable: true,
-      pauseOnHover: true,
-    });
-    return;
-  }
-
-
-  if(!destinationThumbnail?.name){
-    toast.error("Please Select Destination Thumbnail", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      draggable: true,
-      pauseOnHover: true,
-    });
-    return;
-  }
-
-
-  if(destinationImages?.length == 0){
-    toast.error("Please Select Destination Images", {
       position: "bottom-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -292,14 +271,20 @@ let itineraryPayloadObject = {
  itinerary_type: itineraryForm?.type,
  duration_string: JSON.stringify(itineraryForm?.duration),
  selected_destination_string: JSON.stringify(itineraryForm?.selectedDestination),
- itinerary_theme_string: JSON.stringify(itineraryForm?.selectedThemes),
- destination_thumbnail_file: destinationThumbnail,
- destination_images_files: destinationImages
+ itinerary_theme_string: JSON.stringify(itineraryForm?.selectedThemes)
 };
 
+if(destinationThumbnail?.name){
+  itineraryPayloadObject.destination_thumbnail_file = destinationThumbnail
+}
+
+if(destinationImages?.length > 0){
+  itineraryPayloadObject.destination_images_files = destinationImages
+}
 
 
-dispatch(itinerariesStoreAsync(itineraryPayloadObject))
+
+dispatch(itinerariesUpdateAsync({...itineraryPayloadObject, id: id}))
 .then(()=>{
   dispatch(resetItinerary());
 navigate("/dashboard-my-itineraries");
@@ -308,23 +293,40 @@ navigate("/dashboard-my-itineraries");
 }
 
 
+useEffect(()=>{
+  if(userItineraries?.length > 0){
+    dispatch(setItinerary(id));
+  }
+  else{
+    dispatch(itinerariesUserItinerariesAsync())
+    .then(()=>{
+      dispatch(setItinerary(id));
+    })
+  }
+
+
+}, [id]);
 
   return (
     <>
-    {
-isLoading? <div className=' flex justify-center h-[50vh] items-center'>
+<DashboardSideBar />
 
-<div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
 
-</div>
+<DashboardContentContainer>
 
-:
+  {
+    isLoading? <div className=' flex justify-center h-[50vh] items-center'>
 
+    <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+    
+    </div>
+
+    :
   
 
    <div className=' bg-gray-100 py-5'>
 
-   <h1 className=' font-bold text-2xl'>Create Itinerary</h1>
+   <h1 className=' font-bold text-2xl'>Update Itinerary</h1>
    <p className=' text-gray-500 mb-5'>Effortlessly craft your Itinerary with minimal data input: simplify the process and maximize impact.</p>
 
 
@@ -332,13 +334,14 @@ isLoading? <div className=' flex justify-center h-[50vh] items-center'>
 
     <div className=' my-2 flex flex-col items-center justify-between md:flex-row md:justify-between md:items-start p-5'>
    
-   <CreateItinerary />
-     
+   <UpdateItinerary />
+
+
    <ItineraryForm setDestinationThumbnail={setDestinationThumbnail} setDestinationImages={setDestinationImages} destinationThumbnail={destinationThumbnail}/>
    
 
     <div className="flex space-x-2 mt-6 md:hidden">
-    <button onClick={()=>handleCreateItineraryAndItineraryForm()} className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
+    <button onClick={handleUpdateItineraryAndItineraryForm} className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
     </div>
 
 
@@ -346,7 +349,7 @@ isLoading? <div className=' flex justify-center h-[50vh] items-center'>
 
      {/* Publish button div starts here  */}
     <div className=" hidden md:flex justify-center space-x-2 mt-6">
-    <button onClick={()=>handleCreateItineraryAndItineraryForm()} className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
+    <button onClick={handleUpdateItineraryAndItineraryForm} className="px-4 py-2 bg-purple-700 text-white rounded-lg hover:bg-purple-800">Publish</button>
     </div>
    {/* Publish button div ends here  */}
 
@@ -359,8 +362,9 @@ isLoading? <div className=' flex justify-center h-[50vh] items-center'>
     </div>
 
 }
+    </DashboardContentContainer>
     </>
   )
 }
 
-export default CreateItineraryParent
+export default DashboardUpdateItineraryParent

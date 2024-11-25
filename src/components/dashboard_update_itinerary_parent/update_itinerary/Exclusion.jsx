@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // Import the Quill CSS for styling
+import 'react-quill/dist/quill.snow.css'; 
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryDetails } from '../../../../../features/itinerary/itinerarySlice';
+import { setItineraryDetails } from '../../../features/itinerary/itinerarySlice';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
-const Inclusion = ({setCurrentComponent}) => {
+
+const Exclusion = ({setCurrentComponent}) => {
   const dispatch = useDispatch();
   const itineraryDetails = useSelector(state => state.itineraries.itineraryDetails);
 
@@ -17,27 +18,26 @@ const Inclusion = ({setCurrentComponent}) => {
   };
 
 
+
   const handleBack = function(){
-  setCurrentComponent(1)
-  }
-
-  const handleNext = function(){
-  setCurrentComponent(3)
-  }
-
+    setCurrentComponent(2)
+    }
+  
+    const handleNext = function(){
+    setCurrentComponent(4)
+    }
 
   return (
-
     <>  
    
 
     <div className="p-4 mb-10 md:mb-2">
 
-      <label className="block text-lg font-bold mb-2">Inclusion</label>
+      <label className="block text-lg font-bold mb-2">Exclusion</label>
       <ReactQuill
         theme="snow"
-        value={itineraryDetails?.inclusion}
-        onChange={(val)=> dispatch(setItineraryDetails({inclusion: val}))}
+        value={itineraryDetails?.exclusion}
+        onChange={(val)=> dispatch(setItineraryDetails({exclusion: val}))}
         placeholder="Add Inclusion"
         modules={modules}
         className=" h-36 text-gray-700 bg-white"
@@ -66,4 +66,4 @@ const Inclusion = ({setCurrentComponent}) => {
   );
 };
 
-export default Inclusion;
+export default Exclusion;

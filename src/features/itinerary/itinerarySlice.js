@@ -6,6 +6,7 @@ import conf from "../../../conf/conf";
 const initialState = {
     isLoading: false,
     itineraries: [],
+    userItineraries: [],
     isItineraryCreated: false,
     isItineraryUpdated: false,
     errors: {},
@@ -25,10 +26,6 @@ const initialState = {
         selectedThemes: []
     },
 
-     // file handling states 
-     destinationThumbnail: {},
-     destinationImages: [],
-    // file handling states
 
     daysInformation: [],
 
@@ -54,6 +51,29 @@ export const itinerariesIndexAsync = createAsyncThunk(
             const tokenObj = JSON.parse(localStorage.getItem('token'));
 
             const { data } = await axios.get(`${conf.laravelBaseUrl}/api/itinerary`, {
+                params: queryParams,
+                headers: {
+                    Authorization: "Bearer " + tokenObj?.token
+                }
+            });
+
+            return data;
+        } catch (error) {
+            console.log("itinerariesSlice.js itinerariesIndexAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+// fetch user itineraries
+export const itinerariesUserItinerariesAsync = createAsyncThunk(
+    'itineraries/userItineraries',
+    async (queryParams = null, options) => {
+        try {
+            const tokenObj = JSON.parse(localStorage.getItem('token'));
+
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/user-itineraries`, {
                 params: queryParams,
                 headers: {
                     Authorization: "Bearer " + tokenObj?.token
@@ -162,36 +182,66 @@ const {
 // Update a itinerary
 export const itinerariesUpdateAsync = createAsyncThunk(
     'itineraries/Update',
-    async (formVal, options) => {
+    async (itineraryPayloadObject, options) => {
         try {
             const tokenObj = JSON.parse(localStorage.getItem('token'));
 
-            const {itinerary_name, itinerary_address, itinerary_city, pin_code, itinerary_status, services_offered, number_of_staff, about_itinerary, itinerary_website} = formVal;
-
-            const formData = new FormData();
-        
-            formData.append("itinerary_name", itinerary_name);
-            formData.append("itinerary_address", itinerary_address);
-            formData.append("itinerary_city", itinerary_city);
-            formData.append("pin_code", pin_code);
-            formData.append("itinerary_status", itinerary_status);
-            console.log("services_offered comaplySlcie.js is arr-> ", JSON.stringify(services_offered));
-            formData.append("services_offered_string", JSON.stringify(services_offered));
-            formData.append("number_of_staff", number_of_staff);
-            formData.append("about_itinerary", about_itinerary);
-
-            if(itinerary_website){
-                formData.append("itinerary_website", itinerary_website);
-            }
-
-            if(formVal?.itinerary_image){
-                formData.append("itinerary_image", formVal.itinerary_image);
-            }
+            const {
+                days_information_string,
+                destination_detail,
+                inclusion,
+                exclusion,
+                hotel_details_string,
+                title,
+                meta_title,
+                keyword,
+                meta_description,
+                itinerary_visibility,
+                itinerary_type,
+                duration_string,
+                selected_destination_string,
+                itinerary_theme_string,
+                destination_thumbnail_file,
+                destination_images_files,
+              } = itineraryPayloadObject;
+              
+              // Create a new FormData instance
+              const formData = new FormData();
+              
+              // Append each property to the FormData
+              formData.append("days_information_string", days_information_string);
+              formData.append("destination_detail", destination_detail);
+              formData.append("inclusion", inclusion);
+              formData.append("exclusion", exclusion);
+              formData.append("hotel_details_string", hotel_details_string);
+              formData.append("title", title);
+              formData.append("meta_title", meta_title);
+              formData.append("keyword", keyword);
+              formData.append("meta_description", meta_description);
+              formData.append("itinerary_visibility", itinerary_visibility);
+              formData.append("itinerary_type", itinerary_type);
+              formData.append("duration_string", duration_string);
+              formData.append("selected_destination_string", selected_destination_string);
+              formData.append("itinerary_theme_string", itinerary_theme_string);
+              
+              // Append file objects
+              if(destination_thumbnail_file){
+                formData.append("destination_thumbnail_file", destination_thumbnail_file);
+              }
+              
+              // If `destination_images_files` is an array of files, append each file individually
+            
+              if(destination_images_files){
+                for(var i = 0 ; i < destination_images_files?.length; i++){
+                    formData.append('destination_images_files[]', destination_images_files[i]);
+                }
+              }
+             
+          
 
             formData.append("_method", "PUT");
 
-
-            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/itinerary/${formVal?.id}`, formData, {
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/itinerary/${itineraryPayloadObject?.id}`, formData, {
                 headers: {
                     Authorization: "Bearer " + tokenObj?.token
                 }
@@ -295,14 +345,6 @@ const itinerariesSlice = createSlice({
         state.destinationDetailText = action?.payload
         },
 
-        setDestinationThumbnail: (state, action)=>{
-            state.destinationThumbnail = action.payload;
-        },
-
-        setDestinationImages: (state, action) =>{
-            state.destinationImages = action.payload;
-        },
-
           setHotelDetails: (state, action) => {
             const { index, field, value } = action.payload;
 
@@ -313,6 +355,66 @@ const itinerariesSlice = createSlice({
               [field]: value,
             };
           },
+
+          resetItinerary: (state)=>{
+            state.itineraryForm =  {
+                title: "",
+                metaTitle: "",
+                keyword: "",
+                metaDescription: "",
+                visibility: "public",
+                type: "flexible",
+                duration: {},
+                selectedDestination: {},
+                selectedThemes: []
+            },
+
+            state.daysInformation = [];
+            
+            state.destinationDetailText = "";
+
+            state.itineraryDetails = {
+                inclusion: "",
+                exclusion: ""
+            }
+
+            state.hotelDetails =  [
+                { type: "Super Deluxe", name: "", roomType: "", price: "", discount: "" },
+                { type: "Deluxe", name: "", roomType: "", price: "", discount: "" },
+                { type: "Standard", name: "", roomType: "", price: "", discount: "" },
+              ]
+
+          },
+
+          setItinerary: (state, action) => {
+            let itinerary = state.userItineraries.find((ele)=> ele?.id == action?.payload);
+
+            console.log("ItineararySlice.js setItinearary itinerary", itinerary);
+
+            state.itineraryForm =  {
+                title: itinerary?.title,
+                metaTitle: itinerary?.meta_title || "",
+                keyword: itinerary?.keyword || "",
+                metaDescription: itinerary?.meta_description || "",
+                visibility: itinerary?.itinerary_visibility,
+                type: itinerary?.itinerary_type,
+                duration: itinerary?.duration,
+                selectedDestination: itinerary?.selected_destination,
+                selectedThemes: itinerary?.itinerary_theme
+            },
+
+            state.daysInformation = itinerary?.days_information;
+            
+            state.destinationDetailText = itinerary?.destination_detail;
+
+            state.itineraryDetails = {
+                inclusion: itinerary?.inclusion,
+                exclusion: itinerary?.exclusion
+            }
+
+            state.hotelDetails = itinerary?.hotel_details;
+
+          }
     },
     extraReducers: (builder) => {
         builder
@@ -325,6 +427,23 @@ const itinerariesSlice = createSlice({
                 state.itineraries = action.payload;
             })
             .addCase(itinerariesIndexAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+
+                if(action?.payload?.message == "Unauthenticated."){
+                    localStorage.removeItem("token");
+                }
+            })
+
+            .addCase(itinerariesUserItinerariesAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(itinerariesUserItinerariesAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                console.log("itinerariesSlice.js itinerariesIndexAsync.fulfilled actrion.payload", action.payload);
+                state.userItineraries = action.payload;
+            })
+            .addCase(itinerariesUserItinerariesAsync.rejected, (state, action) => {
                 state.errors = action.payload;
                 state.isLoading = false;
 
@@ -353,8 +472,8 @@ const itinerariesSlice = createSlice({
                 state.isLoading = false;
                 state.isItineraryCreated = true;
                 console.log("itinerarieslcie.js itinerariestoreAsync action.payload", action?.payload);
-                state.flashMessage = `Itinerary "${action.payload?.itinerary?.name}" created successfully`;
-                state.itineraries.push(action.payload);
+                state.flashMessage = `Itinerary "${action.payload?.itinerary?.title}" created successfully`;
+                state.userItineraries.push(action.payload.itinerary);
             })
             .addCase(itinerariesStoreAsync.rejected, (state, action) => {
                 console.log("itineararSlice.js itinearariesStoreAsync.rejected", action.payload);
@@ -368,9 +487,14 @@ const itinerariesSlice = createSlice({
             .addCase(itinerariesUpdateAsync.fulfilled, (state, action) => {
                 state.isLoading = false;
                 state.isItineraryUpdated = true;
-                state.flashMessage = `Itinerary "${action.payload?.updatedItinerary?.itinerary_name}" updated successfully`;
+                state.flashMessage = `Itinerary updated successfully`;
                  
-                state.itinerary = action.payload?.updatedItinerary
+                let updatedItineraryIndex = state.userItineraries.findIndex((ele) => ele?.id == action?.payload?.updatedItinerary?.id);
+
+                if (updatedItineraryIndex != -1) {
+                    state.userItineraries.splice(updatedItineraryIndex, 1, action.payload?.updatedItinerary);
+                }
+                
             })
             .addCase(itinerariesUpdateAsync.rejected, (state, action) => {
                 state.errors = action.payload;
@@ -382,9 +506,9 @@ const itinerariesSlice = createSlice({
             })
             .addCase(itinerariesDestroyAsync.fulfilled, (state, action) => {
                 state.isLoading = false;
-                const indx = state.itineraries.findIndex((itinerary)=> itinerary.id == action.payload.id);
-                state.flashMessage = `Itinerary "${state?.itineraries[indx].name}" deleted successfully`;
-                state.itineraries = state.itineraries.filter((itinerary) => itinerary.id !== action.payload.id);
+                const indx = state.userItineraries.findIndex((itinerary)=> itinerary.id == action.payload.id);
+                state.flashMessage = `"${state?.userItineraries[indx]?.selected_destination}" Itinerary deleted successfully`;
+                state.userItineraries = state.userItineraries.filter((itinerary) => itinerary.id != action.payload.id);
             })
             .addCase(itinerariesDestroyAsync.rejected, (state, action) => {
                 state.errors = action.payload;
@@ -393,7 +517,7 @@ const itinerariesSlice = createSlice({
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationThumbnail, setDestinationImages, setDestinationDetailText, setPriceRange, setHotelDetails, setAamir } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationDetailText, setHotelDetails, resetItinerary } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

@@ -29,6 +29,7 @@ import DashboardMyreviews from "./pages/DashboardMyreviews.jsx";
 import DashboardMyreport from "./pages/DashboardMyreport.jsx";
 import DashboardMyteam from "./pages/DashboardMyteam.jsx";
 import DashboardMyItinerariesBuilderParent from "./pages/DashboardMyItinerariesBuilderParent.jsx";
+import DashboardUpdateItineraryParent from "./pages/DashboardUpdateItineraryParent.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -73,6 +74,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route
               path="/dashboard-my-itineraries-builder"
               element={<DashboardMyItinerariesBuilderParent />}
+            />
+
+            <Route
+            path="/dashboard-update-itinerary/:id"
+            element={<DashboardUpdateItineraryParent />}
             />
             {/* <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
           <Route path="/dashboard-my-report" element={<DashboardMyreport/>} /> 

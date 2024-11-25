@@ -2,7 +2,7 @@ import React from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { setDestinationDetailText } from '../../../../../../features/itinerary/itinerarySlice';
+import { setDestinationDetailText } from '../../../../features/itinerary/itinerarySlice';
 
 const DestinationDetailText = () => {
   const dispatch = useDispatch();

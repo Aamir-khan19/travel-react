@@ -2,7 +2,7 @@ import React from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // Import the Quill CSS for styling
 import { useDispatch, useSelector } from 'react-redux';
-import { setItineraryDetails } from '../../../../../features/itinerary/itinerarySlice';
+import { setItineraryDetails } from '../../../features/itinerary/itinerarySlice';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
 
 const Inclusion = ({setCurrentComponent}) => {
