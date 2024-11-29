@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import ItineraryForm from '../components/dashboard_update_itinerary_parent/ItineraryForm';
 import { useDispatch, useSelector } from 'react-redux'
 import { toast, ToastContainer } from 'react-toastify';
-import { itinerariesUpdateAsync, itinerariesUserItinerariesAsync, resetItinerary, setItinerary } from '../features/itinerary/itinerarySlice';
+import { itinerariesUpdateAsync, itinerariesUserItinerariesAsync, resetErrors, resetItinerary, setIsItineraryUpdated, setItinerary } from '../features/itinerary/itinerarySlice';
 import { useNavigate, useParams } from 'react-router-dom';
 import DashboardSideBar from '../components/dashboard/DashboardSideBar';
 import DashboardContentContainer from "../components/dashboard/DashboardContentContainer";
@@ -21,15 +21,18 @@ const destinationDetailText = useSelector(state => state.itineraries.destination
 const itineraryDetails = useSelector(state => state.itineraries.itineraryDetails);
 const hotelDetails = useSelector(state => state.itineraries.hotelDetails);
 const isLoading = useSelector(state => state.itineraries.isLoading);
+const isItineraryUpdated = useSelector(state => state.itineraries.isItineraryUpdated);
+const apiErrors = useSelector(state => state.itineraries.errors);
 
 const [destinationThumbnail, setDestinationThumbnail] = useState({});
 const [destinationImages, setDestinationImages] = useState([]);
 
 
 const handleUpdateItineraryAndItineraryForm = function(){
+  dispatch(resetErrors());
+
   console.log("destinationthumbnail CreateIrtinearayPraent.jsx", destinationThumbnail);
   console.log("Destination Images CreateItinearaParent.jsx", destinationImages);
-
 
   console.log("CreateItineraryForm.jsx itineararForm", itineraryForm, "daysInformation", daysInformation, "destinationDetailText",  destinationDetailText, "itineariesDetails", itineraryDetails, "hotelDetails ", hotelDetails, "destinationThumbanil", destinationThumbnail, "destinationImages", destinationImages);
 
@@ -282,13 +285,7 @@ if(destinationImages?.length > 0){
   itineraryPayloadObject.destination_images_files = destinationImages
 }
 
-
-
-dispatch(itinerariesUpdateAsync({...itineraryPayloadObject, id: id}))
-.then(()=>{
-  dispatch(resetItinerary());
-navigate("/dashboard-my-itineraries");
-})
+ dispatch(itinerariesUpdateAsync({...itineraryPayloadObject, id: id}));
 
 }
 
@@ -306,6 +303,46 @@ useEffect(()=>{
 
 
 }, [id]);
+
+
+useEffect(()=>{
+if(isItineraryUpdated){
+  dispatch(resetItinerary());
+  dispatch(setIsItineraryUpdated());
+  navigate("/dashboard-my-itineraries");
+}
+}, [isItineraryUpdated]);
+
+
+useEffect(() => {
+  if (apiErrors?.errors?.destination_thumbnail_file){
+    setTimeout(()=>{
+      toast.error(apiErrors.errors.destination_thumbnail_file[0], {
+        position: "bottom-right",
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }, 100);
+  }
+
+  if (apiErrors?.message) {
+    setTimeout(() => {
+      toast.error(apiErrors.messae, {
+        position: "bottom-right",
+        autoClose: 10000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        draggable: true,
+        pauseOnHover: true,
+      });
+    }, 50);
+  }
+
+}, [apiErrors]);
+
 
   return (
     <>

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ItineraryForm from './create_itinerary_parent/ItineraryForm'
 import CreateItinerary from './create_itinerary_parent/CreateItinerary'
 import { useDispatch, useSelector } from 'react-redux'
 import { toast, ToastContainer } from 'react-toastify';
-import { itinerariesStoreAsync, resetItinerary } from '../../../features/itinerary/itinerarySlice';
+import { itinerariesStoreAsync, resetErrors, resetItinerary, setIsItineraryCreated } from '../../../features/itinerary/itinerarySlice';
 import { useNavigate } from 'react-router-dom';
 
 function CreateItineraryParent() {
@@ -16,12 +16,15 @@ const destinationDetailText = useSelector(state => state.itineraries.destination
 const itineraryDetails = useSelector(state => state.itineraries.itineraryDetails);
 const hotelDetails = useSelector(state => state.itineraries.hotelDetails);
 const isLoading = useSelector(state => state.itineraries.isLoading);
+const isItineraryCreated = useSelector(state => state.itineraries.isItineraryCreated);
+const apiErrors = useSelector(state => state.itineraries.errors);
 
 const [destinationThumbnail, setDestinationThumbnail] = useState({});
 const [destinationImages, setDestinationImages] = useState([]);
 
 
 const handleCreateItineraryAndItineraryForm = function(){
+  dispatch(resetErrors());
   console.log("destinationthumbnail CreateIrtinearayPraent.jsx", destinationThumbnail);
   console.log("Destination Images CreateItinearaParent.jsx", destinationImages);
 
@@ -299,14 +302,49 @@ let itineraryPayloadObject = {
 
 
 
-dispatch(itinerariesStoreAsync(itineraryPayloadObject))
-.then(()=>{
-  dispatch(resetItinerary());
-navigate("/dashboard-my-itineraries");
-})
+dispatch(itinerariesStoreAsync(itineraryPayloadObject));
 
 }
 
+
+useEffect(()=>{
+  if(isItineraryCreated){
+    dispatch(resetItinerary());
+    dispatch(setIsItineraryCreated());
+    navigate("/dashboard-my-itineraries");
+  }
+  }, [isItineraryCreated, isLoading]);
+  
+  
+
+  useEffect(() => {
+    if (apiErrors?.errors?.destination_thumbnail_file){
+      setTimeout(()=>{
+        toast.error(apiErrors.errors.destination_thumbnail_file[0], {
+          position: "bottom-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          draggable: true,
+          pauseOnHover: true,
+        });
+      }, 100);
+    }
+  
+    if (apiErrors?.message) {
+      setTimeout(() => {
+        toast.error(apiErrors?.message, {
+          position: "bottom-right",
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          draggable: true,
+          pauseOnHover: true,
+        });
+      }, 50);
+    }
+    
+  }, [apiErrors]);
 
 
   return (

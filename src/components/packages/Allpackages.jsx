@@ -1,51 +1,73 @@
-import React, { useState } from "react";import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";import { Link, useParams } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa";
 import packagedata from "./Allpackages/packagedata";
+import { useDispatch, useSelector } from "react-redux";
+import { publicGetItinerariesAsync } from "../../features/public/publicSlice";
+import conf from "../../../conf/conf";
 
 const Allpackages = () => {
+  const dispatch = useDispatch();
+
+  const selectedDestinationItineraries = useSelector(state => state.public.selectedDestinationItineraries);
+
+  const isLoading = useSelector(state => state.public.isLoading);
+
   const {name} = useParams();
 
-  const [searchTerm, setSearchTerm] = useState("");
+  useEffect(()=>{
+  dispatch(publicGetItinerariesAsync(name));
+  }, [name]);
 
-  // Filter packages based on the search term
-  const filteredPackages = packagedata.filter((elem) =>
-    elem.category.toLowerCase().includes(name.toLowerCase())
-  );
+
+  console.log("Allpackages.jsx SelectedDestinationItineraries", selectedDestinationItineraries);
 
   return (
-    <div className="bg-gray-50 py-12">
+    <>
+
+    {
+
+    isLoading? <div className=' flex justify-center h-[50vh] items-center'>
+
+      <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+      
+      </div>
+
+      :
+
+      <div className="bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-5xl font-bold text-center mb-12 text-[#01055b]">
           Explore Our Packages
         </h2>
-        {/* Search Input */}
-        {/* <div className="mb-8">
-          <input
-            type="text"
-            placeholder="Search for a package..."
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div> */}
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPackages.length > 0 ? (
-            filteredPackages.map((elem, index) => (
+          {selectedDestinationItineraries.length > 0 ? (
+            selectedDestinationItineraries.map((itinerary, index) => (
               <div
-                key={index}
+                key={itinerary?.id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"
               >
+                <div className=" relative p-2">
                 <img
-                  src={elem?.image}
+                  src={`${conf?.laravelBaseUrl}/${itinerary?.destination_thumbnail}`}
                   className="h-60 w-full object-cover"
                   alt="Package"
                 />
+
+<span className="absolute bottom-4 right-4 bg-black text-white text-xs sm:text-sm font-medium px-3 py-1 rounded">
+                {itinerary?.duration?.label}
+              </span>
+                </div>
+               
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
                     <h3 className="text-lg font-semibold text-gray-700">
-                      ₹{elem?.price} / Per Person
+                       From ₹ {(itinerary?.hotel_details[2]?.discount)? <span> <span className=' line-through'>{itinerary?.hotel_details[2]?.price}</span> {Number(itinerary?.hotel_details[2]?.price - (((itinerary?.hotel_details[2]?.price)*(itinerary?.hotel_details[2]?.discount))/100))?.toFixed(2)} </span>
+                
+                :
+                
+                <span>{itinerary?.hotel_details[2]?.price}</span> }  / Per Person
                     </h3>
                     <div className="flex items-center">
                       <FaRegStar className="text-yellow-400 text-xl" />
@@ -54,12 +76,10 @@ const Allpackages = () => {
                       </span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-bold text-blue-900 mb-2">
-                    {elem?.category}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4">{elem?.title}</p>
+                  
+                  <p className="text-gray-600 text-sm mb-4">{itinerary?.title}</p>
                   <Link
-                    to={`/package-details/${elem?.id}`}
+                    to={`/package-details/${itinerary?.id}`}
                     className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
                   >
                     See Details
@@ -75,6 +95,9 @@ const Allpackages = () => {
         </div>
       </div>
     </div>
+
+    }
+    </>
   );
 };
 

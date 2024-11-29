@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import { createAction, createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 import conf from "../../../conf/conf";
 
@@ -42,6 +42,9 @@ const initialState = {
     { type: "Standard", name: "", roomType: "", price: "", discount: "" },
   ],
 };
+
+
+const loginSuccess = createAction("login/fetchToken/fulfilled");
 
 // Fetch all itineraries
 export const itinerariesIndexAsync = createAsyncThunk(
@@ -284,6 +287,9 @@ const itinerariesSlice = createSlice({
     name: 'itineraries',
     initialState,
     reducers: {
+        setIsItineraryCreated: (state, action)=>{
+         state.isItineraryCreated = false;
+        },
         setIsItineraryUpdated: (state, action) => {
             state.isItineraryUpdated = false;
         },
@@ -414,6 +420,10 @@ const itinerariesSlice = createSlice({
 
             state.hotelDetails = itinerary?.hotel_details;
 
+          },
+
+          resetErrors: (state)=>{
+            state.errors = {};
           }
     },
     extraReducers: (builder) => {
@@ -497,6 +507,8 @@ const itinerariesSlice = createSlice({
                 
             })
             .addCase(itinerariesUpdateAsync.rejected, (state, action) => {
+                console.log("itineararyUpdateAsync.rejected action.payload", action.payload);
+                
                 state.errors = action.payload;
                 state.isLoading = false;
             })
@@ -513,11 +525,15 @@ const itinerariesSlice = createSlice({
             .addCase(itinerariesDestroyAsync.rejected, (state, action) => {
                 state.errors = action.payload;
                 state.isLoading = false;
-            });
+            })
+
+            .addCase(loginSuccess, (state)=>{
+                state.userItineraries = [];
+            })
     }
 });
 
-export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationDetailText, setHotelDetails, resetItinerary } = itinerariesSlice.actions;
+export const { setIsItineraryCreated, setIsItineraryUpdated, setFlashMessage, setItinerary, setItineraryForm, setItineraryDetails, setDaysInformation, setSliceDaysInformation, setDestinationDetailText, setHotelDetails, resetItinerary, resetErrors } = itinerariesSlice.actions;
 
 const itinerariesReducer = itinerariesSlice.reducer;
 

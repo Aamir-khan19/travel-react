@@ -45,18 +45,17 @@ function DashboardUsers() {
   <DashboardSideBar />
 
   <DashboardContentContainer >
-     <div className='overflow-auto py-5'>
+     <div className='overflow-auto py-5 mb-5'>
         <table className='text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400 mx-auto w-[90%]'>
           <thead className='text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr className='text-nowrap'>
             <th className='px-3 py-2 border-2 border-gray-500 text-right'>S no.</th>
             <th className='px-3 py-2 border-2 border-gray-500 text-right'>Name</th>
+            <th className='px-3 py-2 border-2 border-gray-500 text-right'>Email</th>
             <th className='px-3 py-2 border-2 border-gray-500 text-right'>Profile</th>
             <th className='px-3 py-2 border-2 border-gray-500 text-right'>Company name</th>
-              {/* <th className='px-3 py-2 border-2 border-gray-500 text-right'>Status</th> */}
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Role</th>
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Is Authorised</th>
-              {/* <th className='px-3 py-2 border-2 border-gray-500 text-right'>Whatsapp</th> */}
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Phone</th>
               <th className='px-3 py-2 border-2 border-gray-500 text-right'>Actions</th>
             </tr>
@@ -67,6 +66,7 @@ function DashboardUsers() {
               <tr key={user.id} className='bg-white dark:bg-gray-800 dark:border-gray-700'>
                <td className='px-3 py-2 border border-gray-500'>{i+1}</td>
                <td className='px-3 py-2 border border-gray-500'>{user?.name}</td>
+               <td className='px-3 py-2 border border-gray-500'>{user?.email}</td>
 
                 <td className='px-3 py-2 border border-gray-500'>
                 {
@@ -74,7 +74,7 @@ function DashboardUsers() {
                   <div className=' flex justify-center items-center'>
 
                   <img
-                  src={conf.laravelBaseUrl+"/storage/"+user?.your_photo}
+                  src={conf.laravelBaseUrl+"/"+user?.your_photo}
                   alt="Profile"
                   className="w-10 h-10 object-cover rounded-full"
                   />
