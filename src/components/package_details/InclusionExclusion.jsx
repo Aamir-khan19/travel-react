@@ -6,9 +6,9 @@ const InclusionExclusion = () => {
   const exclusion = useSelector((state) => state.public.particularItinerary?.exclusion);
 
   return (
-    <div className="space-y-6">
+    <div className=" md:flex md:justify-between md:items-stretch">
       {/* Inclusion Section */}
-      <div className="bg-green-50 border border-green-300 p-6 rounded-lg shadow-lg">
+      <div className="bg-green-50 border border-green-300 p-6 rounded-lg shadow-lg md:w-[50%]">
         <h3 className="text-2xl font-bold text-green-700 mb-4">Inclusion</h3>
         <div
           className="text-green-900 leading-relaxed text-sm"
@@ -17,7 +17,7 @@ const InclusionExclusion = () => {
       </div>
 
       {/* Exclusion Section */}
-      <div className="bg-red-50 border border-red-300 p-6 rounded-lg shadow-lg">
+      <div className="bg-red-50 border border-red-300 p-6 rounded-lg shadow-lg md:w-[50%]">
         <h3 className="text-2xl font-bold text-red-700 mb-4">Exclusion</h3>
         <div
           className="text-red-900 leading-relaxed text-sm"

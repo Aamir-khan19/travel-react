@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import { publicGetParticularItineraryAsync, setParticularItinerary } from "../../features/public/publicSlice";
 import Navbar from "../../components/global/Navbar";
 import Footer from "../../components/global/Footer";
+import Itinerary from "../../components/package_details/Itinerary";
 
 const PackageDetails = () => {
   const dispatch = useDispatch();
@@ -25,6 +26,9 @@ const PackageDetails = () => {
       dispatch(publicGetParticularItineraryAsync(id));
     }
   }, [id]);
+
+
+  console.log("particularItinerary daysImformation lol", particularItinerary?.days_information);
 
   return (
     <>
@@ -45,12 +49,17 @@ const PackageDetails = () => {
 
             {/* Destination Details */}
             <div className="mt-6 p-6 bg-blue-50 border border-blue-200 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Destination Details</h3>
+              <h3 className="text-2xl font-bold text-blue-600 mb-4">Overview</h3>
               <div
                 className="prose max-w-none text-gray-700"
                 dangerouslySetInnerHTML={{ __html: particularItinerary?.destination_detail }}
               />
             </div>
+
+
+           {
+            (particularItinerary?.days_information?.length > 0) &&  <Itinerary />
+           }
 
             {/* Hotel Details */}
             <HotelDetails />

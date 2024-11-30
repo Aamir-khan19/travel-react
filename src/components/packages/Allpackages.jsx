@@ -42,8 +42,8 @@ const Allpackages = () => {
 
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {selectedDestinationItineraries.length > 0 ? (
-            selectedDestinationItineraries.map((itinerary, index) => (
+          {selectedDestinationItineraries?.length > 0 ? (
+            selectedDestinationItineraries?.map((itinerary, index) => (
               <div
                 key={itinerary?.id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"

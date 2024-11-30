@@ -196,17 +196,7 @@ const handleCreateItineraryAndItineraryForm = function(){
     return;
   }
 
-  if(!hotelDetails[0]?.name || !hotelDetails[0]?.price){
-    if(!hotelDetails[0]?.name){
-      toast.error("Please input super deluxe hotel name", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        draggable: true,
-        pauseOnHover: true,
-      });
-    }
+  if(!hotelDetails[0]?.price){
 
     if(!hotelDetails[0]?.price){
       toast.error("Please input super deluxe hotel price", {
@@ -225,17 +215,7 @@ const handleCreateItineraryAndItineraryForm = function(){
 
 
 
-  if(!hotelDetails[1]?.name || !hotelDetails[1]?.price){
-    if(!hotelDetails[1]?.name){
-      toast.error("Please input deluxe hotel name", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        draggable: true,
-        pauseOnHover: true,
-      });
-    }
+  if(!hotelDetails[1]?.price){
 
     if(!hotelDetails[1]?.price){
       toast.error("Please input deluxe hotel price", {
@@ -254,17 +234,7 @@ const handleCreateItineraryAndItineraryForm = function(){
 
 
 
-  if(!hotelDetails[2]?.name || !hotelDetails[2]?.price){
-    if(!hotelDetails[2]?.name){
-      toast.error("Please input standard hotel name", {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        draggable: true,
-        pauseOnHover: true,
-      });
-    }
+  if( !hotelDetails[2]?.price){
 
     if(!hotelDetails[2]?.price){
       toast.error("Please input standard hotel price", {

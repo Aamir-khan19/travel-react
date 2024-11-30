@@ -37,9 +37,9 @@ const initialState = {
     },
 
    hotelDetails: [
-    { type: "Super Deluxe", name: "", roomType: "", price: "", discount: "" },
-    { type: "Deluxe", name: "", roomType: "", price: "", discount: "" },
-    { type: "Standard", name: "", roomType: "", price: "", discount: "" },
+    { type: "Super Deluxe", roomType: "", price: "", discount: "" },
+    { type: "Deluxe", roomType: "", price: "", discount: "" },
+    { type: "Standard", roomType: "", price: "", discount: "" },
   ],
 };
 
@@ -352,13 +352,14 @@ const itinerariesSlice = createSlice({
         },
 
           setHotelDetails: (state, action) => {
-            const { index, field, value } = action.payload;
+            console.log("ItineararySlcie.js setHotelDetails", action.payload)
+            const { type, name, value } = action.payload;
 
-            console.log("ItinearaySlice.js action.payload ", index, field, value);
+            let hotelDetailIndex = state.hotelDetails.findIndex((ele)=>ele.type == type);
 
-            state.hotelDetails[index] = {
-              ...state.hotelDetails[index],
-              [field]: value,
+            state.hotelDetails[hotelDetailIndex] = {
+              ...state.hotelDetails[hotelDetailIndex],
+              [name]: value,
             };
           },
 

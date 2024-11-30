@@ -35,7 +35,7 @@ function CreateItinerary() {
     }
 
     {
-      (currentComponent == 4) && <HotelDetails setCurrentComponent={setCurrentComponent} />
+      (currentComponent == 4) && <HotelDetails  setCurrentComponent={setCurrentComponent} />
     }
 
     {

@@ -34,7 +34,12 @@ export const publicGetItinerariesAsync = createAsyncThunk(
     async (destination, options) => {
         try {
 
+            console.log("publicSlice.js publicGetItinerariesAsync destination", destination);
+
             const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-itineraries/${destination}`);
+
+
+            console.log("publicSlice.js publicGetItinerariesAsync destination data", data);
 
             return data;
         } catch (error) {
