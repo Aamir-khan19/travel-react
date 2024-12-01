@@ -4,6 +4,10 @@ import packagedata from "./Allpackages/packagedata";
 import { useDispatch, useSelector } from "react-redux";
 import { publicGetItinerariesAsync } from "../../features/public/publicSlice";
 import conf from "../../../conf/conf";
+import ContactAgentAndEnquiryNowModal from "./Allpackages/ContactAgentAndEnquiryNowModal";
+import PhoneNumberModal from "./Allpackages/PhoneNumberModal";
+import EmailModal from "./Allpackages/EmailModal";
+import EnquiryModal from "./Allpackages/EnquiryModal";
 
 const Allpackages = () => {
   const dispatch = useDispatch();
@@ -14,12 +18,25 @@ const Allpackages = () => {
 
   const {name} = useParams();
 
+  const [isContactAgentEnqNowModal, setIsContactAgentEnqNowModal] = useState(false);
+  const [isPhoneNumberModal, setIsPhoneNumberModal] = useState(false);
+  const [isEmailModal, setIsEmailModal] = useState(false);
+  const [isEnquiryModal, setIsEnquiryModal] = useState(false);
+
   useEffect(()=>{
   dispatch(publicGetItinerariesAsync(name));
   }, [name]);
 
 
   console.log("Allpackages.jsx SelectedDestinationItineraries", selectedDestinationItineraries);
+
+
+  const handlePackageDetails = function(id){
+  console.log("Allpackages.jsx id", id);
+  
+  setIsContactAgentEnqNowModal(true);
+  }
+
 
   return (
     <>
@@ -78,12 +95,19 @@ const Allpackages = () => {
                   </div>
                   
                   <p className="text-gray-600 text-sm mb-4">{itinerary?.title}</p>
-                  <Link
+
+                  {/* <Link
                     to={`/package-details/${itinerary?.id}`}
                     className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
                   >
                     See Details
-                  </Link>
+                  </Link> */}
+
+                  <div
+                   className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
+                   onClick={()=>handlePackageDetails(itinerary?.id)}>See Details</div>
+
+
                 </div>
               </div>
             ))
@@ -94,6 +118,37 @@ const Allpackages = () => {
           )}
         </div>
       </div>
+
+        {
+        isContactAgentEnqNowModal && (
+        <ContactAgentAndEnquiryNowModal
+        onClose={() => setIsContactAgentEnqNowModal(false)}
+        setIsPhoneNumberModal={setIsPhoneNumberModal}
+        setIsEnquiryModal={setIsEnquiryModal}
+        />
+        )
+        }
+
+
+        {
+          isPhoneNumberModal && (
+            <PhoneNumberModal onClose={()=>setIsPhoneNumberModal(false)} setIsEmailModal={setIsEmailModal} />
+          )
+        }
+
+
+        {
+          isEmailModal && (
+            <EmailModal onClose={()=>setIsEmailModal(false)} />
+          )
+        }
+
+        {
+          isEnquiryModal && ( <EnquiryModal
+            onClose={()=>setIsEnquiryModal(false)} />
+          )
+        }
+
     </div>
 
     }
