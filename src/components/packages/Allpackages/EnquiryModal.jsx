@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-const EnquiryModal = ({
-  onClose
-}) => {
+const EnquiryModal = function({ onClose }){
+  const particularItineraryId = useSelector(state => state.public.particularItineraryId);
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     destination: "",
-    message: "",
+    date_of_arrival: "",
   });
 
   const [isLoading, setIsLoading] = useState(false);
@@ -25,11 +28,14 @@ const EnquiryModal = ({
       email: formData.email,
       phone: formData.phone,
       destination: formData.destination,
-      message: formData.message,
+      date_of_arrival: formData.date_of_arrival,
     };
 
     console.log("regsiterBosy REqesutQouteModal.jsx", registerBody);
 
+
+   navigate(`/package-details/${particularItineraryId}`);
+   
     // setIsLoading(true);
   };
 
@@ -42,8 +48,8 @@ const EnquiryModal = ({
   }, [flashMessage]);
 
   const handleChange = (e) => {
-    // const { name, value } = e.target;
-    // setFormData((prevData) => ({ ...prevData, [name]: value }));
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
   return (
@@ -58,7 +64,7 @@ const EnquiryModal = ({
               &times;
             </button>
             <h2 className="text-2xl font-bold mb-2 text-center">
-              Request a Quote
+              Enquire Now
             </h2>
 
             <div
@@ -108,16 +114,20 @@ const EnquiryModal = ({
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
               />
-              <textarea
-                placeholder="Message"
-                rows="4"
-                
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-              ></textarea>
+
+
+
+              <input
+              type="date"
+              placeholder="Date Of Arrival"
+              name="date_of_arrival"
+              value={formData.date_of_arrival}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              />
+
+
               <button
               disabled={isLoading}
                 type="submit"

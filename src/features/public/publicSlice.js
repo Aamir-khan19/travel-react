@@ -8,7 +8,8 @@ const initialState = {
     companies: [],
     errors: {},
     selectedDestinationItineraries: [],
-    particularItinerary: {}
+    particularItinerary: {},
+    particularItineraryId: null
 };
 
 // Fetch all companies
@@ -72,6 +73,9 @@ const publicSlice = createSlice({
     name: 'public',
     initialState,
     reducers: {
+    setParticularItineraryId: (state, action)=>{
+    state.particularItineraryId = action.payload;
+    },
     setParticularItinerary: (state, action)=>{
     let newParticularItinerary = state.selectedDestinationItineraries?.find((elem)=> elem?.id == action.payload.id);
 
@@ -135,7 +139,7 @@ const publicSlice = createSlice({
     }
 });
 
-export const { setParticularItinerary } = publicSlice.actions;
+export const { setParticularItinerary, setParticularItineraryId } = publicSlice.actions;
 
 const publicReducer = publicSlice.reducer;
 

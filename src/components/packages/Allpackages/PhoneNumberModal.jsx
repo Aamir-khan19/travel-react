@@ -5,9 +5,19 @@ import 'react-phone-input-2/lib/style.css';
 
 const PhoneNumberModal = ({ onClose, setIsEmailModal }) => {
   const [mobileNumber, setMobileNumber] = useState('');
+  const [mobileNumberReqErr, setMobileNumberReqErr] = useState("");
 
   
 const handlePhoneNumberSubmit = function(){
+  setMobileNumberReqErr("");
+
+  if(!mobileNumber.trim()){
+    setMobileNumberReqErr("Please Enter Your Phone Number");
+
+    return;
+  }
+
+
     onClose();
     setIsEmailModal(true);
 }
@@ -34,6 +44,12 @@ const handlePhoneNumberSubmit = function(){
               height: "3rem",
             }}
           />
+
+<div className=' w-full'>
+<p className=' text-red-500 text-sm font-semibold'>{mobileNumberReqErr}</p>
+</div>
+         
+
           <button
           onClick={handlePhoneNumberSubmit}
             type="submit"

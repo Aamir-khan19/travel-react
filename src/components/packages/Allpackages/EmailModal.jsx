@@ -2,9 +2,28 @@ import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const EmailModal = ({ onClose }) => {
+  const navigate = useNavigate();
+  const particularItineraryId = useSelector(state => state.public.particularItineraryId);
+
   const [email, setEmail] = useState('');
+  const [emailReqErr, setEmailReqErr] = useState('');
+
+  const handleEmailSubmit = function(){
+    setEmailReqErr("");
+  if(!email.trim()){
+   setEmailReqErr("Please Enter Your Email Id");
+
+   return;
+  }
+
+
+  navigate(`/package-details/${particularItineraryId}`);
+
+  }
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -28,18 +47,26 @@ const EmailModal = ({ onClose }) => {
     >
       Email Address
     </label>
+
     <input
-      type="email"
-      id="email"
-      placeholder="Enter your email"
-      className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 placeholder-gray-400"
+    value={email}
+    onChange={(e)=>setEmail(e.target.value)}
+    name='email'
+    type="email"
+    id="email"
+    placeholder="Enter your email"
+    className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-gray-800 placeholder-gray-400"
     />
+
+   <p className=' text-sm font-semibold text-red-500 mt-4'>{emailReqErr}</p>
+
     <button
-      type="submit"
-      className="mt-4 w-full bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold py-2 rounded-full hover:shadow-lg hover:from-purple-600 hover:to-blue-600 transition-transform transform hover:-translate-y-1"
+    onClick={handleEmailSubmit}
+      className="mt-4 w-full bg-blue-800 text-white font-bold py-2 rounded-full hover:shadow-lg hover:from-purple-600 hover:to-blue-600 transition-transform transform hover:-translate-y-1"
     >
       Submit
     </button>
+
   </div>
 </div>
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";import { Link, useParams } fr
 import { FaRegStar } from "react-icons/fa";
 import packagedata from "./Allpackages/packagedata";
 import { useDispatch, useSelector } from "react-redux";
-import { publicGetItinerariesAsync } from "../../features/public/publicSlice";
+import { publicGetItinerariesAsync, setParticularItineraryId } from "../../features/public/publicSlice";
 import conf from "../../../conf/conf";
 import ContactAgentAndEnquiryNowModal from "./Allpackages/ContactAgentAndEnquiryNowModal";
 import PhoneNumberModal from "./Allpackages/PhoneNumberModal";
@@ -33,6 +33,8 @@ const Allpackages = () => {
 
   const handlePackageDetails = function(id){
   console.log("Allpackages.jsx id", id);
+
+  dispatch(setParticularItineraryId(id));
   
   setIsContactAgentEnqNowModal(true);
   }
@@ -95,13 +97,6 @@ const Allpackages = () => {
                   </div>
                   
                   <p className="text-gray-600 text-sm mb-4">{itinerary?.title}</p>
-
-                  {/* <Link
-                    to={`/package-details/${itinerary?.id}`}
-                    className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
-                  >
-                    See Details
-                  </Link> */}
 
                   <div
                    className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
