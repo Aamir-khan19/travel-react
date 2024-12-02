@@ -288,12 +288,12 @@ const dropdownItems = {
 
   international: [
     { to: `/tour-packages/Thailand`, text: "Thailand" },
-    { to: `/tour-packages/UAE`, text: "U.A.E" },
+    { to: `/tour-packages/UAE`, text: "UAE" },
     { to: `/tour-packages/Indonesia`, text: "Indonesia" },
     { to: `/tour-packages/Maldives`, text: "Maldives" },
-    { to: `/tour-packages/Saudi-Arabia`, text: "Saudi " },
+    { to: `/tour-packages/Saudi-Arabia`, text: "Saudi Arabia" },
     { to: `/tour-packages/Malaysia`, text: "Malaysia" },
-    { to: `/tour-packages/USA`, text: "U.S.A" },
+    { to: `/tour-packages/USA`, text: "USA" },
     { to: `/tour-packages/Spain`, text: "Spain" },
     { to: `/tour-packages/Israel`, text: "Israel" },
     { to: `/tour-packages/France`, text: "France" },

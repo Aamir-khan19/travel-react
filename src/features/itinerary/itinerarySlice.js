@@ -530,6 +530,7 @@ const itinerariesSlice = createSlice({
 
             .addCase(loginSuccess, (state)=>{
                 state.userItineraries = [];
+                state.errors = {}
             })
     }
 });
