@@ -16,9 +16,9 @@ const HotelDetails = () => {
             className="p-4 bg-white border rounded-lg shadow-sm hover:shadow-md transition duration-300"
           >
             <p className="text-lg font-semibold text-blue-600">Type: {hotel.type}</p>
-            <p className="text-gray-700">
+            {/* <p className="text-gray-700">
               <span className="font-medium">Name:</span> {hotel.name}
-            </p>
+            </p> */}
             <p className="text-gray-700">
               <span className="font-medium">Price:</span> ₹{hotel.price}
             </p>
