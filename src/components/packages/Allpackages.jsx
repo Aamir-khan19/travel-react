@@ -81,13 +81,13 @@ const Allpackages = () => {
                
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    <h3 className="text-lg font-semibold text-gray-700">
+                    {/* <h3 className="text-lg font-semibold text-gray-700">
                        From ₹ {(itinerary?.hotel_details[2]?.discount)? <span> <span className=' line-through'>{itinerary?.hotel_details[2]?.price}</span> {Number(itinerary?.hotel_details[2]?.price - (((itinerary?.hotel_details[2]?.price)*(itinerary?.hotel_details[2]?.discount))/100))?.toFixed(2)} </span>
                 
                 :
                 
                 <span>{itinerary?.hotel_details[2]?.price}</span> }  / Per Person
-                    </h3>
+                    </h3> */}
                     <div className="flex items-center">
                       <FaRegStar className="text-yellow-400 text-xl" />
                       <span className="text-sm text-gray-600 ml-1">
