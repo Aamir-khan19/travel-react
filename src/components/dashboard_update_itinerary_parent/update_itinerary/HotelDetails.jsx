@@ -32,7 +32,7 @@ const HotelDetails = () => {
   
   
     const handleBack = function(){
-      setCurrentComponent(3)
+      setCurrentComponent(4)
       }
 
 

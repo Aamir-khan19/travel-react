@@ -26,7 +26,7 @@ const CustomizeItineraryForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-4 rounded-lg shadow-lg max-w-3xl mx-auto mt-10">
+    <div className=" bg-blue-900 p-4 rounded-lg shadow-lg max-w-3xl mx-auto">
       <h2 className="text-xl font-bold text-white mb-4 text-center">
         Customize Your Itinerary
       </h2>
@@ -134,7 +134,7 @@ const CustomizeItineraryForm = () => {
         <div className="text-center">
           <button
             type="submit"
-            className=" w-full font-bold text-lg bg-gradient-to-r from-green-400 to-sky-500 text-white px-4 py-2 rounded-md shadow-md hover:from-green-500 hover:to-sky-600 transition duration-300"
+            className=" w-full font-bold text-lg bg-white text-blue-900 px-4 py-2 rounded-md shadow-md hover:from-green-500 hover:to-sky-600 transition duration-300"
           >
             Submit
           </button>

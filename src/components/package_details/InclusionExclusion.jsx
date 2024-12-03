@@ -11,7 +11,7 @@ const InclusionExclusion = () => {
       <div className="bg-green-50 border border-green-300 p-6 rounded-lg shadow-lg md:w-[50%]">
         <h3 className="text-2xl font-bold text-green-700 mb-4">Inclusion</h3>
         <div
-          className="text-green-900 leading-relaxed text-sm"
+          className="text-gray-700 leading-relaxed text-sm"
           dangerouslySetInnerHTML={{ __html: inclusion }}
         />
       </div>
@@ -20,7 +20,7 @@ const InclusionExclusion = () => {
       <div className="bg-red-50 border border-red-300 p-6 rounded-lg shadow-lg md:w-[50%]">
         <h3 className="text-2xl font-bold text-red-700 mb-4">Exclusion</h3>
         <div
-          className="text-red-900 leading-relaxed text-sm"
+          className="text-gray-700 leading-relaxed text-sm"
           dangerouslySetInnerHTML={{ __html: exclusion }}
         />
       </div>

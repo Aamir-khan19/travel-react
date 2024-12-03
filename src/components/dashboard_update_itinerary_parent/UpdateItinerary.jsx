@@ -6,6 +6,7 @@ import Inclusion from './update_itinerary/Inclusion';
 import Exclusion from './update_itinerary/Exclusion';
 import DestinationDetails from './update_itinerary/DestinationDetail';
 import HotelDetails from './update_itinerary/HotelDetails';
+import TermsAndConditions from './update_itinerary/TermsAndConditions';
 
 function UpdateItinerary() {
     const [currentComponent, setCurrentComponent] = useState(0);
@@ -34,7 +35,11 @@ function UpdateItinerary() {
     }
 
     {
-      (currentComponent == 4) && <HotelDetails setCurrentComponent={setCurrentComponent} />
+    (currentComponent==4) && <TermsAndConditions setCurrentComponent={setCurrentComponent} />
+    }
+
+    {
+      (currentComponent == 5) && <HotelDetails  setCurrentComponent={setCurrentComponent} />
     }
 
 </div>

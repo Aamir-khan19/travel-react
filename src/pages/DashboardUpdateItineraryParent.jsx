@@ -247,6 +247,11 @@ let itineraryPayloadObject = {
  itinerary_theme_string: JSON.stringify(itineraryForm?.selectedThemes)
 };
 
+
+if(itineraryDetails?.terms_and_conditions?.trim()){
+  itineraryPayloadObject.terms_and_conditions = itineraryDetails.terms_and_conditions;
+  }
+
 if(destinationThumbnail?.name){
   itineraryPayloadObject.destination_thumbnail_file = destinationThumbnail
 }

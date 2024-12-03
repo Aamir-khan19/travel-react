@@ -271,6 +271,10 @@ let itineraryPayloadObject = {
 };
 
 
+if(itineraryDetails?.terms_and_conditions?.trim()){
+itineraryPayloadObject.terms_and_conditions = itineraryDetails.terms_and_conditions;
+}
+
 
 dispatch(itinerariesStoreAsync(itineraryPayloadObject));
 

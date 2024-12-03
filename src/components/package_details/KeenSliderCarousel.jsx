@@ -72,7 +72,7 @@ const KeenSliderCarousel = () => {
     <div className="relative">
       {isLoading && <div className="absolute inset-0 flex items-center justify-center bg-white/80 z-10">Loading...</div>}
 
-      <div ref={sliderContainer} className="keen-slider w-full bg-gradient-to-b from-gray-50 to-white rounded-lg shadow-lg overflow-hidden">
+      <div ref={sliderContainer} className="keen-slider w-full bg-blue-100 rounded-lg shadow-lg overflow-hidden">
         {images?.length > 0 ? (
           images.map((img, index) => (
             <div key={index} className="keen-slider__slide">

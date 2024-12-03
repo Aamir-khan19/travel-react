@@ -33,7 +33,8 @@ const initialState = {
 
     itineraryDetails: {
         inclusion: "",
-        exclusion: ""
+        exclusion: "",
+        terms_and_conditions: ""
     },
 
    hotelDetails: [
@@ -125,6 +126,7 @@ const {
     destination_detail,
     inclusion,
     exclusion,
+    terms_and_conditions,
     hotel_details_string,
     title,
     meta_title,
@@ -147,6 +149,7 @@ const {
   formData.append("destination_detail", destination_detail);
   formData.append("inclusion", inclusion);
   formData.append("exclusion", exclusion);
+  formData.append("terms_and_conditions", terms_and_conditions);
   formData.append("hotel_details_string", hotel_details_string);
   formData.append("title", title);
   formData.append("meta_title", meta_title);
@@ -194,6 +197,7 @@ export const itinerariesUpdateAsync = createAsyncThunk(
                 destination_detail,
                 inclusion,
                 exclusion,
+                terms_and_conditions,
                 hotel_details_string,
                 title,
                 meta_title,
@@ -227,6 +231,11 @@ export const itinerariesUpdateAsync = createAsyncThunk(
               formData.append("selected_destination_string", selected_destination_string);
               formData.append("itinerary_theme_string", itinerary_theme_string);
               
+
+              if(terms_and_conditions){
+                formData.append("terms_and_conditions", terms_and_conditions);
+              }
+
               // Append file objects
               if(destination_thumbnail_file){
                 formData.append("destination_thumbnail_file", destination_thumbnail_file);
@@ -416,7 +425,8 @@ const itinerariesSlice = createSlice({
 
             state.itineraryDetails = {
                 inclusion: itinerary?.inclusion,
-                exclusion: itinerary?.exclusion
+                exclusion: itinerary?.exclusion,
+                terms_and_conditions: itinerary?.terms_and_conditions
             }
 
             state.hotelDetails = itinerary?.hotel_details;

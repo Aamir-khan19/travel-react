@@ -4,12 +4,12 @@ import KeenSliderCarousel from "../../components/package_details/KeenSliderCarou
 import EnquiryForm from "../../components/package_details/EnquiryForm";
 import HotelDetails from "../../components/package_details/HotelDetails";
 import InclusionExclusion from "../../components/package_details/InclusionExclusion";
-import CancellationPolicy from "../../components/package_details/CancellationPolicy";
 import { useParams } from "react-router-dom";
 import { publicGetParticularItineraryAsync, setParticularItinerary } from "../../features/public/publicSlice";
 import Navbar from "../../components/global/Navbar";
 import Footer from "../../components/global/Footer";
 import Itinerary from "../../components/package_details/Itinerary";
+import TermsAndConditions from "../../components/package_details/TermsAndConditions";
 
 const PackageDetails = () => {
   const dispatch = useDispatch();
@@ -18,6 +18,10 @@ const PackageDetails = () => {
   const selectedDestinationItineraries = useSelector((state) => state.public.selectedDestinationItineraries);
   const particularItinerary = useSelector((state) => state.public.particularItinerary);
   const isLoading = useSelector((state) => state.public.isLoading);
+
+  const terms_and_conditions = useSelector(
+    (state) => state.public.particularItinerary?.terms_and_conditions
+  );
 
   useEffect(() => {
     if (selectedDestinationItineraries.length > 0) {
@@ -45,11 +49,11 @@ const PackageDetails = () => {
             <KeenSliderCarousel />
 
             {/* Title */}
-            <h1 className="text-4xl font-extrabold mt-4 text-center text-gray-800">{particularItinerary?.title}</h1>
+            <h1 className="text-4xl font-extrabold mt-4 text-center text-blue-900">{particularItinerary?.title}</h1>
 
             {/* Destination Details */}
-            <div className="mt-6 p-6 bg-blue-50 border border-blue-200 rounded-lg shadow-lg">
-              <h3 className="text-2xl font-bold text-blue-600 mb-4">Overview</h3>
+            <div className="mt-6 p-6 bg-blue-100 rounded-lg shadow-lg">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">Overview</h3>
               <div
                 className="prose max-w-none text-gray-700"
                 dangerouslySetInnerHTML={{ __html: particularItinerary?.destination_detail }}
@@ -73,10 +77,14 @@ const PackageDetails = () => {
             {/* Enquiry Form */}
             <EnquiryForm />
 
-            {/* Cancellation Policy */}
-            <div className="p-6 bg-red-50 border border-red-200 rounded-lg shadow-lg">
-              <CancellationPolicy />
-            </div>
+            {/* Terms And Conditions */}
+
+            {
+            terms_and_conditions &&
+            <TermsAndConditions />
+            
+            }  
+
           </div>
         </div>
       )}

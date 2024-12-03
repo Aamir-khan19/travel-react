@@ -67,7 +67,7 @@ const Allpackages = () => {
                 key={itinerary?.id}
                 className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform transform hover:scale-105"
               >
-                <div className=" relative p-2">
+                <div className=" relative">
                 <img
                   src={`${conf?.laravelBaseUrl}/${itinerary?.destination_thumbnail}`}
                   className="h-60 w-full object-cover"
@@ -96,10 +96,10 @@ const Allpackages = () => {
                     </div>
                   </div>
                   
-                  <p className="text-gray-600 text-sm mb-4">{itinerary?.title}</p>
+                  <p className="text-blue-900 mb-4 font-semibold capitalize">{itinerary?.title}</p>
 
                   <div
-                   className="block bg-blue-900 text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
+                   className="block bg-blue-900 cursor-pointer text-white py-2 px-4 rounded-lg text-center shadow-md hover:bg-blue-900 hover:shadow-lg transition-all"
                    onClick={()=>handlePackageDetails(itinerary?.id)}>See Details</div>
 
 

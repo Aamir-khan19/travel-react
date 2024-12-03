@@ -32,8 +32,12 @@ const HotelDetails = () => {
   
   
     const handleBack = function(){
-      setCurrentComponent(3)
+      setCurrentComponent(4)
       }
+
+      // const handleNext = function(){
+      //   setCurrentComponent(6)
+      //   }
 
 
       useEffect(()=>{
