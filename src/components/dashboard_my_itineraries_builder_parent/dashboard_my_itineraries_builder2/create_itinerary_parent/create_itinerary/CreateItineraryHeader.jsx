@@ -27,10 +27,15 @@ function CreateItineraryHeader({setCurrentComponent, currentComponent}) {
        <button onClick={()=>setCurrentComponent(4)} className={` font-semibold ${(currentComponent== 4)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Terms And Conditions</button>
        </li>
 
+      
+
        <li>
-       <button onClick={()=>setCurrentComponent(5)} className={` font-semibold ${(currentComponent== 5)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Hotel Details</button>
+       <button onClick={()=>setCurrentComponent(5)} className={` font-semibold ${(currentComponent== 5)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Package Pricing</button>
        </li>
 
+       <li>
+       <button onClick={()=>setCurrentComponent(6)} className={` font-semibold ${(currentComponent== 6)? "text-purple-500 border-b-2 border-purple-600" : ""}`}>Hotel Details</button>
+       </li>
 
      </ul>
     </div>

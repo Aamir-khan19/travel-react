@@ -31,7 +31,7 @@ function TourDestination() {
         }),
       };
 
-      console.log("TourDestinations.jsx destination", itineraryForm?.selectedDestinations)
+      console.log("TourDestinations.jsx destination", itineraryForm?.selectedDestination)
 
   return (
     <label className="block text-gray-700 mb-2">

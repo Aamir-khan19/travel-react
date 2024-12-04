@@ -51,11 +51,7 @@ function UserItineraries() {
                 {itinerary?.title}
               </h3>
               <p className="text-sm text-gray-700 mt-1">
-                From ₹ {(itinerary?.hotel_details[2]?.discount)? <span> <span className=' line-through'>{itinerary?.hotel_details[2]?.price}</span> {Number(itinerary?.hotel_details[2]?.price - (((itinerary?.hotel_details[2]?.price)*(itinerary?.hotel_details[2]?.discount))/100))?.toFixed(2)} </span>
-                
-                :
-                
-                <span>{itinerary?.hotel_details[2]?.price}</span> } 
+                From ₹ {itinerary?.pricing}
               </p>
               <p className="text-sm text-gray-700 mt-1">
                 {itinerary?.selected_destination.label}

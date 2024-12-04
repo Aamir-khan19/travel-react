@@ -1,19 +1,20 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { HiChevronLeft, HiChevronRight  } from "react-icons/hi";
-import { setItineraryDetails } from "../../../../../features/itinerary/itinerarySlice";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { setItineraryDetails } from "../../../features/itinerary/itinerarySlice";
 
 const PriceComponent = ({setCurrentComponent}) => {
   const dispatch = useDispatch();
   const itineraryDetails = useSelector((state) => state.itineraries.itineraryDetails);
 
-  const handleBack = function(){
-    setCurrentComponent(4)
-    }
 
-    const handleNext = function(){
-      setCurrentComponent(6)
+    const handleBack = function(){
+      setCurrentComponent(4)
       }
+
+      const handleNext = function(){
+        setCurrentComponent(6)
+        }
 
 
   return (
@@ -31,7 +32,6 @@ const PriceComponent = ({setCurrentComponent}) => {
    placeholder="Enter Pricing"
    />
       
-
 
       <div className=' mt-10 flex justify-between'>
       <button onClick={handleBack} className="flex items-center text-blue-600 font-semibold underline hover:text-blue-800 mb-4">

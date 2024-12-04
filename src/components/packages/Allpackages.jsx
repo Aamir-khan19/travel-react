@@ -74,26 +74,28 @@ const Allpackages = () => {
                   alt="Package"
                 />
 
-<span className="absolute bottom-4 right-4 bg-black text-white text-xs sm:text-sm font-medium px-3 py-1 rounded">
+<span className="absolute bottom-4 right-4 bg-blue-900 text-white text-xs sm:text-sm font-medium px-3 py-1 rounded">
                 {itinerary?.duration?.label}
               </span>
                 </div>
                
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-4">
-                    {/* <h3 className="text-lg font-semibold text-gray-700">
-                       From ₹ {(itinerary?.hotel_details[2]?.discount)? <span> <span className=' line-through'>{itinerary?.hotel_details[2]?.price}</span> {Number(itinerary?.hotel_details[2]?.price - (((itinerary?.hotel_details[2]?.price)*(itinerary?.hotel_details[2]?.discount))/100))?.toFixed(2)} </span>
-                
-                :
-                
-                <span>{itinerary?.hotel_details[2]?.price}</span> }  / Per Person
-                    </h3> */}
-                    <div className="flex items-center">
-                      <FaRegStar className="text-yellow-400 text-xl" />
-                      <span className="text-sm text-gray-600 ml-1">
-                        4.9 (1.2k Reviews)
-                      </span>
-                    </div>
+
+<div className="flex justify-between items-center w-full">
+<p className=" text-blue-900 text-lg font-semibold">From ₹ {itinerary?.pricing}</p>
+
+
+<div className=" flex justify-center items-center">
+<FaRegStar className="text-yellow-400 text-xl" />
+<span className="text-sm text-blue-900 ml-1">
+4.9 (1.2k Reviews)
+</span>
+</div>
+
+</div>
+
+
                   </div>
                   
                   <p className="text-blue-900 mb-4 font-semibold capitalize">{itinerary?.title}</p>

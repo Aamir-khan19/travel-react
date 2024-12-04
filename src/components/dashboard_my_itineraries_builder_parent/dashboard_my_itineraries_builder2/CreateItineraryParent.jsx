@@ -251,11 +251,27 @@ const handleCreateItineraryAndItineraryForm = function(){
 
   }
 
+
+  if(!itineraryDetails?.pricing?.trim()){
+    toast.error("Please enter pricing of the package", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      pauseOnHover: true,
+    });
+
+    return;
+  }
+
+
 let itineraryPayloadObject = {
   days_information_string: JSON.stringify(daysInformation),
  destination_detail:  destinationDetailText,
  inclusion: itineraryDetails?.inclusion,
  exclusion: itineraryDetails?.exclusion,
+ pricing: Number(itineraryDetails?.pricing),
  hotel_details_string: JSON.stringify(hotelDetails),
  title: itineraryForm?.title,
  meta_title: itineraryForm?.metaTitle,
@@ -274,6 +290,8 @@ let itineraryPayloadObject = {
 if(itineraryDetails?.terms_and_conditions?.trim()){
 itineraryPayloadObject.terms_and_conditions = itineraryDetails.terms_and_conditions;
 }
+
+
 
 
 dispatch(itinerariesStoreAsync(itineraryPayloadObject));

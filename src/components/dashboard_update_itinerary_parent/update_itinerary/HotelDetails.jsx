@@ -4,7 +4,7 @@ import { setHotelDetails } from "../../../features/itinerary/itinerarySlice"
 import { HiChevronLeft } from "react-icons/hi";
 import { HiChevronRight } from "react-icons/hi2";
 
-const HotelDetails = () => {
+const HotelDetails = ({setCurrentComponent}) => {
     const dispatch = useDispatch();   
     const hotelDetails = useSelector((state) => state.itineraries.hotelDetails);
 
@@ -32,7 +32,7 @@ const HotelDetails = () => {
   
   
     const handleBack = function(){
-      setCurrentComponent(4)
+      setCurrentComponent(5)
       }
 
 

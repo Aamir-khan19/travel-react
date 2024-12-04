@@ -34,7 +34,8 @@ const initialState = {
     itineraryDetails: {
         inclusion: "",
         exclusion: "",
-        terms_and_conditions: ""
+        terms_and_conditions: "",
+        pricing: ""
     },
 
    hotelDetails: [
@@ -126,6 +127,7 @@ const {
     destination_detail,
     inclusion,
     exclusion,
+    pricing,
     terms_and_conditions,
     hotel_details_string,
     title,
@@ -149,6 +151,7 @@ const {
   formData.append("destination_detail", destination_detail);
   formData.append("inclusion", inclusion);
   formData.append("exclusion", exclusion);
+  formData.append("pricing", pricing);
   formData.append("terms_and_conditions", terms_and_conditions);
   formData.append("hotel_details_string", hotel_details_string);
   formData.append("title", title);
@@ -197,6 +200,7 @@ export const itinerariesUpdateAsync = createAsyncThunk(
                 destination_detail,
                 inclusion,
                 exclusion,
+                pricing,
                 terms_and_conditions,
                 hotel_details_string,
                 title,
@@ -220,6 +224,7 @@ export const itinerariesUpdateAsync = createAsyncThunk(
               formData.append("destination_detail", destination_detail);
               formData.append("inclusion", inclusion);
               formData.append("exclusion", exclusion);
+              formData.append("pricing", pricing);
               formData.append("hotel_details_string", hotel_details_string);
               formData.append("title", title);
               formData.append("meta_title", meta_title);
@@ -426,7 +431,8 @@ const itinerariesSlice = createSlice({
             state.itineraryDetails = {
                 inclusion: itinerary?.inclusion,
                 exclusion: itinerary?.exclusion,
-                terms_and_conditions: itinerary?.terms_and_conditions
+                terms_and_conditions: itinerary?.terms_and_conditions,
+                pricing: itinerary?.pricing
             }
 
             state.hotelDetails = itinerary?.hotel_details;

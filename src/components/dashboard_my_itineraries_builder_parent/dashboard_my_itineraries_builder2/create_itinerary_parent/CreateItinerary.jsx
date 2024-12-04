@@ -39,13 +39,16 @@ function CreateItinerary() {
     (currentComponent==4) && <TermsAndConditions setCurrentComponent={setCurrentComponent} />
     }
 
+  
+
     {
-      (currentComponent == 5) && <HotelDetails  setCurrentComponent={setCurrentComponent} />
+      (currentComponent == 5) && <PriceComponent setCurrentComponent={setCurrentComponent} />
     }
 
-    {/* {
-      (currentComponent == 6) && <PriceComponent setCurrentComponent={setCurrentComponent} />
-    } */}
+
+{
+      (currentComponent == 6) && <HotelDetails  setCurrentComponent={setCurrentComponent} />
+    }
 
 </div>
     </>
