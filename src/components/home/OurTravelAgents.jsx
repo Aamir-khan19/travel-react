@@ -32,6 +32,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
       name: "Travels Yug",
+      city: "Bengaluru",
       phone: "9625624780",
       whatsapp: "9625624780",
       facebook: "",
@@ -44,6 +45,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/kamakshiHolidays.png",
       name: "Kamakshi Holidays",
+      city: "Pune",
       phone: "9881290229",
       whatsapp: "9881290229",
       facebook: "https://www.facebook.com/kamakshi.holidays",
@@ -56,6 +58,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
       name: "South Indian Holidays",
+      city: "Tamil Nadu",
       phone: "7567891018",
       whatsapp: "7567891018",
       facebook: "https://www.facebook.com/southindiaholiday",
@@ -68,6 +71,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
       name: "Riche Rich Holidays",
+      city: "Bengaluru",
       phone: "9632417602",
       whatsapp: "9632417602",
       facebook: "",
@@ -80,6 +84,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
       name: "Perfect Planners",
+      city: "",
       phone: "9596863183",
       whatsapp: "9596863183",
       facebook: "https://www.facebook.com/perfectplannerco",
@@ -90,6 +95,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/sathyaTravels.png",
       name: "Sathya Travels",
+      city: "New Delhi",
       phone: "9965539599",
       whatsapp: "9965539599",
       facebook: "",
@@ -102,6 +108,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",
       name: "Just Keep Travels",
+      city: "Delhi",
       phone: "9965539599",
       whatsapp: "9965539599",
       facebook:
@@ -114,6 +121,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
       name: "Tourz Planner",
+      city: "Kolkata",
       phone: "9965539599",
       whatsapp: "9965539599",
       facebook: "",
@@ -126,6 +134,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/himalayancircle.png",
       name: "Himalayan Circle",
+      city: "Solon",
       phone: " 7018419161",
       whatsapp: "9965539599",
       facebook: "https://www.facebook.com/himalayancircle",
@@ -137,6 +146,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/abv.jpeg",
       name: "Rathore Travels ",
+      city: "ferozpur",
       phone: "9988325982",
       whatsapp: "9988325982",
       facebook: "",
@@ -148,6 +158,7 @@ const OurTravelAgents = () => {
     {
       imageUrl: "/Images/travelAgenciesLogo/kancharla.jpeg",
       name: "Kancharla Tour's and Travels",
+      city: "Hyderabad",
       phone: "7095974001",
       whatsapp: "7095974001",
       facebook: "",
@@ -172,6 +183,7 @@ const OurTravelAgents = () => {
 
   const filteredAgents = ourTravelAgents.filter((agent) =>
     agent.name.toLowerCase().includes(searchTerm)
+  || agent.city.toLowerCase().includes(searchTerm)
   );
 
   // Initialize KeenSlider
