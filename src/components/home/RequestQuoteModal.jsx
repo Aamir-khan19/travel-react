@@ -82,7 +82,7 @@ const RequestQuoteModal = ({
             >
               &times;
             </button>
-            <h2 className="text-2xl font-bold mb-2 text-center">
+            <h2 className="text-2xl font-bold mb-2 text-center text-blue-900">
               Plan Your Trip
             </h2>
 
@@ -147,7 +147,7 @@ const RequestQuoteModal = ({
               <button
               disabled={isLoading}
                 type="submit"
-                className="w-full p-3 text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-lg hover:opacity-90 transition"
+                className="w-full p-3 text-white bg-blue-900 rounded-lg hover:opacity-90 transition"
               >
                 Submit
               </button>
