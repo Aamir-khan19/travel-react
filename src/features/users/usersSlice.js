@@ -84,7 +84,7 @@ export const usersUpdateAsync = createAsyncThunk(
         try {
             const tokenObj = JSON.parse(localStorage.getItem('token'));
 
-            const {name, company_name, phone, location, your_requirements, gender, preferred_language, isAuthorised } = formVal;
+            const {name, company_name, phone, location, your_requirements, gender, preferred_language, is_authorised, is_publicly_present, is_verified } = formVal;
 
             const formData = new FormData();
             formData.append("name", name);
@@ -123,8 +123,16 @@ export const usersUpdateAsync = createAsyncThunk(
                 formData.append("preferred_language", preferred_language);
             }
 
-           if(formVal?.isAuthorised){
-            formData.append("isAuthorised", isAuthorised);
+           if(formVal?.is_authorised){
+            formData.append("is_authorised", is_authorised);
+           }
+
+           if(formVal?.is_publicly_present){
+            formData.append("is_publicly_present", is_publicly_present);
+           }
+
+           if(formVal?.is_verified){
+            formData.append("is_verified", is_verified);
            }
             
 

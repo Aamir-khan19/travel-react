@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutAsync } from '../../features/login/loginSlice';
 import { Link, useNavigate } from 'react-router-dom';
@@ -11,11 +11,21 @@ function DashboardContentContainer({children}) {
   const tokenState = useSelector(state => state.login.tokenState);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef(null);
+
+
+  const handleDashboardContainer = function(e){
+    if(modalRef.current && !modalRef.current.contains(e.target)){
+      setIsModalOpen(false);
+     }
+  }
+
   
-  const toggleModal = () => {
+  const toggleModal = (e) => {
     setIsModalOpen(!isModalOpen);
   };
   
+
   const handleLogout = () => {
     dispatch(logoutAsync());
   };
@@ -27,7 +37,7 @@ function DashboardContentContainer({children}) {
   }, [tokenState, navigate]);
 
   return (
-    <div className=" mt-12 lg:mt-0 lg:ml-[245px] pl-0 lg:pl-2 pt-2">
+    <div onClick={(e)=>handleDashboardContainer(e)} className=" mt-12 lg:mt-0 lg:ml-[245px] pl-0 lg:pl-2 pt-2">
        
        {/* Header */}
        <header className="flex justify-between items-center bg-white p-4 shadow">
@@ -42,7 +52,7 @@ function DashboardContentContainer({children}) {
 
             {/* Modal */}
             {isModalOpen && (
-              <div className="absolute right-0 mt-2 bg-white border rounded shadow-lg z-10">
+              <div ref={modalRef} className="absolute right-0 mt-2 bg-white border rounded shadow-lg z-10">
                 <div className="p-4">
 
                   <div className=' border-b border-gray-600 px-2 mb-2'>

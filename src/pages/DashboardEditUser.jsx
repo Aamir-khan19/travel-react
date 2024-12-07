@@ -12,6 +12,7 @@ const DashboardEditUser = () => {
   const isUserUpdated = useSelector((state) => state.users.isUserUpdated);
   const apiErrors = useSelector((state) => state.users.errors);
   const users = useSelector(state => state.users.users);
+  const isLoading = useSelector(state => state.users.isLoading);
 
 const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +24,9 @@ const [formData, setFormData] = useState({
     preferred_language: "",
     password: "",
     password_confirmation: "",
-    isAuthorised: ""
+    is_authorised: "",
+    is_publicly_present: "",
+    is_verified: ""
   });
 
   const handleChange = (e) => {
@@ -47,7 +50,7 @@ const [formData, setFormData] = useState({
 
   useEffect(() => {
     if (user) {
-     setFormData(preVal=> ({ name: user?.name, company_name: user?.company_name, phone: user?.phone, location: user?.location || "", your_requirements: user?.your_requirements || "", gender: user?.gender || "", preferred_language: user?.preferred_language || "", isAuthorised: user?.isAuthorised}));
+     setFormData(preVal=> ({ name: user?.name, company_name: user?.company_name, phone: user?.phone, location: user?.location || "", your_requirements: user?.your_requirements || "", gender: user?.gender || "", preferred_language: user?.preferred_language || "", is_authorised: user?.is_authorised, is_publicly_present: user?.is_publicly_present, is_verified: user?.is_verified }));
     }
 
   }, [user]);
@@ -77,11 +80,21 @@ const [formData, setFormData] = useState({
   console.log("DashboardEditUser.jsx users", users);
 
 
-  console.log("Dashboard.jsx FormDataIsAuthorised", formData.isAuthorised);
+  console.log("Dashboard.jsx FormDataIsAuthorised", formData.is_authorised);
 
 
   return (
  <>
+
+ {
+  isLoading?  <div className=' flex justify-center h-[50vh] items-center'>
+
+  <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+
+  </div>
+
+  :
+
  
     <div className="max-w-4xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h2 className="text-2xl font-bold mb-4">Edit User</h2>
@@ -193,12 +206,37 @@ const [formData, setFormData] = useState({
         <div className="flex flex-col">
           <label className="text-lg font-semibold mb-2">Is Authorised</label>
 
-          <select name="isAuthorised" value={formData?.isAuthorised} onChange={(e)=>handleChange(e)}>
+          <select name="is_authorised" value={formData?.is_authorised} onChange={(e)=>handleChange(e)}>
            <option value="">Authorise user</option>
            <option value={1}>Yes</option>
             <option value={0}>No</option>
           </select>
-          <p className='text-sm text-red-500'>{apiErrors?.errors?.isAuthorised && apiErrors.errors.isAuthorised[0]}</p>
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.is_authorised && apiErrors.errors.is_authorised[0]}</p>
+        </div>
+
+
+
+        <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Is Public</label>
+
+          <select name="is_publicly_present" value={formData?.is_publicly_present} onChange={(e)=>handleChange(e)}>
+           <option value="">Is Public</option>
+           <option value={1}>Yes</option>
+            <option value={0}>No</option>
+          </select>
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.is_publicly_present && apiErrors.errors.is_publicly_present[0]}</p>
+        </div>
+
+
+        <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Is Verified</label>
+
+          <select name="is_verified" value={formData?.is_verified} onChange={(e)=>handleChange(e)}>
+           <option value="">Is Verified</option>
+           <option value={1}>Yes</option>
+            <option value={0}>No</option>
+          </select>
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.is_verified && apiErrors.errors.is_verified[0]}</p>
         </div>
 
 
@@ -284,6 +322,8 @@ const [formData, setFormData] = useState({
         </div>
       </form>
     </div>
+
+}
 
 
     </>
