@@ -167,6 +167,18 @@ const OurTravelAgents = () => {
       // contact: "https://himalayancircle.com/",
       Address: " Plot No.48 Venk. Colony ,Hyderabad -501501",
     },
+    {
+      imageUrl: "/Images/travelAgenciesLogo/take_a_trip.jpeg",
+      name: "TAKE A TRIP TOUR AND TRAVEL",
+      city: "mathura",
+      phone: "9027943676",
+      whatsapp: "9027943676",
+      facebook: "",
+      instagram: "",
+      youtube: "",
+      // contact: "https://himalayancircle.com/",
+      Address: "chanda greens society near transport nagar mathura",
+    },
   ];
 
   const sliderContainer = useRef(null);
