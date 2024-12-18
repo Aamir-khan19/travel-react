@@ -231,7 +231,7 @@ const handleUpdateItineraryAndItineraryForm = function(){
   }
 
 
-  if(!itineraryDetails?.pricing?.trim()){
+  if(!itineraryDetails?.pricing){
     toast.error("Please enter pricing of the package", {
       position: "bottom-right",
       autoClose: 5000,
