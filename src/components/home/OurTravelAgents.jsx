@@ -109,7 +109,7 @@ const OurTravelAgents = () => {
         clearInterval(autoSlideInterval.current);
       }
     };
-  }, [searchTerm, verifiedTravelAgents]);
+  }, [searchTerm, verifiedTravelAgents, isLoading]);
 
 
 
