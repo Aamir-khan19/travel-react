@@ -18,6 +18,7 @@ import Modal from "./components/Modal/Modal";
 import WhatsAppLinkComp from "./components/home/WhatsAppLinkComp";
 import RequestQuoteComp from "./components/home/RequestQuoteComp";
 import RequestQuoteModal from "./components/home/RequestQuoteModal";
+import { redirect } from "react-router-dom";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -57,7 +58,7 @@ const dateOnly = today.toLocaleDateString('en-US'); // Format as MM/DD/YYYY (US 
 // console.log(dateOnly); // Example output: "10/9/2024"
 
 // Create a Date object for the target date (October 10, 2024)
-const targetDate = new Date('10/10/2024');
+const targetDate = new Date('20/12/2024');
 
 // Convert `dateOnly` back to a Date object for comparison
 const currentDate = new Date(dateOnly);
@@ -65,9 +66,9 @@ const currentDate = new Date(dateOnly);
 // Run a condition to check if the current date is on or after the target date
 if (currentDate >= targetDate) {
   // intializeAutoScroll();
-    console.log("The date is 10/10/2024 or later. 10 october aur baad ki tarikh");
+    console.log("The date is 20/12/2024 or later. 20 december aur baad ki tarikh");
 } else {
-    console.log("The date is before 10/10/2024. 10 october ke pehle"); // 9 takih ko le line print ho rahi hai to kal upar wali line print honi chahiye
+    console.log("The date is before 20/12/2024. 20 december ke pehle"); // 9 takih ko le line print ho rahi hai to kal upar wali line print honi chahiye
 }
 
   return (

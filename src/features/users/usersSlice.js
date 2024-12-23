@@ -134,6 +134,10 @@ export const usersUpdateAsync = createAsyncThunk(
            if(formVal?.is_verified){
             formData.append("is_verified", is_verified);
            }
+
+           if(formVal?.verification_date){
+            formData.append("verification_date", formVal.verification_date);
+           }
             
 
             if(formVal?.password){

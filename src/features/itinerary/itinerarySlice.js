@@ -150,8 +150,7 @@ const {
   formData.append("days_information_string", days_information_string);
   formData.append("destination_detail", destination_detail);
   formData.append("inclusion", inclusion);
-  formData.append("exclusion", exclusion);
-  formData.append("pricing", pricing);
+  formData.append("exclusion", exclusion); 
   formData.append("terms_and_conditions", terms_and_conditions);
   formData.append("hotel_details_string", hotel_details_string);
   formData.append("title", title);
@@ -163,6 +162,12 @@ const {
   formData.append("duration_string", duration_string);
   formData.append("selected_destination_string", selected_destination_string);
   formData.append("itinerary_theme_string", itinerary_theme_string);
+
+
+  if(pricing){
+    formData.append("pricing", pricing);
+  }
+ 
   
   // Append file objects
   formData.append("destination_thumbnail_file", destination_thumbnail_file);
@@ -224,7 +229,6 @@ export const itinerariesUpdateAsync = createAsyncThunk(
               formData.append("destination_detail", destination_detail);
               formData.append("inclusion", inclusion);
               formData.append("exclusion", exclusion);
-              formData.append("pricing", pricing);
               formData.append("hotel_details_string", hotel_details_string);
               formData.append("title", title);
               formData.append("meta_title", meta_title);
@@ -236,6 +240,10 @@ export const itinerariesUpdateAsync = createAsyncThunk(
               formData.append("selected_destination_string", selected_destination_string);
               formData.append("itinerary_theme_string", itinerary_theme_string);
               
+
+              if(pricing){
+                formData.append("pricing", pricing);
+              }
 
               if(terms_and_conditions){
                 formData.append("terms_and_conditions", terms_and_conditions);

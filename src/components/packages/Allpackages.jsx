@@ -83,7 +83,7 @@ const Allpackages = () => {
                   <div className="flex justify-between items-center mb-4">
 
 <div className="flex justify-between items-center w-full">
-<p className=" text-blue-900 text-lg font-semibold">From ₹ {itinerary?.pricing}</p>
+<p className=" text-blue-900 text-lg font-semibold">From ₹ {itinerary?.pricing? itinerary?.pricing : <span>****</span> }</p>
 
 
 <div className=" flex justify-center items-center">

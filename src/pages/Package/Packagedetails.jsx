@@ -10,6 +10,7 @@ import Navbar from "../../components/global/Navbar";
 import Footer from "../../components/global/Footer";
 import Itinerary from "../../components/package_details/Itinerary";
 import TermsAndConditions from "../../components/package_details/TermsAndConditions";
+import TravelAgentsDetails from "../../components/package_details/TravelAgentDetails";
 
 const PackageDetails = () => {
   const dispatch = useDispatch();
@@ -82,8 +83,11 @@ const PackageDetails = () => {
             {
             terms_and_conditions &&
             <TermsAndConditions />
-            
             }  
+
+            {
+           <TravelAgentsDetails />
+            }
 
           </div>
         </div>

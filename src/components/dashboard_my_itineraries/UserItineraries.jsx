@@ -14,6 +14,11 @@ function UserItineraries() {
 
 
   const handleItineraryDelete = function(itinearary_id){
+    if(!confirm("Are you sure you want to delete this itinerary")){
+   
+      return;
+    }
+
   dispatch(itinerariesDestroyAsync(itinearary_id))
   }
 

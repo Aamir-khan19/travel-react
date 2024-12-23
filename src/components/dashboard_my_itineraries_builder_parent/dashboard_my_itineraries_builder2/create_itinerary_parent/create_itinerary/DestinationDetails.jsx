@@ -5,8 +5,6 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 function DestinationDetails({setCurrentComponent}) {
 
 
-
-
   const handleBack = function(){
     setCurrentComponent(0)
     }

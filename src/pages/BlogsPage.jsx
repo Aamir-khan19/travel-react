@@ -6,11 +6,11 @@ import Footer from "../components/global/Footer";
 const BlogsPage = () => {
   return (
     <>
-      <Navbar />
+    <Navbar />
 
-      <Blogs />
+    <Blogs />
 
-      <Footer />
+    <Footer />
     </>
   );
 };

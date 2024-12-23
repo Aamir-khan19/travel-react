@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { FaHome, FaUser, FaClipboardList, FaUsers, FaUserShield, FaRegChartBar, FaStar, FaFileAlt } from 'react-icons/fa';
+import { FaHome, FaUser, FaClipboardList, FaUsers, FaUserShield, FaRegChartBar, FaStar, FaBlog } from 'react-icons/fa';
 
 function DashboardSideBar() {
   const navigate = useNavigate();
@@ -141,6 +141,29 @@ function DashboardSideBar() {
               <FaRegChartBar /> My Report
             </NavLink>
           </li>
+
+
+
+
+
+          {tokenState?.user?.role === "admin" && (
+            <li className="md:mx-8 mb-5">
+              <NavLink
+                to="/dashboard-blogs"
+                className={({ isActive }) =>
+                  `flex items-center gap-2 duration-200 ${
+                    isActive
+                      ? "bg-purple-600 px-4 py-1 rounded-xl"
+                      : "text-white"
+                  }`
+                }
+              >
+                <FaBlog /> Blogs
+              </NavLink>
+            </li>
+          )}
+
+
         </ul>
       </div>
 

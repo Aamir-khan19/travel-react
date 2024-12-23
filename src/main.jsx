@@ -30,6 +30,9 @@ import DashboardMyreport from "./pages/DashboardMyreport.jsx";
 import DashboardMyteam from "./pages/DashboardMyteam.jsx";
 import DashboardMyItinerariesBuilderParent from "./pages/DashboardMyItinerariesBuilderParent.jsx";
 import DashboardUpdateItineraryParent from "./pages/DashboardUpdateItineraryParent.jsx";
+import DashboardBlogs from "./pages/DashboardBlogs.jsx";
+import DashboardCreateBlog from "./pages/DashboardCreateBlog.jsx";
+import DashboardEditBlog from "./pages/DashboardEditBlog.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -49,7 +52,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/testimonails" element={<Testimonials />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermandconditionPage />} />
-            <Route path="/blogdetail/:id" element={<BlogDetail />} />
+            <Route path="/blogdetail/:blog_slug" element={<BlogDetail />} />
             <Route path="/package-details/:id" element={<Packagedetails />} />
 
             <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
@@ -80,6 +83,22 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/dashboard-update-itinerary/:id"
             element={<DashboardUpdateItineraryParent />}
             />
+
+            <Route
+            path="/dashboard-blogs"
+            element={<DashboardBlogs />}
+            />
+
+            <Route
+            path="/dashboard-create-blog"
+            element={<DashboardCreateBlog />}
+            />
+
+            <Route
+            path="/dashboard-edit-blog/:id"
+            element={<DashboardEditBlog />}
+            />
+
             {/* <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
           <Route path="/dashboard-my-report" element={<DashboardMyreport/>} /> 
           <Route path="/dashboard-my-team" element={<DashboardMyteam/>} />  */}

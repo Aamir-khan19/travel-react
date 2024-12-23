@@ -5,6 +5,7 @@ import usersReducer from '../features/users/usersSlice'
 import companiesReducer from '../features/company/companySlice'
 import itinerariesReducer from '../features/itinerary/itinerarySlice'
 import publicReducer from '../features/public/publicSlice'
+import blogsReducer from '../features/blog/blogSlice'
 
 export const store = configureStore({
   reducer: {
@@ -13,6 +14,7 @@ export const store = configureStore({
     users: usersReducer,
     companies: companiesReducer,
     itineraries: itinerariesReducer,
-    public: publicReducer
+    public: publicReducer,
+    blogs: blogsReducer
   },
 })

@@ -95,7 +95,7 @@ const Footer = () => {
                   duration={500}
                   className="text-white dark:text-neutral-200 cursor-pointer"
                 >
-                  Travel agents login
+                 Agent login
                 </RouterLink>
               </li>
 

@@ -15,7 +15,7 @@ function DestinationImages({setDestinationImages}) {
   return (
     <>
 
-     <label className='block text-gray-700 mt-3 mb-1'>  Destination Images</label>
+     <label className='block text-gray-700 mt-3 mb-1'>Destination Images</label>
 
     <div className=' overflow-x-scroll ' >
     <input

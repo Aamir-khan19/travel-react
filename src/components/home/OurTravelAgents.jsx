@@ -10,177 +10,19 @@ import {
   FaSearch,
 } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
-import { publicGetCompaniesAsync } from "../../features/public/publicSlice";
+import { publicGetAllVerifiedTravelAgentsAsync } from "../../features/public/publicSlice";
+import conf from "../../../conf/conf";
+
+
 
 const OurTravelAgents = () => {
   const dispatch = useDispatch();
-  const companies = useSelector(state => state.public.companies);
+  const verifiedTravelAgents = useSelector(state => state.public.verifiedTravelAgents);
   const isLoading = useSelector(state => state.public.isLoading);
 
+  const [filteredAgents, setFilteredAgents] = useState([]);
 
-  useEffect(()=>{
-    if(companies?.length == 0){
-      dispatch(publicGetCompaniesAsync())
-    }
-    }, [])
-
-
-    console.log("OurTravelAgents.jsx companies public", companies);
-
-
-  const ourTravelAgents = [
-    {
-      imageUrl: "/Images/travelAgenciesLogo/travelYug.jpg",
-      name: "Travels Yug",
-      city: "Bengaluru",
-      phone: "9625624780",
-      whatsapp: "9625624780",
-      facebook: "",
-      instagram:
-        "https://www.instagram.com/travelsyug_/profilecard/?igsh=aTNudnpyYzltbjhw",
-      youtube: "",
-      contact: "https://travelyuga.com/",
-      Address: " N-2, 24th Main, LIC Row Houses, Bengaluru, Karnataka 560078",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/kamakshiHolidays.png",
-      name: "Kamakshi Holidays",
-      city: "Pune",
-      phone: "9881290229",
-      whatsapp: "9881290229",
-      facebook: "https://www.facebook.com/kamakshi.holidays",
-      instagram: "",
-      youtube: "",
-      contact: "https://kamakshiholidays.com/",
-      Address: "Lane no 30, Ubale Nagar, Wagholi, Pune 412207",
-    },
-
-    {
-      imageUrl: "/Images/travelAgenciesLogo/southIndianHolidays.jpeg",
-      name: "South Indian Holidays",
-      city: "Tamil Nadu",
-      phone: "7567891018",
-      whatsapp: "7567891018",
-      facebook: "https://www.facebook.com/southindiaholiday",
-      instagram: "https://www.instagram.com/kodaitipsndtrips/",
-      youtube: "https://www.youtube.com/channel/UCcVxN7dwx49anVmspOUrHLg",
-      contact: "http://www.southindianholidays.in/",
-      Address:
-        "Anna Nagar, Moonjikal, Pambarpuram, Kodaikanal, Tamil Nadu - 624101.",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/richieRichTravels.png",
-      name: "Riche Rich Holidays",
-      city: "Bengaluru",
-      phone: "9632417602",
-      whatsapp: "9632417602",
-      facebook: "",
-      instagram: "",
-      youtube: "",
-      contact: "https://www.richierichholidays.in/",
-      Address:
-        " N-2, 24th Main, LIC Row Houses, J.P. Nagar, Bengaluru, Ka-560078.",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/perfectPlanners.png",
-      name: "Perfect Planners",
-      city: "",
-      phone: "9596863183",
-      whatsapp: "9596863183",
-      facebook: "https://www.facebook.com/perfectplannerco",
-      instagram: "https://www.instagram.com/perfectplanner.company/",
-      youtube: "",
-      contact: "https://perfectplannerco.com/",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/sathyaTravels.png",
-      name: "Sathya Travels",
-      city: "New Delhi",
-      phone: "9965539599",
-      whatsapp: "9965539599",
-      facebook: "",
-      instagram: "",
-      youtube: "",
-      contact: "https://satyatravelsindia.com/",
-      Address:
-        "B-28, DDA Complex Market, New Rajinder Nagar, New Delhi, Delhi-110060,",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/justkeeptravel.png",
-      name: "Just Keep Travels",
-      city: "Delhi",
-      phone: "9965539599",
-      whatsapp: "9965539599",
-      facebook:
-        "https://www.facebook.com/profile.php?id=100095314801749&mibextid=JRoKGi",
-      instagram: "https://www.instagram.com/justkeeptravel_official/",
-      youtube: "https://www.youtube.com/@alokdiwan6122",
-      contact: "https://justkeeptravel.com/",
-      Address: "198/1896 Basement, Ganesh Pura, Tri Nagar Delhi-110035 ",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/TOURZPLANNER.png",
-      name: "Tourz Planner",
-      city: "Kolkata",
-      phone: "9965539599",
-      whatsapp: "9965539599",
-      facebook: "",
-      instagram: "",
-      youtube: "",
-      contact: "/https://tourzplanner.in/",
-      Address:
-        "5/59, Netaji Nagar, Kolkata 7000 40, Landmark- Sub post office. ",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/himalayancircle.png",
-      name: "Himalayan Circle",
-      city: "Solon",
-      phone: " 7018419161",
-      whatsapp: "9965539599",
-      facebook: "https://www.facebook.com/himalayancircle",
-      instagram: "https://www.instagram.com/himalayancircle",
-      youtube: "",
-      contact: "https://himalayancircle.com/",
-      Address: "vill-Nauni,PO-Darlaghat,teh-Arki, Distt-Solon HP -171102",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/abv.jpeg",
-      name: "Rathore Travels ",
-      city: "ferozpur",
-      phone: "9988325982",
-      whatsapp: "9988325982",
-      facebook: "",
-      instagram: "",
-      youtube: "",
-      // contact: "",
-      Address: "Housing board near cival hospital ferozpur city ,Pin-152002",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/kancharla.jpeg",
-      name: "Kancharla Tour's and Travels",
-      city: "Hyderabad",
-      phone: "7095974001",
-      whatsapp: "7095974001",
-      facebook: "",
-      instagram: "",
-      youtube: "",
-      // contact: "https://himalayancircle.com/",
-      Address: " Plot No.48 Venk. Colony ,Hyderabad -501501",
-    },
-    {
-      imageUrl: "/Images/travelAgenciesLogo/take_a_trip.jpeg",
-      name: "TAKE A TRIP TOUR AND TRAVEL",
-      city: "mathura",
-      phone: "9027943676",
-      whatsapp: "9058078729",
-      facebook: "",
-      instagram: "https://www.instagram.com/take_a_trip_tour_and_travel/profilecard/?igsh=OW9wZDdoaThtdDF5",
-      youtube: "https://m.youtube.com/@take_a_trip_tour_and_travel?fbclid=PAY2xjawHCS61leHRuA2FlbQIxMAABpjlIHC8oU3DqFdX08Pf9JkMb1Zx7OgGvLuXNmoH82UVEXQgku1i1t0KETg_aem_LDfRI3j686Pm3iAkF_1oeg",
-      contact: "https://www.justdial.com/Mathura/Take-A-Trip-Tour-And-Travel-Civil-Line/9999PX565-X565-230127215525-A5I6_BZDET?via=scode&fbclid=PAY2xjawHCS2xleHRuA2FlbQIxMAABpsjrrtD8jNEGjK3CFnjmxsjhQpZyFL6dB6WTes7R8JklJDOQyloXEDX7lw_aem_AIrt83eikRZr1knhcn91Aw",
-      Address: "chanda greens society near transport nagar mathura",
-    },
-  ];
-
+  
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
   const autoSlideInterval = useRef(null);
@@ -189,15 +31,32 @@ const OurTravelAgents = () => {
   const [isPhoneModalOpen, setIsPhoneModalOpen] = useState(false);
   const [currentPhoneModal, setCurrentPhoneModal] = useState(null);
 
+  useEffect(()=>{
+    if(verifiedTravelAgents?.length == 0){
+      dispatch(publicGetAllVerifiedTravelAgentsAsync())
+      .then((data)=>{
+        setFilteredAgents(data.payload);   
+      })
+    }
+    }, []);
+
+
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
+    if(verifiedTravelAgents?.length > 0){
+
+      let newFilteredAgents = verifiedTravelAgents?.filter((agent) =>
+          agent?.company_name?.toLowerCase()?.trim()?.includes(e.target.value.toLowerCase()?.trim())
+        || agent?.company_city?.toLowerCase()?.trim()?.includes(e.target.value.toLowerCase()?.trim())
+        );
+    
+        setFilteredAgents(newFilteredAgents);
+    }
   };
 
-  const filteredAgents = ourTravelAgents.filter((agent) =>
-    agent.name.toLowerCase().includes(searchTerm)
-  || agent.city.toLowerCase().includes(searchTerm)
-  );
+    
 
+ 
   // Initialize KeenSlider
   useEffect(() => {
     if (sliderContainer.current && !keenSlider.current) {
@@ -250,7 +109,9 @@ const OurTravelAgents = () => {
         clearInterval(autoSlideInterval.current);
       }
     };
-  }, [searchTerm]);
+  }, [searchTerm, verifiedTravelAgents]);
+
+
 
   const handlePrevSlide = () => {
     if (keenSlider.current) {
@@ -275,13 +136,10 @@ const OurTravelAgents = () => {
   };
 
 
-
-
-
   return (
     <>
   {
-    false?  <div className=' flex justify-center h-[50vh] items-center'>
+    isLoading?  <div className=' flex justify-center h-[50vh] items-center'>
 
     <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
 
@@ -317,8 +175,8 @@ const OurTravelAgents = () => {
         {/* Slider Section */}
         <div className="sm:mt-16 relative mt-8 lg:col-span-2 lg:mx-0">
           <div ref={sliderContainer} className="keen-slider">
-            {filteredAgents.length > 0 ? (
-              filteredAgents.map((agent, i) => (
+            {filteredAgents?.length > 0 ? (
+              filteredAgents?.map((agent, i) => (
                 <div className="keen-slider__slide" key={i}>
                   <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full min-h-[380px] max-[600px]:min-h-[400px]">
                     <div className="bg-[url('/Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[145px] h-[110px] mx-2 -ml-[15px] -mt-[16px]"></div>
@@ -326,21 +184,21 @@ const OurTravelAgents = () => {
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
                         <img
-                          src={agent.imageUrl}
-                          alt={agent.name}
+                          src={conf?.laravelBaseUrl + "/" + agent?.company_logo}
+                          alt={agent?.company_name}
                           className="w-auto h-32"
                         />
                         <div className="flex gap-4 justify-center items-center flex-col">
-                          <h1 className="text-xl font-bold">{agent.name}</h1>
+                          <h1 className="text-xl font-bold">{agent?.company_name}</h1>
                           <p>
                             <span className="font-semibold text-xl">
-                              {agent?.Address && <span>Address:- </span>}
+                              {agent?.company_address && <span>Address:- </span>}
                             </span>
-                            {agent?.Address}
+                            {agent?.company_address}
                           </p>
 
                           <a
-                            href={agent?.contact}
+                            href={agent?.company_website}
                             target="_blank"
                             className="w-40 p-2 flex items-center justify-center text-white rounded-lg bg-[#01055b]"
                           >

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { usersShowAsync, usersUpdateAsync, setIsUserUpdated, setUser } from '../features/users/usersSlice'; // Adjust the import path as needed
+import { ToastContainer } from 'react-toastify';
 
 const DashboardEditUser = () => {
   const { id } = useParams();
@@ -26,10 +27,21 @@ const [formData, setFormData] = useState({
     password_confirmation: "",
     is_authorised: "",
     is_publicly_present: "",
-    is_verified: ""
+    is_verified: "",
+    verification_date: ""
   });
 
+  const [isChangeInVerificationValue, setIsChangeInVerificationValue] = useState(false);
+  const [verificationDate, setVerificationDate] = useState(null);
+
   const handleChange = (e) => {
+
+    console.log("e.atrgetva.leu", e.target.value);
+
+    if(e.target.name == "is_verified"){
+     setIsChangeInVerificationValue(true);
+    }
+
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
@@ -50,13 +62,30 @@ const [formData, setFormData] = useState({
 
   useEffect(() => {
     if (user) {
-     setFormData(preVal=> ({ name: user?.name, company_name: user?.company_name, phone: user?.phone, location: user?.location || "", your_requirements: user?.your_requirements || "", gender: user?.gender || "", preferred_language: user?.preferred_language || "", is_authorised: user?.is_authorised, is_publicly_present: user?.is_publicly_present, is_verified: user?.is_verified }));
+     setFormData(preVal=> ({ name: user?.name, company_name: user?.company_name, phone: user?.phone, location: user?.location || "", your_requirements: user?.your_requirements || "", gender: user?.gender || "", preferred_language: user?.preferred_language || "", is_authorised: user?.is_authorised, is_publicly_present: user?.is_publicly_present, is_verified: user?.is_verified, verification_date: user?.verification_date || "" }));
     }
 
   }, [user]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+   if(isChangeInVerificationValue){
+    if(formData?.is_verified){
+      const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0'); // Months are 0-based
+  const day = String(now.getDate()).padStart(2, '0');
+  const hours = String(now.getHours()).padStart(2, '0');
+  const minutes = String(now.getMinutes()).padStart(2, '0');
+  const seconds = String(now.getSeconds()).padStart(2, '0');
+
+  let currentDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
+
+  formData.verification_date = currentDateTime;
+    }
+   }
+
 
     if(profileImage?.name){
       dispatch(usersUpdateAsync({...user, ...formData, profileImage}));
@@ -240,6 +269,21 @@ const [formData, setFormData] = useState({
         </div>
 
 
+        {/* <div className="flex flex-col">
+          <label className="text-lg font-semibold mb-2">Set Verification Date</label>
+          <input
+            type="date"
+            name="verification_date"
+            value={formData?.verification_date}
+            onChange={(e)=>handleChange(e)}
+            className="border rounded-md p-2"
+            placeholder="verification date"
+          />
+         
+          <p className='text-sm text-red-500'>{apiErrors?.errors?.verification_date && apiErrors?.errors?.verification_date[0]}</p>
+        </div> */}
+
+
         <div className="flex flex-col">
           <label className="text-lg font-semibold mb-2">New Password</label>
           <input
@@ -325,6 +369,8 @@ const [formData, setFormData] = useState({
 
 }
 
+
+<ToastContainer />
 
     </>
   );

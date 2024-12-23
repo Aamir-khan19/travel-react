@@ -1,23 +1,36 @@
 import React, { useEffect, useState } from "react";
-import Blog from "./Blog";
 import { Link } from "react-router-dom";
-import { blogPosts as BlogPosts } from "./blogPostsData";
+import { useDispatch, useSelector } from "react-redux";
+import { publicGetAllBlogsAsync } from "../../features/public/publicSlice";
+import conf from "../../../conf/conf";
+
 const Blogs = () => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.public.isLoading);
+  const allBlogs = useSelector((state) => state.public.allBlogs);
+
   const [category, setCategory] = useState("");
-
-  const [blogPosts, setBlogPosts] = useState(BlogPosts);
-
-  const uniqueData = blogPosts.filter(
-    (value, index, self) =>
-      index === self.findIndex((obj) => obj.category === value.category)
-  );
-
+ 
   useEffect(() => {
-    console.log("category", category);
-  }, [category]);
+    if(allBlogs.length == 0) {
+      dispatch(publicGetAllBlogsAsync());
+    }
+  }, []);
 
   return (
-    <section className="w-full">
+
+    <>
+    
+    {
+      isLoading? <div className=' flex justify-center h-[50vh] items-center'>
+
+      <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+      
+      </div>
+
+      :
+
+      <section className="w-full">
       <div className="max-w-7xl mx-auto py-10 px-5">
         <div className="relative w-full">
           <div className="relative">
@@ -52,10 +65,10 @@ const Blogs = () => {
               value={category}
               onChange={(e) => setCategory(e.target.value)}
             >
-              <option value="">Select Location</option>
-              {uniqueData?.map((post) => (
-                <option key={post.category} value={post?.category}>
-                  {post?.category}
+              <option value="">Select Category</option>
+              {allBlogs?.map((post) => (
+                <option key={post.category} value={post?.blog_category}>
+                  {post?.blog_category}
                 </option>
               ))}
             </select>
@@ -63,80 +76,74 @@ const Blogs = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
             {category
-              ? blogPosts.map((post) => {
-                  if (category == post?.category) {
-                    console.log(
-                      "category post.category",
-                      category,
-                      post?.category
-                    );
+              ? allBlogs?.map((post) => {
+                  if (category == post?.blog_category) {
+                   
                     return (
                       <Link
-                        key={post.id}
-                        to={`/blogdetail/${post.id}`}
-                        // to={'/blogs'}
+                        key={post?.id}
+                        to={`/blogdetail/${post?.blog_slug}`}
+                     
                         className="flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
                       >
                         <img
-                          src={post.image}
+                          src={`${conf.laravelBaseUrl}/${
+                            post?.blog_image
+                          }`}
                           alt=""
                           className="object-cover h-64 rounded-lg"
                         />
                         <div className="flex gap-3 items-center">
                           <div className="bg-blue-300 px-2 py-1 rounded-lg w-fit">
-                            <p>{post.category}</p>
+                            <p>{post?.blog_category}</p>
                           </div>
                           <div className="bg-blue-300 px-2 py-1 rounded-lg w-fit">
                             <p>Read More</p>
                           </div>
                         </div>
                         <h1 className="text-xl sm:text-2xl md:text-3xl font-medium">
-                          {post.title}
+                          {post?.blog_title}
                         </h1>
+
+                        <p>{post?.blog_description}</p>
+
                         <div className="flex items-center justify-between gap-2">
-                          <img
-                            src={post.authorImage}
-                            className="object-cover rounded-full w-8 h-8"
-                            alt=""
-                          />
-                          <p>{post.author}</p>
-                          <p>{post.date}</p>
+                          <p>{post?.blog_author_name}</p>
+                          <p>{post?.created_at}</p>
                         </div>
                       </Link>
                     );
                   }
                 })
-              : blogPosts?.map((post) => (
+              : allBlogs?.map((post) => (
                   <Link
-                    key={post.id}
-                    to={`/blogdetail/${post.id}`}
+                    key={post?.id}
+                    to={`/blogdetail/${post?.blog_slug}`}
                     // to={'/blogs'}
                     className="flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
                   >
                     <img
-                      src={post.image}
+                      src={`${conf.laravelBaseUrl}/${post?.blog_image}`}
                       alt=""
                       className="object-cover h-64 rounded-lg"
                     />
                     <div className="flex gap-3 items-center">
                       <div className="bg-blue-200 px-2 py-1 rounded-lg w-fit">
-                        <p>{post.category}</p>
+                        <p>{post?.blog_category}</p>
                       </div>
                       <div className="bg-blue-200 px-2 py-1 rounded-lg w-fit">
                         <p>Read More</p>
                       </div>
                     </div>
                     <h1 className="text-xl sm:text-2xl md:text-3xl font-medium">
-                      {post.title}
+                      {post?.blog_title}
                     </h1>
+
+                    <p>{post?.blog_description}</p>
+
                     <div className="flex items-center justify-between gap-2">
-                      <img
-                        src={post.authorImage}
-                        className="object-cover rounded-full w-8 h-8"
-                        alt=""
-                      />
-                      <p>{post.author}</p>
-                      <p>{post.date}</p>
+                      <p>{post?.blog_author_name}</p>
+                      <p>{post?.created_at}</p>
                     </div>
                   </Link>
                 ))}
@@ -144,6 +151,12 @@ const Blogs = () => {
         </div>
       </div>
     </section>
+    }
+   
+   
+
+
+    </>
   );
 };
 

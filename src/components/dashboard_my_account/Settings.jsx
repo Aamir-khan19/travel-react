@@ -26,7 +26,10 @@ const Settings = () => {
     youtube: "",
     gender: "",
     preferred_language: ""
-  })
+  });
+
+  const [verificationDate, setVerificationDate] = useState(null);
+  const [expirationDate, setExpirationDate] = useState(null);
 
   const handleImageUpload = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -70,7 +73,7 @@ const Settings = () => {
   }, [])
 
 
-  console.log("Settings.jsx", user);
+  console.log("Settings.jsx user", user);
 
   useEffect(() => {
     setUserDetails({
@@ -84,6 +87,22 @@ const Settings = () => {
       gender: user?.gender || "", 
       preferred_language: user?.preferred_language || ""
     });
+
+
+    if(user?.verification_date){
+      let verificationDate = new Date(user?.verification_date);
+      const verificationDateFormat = `${verificationDate.getDate().toString().padStart(2, '0')}/${(verificationDate.getMonth() + 1).toString().padStart(2, '0')}/${verificationDate.getFullYear()}`;
+      setVerificationDate(verificationDateFormat);
+  
+  
+      let newExpirationDate = new Date(verificationDate);
+      newExpirationDate.setMonth(verificationDate.getMonth() + 3);
+      const expirationDateFormat = `${newExpirationDate.getDate().toString().padStart(2, '0')}/${(newExpirationDate.getMonth() + 1).toString().padStart(2, '0')}/${newExpirationDate.getFullYear()}`;
+      setExpirationDate(expirationDateFormat);
+    }
+
+  
+
   }, [user]);
 
 
@@ -290,7 +309,20 @@ isLoading?
       </div>
 
 
+{
+  verificationDate && 
+  <div>
+    <hr />
+
+<div>
+  <h1 className=' text-lg font-semibold'>Verfication Date: {verificationDate} Expiration Date: {expirationDate} </h1>
+</div>
+  </div>
+}
+
+
 <hr />
+
 
       <PasswordReset user={user} />
       </form>
@@ -298,6 +330,8 @@ isLoading?
       </div>
       
       }
+
+
 
      
     </div>

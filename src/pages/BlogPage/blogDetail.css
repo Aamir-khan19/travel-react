@@ -1,0 +1,46 @@
+/* Custom styles encapsulated within #particular-blog-content to prevent overriding */
+#particular-blog-content h1, #particular-blog-content h2 {
+  font-size: 2rem; /* Tailwind's text-3xl */
+  font-weight: 600; /* Tailwind's font-semibold */
+  color: #4338ca; /* Tailwind's text-indigo-800 */
+  transition: color 0.3s ease; /* Tailwind's transition-colors duration-300 */
+}
+
+#particular-blog-content h1:hover, #particular-blog-content h2:hover {
+  color: #3730a3; /* Tailwind's text-indigo-900 */
+}
+
+#particular-blog-content p {
+  font-size: 1.125rem; /* Tailwind's text-lg */
+  color: #4a5568; /* Tailwind's text-gray-700 */
+  line-height: 1.75; /* Tailwind's leading-relaxed */
+  letter-spacing: 0.025em; /* Tailwind's tracking-wide */
+}
+
+#particular-blog-content img {
+  width: 50%; /* Tailwind's w-full */
+  object-fit: contain; /* Tailwind's object-cover */
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.5rem; /* Tailwind's rounded-lg */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Tailwind's shadow-lg */
+  transition: transform 0.5s ease-in-out; /* Tailwind's transition-transform duration-500 ease-in-out */
+}
+
+#particular-blog-content img:hover {
+  transform: scale(1.015); /* Tailwind's hover:scale-105 */
+}
+
+
+#particular-blog-description p {
+  font-size: 1.125rem; /* Tailwind's text-lg */
+  color: #4a5568; /* Tailwind's text-gray-700 */
+  line-height: 1.75; /* Tailwind's leading-relaxed */
+  letter-spacing: 0.025em; /* Tailwind's tracking-wide */
+}
+
+@media (max-width: 768px) {
+  #particular-blog-content img {
+    width: 100%; /* Tailwind's w-2/5 */
+  }
+}
