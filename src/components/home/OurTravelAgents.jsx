@@ -35,7 +35,7 @@ const OurTravelAgents = () => {
     if(verifiedTravelAgents?.length == 0){
       dispatch(publicGetAllVerifiedTravelAgentsAsync())
       .then((data)=>{
-        setFilteredAgents(data.payload);   
+        setFilteredAgents(data.payload);  
       })
     }
     }, []);
@@ -60,7 +60,7 @@ const OurTravelAgents = () => {
   // Initialize KeenSlider
   useEffect(() => {
     if (sliderContainer.current && !keenSlider.current) {
-      keenSlider.current = new KeenSlider(sliderContainer.current, {
+      keenSlider.current = new KeenSlider(sliderContainer?.current, {
         loop: true,
         slides: {
           origin: "center",
@@ -98,18 +98,20 @@ const OurTravelAgents = () => {
           keenSlider.current.next();
         }
       }, 10000);
+
     }
 
     return () => {
-      if (keenSlider.current) {
-        keenSlider.current.destroy();
+      if (keenSlider?.current) {
+        keenSlider?.current?.destroy();
         keenSlider.current = null;
       }
-      if (autoSlideInterval.current) {
+      if (autoSlideInterval?.current) {
         clearInterval(autoSlideInterval.current);
       }
     };
-  }, [searchTerm, verifiedTravelAgents, isLoading]);
+
+  }, [searchTerm, filteredAgents]);
 
 
 
