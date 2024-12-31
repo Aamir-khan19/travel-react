@@ -84,6 +84,8 @@ export const publicGetAllBlogsAsync = createAsyncThunk(
     async (_ = null, options) => {
         try {
             const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-blogs`);
+
+            console.log("get all blogs", data);
             return data;
         } catch (error) {
             console.log("publicSlice.js publicGetAllBlogsAsync error", error);
