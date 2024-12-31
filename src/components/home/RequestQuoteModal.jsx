@@ -57,6 +57,7 @@ const RequestQuoteModal = ({isRequestQuoteModalOpen, handleRequestQuoteCloseModa
           phone: "",
           message: "",
           selected_destination: "",
+          date_of_arrival: ""
         });
 
   }

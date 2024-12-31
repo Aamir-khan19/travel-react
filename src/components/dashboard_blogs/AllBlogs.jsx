@@ -113,6 +113,8 @@ function AllBlogs() {
       )}
     </div>
   </div>
+
+  
   )
 }
 

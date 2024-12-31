@@ -4,22 +4,32 @@ import tripIdeas from "../components/packages/Allpackages/tripIdeas";
 import Navbar from "../components/global/Navbar";
 import Footer from "../components/global/Footer";
 import KeenSlider from "keen-slider";
+import animatedLoader from "/Images/animated_images/loader.svg";
 import "keen-slider/keen-slider.min.css";
 import api from "../api";
+import destinationOptions from "../components/home/destinationOptions";
+import { useDispatch, useSelector } from "react-redux";
+import { publicStoreGeneralLeadAsync, setIsLeadCreated } from "../features/public/publicSlice";
 
 function TripIdeaPage() {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(state => state.public.leadIsLoading);
+    const isLeadCreated = useSelector(state => state.public.isLeadCreated);
+
+
   const { name, id } = useParams(); // Extract name and id from URL params
   const [tripData, setTripData] = useState(null); // State to hold the trip data
-  const [flashMessage, setFlashMessage] = useState("");
+
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    message: "",
+    selected_destination: "",
+    date_of_arrival: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
+  const [flashMessage, setFlashMessage] = useState("");
 
   const sliderContainerRef = useRef(null); // Reference for the Keen Slider container
   const [sliderInstance, setSliderInstance] = useState(null); // State to hold slider instance
@@ -41,35 +51,37 @@ function TripIdeaPage() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-
-    const registerBody = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      message: formData.message,
-    };
-
-    setIsLoading(true);
-
-    api
-      .postReq("contact-us", registerBody)
-      .then((data) => {
-        console.log("contact-us", data);
-        setIsLoading(false);
-
-        setFlashMessage(
-          "Form submitted successfully you will be contacted soon"
-        );
-        console.log("successfully refgsitered with us", data);
-
-        setFormData({ name: "", email: "", phone: "", message: "" });
-      })
-      .catch((error) => {
-        setIsLoading(false);
-        console.log("oopps seomtjing went wrong", error);
-      });
+     e.preventDefault();
+    
+        const registerBody = {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          selected_destination: formData.selected_destination,
+          date_of_arrival: formData.date_of_arrival,
+        };
+    
+        dispatch(publicStoreGeneralLeadAsync(registerBody));
   };
+
+   useEffect(()=>{
+    if(isLeadCreated){
+     dispatch(setIsLeadCreated());
+  
+          setFlashMessage(
+            "Form submitted successfully you will be contacted soon"
+          );
+  
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+            selected_destination: "",
+          });
+  
+    }
+    }, [isLeadCreated]);
 
   useEffect(() => {
     if (flashMessage) {
@@ -210,7 +222,7 @@ function TripIdeaPage() {
               required
             />
             <input
-              type="tel"
+              type="number"
               name="phone"
               value={formData.phone}
               onChange={handleChange}
@@ -218,21 +230,54 @@ function TripIdeaPage() {
               className="border border-gray-300 p-4 rounded-lg focus:ring focus:ring-blue-300 focus:outline-none transition-shadow duration-300 hover:shadow-md"
               required
             />
-            <textarea
-              name="message"
-              value={formData.message}
+
+
+<select
+              name="selected_destination"
+              value={formData.selected_destination}
               onChange={handleChange}
-              placeholder="Your Message"
-              className="border border-gray-300 p-4 rounded-lg focus:ring focus:ring-blue-300 focus:outline-none transition-shadow duration-300 hover:shadow-md"
-              rows="5"
               required
-            />
+              className="border border-gray-300 p-4 rounded-lg focus:ring focus:ring-blue-300 focus:outline-none transition-shadow duration-300 hover:shadow-md"
+              >
+              <option value="" disabled>
+              Select Destination
+              </option>
+
+              {destinationOptions.map((option) =>(
+              <option value={option?.value}>{option?.label}</option>
+              ) )}
+
+              </select>
+
+
+              <div className=" my-5">
+                <label htmlFor="date_of_arrival">Date Of Arrival</label>
+              <input
+              id="date_of_arrival"
+                type="date"
+                placeholder="Date Of Arrival"
+                name="date_of_arrival"
+                value={formData.date_of_arrival}
+                onChange={handleChange}
+                required
+                 className="border w-full border-gray-300 p-4 rounded-lg focus:ring focus:ring-blue-300 focus:outline-none transition-shadow duration-300 hover:shadow-md"
+              />
+              </div>
+
             <button
               disabled={isLoading}
               type="submit"
               className="bg-gradient-to-r bg-blue-900  text-white font-bold py-3 rounded-lg hover:bg-blue-800  transition-transform duration-200 transform hover:scale-85"
             >
-              Submit
+              {
+                              isLoading? <div className=" flex justify-center">
+                              <img src={animatedLoader} alt="" />
+              
+                              </div>
+                              :
+              
+                             <span>Submit</span>
+                            }  
             </button>
           </form>
         </div>

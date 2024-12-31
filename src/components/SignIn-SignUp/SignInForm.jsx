@@ -3,6 +3,7 @@ import { FaUser, FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginAsync } from "../../features/login/loginSlice";
+import animatedLoader from "/Images/animated_images/loader.svg";
 
 const SignInForm = () => {
   const dispatch = useDispatch();
@@ -122,13 +123,21 @@ const SignInForm = () => {
                 <button
                   disabled={isLoading}
                   type="submit"
-                  className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-[#01055b] hover:bg-[#16174b] focus:outline-none"
+                  className="w-full py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-blue-900 focus:outline-none"
                 >
-                  Log in
+                   {
+                                                isLoading? <div className=" flex justify-center">
+                                                <img src={animatedLoader} alt="" />
+                                
+                                                </div>
+                                                :
+                                
+                                               <span>Submit</span>
+                                              }  
                 </button>
               </div>
 
-              <p className="text-sm mt-8 text-center text-gray-800">
+              {/* <p className="text-sm mt-8 text-center text-gray-800">
                 Don't have an account?{" "}
                 <Link
                   to="/b2b-signup"
@@ -136,7 +145,8 @@ const SignInForm = () => {
                 >
                   Register here
                 </Link>
-              </p>
+              </p> */}
+
             </form>
           </div>
           <div className="lg:h-[400px] md:h-[300px] mt-8 md:mt-0">

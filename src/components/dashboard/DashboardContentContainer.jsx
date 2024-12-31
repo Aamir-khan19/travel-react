@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { logoutAsync } from '../../features/login/loginSlice';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaUser } from 'react-icons/fa';
+import animatedLoader from "/Images/animated_images/delete_loader.svg";
 
 function DashboardContentContainer({children}) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   
   const tokenState = useSelector(state => state.login.tokenState);
+  const isLoading = useSelector(state => state.login.isLoading);
   
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef(null);
@@ -66,10 +68,19 @@ function DashboardContentContainer({children}) {
                
                   
                   <button
+                  disabled={isLoading}
                     className="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded focus:outline-none"
                     onClick={handleLogout}
                   >
-                    Logout
+                      {
+                                                  isLoading? <div className=" flex justify-center">
+                                                  <img src={animatedLoader} alt="" />
+                                  
+                                                  </div>
+                                                  :
+                                  
+                                                 <span>Logout</span>
+                                                } 
                   </button>
                 </div>
               </div>

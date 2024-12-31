@@ -17,6 +17,7 @@ const Blogs = () => {
     }
   }, []);
 
+
   return (
 
     <>
@@ -84,7 +85,7 @@ const Blogs = () => {
                         key={post?.id}
                         to={`/blog/${post?.blog_slug}`}
                      
-                        className="flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
+                        className=" flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
                       >
                         <img
                           src={`${conf.laravelBaseUrl}/${
@@ -105,12 +106,14 @@ const Blogs = () => {
                           {post?.blog_title}
                         </h1>
 
-                        <p>{post?.blog_description}</p>
+                        <p className="text-base font-normal text-gray-700 overflow-hidden truncate mb-5">
+                    {post?.blog_description}
+                      </p>
 
-                        <div className="flex items-center justify-between gap-2">
-                          <p>{post?.blog_author_name}</p>
-                          <p>{post?.created_at}</p>
-                        </div>
+                    <div className="flex items-center justify-between gap-2 absolute bottom-0 left-0 right-0 px-1">
+                      <p>{post?.blog_author_name}</p>
+                      <p>{post?.created_at}</p>
+                    </div>
                       </Link>
                     );
                   }
@@ -139,9 +142,11 @@ const Blogs = () => {
                       {post?.blog_title}
                     </h1>
 
-                    <p>{post?.blog_description}</p>
+<p className="text-base font-normal text-gray-700 overflow-hidden truncate mb-5">
+                    {post?.blog_description}
+                      </p>
 
-                    <div className="flex items-center justify-between gap-2">
+                    <div className="flex items-center justify-between gap-2 absolute bottom-0 left-0 right-0 px-1">
                       <p>{post?.blog_author_name}</p>
                       <p>{post?.created_at}</p>
                     </div>

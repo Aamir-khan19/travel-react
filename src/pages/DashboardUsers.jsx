@@ -10,6 +10,7 @@ function DashboardUsers() {
   const dispatch = useDispatch();
 
   const users = useSelector(state => state.users.users);
+  const isLoading = useSelector(state => state.users.isLoading);
   const flashMessage = useSelector(state=> state.users.flashMessage);
 
   useEffect(() => {
@@ -45,7 +46,18 @@ function DashboardUsers() {
   <DashboardSideBar />
 
   <DashboardContentContainer >
-     <div className='overflow-auto py-5 mb-5'>
+    {
+      isLoading? <div className=' flex justify-center h-[50vh] items-center'>
+
+      <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+     
+      </div>
+
+      :
+
+
+    
+     <div className='overflow-auto py-5 mb-5 mx-2'>
         <table className='text-sm text-left rtl:text-right text-gray-700 dark:text-gray-400 mx-auto w-[90%]'>
           <thead className='text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
             <tr className='text-nowrap'>
@@ -115,6 +127,9 @@ function DashboardUsers() {
           </tbody>
         </table>
       </div>
+
+}
+
   </DashboardContentContainer>
       </>
    

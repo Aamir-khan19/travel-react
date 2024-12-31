@@ -4,6 +4,7 @@ import conf from "../../../conf/conf";
 
 const initialState = {
     isLoading: false,
+    isDeletionLoading: false,
     leadsPhoneEmail: [],
     leadsQueriesCustomizeItinerary: [],
     generalLeads: [],
@@ -165,15 +166,15 @@ const leadSlice = createSlice({
             })
 
             .addCase(deleteVerifiedLeadPhoneEmail.pending, (state) => {
-                state.isLoading = true;
+                state.isDeletionLoading = true;
             })
             .addCase(deleteVerifiedLeadPhoneEmail.fulfilled, (state, action) => {
-                state.isLoading = false;
+                state.isDeletionLoading = false;
                 state.leadsPhoneEmail = state.leadsPhoneEmail.filter((lead) => lead.id != action.payload.id);
                 state.flashMessage = "Lead deleted successfully";
             })
             .addCase(deleteVerifiedLeadPhoneEmail.rejected, (state, action) => {
-                state.isLoading = false;
+                state.isDeletionLoading = false;
                 state.errors = action.payload;
             })
 
@@ -190,15 +191,15 @@ const leadSlice = createSlice({
             })
 
             .addCase(deleteVerifiedLeadQueryForCustomizeItinerary.pending, (state) => {
-                state.isLoading = true;
+                state.isDeletionLoading = true;
             })
             .addCase(deleteVerifiedLeadQueryForCustomizeItinerary.fulfilled, (state, action) => {
-                state.isLoading = false;
+                state.isDeletionLoading = false;
                 state.leadsQueriesCustomizeItinerary = state.leadsQueriesCustomizeItinerary.filter((lead) => lead.id != action.payload.id);
                 state.flashMessage = "Lead deleted successfully";
             })
             .addCase(deleteVerifiedLeadQueryForCustomizeItinerary.rejected, (state, action) => {
-                state.isLoading = false;
+                state.isDeletionLoading = false;
                 state.errors = true;
             })
 
@@ -215,16 +216,16 @@ const leadSlice = createSlice({
             })
 
             .addCase(deleteGeneralLead.pending, (state) => {
-                state.isLoading = true;
+                state.isDeletionLoading = true;
             })
             .addCase(deleteGeneralLead.fulfilled, (state, action) => {
-                state.isLoading = false;
+                state.isDeletionLoading = false;
                 state.generalLeads = state.generalLeads.filter((lead) => lead.id != action.payload.id);
                 state.flashMessage = "General lead deleted successfully";
             })
             .addCase(deleteGeneralLead.rejected, (state, action) => {
                 state.errors = action.payload;
-                state.isLoading = false;
+                state.isDeletionLoading = false;
             })
 
 

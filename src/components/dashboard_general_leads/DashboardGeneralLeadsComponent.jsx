@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteGeneralLead, fetchGeneralLeads } from '../../features/lead/leadSlice';
 import animatedLoader from "/Images/animated_images/delete_loader.svg";
@@ -7,8 +7,12 @@ function DashboardGeneralLeadsComponent() {
      const dispatch = useDispatch();
       const generalLeads = useSelector(state => state.leads.generalLeads);
       const isLoading = useSelector(state => state.leads.isLoading);
+      const isDeletionLoading = useSelector(state => state.leads.isDeletionLoading);
+
+      const [currentLeadDeletionId, setCurrentLeadDeletionId] = useState(null);
 
       const handleDelete = function(id){
+        setCurrentLeadDeletionId(id);
        dispatch(deleteGeneralLead(id));
       }
       
@@ -16,10 +20,21 @@ function DashboardGeneralLeadsComponent() {
         if(generalLeads.length == 0){
             dispatch(fetchGeneralLeads())
         }
-        }, [generalLeads]);
+        }, []);
 
   return (
      <>
+     {
+      isLoading? <div className=' flex justify-center h-[50vh] items-center'>
+
+      <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+    
+      </div>
+
+      :
+
+
+    
        
         
             <div className='overflow-auto py-5 mb-5'>
@@ -65,9 +80,9 @@ function DashboardGeneralLeadsComponent() {
                   {
 (JSON.parse(localStorage.getItem("token"))?.user?.role == "admin") &&
                    <td className='px-3 py-2 border border-gray-500'>
-                     <button disabled={isLoading} onClick={() => handleDelete(lead?.id)} className='font-medium text-red-600 dark:text-red-500 hover:underline mx-1 text-center'>
+                     <button disabled={isDeletionLoading} onClick={() => handleDelete(lead?.id)} className='font-medium text-red-600 dark:text-red-500 hover:underline mx-1 text-center'>
                         {
-                            isLoading? <div className=" flex justify-center">
+                            (isDeletionLoading && (currentLeadDeletionId == lead?.id))? <div className=" flex justify-center">
                                         <img src={animatedLoader} alt="" />
                             
                                         </div>
@@ -87,6 +102,9 @@ function DashboardGeneralLeadsComponent() {
               </tbody>
             </table>
           </div>
+
+
+}
     
           </>
   )

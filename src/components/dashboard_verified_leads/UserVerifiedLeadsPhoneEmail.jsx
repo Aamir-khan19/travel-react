@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteVerifiedLeadPhoneEmail, fetchVerifiedLeadsPhoneEmail } from '../../features/lead/leadSlice';
 import animatedLoader from "/Images/animated_images/delete_loader.svg";
@@ -8,8 +8,12 @@ function UserVerifiedLeadsPhoneEmail() {
   const dispatch = useDispatch();
   const leadsPhoneEmail = useSelector(state => state.leads.leadsPhoneEmail);
   const isLoading = useSelector(state => state.leads.isLoading);
+  const isDeletionLoading = useSelector(state => state.leads.isDeletionLoading);
+
+  const [currentLeadDeletionId, setCurrentLeadDeletionId] = useState(null);
   
   const handleDelete = function(id){
+    setCurrentLeadDeletionId(id);
    dispatch(deleteVerifiedLeadPhoneEmail(id));
   }
   
@@ -17,11 +21,25 @@ function UserVerifiedLeadsPhoneEmail() {
     if(leadsPhoneEmail.length == 0){
         dispatch(fetchVerifiedLeadsPhoneEmail())
     }
-    }, [leadsPhoneEmail]);
+    }, []);
 
 
   return (
     <>
+
+    {
+      isLoading? <div className=' flex justify-center h-[50vh] items-center'>
+
+      <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
+    
+      </div>
+
+      :
+
+
+
+<div>
+
     <div className=' flex justify-end items-center py-2 px-2'>
     <Link to="/dashboard-queries-customize-itinerary" className=' bg-green-500 px-2 py-1 rounded text-white'>View Queries For Customize Itinerary</Link>
     </div>
@@ -59,9 +77,9 @@ function UserVerifiedLeadsPhoneEmail() {
                 <td className='px-3 py-2 border border-gray-500'>{lead?.created_at}</td>
 
                 <td className='px-3 py-2 border border-gray-500'>
-                 <button disabled={isLoading} onClick={() => handleDelete(lead?.id)} className='font-medium text-red-600 dark:text-red-500 hover:underline mx-1 text-center'>
+                 <button disabled={isDeletionLoading} onClick={() => handleDelete(lead?.id)} className='font-medium text-red-600 dark:text-red-500 hover:underline mx-1 text-center'>
                     {
-                        isLoading? <div className=" flex justify-center">
+                        (isDeletionLoading && (currentLeadDeletionId == lead?.id))? <div className=" flex justify-center">
                                     <img src={animatedLoader} alt="" />
                         
                                     </div>
@@ -79,6 +97,12 @@ function UserVerifiedLeadsPhoneEmail() {
           </tbody>
         </table>
       </div>
+
+
+      </div>
+
+
+}
 
       </>
   )
