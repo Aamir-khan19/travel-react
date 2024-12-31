@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import animatedLoader from "/Images/animated_images/loader.svg";
+import { publicStoreLeadPhoneEmailAsync, setIsLeadCreated } from '../../../features/public/publicSlice';
 
-const EmailModal = ({ onClose }) => {
-  const navigate = useNavigate();
+const EmailModal = ({ onClose, mobileNumber }) => {
+  const dispatch = useDispatch();
   const particularItineraryId = useSelector(state => state.public.particularItineraryId);
+     const isLoading = useSelector(state => state.public.leadIsLoading);
+     const isLeadCreated = useSelector(state => state.public.isLeadCreated);
+
+     const navigate = useNavigate();
 
   const [email, setEmail] = useState('');
   const [emailReqErr, setEmailReqErr] = useState('');
@@ -20,10 +26,17 @@ const EmailModal = ({ onClose }) => {
    return;
   }
 
-
-  navigate(`/package-details/${particularItineraryId}`);
-
+  dispatch(publicStoreLeadPhoneEmailAsync({email: email, phone: mobileNumber, itinerary_id: particularItineraryId }));
   }
+
+
+  useEffect(()=>{
+  if(isLeadCreated){
+    dispatch(setIsLeadCreated());
+
+    navigate(`/package-details/${particularItineraryId}`);
+  }
+  }, [isLeadCreated]);
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
@@ -61,10 +74,19 @@ const EmailModal = ({ onClose }) => {
    <p className=' text-sm font-semibold text-red-500 mt-4'>{emailReqErr}</p>
 
     <button
+    disabled={isLoading}
     onClick={handleEmailSubmit}
-      className="mt-4 w-full bg-blue-800 text-white font-bold py-2 rounded-full hover:shadow-lg hover:from-purple-600 hover:to-blue-600 transition-transform transform hover:-translate-y-1"
+      className="mt-4 w-full bg-blue-900 text-white font-bold py-2 rounded-full hover:shadow-lg hover:from-purple-600 hover:to-blue-600 transition-transform transform hover:-translate-y-1"
     >
-      Submit
+     {
+                                    isLoading? <div className=" flex justify-center">
+                                    <img src={animatedLoader} alt="" />
+                    
+                                    </div>
+                                    :
+                    
+                                   <span>Submit</span>
+                                  }  
     </button>
 
   </div>

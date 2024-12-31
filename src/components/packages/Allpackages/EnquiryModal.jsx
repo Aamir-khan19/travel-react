@@ -1,43 +1,73 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import destinationOptions from "./destinationOptions";
+import { publicStoreGeneralLeadAsync, setIsLeadCreated } from "../../../features/public/publicSlice";
+import animatedLoader from "/Images/animated_images/loader.svg";
 
 const EnquiryModal = function({ onClose }){
+  const dispatch = useDispatch();
   const particularItineraryId = useSelector(state => state.public.particularItineraryId);
+  const selectedDestinationItineraries = useSelector(state => state.public.selectedDestinationItineraries);
+
+   const isLoading = useSelector(state => state.public.leadIsLoading);
+   const isLeadCreated = useSelector(state => state.public.isLeadCreated);
+
   const navigate = useNavigate();
-
+  
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    destination: "",
-    date_of_arrival: "",
-  });
-
-  const [isLoading, setIsLoading] = useState(false);
+     name: "",
+     email: "",
+     phone: "",
+     selected_destination: "",
+     date_of_arrival: "",
+   });
 
   const [flashMessage, setFlashMessage] = useState("");
 
   const handleFormSubmit = (e) => {
-    e.preventDefault();
+     e.preventDefault();
+ 
+     const registerBody = {
+       name: formData.name,
+       email: formData.email,
+       phone: formData.phone,
+       selected_destination: formData.selected_destination,
+       date_of_arrival: formData.date_of_arrival,
+     };
+ 
+     dispatch(publicStoreGeneralLeadAsync(registerBody));
+     
+   };
 
-    console.log("e.preventDefault", e);
-
-    const registerBody = {
-      name: formData.name,
-      email: formData.email,
-      phone: formData.phone,
-      destination: formData.destination,
-      date_of_arrival: formData.date_of_arrival,
-    };
-
-    console.log("regsiterBosy REqesutQouteModal.jsx", registerBody);
-
-
-   navigate(`/package-details/${particularItineraryId}`);
-   
-    // setIsLoading(true);
+   const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
+
+    useEffect(()=>{
+    if(isLeadCreated){
+     dispatch(setIsLeadCreated());
+  
+          setFlashMessage(
+            "Form submitted successfully you will be contacted soon"
+          );
+  
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+            selected_destination: "",
+          });
+
+
+          navigate(`/package-details/${particularItineraryId}`);
+  
+    }
+    }, [isLeadCreated]);
+
 
   useEffect(() => {
     if (flashMessage) {
@@ -47,10 +77,11 @@ const EnquiryModal = function({ onClose }){
     }
   }, [flashMessage]);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
-  };
+ 
+  useEffect(()=>{
+    console.log("EnquiryModal.jsx selectedDestinationItineraries", selectedDestinationItineraries);
+  setFormData((prevData) => ({ ...prevData, selected_destination: selectedDestinationItineraries?.[0]?.selected_destination?.value }));
+  }, [selectedDestinationItineraries]);
 
   return (
     <div>
@@ -105,19 +136,29 @@ const EnquiryModal = function({ onClose }){
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+                    <select
+              name="selected_destination"
+              value={formData.selected_destination}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              >
+              <option value="" disabled>
+              Select Destination
+              </option>
+
+              {destinationOptions.map((option) =>(
+              <option value={option?.value}>{option?.label}</option>
+              ) )}
+
+              </select>
+
+
+
+              <div className=" my-5">
+              <label htmlFor="date_of_arrival">Date Of Arrival</label>
               <input
-                type="text"
-                placeholder="Destination"
-                name="destination"
-                value={formData.destination}
-                onChange={handleChange}
-                required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-              />
-
-
-
-              <input
+              id="date_of_arrival"
               type="date"
               placeholder="Date Of Arrival"
               name="date_of_arrival"
@@ -126,6 +167,8 @@ const EnquiryModal = function({ onClose }){
               required
               className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
               />
+              </div>
+           
 
 
               <button
@@ -133,7 +176,15 @@ const EnquiryModal = function({ onClose }){
                 type="submit"
                 className="w-full p-3 text-white bg-blue-900 rounded-lg hover:opacity-90 transition"
               >
-                Submit
+                {
+                               isLoading? <div className=" flex justify-center">
+                               <img src={animatedLoader} alt="" />
+               
+                               </div>
+                               :
+               
+                              <span>Submit</span>
+                             }  
               </button>
             </form>
           </div>

@@ -33,6 +33,9 @@ import DashboardUpdateItineraryParent from "./pages/DashboardUpdateItineraryPare
 import DashboardBlogs from "./pages/DashboardBlogs.jsx";
 import DashboardCreateBlog from "./pages/DashboardCreateBlog.jsx";
 import DashboardEditBlog from "./pages/DashboardEditBlog.jsx";
+import DashboardVerifiedLeads from "./pages/DashboardVerifiedLeads.jsx";
+import DashBoardQueriesCustomizeItinerary from "./pages/DashboardQueriesCustomizeItinerary.jsx";
+import DashboardGeneralLeads from "./pages/DashboardGeneralLeads.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -47,12 +50,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/signup" element={<SignUp />} />
             <Route path="/tour-packages/:name" element={<TourPackages />} />
             <Route path="/destination" element={<SignUp />} />
-            <Route path="/blogs" element={<Blogs />} />
+            <Route path="/blog" element={<Blogs />} />
 
             <Route path="/testimonails" element={<Testimonials />} />
             <Route path="/privacyPolicy" element={<PrivacyPolicyPage />} />
             <Route path="/terms" element={<TermandconditionPage />} />
-            <Route path="/blogdetail/:blog_slug" element={<BlogDetail />} />
+            <Route path="/blog/:blog_slug" element={<BlogDetail />} />
             <Route path="/package-details/:id" element={<Packagedetails />} />
 
             <Route path="/trip-ideas/:name/:id" element={<TripIdeaPage />} />
@@ -99,9 +102,24 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={<DashboardEditBlog />}
             />
 
-            {/* <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
+           <Route
+           path="/dashboard-verifed-leads"
+           element={<DashboardVerifiedLeads />}
+           />
+
+           <Route
+           path="/dashboard-queries-customize-itinerary"
+           element={<DashBoardQueriesCustomizeItinerary />}
+           />
+
+<Route
+           path="/dashboard-general-leads"
+           element={<DashboardGeneralLeads />}
+           />
+
+            <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
           <Route path="/dashboard-my-report" element={<DashboardMyreport/>} /> 
-          <Route path="/dashboard-my-team" element={<DashboardMyteam/>} />  */}
+          <Route path="/dashboard-my-team" element={<DashboardMyteam/>} /> 
           </Routes>
         </div>
       </BrowserRouter>

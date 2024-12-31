@@ -3,8 +3,7 @@ import { FaTimes } from 'react-icons/fa';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
-const PhoneNumberModal = ({ onClose, setIsEmailModal }) => {
-  const [mobileNumber, setMobileNumber] = useState('');
+const PhoneNumberModal = ({ onClose, setIsEmailModal, mobileNumber, setMobileNumber }) => {
   const [mobileNumberReqErr, setMobileNumberReqErr] = useState("");
 
   
@@ -53,7 +52,7 @@ const handlePhoneNumberSubmit = function(){
           <button
           onClick={handlePhoneNumberSubmit}
             type="submit"
-            className="bg-blue-800 text-white rounded-full py-2 px-4 w-full text-lg"
+            className="bg-blue-900 text-white rounded-full py-2 px-4 w-full text-lg"
           >
             SUBMIT
           </button>

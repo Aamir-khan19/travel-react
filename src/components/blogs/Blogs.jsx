@@ -82,7 +82,7 @@ const Blogs = () => {
                     return (
                       <Link
                         key={post?.id}
-                        to={`/blogdetail/${post?.blog_slug}`}
+                        to={`/blog/${post?.blog_slug}`}
                      
                         className="flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
                       >
@@ -118,7 +118,7 @@ const Blogs = () => {
               : allBlogs?.map((post) => (
                   <Link
                     key={post?.id}
-                    to={`/blogdetail/${post?.blog_slug}`}
+                    to={`/blog/${post?.blog_slug}`}
                     // to={'/blogs'}
                     className="flex cursor-pointer border border-gray-300 p-4 rounded-lg flex-col gap-5 relative group"
                   >

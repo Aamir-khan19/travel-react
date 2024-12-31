@@ -171,7 +171,7 @@ dangerouslySetInnerHTML={{ __html: particularBlog?.blog_content }}
 
 
 
-<div className="mt-10 md:mt-0 bg-blue-100 rounded-md p-4 md:ml-5">
+<div className="mt-10 md:mt-0 bg-blue-100 rounded-md p-4 md:ml-5 min-w-[250px] md:min-w-[300px]">
     <h3 className="text-3xl font-semibold text-gray-800 mb-8 md:text-center">
       Recent Blogs
     </h3>

@@ -273,7 +273,7 @@ let itineraryPayloadObject = {
 
 
 if(itineraryDetails?.pricing){
-  itineraryPayloadObject.pricing = Number(itineraryDetails.pricing);
+  itineraryPayloadObject.pricing = itineraryDetails.pricing;
 }
 
 if(itineraryDetails?.terms_and_conditions?.trim()){

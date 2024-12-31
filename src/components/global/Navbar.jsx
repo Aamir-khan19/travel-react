@@ -127,7 +127,7 @@ const NavLinks = ({ menuOpen }) => {
 
         </button>
 
-        <NavLink to="/blogs" text="Blogs" />
+        <NavLink to="/blog" text="Blogs" />
         <NavLink to="/contact" text="Contact" />
         <button onMouseEnter={() => setIsTripIdeasVisible(true)} onMouseLeave={() => setIsTripIdeasVisible(false)} className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl relative">
           Trip ideas

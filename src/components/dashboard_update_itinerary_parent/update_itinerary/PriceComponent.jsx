@@ -27,7 +27,7 @@ const PriceComponent = ({setCurrentComponent}) => {
    id="pricing"
    value={itineraryDetails?.pricing}
    onChange={(e)=> dispatch(setItineraryDetails({pricing: e.target.value}))}
-   type="number"
+   type="text"
    className=" mb-10 mt-2 w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
    placeholder="Enter Pricing"
    />

@@ -23,6 +23,9 @@ const Allpackages = () => {
   const [isEmailModal, setIsEmailModal] = useState(false);
   const [isEnquiryModal, setIsEnquiryModal] = useState(false);
 
+  const [mobileNumber, setMobileNumber] = useState('');
+
+
   useEffect(()=>{
   dispatch(publicGetItinerariesAsync(name));
   }, [name]);
@@ -129,14 +132,14 @@ const Allpackages = () => {
 
         {
           isPhoneNumberModal && (
-            <PhoneNumberModal onClose={()=>setIsPhoneNumberModal(false)} setIsEmailModal={setIsEmailModal} />
+            <PhoneNumberModal mobileNumber={mobileNumber} setMobileNumber={setMobileNumber} onClose={()=>setIsPhoneNumberModal(false)} setIsEmailModal={setIsEmailModal} />
           )
         }
 
 
         {
           isEmailModal && (
-            <EmailModal onClose={()=>setIsEmailModal(false)} />
+            <EmailModal mobileNumber={mobileNumber} onClose={()=>setIsEmailModal(false)} />
           )
         }
 

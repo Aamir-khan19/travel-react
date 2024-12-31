@@ -1,78 +1,82 @@
 import React, { useEffect, useState } from "react";
 import api from "../../api";
+import destinationOptions from "./destinationOptions";
+import { useDispatch, useSelector } from "react-redux";
+import { publicStoreGeneralLeadAsync, setIsLeadCreated } from "../../features/public/publicSlice";
+import animatedLoader from "/Images/animated_images/loader.svg";
 
-const RequestQuoteModal = ({
-  isRequestQuoteModalOpen,
-  handleRequestQuoteCloseModal,
-}) => {
+const RequestQuoteModal = ({isRequestQuoteModalOpen, handleRequestQuoteCloseModal,}) => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(state => state.public.leadIsLoading);
+
+  const isLeadCreated = useSelector(state => state.public.isLeadCreated);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    destination: "",
+    selected_destination: "",
     date_of_arrival: "",
   });
 
-  const [isLoading, setIsLoading] = useState(false);
-
-  const [flashMessage, setFlashMessage] = useState("");
+  const [tripPlannerFlashMessage, setTripPlannerFlashMessage] = useState("");
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-
-    console.log("e.preventDefault", e);
 
     const registerBody = {
       name: formData.name,
       email: formData.email,
       phone: formData.phone,
-      destination: formData.destination,
+      selected_destination: formData.selected_destination,
       date_of_arrival: formData.date_of_arrival,
     };
 
-    console.log("regsiterBosy REqesutQouteModal.jsx", registerBody);
-
-    setIsLoading(true);
-
-    api
-      .postReq("quote", registerBody)
-      .then((data) => {
-        console.log("request a quote successfully got", data);
-        setIsLoading(false);
-        setFlashMessage(
-          "Form submitted successfully you will be contacted soon"
-        );
-        console.log("successfully refgsitered eith us", data);
-
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-          destination: "",
-        });
-      })
-      .catch((error) => {
-        setIsLoading(false)
-        console.log("ReqesutQhuoteModel.jsx", error);
-      });
+    dispatch(publicStoreGeneralLeadAsync(registerBody));
+    
   };
 
-  useEffect(() => {
-    if (flashMessage) {
-      setTimeout(() => {
-        setFlashMessage("");
-      }, 5000);
-    }
-  }, [flashMessage]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
+
+  useEffect(()=>{
+  if(isLeadCreated){
+   dispatch(setIsLeadCreated());
+
+        setTripPlannerFlashMessage(
+          "Form submitted successfully you will be contacted soon"
+        );
+
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+          selected_destination: "",
+        });
+
+  }
+  }, [isLeadCreated]);
+
+
+
+
+
+  useEffect(() => {
+    if (tripPlannerFlashMessage) {
+      setTimeout(() => {
+        setTripPlannerFlashMessage("");
+      }, 5000);
+    }
+  }, [tripPlannerFlashMessage]);
+
   return (
     <div>
+
       {isRequestQuoteModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
           <div className="bg-white p-2 rounded-lg shadow-lg w-[400px] max-[600]:w-[320px] max-[400px]:w-[280px] relative px-4 pb-4">
@@ -88,15 +92,16 @@ const RequestQuoteModal = ({
 
             <div
               className={`bg-white rounded ${
-                flashMessage ? "block" : "hidden"
+                tripPlannerFlashMessage ? "block" : "hidden"
               }`}
             >
               <h1 className=" text-center text-green-500 font-bold text-sm">
-                {flashMessage}
+                {tripPlannerFlashMessage}
               </h1>
             </div>
 
-            <form className="space-y-4" onSubmit={(e) => handleFormSubmit(e)}>
+            <form className="space-y-4" onSubmit={(e)=>handleFormSubmit(e)}>
+
               <input
                 type="text"
                 placeholder="Name"
@@ -115,8 +120,9 @@ const RequestQuoteModal = ({
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
+
               <input
-                type="tel"
+                type="number"
                 placeholder="Phone"
                 name="phone"
                 value={formData.phone}
@@ -124,17 +130,29 @@ const RequestQuoteModal = ({
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <input
-                type="text"
-                placeholder="Destination"
-                name="destination"
-                value={formData.destination}
-                onChange={handleChange}
-                required
-                className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
-              />
+
+              <select
+              name="selected_destination"
+              value={formData.selected_destination}
+              onChange={handleChange}
+              required
+              className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
+              >
+              <option value="" disabled>
+              Select Destination
+              </option>
+
+              {destinationOptions.map((option) =>(
+              <option value={option?.value}>{option?.label}</option>
+              ) )}
+
+              </select>
+
               
+              <div className=" my-5">
+                <label htmlFor="date_of_arrival">Date Of Arrival</label>
               <input
+              id="date_of_arrival"
                 type="date"
                 placeholder="Date Of Arrival"
                 name="date_of_arrival"
@@ -143,13 +161,23 @@ const RequestQuoteModal = ({
                 required
                 className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-900"
               />
+              </div>
+           
 
               <button
               disabled={isLoading}
                 type="submit"
                 className="w-full p-3 text-white bg-blue-900 rounded-lg hover:opacity-90 transition"
               >
-                Submit
+              {
+                isLoading? <div className=" flex justify-center">
+                <img src={animatedLoader} alt="" />
+
+                </div>
+                :
+
+               <span>Submit</span>
+              }  
               </button>
             </form>
           </div>

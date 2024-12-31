@@ -15,7 +15,11 @@ const initialState = {
     recentBlogs: [],
     particularBlog: {},
 
-    verifiedTravelAgents: []
+    verifiedTravelAgents: [],
+
+    isLeadCreated: false,
+    isCustomizeItineraryCreated: false,
+    leadIsLoading: false
 };
 
 // Fetch all companies
@@ -132,6 +136,49 @@ export const publicGetAllVerifiedTravelAgentsAsync = createAsyncThunk(
 );
 
 
+// lead api endpoints ends here
+// Store lead phone and email
+export const publicStoreLeadPhoneEmailAsync = createAsyncThunk(
+    'public/storeLeadPhoneEmail',
+    async (leadData, options) => {
+        try {
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/lead-phone-email`, leadData);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicStoreLeadPhoneEmailAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+export const publicStoreLeadQueryForCustomizeItineraryAsync = createAsyncThunk(
+    'public/storeLeadQueryForCustomizeItinerary',
+    async (leadData, options) => {
+        try {
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/lead-query-for-customize-itinerary`, leadData);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicStoreLeadQueryForCustomizeItineraryAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+export const publicStoreGeneralLeadAsync = createAsyncThunk(
+    'public/storeGeneralLead',
+    async (leadData, options) => {
+        try {
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/general-lead`, leadData);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicStoreGeneralLeadAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+// lead api endpoints ends here
+
 
 const publicSlice = createSlice({
     name: 'public',
@@ -148,7 +195,15 @@ const publicSlice = createSlice({
     setParticularBlog: (state, action) => {
         let newParticularBlog = state.allBlogs?.find((elem) => elem?.blog_slug == action.payload);
         state.particularBlog = newParticularBlog;
+    },
+    setIsLeadCreated: (state) => {
+        state.isLeadCreated = false;
+        
+    },
+    setIsCustomizeItineraryCreated: (state)=>{
+        state.isCustomizeItineraryCreated = false;
     }
+    
     },
     extraReducers: (builder) => {
         builder
@@ -164,9 +219,7 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated."){
-                    localStorage.removeItem("token");
-                }
+            
             })
 
 
@@ -182,9 +235,6 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated."){
-                    localStorage.removeItem("token");
-                }
             })
 
 
@@ -200,9 +250,7 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated."){
-                    localStorage.removeItem("token");
-                }
+             
             })
 
 
@@ -217,9 +265,6 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated.") {
-                    localStorage.removeItem("token");
-                }
             })
 
 
@@ -234,9 +279,7 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated.") {
-                    localStorage.removeItem("token");
-                }
+                
             })
 
             .addCase(publicGetRecentBlogsAsync.pending, (state) => {
@@ -250,9 +293,7 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated.") {
-                    localStorage.removeItem("token");
-                }
+              
             })
 
 
@@ -267,16 +308,56 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
-                if(action?.payload?.message == "Unauthenticated.") {
-                    localStorage.removeItem("token");
-                }
             })
 
+
+            // lead api end points pending, fulfilled and rejected cases ends here
+            .addCase(publicStoreLeadPhoneEmailAsync.pending, (state) => {
+                state.leadIsLoading = true;
+            })
+            .addCase(publicStoreLeadPhoneEmailAsync.fulfilled, (state, action) => {
+                state.leadIsLoading = false;
+                state.isLeadCreated = true;
+                console.log("publicSlice.js publicStoreLeadPhoneEmailAsync.fulfilled action.payload", action.payload);
+            })
+            .addCase(publicStoreLeadPhoneEmailAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.leadIsLoading = false;
+
+            })
+
+
+            .addCase(publicStoreLeadQueryForCustomizeItineraryAsync.pending, (state) => {
+                state.leadIsLoading = true;
+            })
+            .addCase(publicStoreLeadQueryForCustomizeItineraryAsync.fulfilled, (state, action) => {
+                state.leadIsLoading = false;
+                state.isCustomizeItineraryCreated = true;
+                console.log("publicSlice.js publicStoreLeadQueryForCustomizeItineraryAsync.fulfilled action.payload", action.payload);
+            })
+            .addCase(publicStoreLeadQueryForCustomizeItineraryAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.leadIsLoading = false;
+            })
+
+
+            .addCase(publicStoreGeneralLeadAsync.pending, (state) => {
+                state.leadIsLoading = true;
+            })
+            .addCase(publicStoreGeneralLeadAsync.fulfilled, (state, action) => {
+                state.leadIsLoading = false;
+                state.isLeadCreated = true;
+                console.log("publicSlice.js publicStoreGeneralLeadAsync.fulfilled action.payload", action.payload);
+            })
+            .addCase(publicStoreGeneralLeadAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.leadIsLoading = false;
+            })
             
     }
 });
 
-export const { setParticularItinerary, setParticularItineraryId, setParticularBlog } = publicSlice.actions;
+export const { setParticularItinerary, setParticularItineraryId, setParticularBlog, setIsLeadCreated, setIsCustomizeItineraryCreated } = publicSlice.actions;
 
 const publicReducer = publicSlice.reducer;
 

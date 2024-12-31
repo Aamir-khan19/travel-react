@@ -6,6 +6,7 @@ import companiesReducer from '../features/company/companySlice'
 import itinerariesReducer from '../features/itinerary/itinerarySlice'
 import publicReducer from '../features/public/publicSlice'
 import blogsReducer from '../features/blog/blogSlice'
+import leadReducer from '../features/lead/leadSlice'
 
 export const store = configureStore({
   reducer: {
@@ -15,6 +16,7 @@ export const store = configureStore({
     companies: companiesReducer,
     itineraries: itinerariesReducer,
     public: publicReducer,
-    blogs: blogsReducer
+    blogs: blogsReducer,
+    leads: leadReducer
   },
 })

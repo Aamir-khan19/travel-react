@@ -1,24 +1,45 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { NavLink, useNavigate } from 'react-router-dom';
-import { FaHome, FaUser, FaClipboardList, FaUsers, FaUserShield, FaRegChartBar, FaStar, FaBlog } from 'react-icons/fa';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { FaHome, FaUser, FaClipboardList, FaUsers, FaUserShield, FaRegChartBar, FaStar, FaBlog, FaChevronUp, FaChevronDown, FaCheckCircle } from 'react-icons/fa';
 
 function DashboardSideBar() {
+  const location = useLocation();
   const navigate = useNavigate();
 
   const tokenState = useSelector((state) => state.login.tokenState);
 
   const [isOpen, setIsOpen] = useState(false);
 
+  const [isLeadMenuOpen, setIsLeadMenuOpen] = useState(false);
+
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    if (!tokenState?.token) {
-      navigate("/b2b-login");
-    }
-  }, [tokenState, navigate]);
+
+  const toggleLeadMenu = () => {
+    setIsLeadMenuOpen((prev) => !prev);
+  };
+
+
+ useEffect(()=>{
+ if(location.pathname == "/dashboard-verifed-leads"){
+  setIsOpen(false);
+    setIsLeadMenuOpen(true)
+ }
+  if(location.pathname == "/dashboard-general-leads"){  
+    setIsOpen(false);
+    setIsLeadMenuOpen(true)
+  }
+ }, [location]);
+
+
+ useEffect(() => {
+  if (!tokenState?.token) {
+    navigate("/b2b-login");
+  }
+}, [tokenState, navigate]);
 
   return (
     <>
@@ -52,7 +73,7 @@ function DashboardSideBar() {
               to="/dashboard"
               className={({ isActive }) =>
                 `flex items-center gap-2 duration-200 ${
-                  isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
+                  (isActive)? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
                 }`
               }
             >
@@ -65,7 +86,7 @@ function DashboardSideBar() {
               to="/dashboard-my-itineraries"
               className={({ isActive }) =>
                 `flex items-center gap-2 duration-200 ${
-                  isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
+                  (isActive)? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
                 }`
               }
             >
@@ -73,13 +94,57 @@ function DashboardSideBar() {
             </NavLink>
           </li>
 
+
+
+          <li className="md:mx-8 mb-6">
+      <button
+        onClick={toggleLeadMenu}
+        className={`flex items-center gap-2 duration-200`}
+      >
+      {isLeadMenuOpen ? <FaChevronUp /> : <FaChevronDown />}  Leads
+      </button>
+      
+      {isLeadMenuOpen && (
+        <ul className="mt-2 w-full flex flex-col items-start justify-between">
+
+          <li>
+          <NavLink
+      to="/dashboard-verifed-leads"
+      className={({ isActive }) =>
+        `flex items-center gap-2 duration-200 ${
+          (isActive)? "bg-purple-600 px-2 py-1 rounded-xl" : "text-white"
+        }`
+      }
+    >
+      <FaCheckCircle /> Verified Leads
+    </NavLink>
+          </li>
+
+          <li>
+          <NavLink
+              to="/dashboard-general-leads"
+              className={({ isActive }) =>
+                `flex items-center gap-2 duration-200 ${
+                  (isActive)? "bg-purple-600 px-2 py-1 rounded-xl" : "text-white"
+                }`
+              }
+            >
+              <FaUser /> General Leads
+            </NavLink>
+          </li>
+
+        </ul>
+      )}
+    </li>
+
+
           {tokenState?.user?.role === "admin" && (
             <li className="md:mx-8 mb-5">
               <NavLink
                 to="/dashboard-users"
                 className={({ isActive }) =>
                   `flex items-center gap-2 duration-200 ${
-                    isActive
+                    (isActive)
                       ? "bg-purple-600 px-4 py-1 rounded-xl"
                       : "text-white"
                   }`
@@ -95,7 +160,7 @@ function DashboardSideBar() {
               to="/dashboard-my-account"
               className={({ isActive }) =>
                 `flex items-center gap-2 duration-200 ${
-                  isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
+                  (isActive)? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
                 }`
               }
             >
@@ -108,7 +173,7 @@ function DashboardSideBar() {
               to="/dashboard-my-team"
               className={({ isActive }) =>
                 `flex items-center gap-2 duration-200 ${
-                  isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
+                  (isActive)? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
                 }`
               }
             >
@@ -121,7 +186,7 @@ function DashboardSideBar() {
               to="/dashboard-my-reviews"
               className={({ isActive }) =>
                 `flex items-center gap-2 duration-200 ${
-                  isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
+                  (isActive)? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
                 }`
               }
             >
@@ -134,7 +199,7 @@ function DashboardSideBar() {
               to="/dashboard-my-report"
               className={({ isActive }) =>
                 `flex items-center gap-2 duration-200 ${
-                  isActive ? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
+                  (isActive)? "bg-purple-600 px-4 py-1 rounded-xl" : "text-white"
                 }`
               }
             >
@@ -152,7 +217,7 @@ function DashboardSideBar() {
                 to="/dashboard-blogs"
                 className={({ isActive }) =>
                   `flex items-center gap-2 duration-200 ${
-                    isActive
+                    (isActive)
                       ? "bg-purple-600 px-4 py-1 rounded-xl"
                       : "text-white"
                   }`
