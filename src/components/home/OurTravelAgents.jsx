@@ -40,6 +40,12 @@ const OurTravelAgents = () => {
     }
     }, []);
 
+    useEffect(()=>{
+      if(verifiedTravelAgents?.length > 0){
+        setFilteredAgents(verifiedTravelAgents);
+      }
+    }, []);  
+
 
   const handleInputChange = (e) => {
     setSearchTerm(e.target.value.toLowerCase());
