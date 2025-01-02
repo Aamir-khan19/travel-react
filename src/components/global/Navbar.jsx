@@ -195,55 +195,55 @@ const DropdownMenu = ({ items }) => {
 
   return (
     <div
-
-      className="absolute z-[100] lg:translate-x-[-30%] md:translate-x-[0%] translate-x-[-50%] sm:translate-x-[10%]  xs:translate-x-[-15%] xs:w-[250px] xs:justify-center  xxs:w-[900px] xxs:items-center  xxs:translate-x-[-40%]    xxs:justify-center  xs:items-center px-2 md:px-3 sm:px-5 md:right-8 sm:left-15 xs:left-15  xxs:left-15 md:left-30 xxs:translate-x-[50%]  left-1/2   lg:left-6 md:w-[500px] md:items-center md:justify-center sm:w-[300px]  sm:justify-center sm:items-center   lg:w-[700px]  bg-white border border-gray-200 rounded-lg  transition-opacity duration-300 flex mr-4 mt-6 gap-4 sm:gap-6 p-4 custom-showHide justify-left"
-    >
-      <div className="flex flex-col lg:flex-row gap-6">
-        {/* Domestic Packages Section */}
-        <div>
-          <h1 className="font-bold text-bold py-4 text-xl text-[#02173ba4] hover:text-[#3d71cca4]">
-            Domestic Packages
-          </h1>
-          <ul className="grid text-bold lg:grid-cols-3 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-1">
-            {visibleIndianItems.map((item, index) => (
-              <li key={index}>
-                <Link
-                  to={item.to}
-                  className="block py-2 md:text-left font-bold hover:bg-gray-100 md:text-sm  hover:text-[#3d71cca4]"
-                >
-                  {item.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* International Packages Section */}
-        <div>
-          <h1 className="font-bold text-bold py-4 text-xl text-[#02173ba4] hover:text-[#3d71cca4]">
-            International Packages
-          </h1>
-          <ul className="grid text-bold lg:grid-cols-3 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-2 xxs:grid-cols-2 gap-1">
-            {visibleInternationalItems.map((item, index) => (
-              <li key={index}>
-                <Link
-                  to={item.to}
-                  className="block py-2 md:text-left font-bold hover:bg-gray-100 md:text-sm  hover:text-[#3d71cca4]"
-                >
-                  {item.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <button
-            onClick={handleToggle}
-            className="mt-4 bg-[#3d71cc] text-white px-4 py-2 rounded-lg hover:bg-[#1a2f53] transition"
-          >
-            {showMore ? "Read Less" : "Read More"}
-          </button>
-        </div>
+    className="absolute z-[100] translate-x-[-50%] left-1/2 lg:w-[700px] md:w-[500px] sm:w-[300px] xs:w-[250px] bg-gradient-to-r from-white to-gray-50 shadow-lg border border-gray-200 rounded-xl p-6 transition-opacity duration-300 mt-6"
+  >
+    <div className="flex flex-col lg:flex-row gap-8">
+      {/* Domestic Packages Section */}
+      <div>
+        <h1 className="font-extrabold text-xl text-[#02173b] hover:text-[#3d71cc] transition">
+          🌟 Domestic Packages
+        </h1>
+        <ul className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+          {visibleIndianItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.to}
+                className="block py-2 px-3 bg-gray-100 hover:bg-[#3d71cc] hover:text-white rounded-lg font-medium transition"
+              >
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
+  
+      {/* International Packages Section */}
+      <div>
+        <h1 className="font-extrabold text-xl text-[#02173b] hover:text-[#3d71cc] transition">
+          ✈️ International Packages
+        </h1>
+        <ul className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+          {visibleInternationalItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.to}
+                className="block py-2 px-3 bg-gray-100 hover:bg-[#3d71cc] hover:text-white rounded-lg font-medium transition"
+              >
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <button
+          onClick={handleToggle}
+          className="mt-6 bg-gradient-to-r from-[#3d71cc] to-[#1a2f53] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:opacity-90 transition"
+        >
+          {showMore ? "Read Less" : "Read More"}
+        </button>
       </div>
     </div>
+  </div>
+  
   );
 };
 
