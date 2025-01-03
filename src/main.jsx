@@ -36,6 +36,9 @@ import DashboardEditBlog from "./pages/DashboardEditBlog.jsx";
 import DashboardVerifiedLeads from "./pages/DashboardVerifiedLeads.jsx";
 import DashBoardQueriesCustomizeItinerary from "./pages/DashboardQueriesCustomizeItinerary.jsx";
 import DashboardGeneralLeads from "./pages/DashboardGeneralLeads.jsx";
+import DashboardBlogCategories from "./pages/DashboardBlogCategories.jsx";
+import DashboardCreateBlogCategory from "./pages/DashboardCreateBlogCategory.jsx";
+import DashboardEditBlogCategory from "./pages/DashboardEditBlogCategory.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -100,6 +103,21 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route
             path="/dashboard-edit-blog/:id"
             element={<DashboardEditBlog />}
+            />
+
+            <Route 
+            path="/dashboard-blog-categories"
+            element={<DashboardBlogCategories />}
+            />
+
+            <Route
+            path="/dashboard-create-blog-category"
+            element={<DashboardCreateBlogCategory />}
+            />
+
+<Route
+            path="/dashboard-edit-blog-category/:id"
+            element={<DashboardEditBlogCategory />}
             />
 
            <Route

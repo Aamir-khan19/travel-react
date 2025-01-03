@@ -19,7 +19,9 @@ const initialState = {
 
     isLeadCreated: false,
     isCustomizeItineraryCreated: false,
-    leadIsLoading: false
+    leadIsLoading: false,
+
+    blogCategories: [],
 };
 
 // Fetch all companies
@@ -180,6 +182,22 @@ export const publicStoreGeneralLeadAsync = createAsyncThunk(
 );
 
 // lead api endpoints ends here
+
+
+// Fetch all blog categories
+export const publicGetAllBlogCategoriesAsync = createAsyncThunk(
+    'public/getAllBlogCategories',
+    async (_ = null, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-blog-categories`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetAllBlogCategoriesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
 
 
 const publicSlice = createSlice({
@@ -354,6 +372,19 @@ const publicSlice = createSlice({
             .addCase(publicStoreGeneralLeadAsync.rejected, (state, action) => {
                 state.errors = action.payload;
                 state.leadIsLoading = false;
+            })
+
+
+            .addCase(publicGetAllBlogCategoriesAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetAllBlogCategoriesAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.blogCategories = action.payload;
+            })
+            .addCase(publicGetAllBlogCategoriesAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
             })
             
     }

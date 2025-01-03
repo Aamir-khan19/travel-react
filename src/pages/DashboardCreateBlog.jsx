@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {Link, useNavigate} from "react-router-dom";
-import { blogsStoreAsync, setIsBlogCreated } from '../features/blog/blogSlice';
+import { blogCategoriesIndexAsync, blogsStoreAsync, setIsBlogCreated } from '../features/blog/blogSlice';
 import InputField from '../components/dashboard_create_blog/InputField';
 import TextAreaField from '../components/dashboard_create_blog/TextAreaField';
 import FileUploadField from '../components/dashboard_create_blog/FileUploadField';
@@ -15,6 +15,8 @@ function DashboardCreateBlog() {
     const isLoading = useSelector(state => state.blogs.isLoading);
     const isBlogCreated  = useSelector(state => state.blogs.isBlogCreated);
     const apiErrors = useSelector(state => state.blogs.errors);
+
+    const blogCategories = useSelector(state => state.blogs.blogCategories);
 
     const navigate = useNavigate();
 
@@ -142,6 +144,13 @@ function DashboardCreateBlog() {
         "background",
       ];
 
+
+      useEffect(()=>{
+      if(blogCategories.length == 0){
+          dispatch(blogCategoriesIndexAsync());
+      }
+      }, []);
+
   return (
     <>
     <DashboardSideBar />
@@ -223,12 +232,18 @@ onSubmit={handleSubmit}
 />
 <p className=' mb-8 text-red-500 text-sm'>{apiErrors?.errors?.blog_author_name && apiErrors?.errors?.blog_author_name[0]}</p>
 
-<InputField
-    label="Blog Category"
-    name="blog_category"
-    value={formData.blog_category}
-    onChange={handleChange}
-/>
+<div className="mb-4">
+        <label className="block text-sm font-medium text-gray-700 mb-1">
+            Blog Category
+        </label>
+
+        <select name="blog_category" value={formData.blog_category} onChange={handleChange} className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-700">
+        <option value="" disabled>Select Blog Category</option>
+        {blogCategories?.map((category, index) => (
+            <option key={index} value={category.category_name}>{category.category_name}</option>
+        ))}
+        </select>
+    </div>
 <p className=' mb-8 text-red-500 text-sm'>{apiErrors?.errors?.blog_category && apiErrors?.errors?.blog_category[0]}</p>
 
 <InputField

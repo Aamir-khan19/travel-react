@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { publicGetAllBlogsAsync } from "../../features/public/publicSlice";
+import { publicGetAllBlogCategoriesAsync, publicGetAllBlogsAsync } from "../../features/public/publicSlice";
 import conf from "../../../conf/conf";
 
 const Blogs = () => {
   const dispatch = useDispatch();
   const isLoading = useSelector((state) => state.public.isLoading);
   const allBlogs = useSelector((state) => state.public.allBlogs);
+  const blogCategories = useSelector((state) => state.public.blogCategories);
 
   const [category, setCategory] = useState("");
  
@@ -17,6 +18,12 @@ const Blogs = () => {
     }
   }, []);
 
+
+  useEffect(()=>{
+if(blogCategories.length == 0){
+dispatch(publicGetAllBlogCategoriesAsync());
+}
+  }, []);
 
   return (
 
@@ -67,9 +74,9 @@ const Blogs = () => {
               onChange={(e) => setCategory(e.target.value)}
             >
               <option value="">Select Category</option>
-              {allBlogs?.map((post) => (
-                <option key={post.category} value={post?.blog_category}>
-                  {post?.blog_category}
+              {blogCategories?.map((category) => (
+                <option key={category?.id} value={category?.category_name}>
+                  {category?.category_name}
                 </option>
               ))}
             </select>

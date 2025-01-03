@@ -13,6 +13,8 @@ function DashboardSideBar() {
 
   const [isLeadMenuOpen, setIsLeadMenuOpen] = useState(false);
 
+  const [isBlogMenuOpen, setIsBlogMenuOpen] = useState(false);
+
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -21,6 +23,10 @@ function DashboardSideBar() {
   const toggleLeadMenu = () => {
     setIsLeadMenuOpen((prev) => !prev);
   };
+
+  const toggleBlogMenu = () => {
+    setIsBlogMenuOpen((prev) => !prev);
+  }
 
 
  useEffect(()=>{
@@ -31,6 +37,16 @@ function DashboardSideBar() {
   if(location.pathname == "/dashboard-general-leads"){  
     setIsOpen(false);
     setIsLeadMenuOpen(true)
+  }
+
+  if(location.pathname == "/dashboard-blogs"){
+    setIsOpen(false);
+    setIsBlogMenuOpen(true);
+  }
+
+  if(location.pathname == "/dashboard-blog-categories"){
+    setIsOpen(false);
+    setIsBlogMenuOpen(true);
   }
  }, [location]);
 
@@ -211,8 +227,22 @@ function DashboardSideBar() {
 
 
 
-          {tokenState?.user?.role === "admin" && (
-            <li className="md:mx-8 mb-5">
+
+          
+{
+  (tokenState?.user?.role === "admin") && (
+<li className="md:mx-8 mb-6">
+      <button
+        onClick={toggleBlogMenu}
+        className={`flex items-center gap-2 duration-200`}
+      >
+      {isBlogMenuOpen ? <FaChevronUp /> : <FaChevronDown />}  Blog
+      </button>
+      
+      {isBlogMenuOpen && (
+        <ul className="mt-2 w-full flex flex-col items-start justify-between">
+
+          <li>
               <NavLink
                 to="/dashboard-blogs"
                 className={({ isActive }) =>
@@ -226,8 +256,26 @@ function DashboardSideBar() {
                 <FaBlog /> Blogs
               </NavLink>
             </li>
-          )}
 
+
+          <li>
+          <NavLink
+              to="/dashboard-blog-categories"
+              className={({ isActive }) =>
+                `flex items-center gap-2 duration-200 ${
+                  (isActive)? "bg-purple-600 px-2 py-1 rounded-xl" : "text-white"
+                }`
+              }
+            >
+              <FaClipboardList /> Blog Categories
+            </NavLink>
+          </li>
+
+        </ul>
+      )}
+    </li>
+  )
+}
 
         </ul>
       </div>
