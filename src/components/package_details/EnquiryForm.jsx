@@ -57,9 +57,9 @@ const CustomizeItineraryForm = () => {
       selected_destination: formData?.destination,
       date_of_arrival: formData?.dateOfArrival,
       // places_to_cover: formData?.placesToCoverArray,
-      no_of_persons: formData?.noOfPersons,
-      no_of_adults: formData?.noOfAdults,
-      no_of_children: formData?.noOfChildren,
+      no_of_person: formData?.noOfPersons,
+      no_of_adult: formData?.noOfAdults,
+      no_of_child: formData?.noOfChildren,
       child_age: formData?.childAge,
       message: formData?.message
     }
