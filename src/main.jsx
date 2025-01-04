@@ -39,6 +39,7 @@ import DashboardGeneralLeads from "./pages/DashboardGeneralLeads.jsx";
 import DashboardBlogCategories from "./pages/DashboardBlogCategories.jsx";
 import DashboardCreateBlogCategory from "./pages/DashboardCreateBlogCategory.jsx";
 import DashboardEditBlogCategory from "./pages/DashboardEditBlogCategory.jsx";
+import SitemapComponent from "./pages/Sitemap.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -133,6 +134,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 <Route
            path="/dashboard-general-leads"
            element={<DashboardGeneralLeads />}
+           />
+
+
+           <Route
+           path="/sitemap.xml"
+           element={<SitemapComponent />} 
            />
 
             <Route path="/dashboard-my-reviews" element={<DashboardMyreviews />} />
