@@ -40,19 +40,11 @@ function DashboardEditBlog() {
 
     const [blogContent, setBlogContent] = useState("");
 
+    const [visibleBlogSlug, setVisibleBlogSlug] = useState("");
+
     const handleChange = (e) => {
         const { name, value } = e.target;
-
-        console.log("blog_visibility", e.target.value, formData?.blog_visibility);
-
-        if (name === 'blog_title') {
-            // Generate slug
-            const slug = value.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
-            setFormData({ ...formData, blog_title: value, blog_slug: slug });
-        } else {
             setFormData({ ...formData, [name]: value });
-        }
-
     };
 
     const handleFileChange = (e) => {
@@ -116,6 +108,7 @@ function DashboardEditBlog() {
         blog_visibility: blog?.blog_visibility || 'public'});
 
         setBlogContent(blog?.blog_content);
+        setVisibleBlogSlug(blog?.blog_slug);
     }, [blog])
 
 
@@ -183,6 +176,13 @@ function DashboardEditBlog() {
       }, []);
 
 
+      const handleVisibleBlogSlug = function (e) {
+        setVisibleBlogSlug(e.target.value);
+
+        const slug = e.target.value.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
+        setFormData({ ...formData, blog_slug: slug });
+    }
+
   return (
     <>
     <DashboardSideBar />
@@ -215,16 +215,20 @@ onSubmit={handleSubmit}
 <p className=' mb-8 text-sm text-red-500'>{apiErrors?.errors?.blog_title && apiErrors?.errors?.blog_title[0]}</p>
 
 <div className="mb-4">
-    <label className="block text-sm font-medium text-gray-700 mb-1">
-        Blog Slug
-    </label>
-    <input
-    readOnly
-        type="text"
-        name="blog_slug"
-        value={formData?.blog_slug}
-        className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-700"
-    />
+<label className="block text-sm font-medium text-gray-700 mb-1">
+Blog Slug
+</label>
+
+<input
+type="text"
+value={visibleBlogSlug}
+onChange={handleVisibleBlogSlug}
+className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-700"
+/>
+
+{
+formData?.blog_slug && <p className=' bg-white rounded px-2 py-1'>{formData?.blog_slug}</p>
+} 
 </div>
 <p className=' mb-8 text-red-500 text-sm'>{apiErrors?.errors?.blog_slug && apiErrors?.errors?.blog_slug[0]}</p>
 

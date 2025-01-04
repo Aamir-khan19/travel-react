@@ -7,7 +7,7 @@ import TextAreaField from '../components/dashboard_create_blog/TextAreaField';
 import FileUploadField from '../components/dashboard_create_blog/FileUploadField';
 import SelectField from '../components/dashboard_create_blog/SelectField';
 import DashboardSideBar from "../components/dashboard/DashboardSideBar";
-import DashboardContentContainer from "../components/dashboard/DashboardContentContainer"
+import DashboardContentContainer from "../components/dashboard/DashboardContentContainer";
 import ReactQuill from 'react-quill';
 
 function DashboardCreateBlog() {
@@ -150,7 +150,7 @@ function DashboardCreateBlog() {
         setVisibleBlogSlug(e.target.value);
 
         const slug = e.target.value.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
-        setFormData({ ...formData, blog_title: value, blog_slug: slug });
+        setFormData({ ...formData, blog_slug: slug });
     }
 
     return (
@@ -185,8 +185,6 @@ function DashboardCreateBlog() {
                             <p className=' mb-8 text-sm text-red-500'>{apiErrors?.errors?.blog_title && apiErrors?.errors?.blog_title[0]}</p>
 
 
-
-
                             <div className="mb-4">
                                 <label className="block text-sm font-medium text-gray-700 mb-1">
                                     Blog Slug
@@ -199,14 +197,11 @@ function DashboardCreateBlog() {
                                     className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-700"
                                 />
 
-                                <input
-
-                                    type="text"
-                                    name="blog_slug"
-                                    value={formData?.blog_slug}
-                                    className="w-full p-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-700"
-                                />
+                               {
+                                formData?.blog_slug && <p className=' bg-white rounded px-2 py-1'>{formData?.blog_slug}</p>
+                               } 
                             </div>
+
                             <p className=' mb-8 text-red-500 text-sm'>{apiErrors?.errors?.blog_slug && apiErrors?.errors?.blog_slug[0]}</p>
 
 
