@@ -82,7 +82,7 @@ const Settings = () => {
       phone: user?.phone || "", 
       whatsapp: user?.whatsapp || "",
       facebook: user?.facebook || "",
-      instagram: user?.facebook || "",
+      instagram: user?.instagram || "",
       youtube: user?.youtube || "",
       gender: user?.gender || "", 
       preferred_language: user?.preferred_language || ""
