@@ -201,7 +201,7 @@ isLoading?
 :
 
 <form 
-className="bg-gray-100 p-6 rounded-lg shadow-md max-w-2xl mx-auto md:mx-0" 
+className="bg-gray-100 p-6 rounded-lg shadow-md max-w-3xl mx-auto md:mx-0" 
 onSubmit={handleSubmit}
 >
 <h2 className="text-2xl font-semibold text-purple-700 mb-4">Edit Blog</h2>
