@@ -20,6 +20,7 @@ import RequestQuoteComp from "./components/home/RequestQuoteComp";
 import RequestQuoteModal from "./components/home/RequestQuoteModal";
 import { redirect } from "react-router-dom";
 import TrendingDestination from "./components/home/TrendingDestination";
+import AboutUsSection from "./components/home/AboutUsSection";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -77,6 +78,7 @@ if (currentDate >= targetDate) {
           <Navbar />
           <WeddingCarouselTop />
           <Herosection />
+          <AboutUsSection />
           <Client />
           <TrendingDestination />
           <OurTravelAgents />
