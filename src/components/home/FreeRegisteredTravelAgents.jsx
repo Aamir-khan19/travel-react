@@ -807,6 +807,11 @@ const FreeRegisteredTravelAgents = () => {
       phone: "9864021279",
       email: "apniyatratoursandtravels@gmail.com",
     },
+    {
+      name: "MAHALAXMI Tour Organizer",
+      phone: "8011621169",
+      email: "mahalaxmi109@rediffmail.com",
+    },
   ];
 
   const sliderContainer = useRef(null);

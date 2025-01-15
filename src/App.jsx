@@ -19,6 +19,7 @@ import WhatsAppLinkComp from "./components/home/WhatsAppLinkComp";
 import RequestQuoteComp from "./components/home/RequestQuoteComp";
 import RequestQuoteModal from "./components/home/RequestQuoteModal";
 import { redirect } from "react-router-dom";
+import TrendingDestination from "./components/home/TrendingDestination";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -77,6 +78,7 @@ if (currentDate >= targetDate) {
           <WeddingCarouselTop />
           <Herosection />
           <Client />
+          <TrendingDestination />
           <OurTravelAgents />
           <InternationalTopTourPackage />
           <VerifiedHotel />
