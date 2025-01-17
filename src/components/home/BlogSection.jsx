@@ -113,7 +113,7 @@ const BlogSection = () => {
   };
 
   return (
-    <section className="py-10 md:py-20 ">
+    <section className="py-10 ">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16">
           <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">

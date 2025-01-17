@@ -87,7 +87,7 @@ const InternationalTopTourPackage = () => {
   };
 
   return (
-    <section className="py-10 md:py-20" id="international">
+    <section className="py-10" id="international">
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
         <div
           className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16"

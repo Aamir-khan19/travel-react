@@ -9,6 +9,7 @@ const initialState = {
     errors: {},
     selectedDestinationItineraries: [],
     randomItineraries: [],
+    randomItineraries2: [],
     particularItinerary: {},
     particularItineraryId: null,
 
@@ -67,6 +68,20 @@ export const publicGetItinerariesAsync = createAsyncThunk(
 
 export const publicGetRandomItinerariesAsync = createAsyncThunk(
     'public/getRandomItineraries',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-random-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetRandomItinerariesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+export const publicGetRandomItinerariesAsync2 = createAsyncThunk(
+    'public/getRandomItineraries2',
     async (_, options) => {
         try {
             const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-random-itineraries`);
@@ -282,6 +297,20 @@ const publicSlice = createSlice({
                 state.randomItineraries = action.payload;
             })
             .addCase(publicGetRandomItinerariesAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+            })
+
+
+
+            .addCase(publicGetRandomItinerariesAsync2.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetRandomItinerariesAsync2.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.randomItineraries2 = action.payload;
+            })
+            .addCase(publicGetRandomItinerariesAsync2.rejected, (state, action) => {
                 state.errors = action.payload;
                 state.isLoading = false;
             })

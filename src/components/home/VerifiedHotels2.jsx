@@ -108,7 +108,7 @@ const VerifiedHotel2 = () => {
 
   return (
     <section>
-      <div className="mx-auto max-w-7xl md:pb-20 pb-10 px-5">
+      <div className="mx-auto max-w-7xl pb-10 px-5">
         <div className="sm:mt-16 mt-4 lg:col-span-2  lg:mx-0">
           <div ref={sliderRef} className="keen-slider">
             {hotelsData.map((item) => (

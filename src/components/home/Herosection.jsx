@@ -24,7 +24,7 @@ const Herosection = () => {
 
   const slides = [
     { image: "/Images/Homepageimages/goa.jpg" },
-    { image: "/Images/Homepageimages/boat_heroImage.png" },
+    { image: "/Images/Homepageimages/goa3.jpg" },
     { image: "/Images/Homepageimages/winter_heroImage.png" },
     { image: "/Images/Homepageimages/mountain_heroImage.png" },
   ];
@@ -80,7 +80,7 @@ const Herosection = () => {
   };
 
   return (
-    <div className="relative w-full h-[70vh] md:h-[95vh] overflow-hidden">
+    <div className="relative w-full h-[70vh] md:h-[110vh] overflow-hidden">
       <button
         className={`absolute z-30 ${
           isFormVisible ? "md:right-1/3 right-[78%]" : "right-0"

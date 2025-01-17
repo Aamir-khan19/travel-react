@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import Navbar from "../../components/global/Navbar";
 import Footer from "../../components/global/Footer";
@@ -34,7 +34,11 @@ const BlogDetail = () => {
    window.scrollTo(0, 0);
   }, [dispatch, blog_slug, recentBlogs]);
 
+  // let newParticularBlog = {...particularBlog};
 
+  // newParticularBlog.blog_content = newParticularBlog?.blog_content?.replace("&lt;", "<");
+  // newParticularBlog.blog_content = newParticularBlog?.blog_content?.replace("&gt;", ">");
+  
   return (
     <div>
       <Navbar />
@@ -189,12 +193,12 @@ dangerouslySetInnerHTML={{ __html: particularBlog?.blog_content }}
           <h4 className="text-xl font-semibold mb-2 text-gray-800">
             {post.blog_title}
           </h4>
-          <a
-            href={`/blogdetail/${post?.blog_slug}`}
+          <Link
+            to={`/blog/${post?.blog_slug}`}
             className="text-indigo-900 font-semibold hover:underline"
           >
             Read more
-          </a>
+          </Link>
         </div>
       ))}
     </div>

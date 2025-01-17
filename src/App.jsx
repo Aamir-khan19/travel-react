@@ -21,6 +21,7 @@ import RequestQuoteModal from "./components/home/RequestQuoteModal";
 import { redirect } from "react-router-dom";
 import TrendingDestination from "./components/home/TrendingDestination";
 import AboutUsSection from "./components/home/AboutUsSection";
+import TrendingPackage from "./components/home/TrendingPackage";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -83,12 +84,13 @@ if (currentDate >= targetDate) {
           <TrendingDestination />
           <OurTravelAgents />
           <InternationalTopTourPackage />
-          <VerifiedHotel />
           <DomesticTopTourPackage />
+          <VerifiedHotel />
+          <TrendingPackage />
           {/* <VerifiedTransport /> */}
-          <FreeRegisteredTravelAgents />
-          <GrowBuisness />
           <BlogSection />
+          <GrowBuisness />
+          <FreeRegisteredTravelAgents />
           <Testimonial />
           <Footer />
           <WhatsAppLinkComp />

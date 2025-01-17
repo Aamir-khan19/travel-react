@@ -146,15 +146,15 @@ const TrendingDestination = () => {
         <p className="text-sm text-gray-600">
           {itinerary?.title}
         </p>
-        <p className="text-xl font-semibold text-red-600 mt-2">
+        <p className="text-xl font-semibold text-orange-600 mt-2">
         From ₹ 
           {itinerary?.pricing}</p>
-        <button onClick={()=>handlePackageDetails(itinerary?.id)} className="mt-4 px-4 py-2 bg-blue-900 text-white rounded hover:bg-blue-800 bottom-0 absolute">
+        <button onClick={()=>handlePackageDetails(itinerary?.id)} className="mt-4 px-4 md:px-8 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 bottom-0 absolute">
           Know More
         </button>
       </div>
       {/* Right Side */}
-      <div className="w-32 h-32 overflow-hidden rounded-lg">
+      <div className=" w-40 h-40 md:w-48 md:h-48 overflow-hidden rounded-lg">
         <img
           src={conf.laravelBaseUrl + "/" + itinerary?.destination_thumbnail}
           alt={itinerary?.selected_destination?.label}
