@@ -70,7 +70,7 @@ const TrendingDestination = () => {
       // Set up auto slide every 3 seconds
       autoSlideInterval.current = setInterval(() => {
         if (keenSlider.current) {
-          keenSlider.current.next();
+          keenSlider?.current?.next();
         }
       }, 10000);
 

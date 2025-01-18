@@ -80,7 +80,7 @@ const Herosection = () => {
   };
 
   return (
-    <div className="relative w-full h-[70vh] md:h-[110vh] overflow-hidden">
+    <div className="relative w-full h-[90vh] md:h-[110vh] overflow-hidden">
       <button
         className={`absolute z-30 ${
           isFormVisible ? "md:right-1/3 right-[78%]" : "right-0"
