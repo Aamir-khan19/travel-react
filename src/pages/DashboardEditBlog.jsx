@@ -9,6 +9,7 @@ import SelectField from '../components/dashboard_create_blog/SelectField';
 import DashboardSideBar from "../components/dashboard/DashboardSideBar";
 import DashboardContentContainer from "../components/dashboard/DashboardContentContainer";
 import ReactQuill from 'react-quill';
+import DashboardBlogContentImagesModal from '../components/dashboard_create_blog/DashboardBlogContentImagesModal';
 
 function DashboardEditBlog() {
     const dispatch = useDispatch();
@@ -41,6 +42,8 @@ function DashboardEditBlog() {
     const [blogContent, setBlogContent] = useState("");
 
     const [visibleBlogSlug, setVisibleBlogSlug] = useState("");
+
+    const [isBlogContentImagesModalOpen, setIsBlogContentImagesModalOpen] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -183,6 +186,11 @@ function DashboardEditBlog() {
         setFormData({ ...formData, blog_slug: slug });
     }
 
+
+    const handleBlogContentImagesModal = function(){
+        setIsBlogContentImagesModalOpen(true);
+        }
+
   return (
     <>
     <DashboardSideBar />
@@ -300,6 +308,9 @@ formData?.blog_slug && <p className=' bg-white rounded px-2 py-1'>{formData?.blo
 <label className="block text-sm font-medium text-gray-700 mb-1">
             Blog Content
         </label>
+
+        <button onClick={handleBlogContentImagesModal} type='button' className=' bg-indigo-400 text-white rounded px-4 py-1 my-2'>Select Blog Content Images</button>
+
 <ReactQuill
    theme="snow"
    value={blogContent}
@@ -337,6 +348,9 @@ to="/dashboard-blogs">Cancel</Link>
 
 }
     
+{
+isBlogContentImagesModalOpen && <DashboardBlogContentImagesModal setIsBlogContentImagesModalOpen={setIsBlogContentImagesModalOpen} isBlogContentImagesModalOpen={isBlogContentImagesModalOpen} />
+}
 
 </DashboardContentContainer>
 </>

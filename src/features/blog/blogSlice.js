@@ -15,7 +15,13 @@ const initialState = {
     blogCategory: {},
     isBlogCategoryCreated: false,
     isBlogCategoryUpdated: false,
-    isDeletionLoading: false
+    isDeletionLoading: false,
+
+    blogContentImages: [],
+    blogContentImage: {},
+    isBlogContentImagesCreated: false,
+    isBlogContentImagesUpdated: false,
+    isBlogContentImagesDeletionLoading: false
 };
 
 
@@ -234,6 +240,126 @@ export const blogCategoryDestroyAsync = createAsyncThunk(
 );
 
 
+
+
+// blog content images api endpoints starts here
+// get all blog content images 
+export const blogContentImagesIndexAsync = createAsyncThunk(
+    'blogContentImages/Index',
+    async (queryParams = null, options) => {
+        try {
+            const tokenObj = JSON.parse(localStorage.getItem('token'));
+
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/blogContentImages`, {
+                params: queryParams,
+                headers: {
+                    Authorization: "Bearer " + tokenObj?.token
+                }
+            });
+
+            return data;
+        } catch (error) {
+            console.log("blogsSlice.js blogContentImagesIndexAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+// Create a new blog content image
+export const blogContentImagesStoreAsync = createAsyncThunk(
+    'blogContentImages/Store',
+    async (imagePayloadObject, options) => {
+        try {
+            const tokenObj = JSON.parse(localStorage.getItem('token'));
+            const {title, images_files} = imagePayloadObject;
+
+            const formData = new FormData();
+            if(title){
+                formData.append("title", title);
+            }
+            
+            if(images_files?.length > 0){
+                for(var i = 0 ; i < images_files?.length; i++){
+                    formData.append('images_files[]', images_files[i]);
+                }  
+            }
+
+           
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/blogContentImages`, formData, {
+                headers: {
+                    Authorization: "Bearer " + tokenObj?.token,
+                }
+            });
+
+            console.log("blogSlice.js blogContentImagesStoreAsync data ->", data);
+            return data;
+        } catch (error) {
+            console.log("blogsSlice.js blogContentImagesStoreAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+// Update a blog content image
+export const blogContentImagesUpdateAsync = createAsyncThunk(
+    'blogContentImages/Update',
+    async (imagePayloadObject, options) => {
+        try {
+            const tokenObj = JSON.parse(localStorage.getItem('token'));
+            const { id, title, images_files } = imagePayloadObject;
+
+            const formData = new FormData();
+            if (title) {
+                formData.append("title", title);
+            }
+
+            for (var i = 0; i < images_files?.length; i++) {
+                formData.append('images_files[]', images_files[i]);
+            }
+
+            formData.append("_method", "PUT");
+
+            const { data } = await axios.post(`${conf.laravelBaseUrl}/api/blogContentImages/${id}`, formData, {
+                headers: {
+                    Authorization: "Bearer " + tokenObj?.token,
+                }
+            });
+
+            console.log("blogSlice.js blogContentImagesUpdateAsync data ->", data);
+            return data;
+        } catch (error) {
+            console.log("blogsSlice.js blogContentImagesUpdateAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+// Delete a blog content image
+export const blogContentImagesDeleteAsync = createAsyncThunk(
+    'blogContentImages/Destroy',
+    async (id, options) => {
+        try {
+            const tokenObj = JSON.parse(localStorage.getItem('token'));
+
+            const { data } = await axios.delete(`${conf.laravelBaseUrl}/api/blogContentImages/${id}`, {
+                headers: {
+                    Authorization: "Bearer " + tokenObj?.token
+                }
+            });
+
+            console.log("blogsSlice.js blogContentImagesDeleteAsync data", data);
+
+            return { id };
+        } catch (error) {
+            console.log("blogsSlice.js blogContentImagesDeleteAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
 const blogsSlice = createSlice({
     name: 'blogs',
     initialState,
@@ -261,6 +387,15 @@ const blogsSlice = createSlice({
         },
         setIsBlogCategoryUpdated: (state) => {
             state.isBlogCategoryUpdated = false;
+        },
+        setBlogContontImage: (state, action) => {
+            state.blogContentImage = state?.blogContentImages?.find((image) => image.id == action.payload);
+        },
+        setIsBlogContentImagesCreated: (state)=>{
+            state.isBlogContentImagesCreated = false;
+        },
+        setIsBlogContentImagesUpdated: (state)=>{
+            state.isBlogContentImagesUpdated = false;
         }
 
     },
@@ -416,10 +551,75 @@ const blogsSlice = createSlice({
                 state.errors = action.payload;
                 state.isDeletionLoading = false;
             })
+
+            // blog content images cases starts here
+            .addCase(blogContentImagesIndexAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(blogContentImagesIndexAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                console.log("blogsSlice.js blogContentImagesIndexAsync.fulfilled action.payload", action.payload);
+                state.blogContentImages = action.payload;
+            })
+            .addCase(blogContentImagesIndexAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+
+                if (action?.payload?.message == "Unauthenticated.") {
+                    localStorage.removeItem("token");
+                }
+            })
+
+            .addCase(blogContentImagesStoreAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(blogContentImagesStoreAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isBlogContentImagesCreated = true;
+                state.flashMessage = `Blog content image created successfully`;
+                console.log("blogsSlice.js blogContentImagesStoreAsync.fulfilled action.payload", action.payload);
+                state.blogContentImages.push(action.payload?.blog_content_image);
+            })
+            .addCase(blogContentImagesStoreAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+            })
+
+            .addCase(blogContentImagesUpdateAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(blogContentImagesUpdateAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isBlogContentImagesUpdated = true;
+                state.flashMessage = `Blog content image updated successfully`;
+
+                let updatedImageIndex = state?.blogContentImages?.findIndex((ele) => ele?.id == action?.payload?.blog_content_image?.id);
+
+                if (updatedImageIndex != -1) {
+                    state.blogContentImages.splice(updatedImageIndex, 1, action.payload?.blog_content_image);
+                }
+            })
+            .addCase(blogContentImagesUpdateAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+            })
+
+            .addCase(blogContentImagesDeleteAsync.pending, (state) => {
+                state.isBlogContentImagesDeletionLoading = true;
+            })
+            .addCase(blogContentImagesDeleteAsync.fulfilled, (state, action) => {
+                state.isBlogContentImagesDeletionLoading = false;
+                const indx = state.blogContentImages.findIndex((image) => image.id == action.payload.id);
+                state.blogContentImages = state.blogContentImages.filter((image) => image.id != action.payload.id);
+            })
+            .addCase(blogContentImagesDeleteAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isBlogContentImagesDeletionLoading = false;
+            })
     }
 });
 
-export const { setIsBlogCreated, setIsBlogUpdated, setFlashMessage, setBlog, setBlogCategory, setIsBlogCategoryCreated, setIsBlogCategoryUpdated } = blogsSlice.actions;
+export const { setIsBlogCreated, setIsBlogUpdated, setFlashMessage, setBlog, setBlogCategory, setIsBlogCategoryCreated, setIsBlogCategoryUpdated, setIsBlogContentImagesCreated, setIsBlogContentImagesUpdated, setBlogContontImage } = blogsSlice.actions;
 
 const blogsReducer = blogsSlice.reducer;
 

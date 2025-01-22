@@ -40,6 +40,9 @@ import DashboardBlogCategories from "./pages/DashboardBlogCategories.jsx";
 import DashboardCreateBlogCategory from "./pages/DashboardCreateBlogCategory.jsx";
 import DashboardEditBlogCategory from "./pages/DashboardEditBlogCategory.jsx";
 import SitemapComponent from "./pages/Sitemap.jsx";
+import DashboardBlogContentImages from "./pages/DashboardBlogContentImages.jsx";
+import DashboardCreateBlogContentImages from "./pages/DashboardCreateBlogContentImages.jsx";
+import DashboardEditBlogContentImages from "./pages/DashboardEditBlogContentImages.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -111,6 +114,8 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             element={<DashboardBlogCategories />}
             />
 
+      
+
             <Route
             path="/dashboard-create-blog-category"
             element={<DashboardCreateBlogCategory />}
@@ -120,6 +125,23 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             path="/dashboard-edit-blog-category/:id"
             element={<DashboardEditBlogCategory />}
             />
+
+<Route
+            path="/dashboard-blog-content-images"
+            element={<DashboardBlogContentImages />}
+            />
+
+<Route
+            path="/dashboard-create-blog-content-images"
+            element={<DashboardCreateBlogContentImages />}
+            />
+
+
+<Route
+            path="/dashboard-edit-blog-content-images/:id"
+            element={<DashboardEditBlogContentImages />}
+            />
+
 
            <Route
            path="/dashboard-verifed-leads"

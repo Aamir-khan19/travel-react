@@ -34,10 +34,11 @@ const BlogDetail = () => {
    window.scrollTo(0, 0);
   }, [dispatch, blog_slug, recentBlogs]);
 
-  // let newParticularBlog = {...particularBlog};
+  let newParticularBlog = { ...particularBlog };
 
-  // newParticularBlog.blog_content = newParticularBlog?.blog_content?.replace("&lt;", "<");
-  // newParticularBlog.blog_content = newParticularBlog?.blog_content?.replace("&gt;", ">");
+  newParticularBlog.blog_content = newParticularBlog?.blog_content
+    ?.replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");  
   
   return (
     <div>
@@ -108,7 +109,7 @@ dangerouslySetInnerHTML={{ __html: particularBlog?.blog_description }}
   <div
 id="particular-blog-content"
 className="prose max-w-none text-gray-700"
-dangerouslySetInnerHTML={{ __html: particularBlog?.blog_content }}
+dangerouslySetInnerHTML={{ __html: newParticularBlog?.blog_content }}
 />
   </div>
 
