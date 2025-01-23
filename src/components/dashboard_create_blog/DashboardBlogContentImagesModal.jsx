@@ -64,21 +64,35 @@ function DashboardBlogContentImagesModal({setIsBlogContentImagesModalOpen}){
                     className="border rounded-lg p-4 shadow-sm"
                   >
                     <h3 className="font-bold text-lg mb-2">{imageGroup?.title}</h3>
-                    <div className="space-y-2">
-                      {imageGroup?.images?.map((imageSrc, index) => (
-                        <div onClick={()=>handleCopyBlogContentImageCode(imageSrc)} key={index} className="text-sm bg-blue-100 rounded py-2 px-2 cursor-pointer hover:bg-blue-200">
-                          <img
-                            src={`${conf?.laravelBaseUrl}/${imageSrc}`}
-                            alt={imageGroup?.title}
-                            className="w-full h-32 object-cover rounded-md mb-2"
-                          />
-                          <p className="text-gray-600">
-                            Used In: {imageGroup?.blog_content_images_used_in[index]?.used_in?.join(', ') || 'Not used'}
-                          </p>
 
-                        </div>
-                      ))}
-                    </div>
+
+                    <div className="space-y-2">
+  {imageGroup?.images?.map((imageSrc, index) => {
+    // Ensure blog_content_images_used_in exists and has an entry for the current index
+    const imageUsedIn = imageGroup?.blog_content_images_used_in?.[index];
+    const usedIn = imageUsedIn?.used_in?.join(', ') || 'Not used'; // Fallback to 'Not used' if not available
+
+    return (
+      <div 
+        onClick={() => handleCopyBlogContentImageCode(imageSrc)} 
+        key={index} 
+        className="text-sm bg-blue-100 rounded py-2 px-2 cursor-pointer hover:bg-blue-200"
+      >
+        <img
+          src={`${conf?.laravelBaseUrl}/${imageSrc}`}
+          alt={imageGroup?.title}
+          className="w-full h-32 object-cover rounded-md mb-2"
+        />
+        <p className="text-gray-600 line-clamp-3 text-sm">
+          Used In: {usedIn}
+        </p>
+      </div>
+    );
+  })}
+</div>
+
+
+
                   </div>
                 ))}
               </div>
