@@ -39,7 +39,7 @@ function DashboardContentContainer({children}) {
   }, [tokenState, navigate]);
 
   return (
-    <div onClick={(e)=>handleDashboardContainer(e)} className=" mt-12 lg:mt-0 lg:ml-[245px] pl-0 lg:pl-2 pt-2">
+    <div onClick={(e)=>handleDashboardContainer(e)} className=" mt-12 lg:mt-0 lg:ml-[245px] pl-0 lg:pl-3 pt-2">
        
        {/* Header */}
        <header className="flex justify-between items-center bg-white p-4 shadow">

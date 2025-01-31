@@ -99,7 +99,7 @@ const HotelDetails = ({setCurrentComponent}) => {
             Price ($):
           </label>
           <input
-            type="number"
+            type="text"
             id="price"
             name="price"
             value={price}

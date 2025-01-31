@@ -31,7 +31,6 @@ const SitemapComponent = () => {
 
   return (
     <div>
-      <h1>Sitemap XML</h1>
 
       {loading && <p>Loading...</p>} {/* Show loading state */}
       {error && <p style={{ color: 'red' }}>{error}</p>} {/* Show error state */}
@@ -39,8 +38,7 @@ const SitemapComponent = () => {
       {/* Display the raw XML content if not loading and no error */}
       {!loading && !error && (
         <div>
-          <h2>Raw XML Sitemap:</h2>
-          <pre>{sitemapData}</pre> {/* Display the raw XML content in a preformatted tag */}
+          <pre className=' text-blue-950'>{sitemapData}</pre> {/* Display the raw XML content in a preformatted tag */}
         </div>
       )}
     </div>

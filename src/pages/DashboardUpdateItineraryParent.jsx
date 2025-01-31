@@ -148,33 +148,6 @@ const handleUpdateItineraryAndItineraryForm = function(){
   }
 
 
-  if(!itineraryDetails?.inclusion?.trim()){
-    toast.error("Please add inclusion", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      draggable: true,
-      pauseOnHover: true,
-    });
-
-    return;
-  }
-
-
-  if(!itineraryDetails?.exclusion?.trim()){
-    toast.error("Please add inclusion", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      draggable: true,
-      pauseOnHover: true,
-    });
-
-    return;
-  }
-
   if(!hotelDetails[0]?.price){
 
     if(!hotelDetails[0]?.price){
@@ -234,8 +207,6 @@ const handleUpdateItineraryAndItineraryForm = function(){
 let itineraryPayloadObject = {
   days_information_string: JSON.stringify(daysInformation),
  destination_detail:  destinationDetailText,
- inclusion: itineraryDetails?.inclusion,
- exclusion: itineraryDetails?.exclusion,
  hotel_details_string: JSON.stringify(hotelDetails),
  title: itineraryForm?.title,
  meta_title: itineraryForm?.metaTitle,
@@ -251,6 +222,14 @@ let itineraryPayloadObject = {
 
 if(itineraryDetails?.pricing){
   itineraryPayloadObject.pricing = itineraryDetails.pricing;
+}
+
+if(itineraryDetails?.inclusion){
+  itineraryPayloadObject.inclusion = itineraryDetails.inclusion;
+}
+
+if(itineraryDetails?.exclusion){
+itineraryPayloadObject.exclusion = itineraryDetails.exclusion;
 }
 
 if(itineraryDetails?.terms_and_conditions?.trim()){

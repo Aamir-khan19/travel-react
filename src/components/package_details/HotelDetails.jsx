@@ -20,7 +20,7 @@ const HotelDetails = () => {
               <span className="font-medium">Name:</span> {hotel.name}
             </p> */}
             <p className="text-gray-700">
-              <span className="font-medium">Price:</span> ₹{hotel.price}
+              <span className="font-medium">Price:</span> {(Number(hotel.price))? <span>₹ {hotel?.price}</span> : hotel?.price }
             </p>
             {
               hotel?.discount &&   <p className="text-gray-700">
