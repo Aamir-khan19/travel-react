@@ -32,10 +32,10 @@ function ContactAgentAndEnquiryNowModal({ onClose, setIsPhoneNumberModal,  setIs
 
   return (
     <>
-      <div className="fixed inset-0 bg-black bg-opacity-50 z-10" />
+      <div className="fixed inset-0 bg-black bg-opacity-50 z-[90]" />
       <div
         ref={modalRef}
-        className="z-20 fixed top-[50vh] left-1/2 transform -translate-x-1/2 max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center gap-4"
+        className="z-[100] fixed top-[50vh] left-1/2 transform -translate-x-1/2 max-w-4xl bg-white p-4 rounded-lg shadow-lg flex justify-center gap-4"
       >
         <button onClick={handlePhoneNumberModal} className="flex items-center px-8 py-3 bg-blue-900 text-white rounded-lg shadow hover:bg-indigo-900 transition duration-300">
           <FaPhone className="mr-2" /> CONTACT AGENT

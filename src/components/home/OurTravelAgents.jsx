@@ -14,7 +14,6 @@ import { publicGetAllVerifiedTravelAgentsAsync } from "../../features/public/pub
 import conf from "../../../conf/conf";
 
 
-
 const OurTravelAgents = () => {
   const dispatch = useDispatch();
   const verifiedTravelAgents = useSelector(state => state.public.verifiedTravelAgents);

@@ -21,7 +21,7 @@ const handlePhoneNumberSubmit = function(){
     setIsEmailModal(true);
 }
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-[90]">
       <div className="bg-white rounded-lg shadow-lg p-6 w-96">
         {/* Close Button */}
         <div className="flex justify-end">

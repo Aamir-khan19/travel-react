@@ -44,6 +44,7 @@ const InternationalTopTourPackage = () => {
   ];
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
+   const autoSlideInterval = useRef(null);
 
   useEffect(() => {
     if (sliderContainer.current && !keenSlider.current) {
@@ -71,7 +72,34 @@ const InternationalTopTourPackage = () => {
           },
         },
       });
+
+
+
+
+      // Set up auto slide every 3 seconds
+      autoSlideInterval.current = setInterval(() => {
+        if (keenSlider.current) {
+          keenSlider.current.next();
+        }
+      }, 1000);
+
     }
+
+
+
+    return () => {
+      if (keenSlider?.current) {
+        keenSlider?.current?.destroy();
+        keenSlider.current = null;
+      }
+      if (autoSlideInterval?.current) {
+        clearInterval(autoSlideInterval.current);
+      }
+    };
+    
+
+
+
   }, []);
 
   const handlePrevSlide = () => {
