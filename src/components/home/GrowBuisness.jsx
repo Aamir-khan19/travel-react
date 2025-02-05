@@ -16,7 +16,7 @@ const GrowBuisness = () => {
             <div className="md:w-1/2 lg:w-2/3">
               <h1 className="text-4xl md:text-6xl lg:text-7xl text-white font-bold mb-6">
                 Grow your <br className="hidden md:block" />
-                <span className="text-white"> Buisness</span> with Us
+                <span className="text-white"> Business</span> with Us
               </h1>
 
               <a

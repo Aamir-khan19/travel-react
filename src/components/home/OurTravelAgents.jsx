@@ -185,19 +185,19 @@ const OurTravelAgents = () => {
             {filteredAgents?.length > 0 ? (
               filteredAgents?.map((agent, i) => (
                 <div className="keen-slider__slide" key={i}>
-                  <div className="flex border-[1px] p-5 border-gray-600 rounded-lg relative w-full">
-                    <div className="bg-[url('/Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[145px] h-[110px] mx-2 -ml-[15px] -mt-[16px]"></div>
+                  <div className=" flex border-[1px] p-2 min-h-[220px] border-gray-600 rounded-lg relative w-full">
+                    <div className="bg-[url('/Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[100px] h-[100px] top-0 left-0 absolute z-[-10]"></div>
 
                     <div className="flex justify-between w-full">
                       <div className="flex w-full flex-col justify-center items-center">
                         <img
                           src={conf?.laravelBaseUrl + "/" + agent?.company_logo}
                           alt={agent?.company_name}
-                          className="w-auto h-24 object-contain"
+                          className="w-auto h-24 object-contain max-w-[250px]"
                         />
                         <div className="flex gap-2 justify-center items-center flex-col">
                           <h1 className="font-bold text-sm">{agent?.company_name}</h1>
-                          <p className="line-clamp-2 text-sm">
+                          <p className="line-clamp-2 text-sm text-center w-[80%]">
                             <span className="font-semibold ">
                               {agent?.company_address && <span>Address:- </span>}
                             </span>
@@ -215,7 +215,7 @@ const OurTravelAgents = () => {
                       </div>
 
                       {/* Icons */}
-                      <div className="p-2 bg-white rounded-full flex flex-col items-center justify-between">
+                      <div className=" bg-white rounded-full flex flex-col items-center justify-between">
                         <a
                           href={`https://api.whatsapp.com/send/?phone=${agent?.whatsapp}&text&type=phone_number&app_absent=0`}
                           target="_blank"

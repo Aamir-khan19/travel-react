@@ -24,6 +24,9 @@ const initialState = {
     leadIsLoading: false,
 
     blogCategories: [],
+    fiveInternationalItineraries: [],
+    fiveDomesticItineraries: [],
+    fiveDomesticItineraries2: []
 };
 
 // Fetch all companies
@@ -88,6 +91,48 @@ export const publicGetRandomItinerariesAsync2 = createAsyncThunk(
             return data;
         } catch (error) {
             console.log("publicSlice.js publicGetRandomItinerariesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+export const publicGetFiveInternationalItinerariesAsync = createAsyncThunk(
+    'public/getFiveInternationalItineraries',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-five-international-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetFiveInternationalItinerariesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+export const publicGetFiveDomesticItinerariesAsync = createAsyncThunk(
+    'public/getFiveDomesticItineraries',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-five-domestic-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetFiveDomesticItinerariesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+export const publicGetFiveDomesticItinerariesAsync2 = createAsyncThunk(
+    'public/getFiveDomesticItineraries2',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-five-domestic-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetFiveDomesticItinerariesAsync error", error);
             throw options.rejectWithValue(error?.response?.data);
         }
     }
@@ -228,6 +273,9 @@ export const publicGetAllBlogCategoriesAsync = createAsyncThunk(
         }
     }
 );
+
+
+
 
 
 
@@ -443,6 +491,46 @@ const publicSlice = createSlice({
             .addCase(publicGetAllBlogCategoriesAsync.rejected, (state, action) => {
                 state.errors = action.payload;
                 state.isLoading = false;
+            })
+
+
+            .addCase(publicGetFiveInternationalItinerariesAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetFiveInternationalItinerariesAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.fiveInternationalItineraries = action.payload;
+            })
+            .addCase(publicGetFiveInternationalItinerariesAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+            })
+
+
+            .addCase(publicGetFiveDomesticItinerariesAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetFiveDomesticItinerariesAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.fiveDomesticItineraries = action.payload;
+            })
+            .addCase(publicGetFiveDomesticItinerariesAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;    
+            })
+
+
+
+            .addCase(publicGetFiveDomesticItinerariesAsync2.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetFiveDomesticItinerariesAsync2.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.fiveDomesticItineraries2 = action.payload;
+            })
+            .addCase(publicGetFiveDomesticItinerariesAsync2.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;    
             })
             
     }
