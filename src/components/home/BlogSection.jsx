@@ -144,7 +144,7 @@ const BlogSection = () => {
 
 
           <div className="justify-between flex mb-2">
-          <h1 className=" text-blue-900 text-3xl font-bold mb-2">Top Most Tour Package</h1>
+          <h1 className=" text-blue-900 text-3xl font-bold mb-2">Places to visit</h1>
             <button className="text-sm px-5 py-2 rounded-md bg-blue-950 text-white">
               Explore All
             </button>
