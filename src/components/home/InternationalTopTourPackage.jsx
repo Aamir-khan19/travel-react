@@ -81,7 +81,7 @@ const InternationalTopTourPackage = () => {
         if (keenSlider.current) {
           keenSlider.current.next();
         }
-      }, 1000);
+      }, 5000);
 
     }
 
@@ -115,80 +115,50 @@ const InternationalTopTourPackage = () => {
   };
 
   return (
-    <section className="py-10" id="international">
+    <section className="py-2" id="international">
+
+    
+
       <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
-        <div
-          className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16"
-          id="international"
-        >
-          <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
-            Highlight International Packages
-          </h2>
-          <div className="hidden sm:flex gap-4">
-            <button
-              aria-label="Previous slide"
-              onClick={handlePrevSlide}
-              className="rounded-full bg-[#01055b] p-4 text-white"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                className="w-6 h-6"
-              >
-                <path
-                  fill="currentColor"
-                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                />
-              </svg>
-            </button>
-            <button
-              aria-label="Next slide"
-              onClick={handleNextSlide}
-              className="rounded-full bg-[#01055b] p-4 text-white "
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                className="w-6 h-6"
-              >
-                <path
-                  fill="currentColor"
-                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
-                />
-              </svg>
+
+        <div>
+          <div
+            className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16"
+            id="international"
+          ></div>
+
+<h1 className=" text-blue-900 text-3xl font-bold mb-2">Top Most Tour Package</h1>
+
+          <div className="justify-between flex mb-2">
+            <h3 className="text-[#FB471E]">International</h3>
+            <button className="text-sm px-5 py-2 rounded-md bg-blue-950 text-white">
+              Explore All
             </button>
           </div>
+
         </div>
 
         <div ref={sliderContainer} className="keen-slider">
-          {internationalTopTourPackageData.map((item, i) => (
-            <div key={i} className="keen-slider__slide">
-              <div className="relative w-full rounded-xl overflow-hidden">
-                <img
-                  src={item.imageUrl}
-                  alt={item.title}
-                  className="object-cover object-center w-full h-full min-h-[280px]"
-                />
-                {/* <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div> */}
-                <div className="absolute flex flex-col gap-3 top-0 h-[210px] justify-end left-0 right-0 p-4">
-                  <h3 className="text-white text-2xl font-semibold">
-                    {item.title}
-                  </h3>
-                  <p className="text-white text-sm leading-6">
-                    {item.description}
-                  </p>
-                  <Link to="/contact">
-                    <button className="bg-white rounded-lg py-2 px-4 text-[#01055b] font-semibold w-full">
-                      Contact
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
+        {internationalTopTourPackageData.map((item, i) => (
+           <div key={i} className="keen-slider__slide">
+           <div className="relative h-[350px] overflow-hidden rounded-2xl">
+             <img
+               src={item.imageUrl}
+               alt={item.title}
+               className="object-cover object-center w-full h-full min-h-[340px] rounded-2xl"
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent p-4 flex flex-col gap-3 justify-end rounded-2xl">
+               <h3 className="text-xl text-white font-semibold">{item.title}</h3>
+               <p className="text-white text-sm leading-6">{item.description}</p>
+             </div>
+           </div>
+         </div>
+         
           ))}
         </div>
 
         <div className="flex sm:hidden justify-center gap-4 mt-8">
+
           <button
             aria-label="Previous slide"
             onClick={handlePrevSlide}
@@ -205,6 +175,7 @@ const InternationalTopTourPackage = () => {
               />
             </svg>
           </button>
+
           <button
             aria-label="Next slide"
             onClick={handleNextSlide}
@@ -221,7 +192,9 @@ const InternationalTopTourPackage = () => {
               />
             </svg>
           </button>
+
         </div>
+
       </div>
     </section>
   );
