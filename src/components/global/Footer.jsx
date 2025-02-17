@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-5 py-10 md:py-20">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col gap-5">
-            <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center">
+            {/* <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center">
               <h6 className="mb-4 font-semibold uppercase">Policy</h6>
               <ul>
                 <li className="mb-4">
@@ -27,7 +27,7 @@ const Footer = () => {
                   </a>
                 </li>
               </ul>
-            </div>
+            </div> */}
             <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center">
               <h6 className="mb-4 font-semibold uppercase">Support</h6>
               <ul>
@@ -170,7 +170,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-10 flex flex-col md:flex-row justify-between items-center p-2 dark:bg-neutral-700">
-          <span>©2024@ Travelnworld, All rights reserved</span>
+          <span>©2025@ Travelnworld, All rights reserved</span>
         </div>
       </div>
     </footer>

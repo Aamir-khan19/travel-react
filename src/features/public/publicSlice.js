@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios, { all } from "axios";
 import conf from "../../../conf/conf";
 
 // Initial state for companies
@@ -24,9 +24,15 @@ const initialState = {
     leadIsLoading: false,
 
     blogCategories: [],
+
     fiveInternationalItineraries: [],
+    allInternationalItineraries: [],
+
     fiveDomesticItineraries: [],
-    fiveDomesticItineraries2: []
+    allDomesticItineraries: [],
+
+    fiveDomesticItineraries2: [],
+    allDomesticItineraries2: [],
 };
 
 // Fetch all companies
@@ -97,6 +103,7 @@ export const publicGetRandomItinerariesAsync2 = createAsyncThunk(
 );
 
 
+// Top most tour package section api endpoints public-five-international-itineraries, public-thirty-international-itineraries, public-five-domestic-itineraries, public-thirty-domestic-itineraries starts here
 export const publicGetFiveInternationalItinerariesAsync = createAsyncThunk(
     'public/getFiveInternationalItineraries',
     async (_, options) => {
@@ -111,6 +118,23 @@ export const publicGetFiveInternationalItinerariesAsync = createAsyncThunk(
 );
 
 
+export const publicGetAllInternationalItinerariesAsync = createAsyncThunk(
+    'public/getAllInternationalItineraries',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-thirty-international-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetAllInternationalItinerariesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+
+
+
 export const publicGetFiveDomesticItinerariesAsync = createAsyncThunk(
     'public/getFiveDomesticItineraries',
     async (_, options) => {
@@ -119,6 +143,20 @@ export const publicGetFiveDomesticItinerariesAsync = createAsyncThunk(
             return data;
         } catch (error) {
             console.log("publicSlice.js publicGetFiveDomesticItinerariesAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
+export const publicGetAllDomesticItinerariesAsync = createAsyncThunk(
+    'public/getAllDomesticItineraries',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-thirty-domestic-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetAllDomesticItinerariesAsync error", error);
             throw options.rejectWithValue(error?.response?.data);
         }
     }
@@ -137,6 +175,22 @@ export const publicGetFiveDomesticItinerariesAsync2 = createAsyncThunk(
         }
     }
 );
+
+
+export const publicGetAllDomesticItinerariesAsync2 = createAsyncThunk(
+    'public/getAllDomesticItineraries2',
+    async (_, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-thirty-domestic-itineraries`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetAllDomesticItinerariesAsync2 error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+// Top most tour package section api endpoints public-five-international-itineraries, public-thirty-international-itineraries, public-five-domestic-itineraries, public-thirty-domestic-itineraries ends here
 
 
 export const publicGetParticularItineraryAsync = createAsyncThunk(
@@ -494,6 +548,9 @@ const publicSlice = createSlice({
             })
 
 
+
+            // Top most tour package section api endpoints cases public-five-international-itineraries, public-thirty-international-itineraries, public-five-domestic-itineraries, public-thirty-domestic-itineraries starts here
+
             .addCase(publicGetFiveInternationalItinerariesAsync.pending, (state) => {
                 state.isLoading = true;
             })
@@ -502,6 +559,19 @@ const publicSlice = createSlice({
                 state.fiveInternationalItineraries = action.payload;
             })
             .addCase(publicGetFiveInternationalItinerariesAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+            })
+
+
+            .addCase(publicGetAllInternationalItinerariesAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetAllInternationalItinerariesAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.allInternationalItineraries = action.payload;
+            })
+            .addCase(publicGetAllInternationalItinerariesAsync.rejected, (state, action) => {
                 state.errors = action.payload;
                 state.isLoading = false;
             })
@@ -519,6 +589,18 @@ const publicSlice = createSlice({
                 state.isLoading = false;    
             })
 
+            .addCase(publicGetAllDomesticItinerariesAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetAllDomesticItinerariesAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.allDomesticItineraries = action.payload;
+            })
+            .addCase(publicGetAllDomesticItinerariesAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;    
+            })
+
 
 
             .addCase(publicGetFiveDomesticItinerariesAsync2.pending, (state) => {
@@ -532,6 +614,22 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;    
             })
+
+            .addCase(publicGetAllDomesticItinerariesAsync2.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetAllDomesticItinerariesAsync2.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.allDomesticItineraries2 = action.payload;
+            })
+            .addCase(publicGetAllDomesticItinerariesAsync2.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
+            })
+
+
+              // Top most tour package section api endpoints cases public-five-international-itineraries, public-thirty-international-itineraries, public-five-domestic-itineraries, public-thirty-domestic-itineraries ends here
+
             
     }
 });

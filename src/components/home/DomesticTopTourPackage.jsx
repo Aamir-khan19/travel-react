@@ -9,11 +9,14 @@ import PhoneNumberModal from "../packages/Allpackages/PhoneNumberModal";
 import EmailModal from "../packages/Allpackages/EmailModal";
 import EnquiryModal from "../packages/Allpackages/EnquiryModal";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const DomesticTopTourPackage = () => {
   const dispatch = useDispatch();
   const fiveDomesticItineraries = useSelector(state => state.public.fiveDomesticItineraries);
   const isLoading = useSelector(state => state.public.isLoading);
+
+  const navigate = useNavigate();
 
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
@@ -111,6 +114,11 @@ const DomesticTopTourPackage = () => {
     setIsContactAgentEnqNowModal(true);
     }
 
+
+    const handleExploreAll = function(){
+      navigate('/all-domestic-itineraries');
+      }
+
   return (
     <>
     {
@@ -134,7 +142,7 @@ const DomesticTopTourPackage = () => {
  
            <div className="justify-between flex mb-2">
              <h3 className="text-[#FB471E]">Domestic</h3>
-             <button className="text-sm px-5 py-2 rounded-md bg-blue-950 text-white">
+             <button onClick={handleExploreAll} className="text-sm px-5 py-2 rounded-md bg-blue-950 text-white">
                Explore All
              </button>
            </div>

@@ -2,18 +2,21 @@ import React, { useEffect, useRef } from "react";
 import KeenSlider from "keen-slider";
 import "keen-slider/keen-slider.min.css";
 import { useDispatch, useSelector } from "react-redux";
-import { publicGetFiveDomesticItinerariesAsync, publicGetFiveDomesticItinerariesAsync2, setParticularItineraryId } from "../../features/public/publicSlice";
+import { publicGetFiveDomesticItinerariesAsync2, setParticularItineraryId } from "../../features/public/publicSlice";
 import conf from "../../../conf/conf";
 import ContactAgentAndEnquiryNowModal from "../packages/Allpackages/ContactAgentAndEnquiryNowModal";
 import PhoneNumberModal from "../packages/Allpackages/PhoneNumberModal";
 import EmailModal from "../packages/Allpackages/EmailModal";
 import EnquiryModal from "../packages/Allpackages/EnquiryModal";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const BlogSection = () => {
+const PlacesToVisit = () => {
   const dispatch = useDispatch();
   const fiveDomesticItineraries2 = useSelector(state => state.public.fiveDomesticItineraries2);
   const isLoading = useSelector(state => state.public.isLoading);
+
+  const navigate = useNavigate();
 
   const sliderContainer = useRef(null);
   const keenSlider = useRef(null);
@@ -111,10 +114,15 @@ const BlogSection = () => {
     setIsContactAgentEnqNowModal(true);
     }
 
+
+    const handleExploreAll = function(){
+      navigate("/all-places-to-visit");
+    }
+
   return (
     <>
     {
-       isLoading?  <div className=' flex justify-center h-[50vh] items-center'>
+       isLoading?  <div className='flex justify-center h-[50vh] items-center'>
 
        <div className='inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600 align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]'></div> 
    
@@ -135,8 +143,8 @@ const BlogSection = () => {
            ></div>
  
            <div className="justify-between flex mb-2">
-             <h1 className=" text-blue-900 text-3xl">Places to visit</h1>
-             <button className="text-sm px-5 py-2 rounded-md bg-blue-950 text-white">
+             <h1 className=" text-blue-900 text-3xl font-bold">Places to visit</h1>
+             <button onClick={handleExploreAll} className="text-sm px-5 py-2 rounded-md bg-blue-950 text-white">
                Explore All
              </button>
            </div>
@@ -252,4 +260,4 @@ const BlogSection = () => {
   );
 };
 
-export default BlogSection;
+export default PlacesToVisit;

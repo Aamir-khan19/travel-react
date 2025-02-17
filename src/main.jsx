@@ -43,6 +43,9 @@ import SitemapComponent from "./pages/Sitemap.jsx";
 import DashboardBlogContentImages from "./pages/DashboardBlogContentImages.jsx";
 import DashboardCreateBlogContentImages from "./pages/DashboardCreateBlogContentImages.jsx";
 import DashboardEditBlogContentImages from "./pages/DashboardEditBlogContentImages.jsx";
+import AllInternationalItinerariesPage from "./pages/AllInternationalItinerariesPage.jsx";
+import AllDomesticItinerariesPage from "./pages/AllDomesticItinerariesPage.jsx";
+import AllPlacesToVisit from "./pages/AllPlacesToVisit.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -69,6 +72,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
             <Route path="/b2b-signup" element={<SignUp />} />
             <Route path="/b2b-login" element={<SignIn />} />
+            <Route path="/all-international-itineraries" element={<AllInternationalItinerariesPage />} />
+            <Route path='/all-domestic-itineraries' element={<AllDomesticItinerariesPage />} />
+            <Route path="/all-places-to-visit" element={<AllPlacesToVisit />} />
 
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard-users" element={<DashboardUsers />} />

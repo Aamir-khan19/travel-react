@@ -11,7 +11,6 @@ import DomesticTopTourPackage from "./components/home/DomesticTopTourPackage";
 import VerifiedHotel from "./components/home/VerifiedHotel";
 import VerifiedTransport from "./components/home/VerifiedTransport";
 import FreeRegisteredTravelAgents from "./components/home/FreeRegisteredTravelAgents";
-import BlogSection from "./components/home/BlogSection";
 import Testimonial from "./components/home/Testimonial";
 import NextTopLoader from "nextjs-toploader";
 import Modal from "./components/Modal/Modal";
@@ -22,6 +21,7 @@ import { redirect } from "react-router-dom";
 import TrendingDestination from "./components/home/TrendingDestination";
 import AboutUsSection from "./components/home/AboutUsSection";
 import TrendingPackage from "./components/home/TrendingPackage";
+import PlacesToVisit from "./components/home/PlacesToVisit";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -88,7 +88,7 @@ if (currentDate >= targetDate) {
           <VerifiedHotel />
           <TrendingPackage />
           {/* <VerifiedTransport /> */}
-          <BlogSection />
+          <PlacesToVisit />
           <GrowBuisness />
           <FreeRegisteredTravelAgents />
           <Testimonial />
