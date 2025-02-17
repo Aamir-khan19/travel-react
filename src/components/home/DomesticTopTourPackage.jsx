@@ -130,14 +130,14 @@ const DomesticTopTourPackage = () => {
 
        :
 
-       <section className="py-2" id="international">
+       <section className="py-2">
 
        <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
  
          <div>
            <div
              className="flex flex-col sm:flex-row items-center justify-between mb-8 sm:mb-16"
-             id="international"
+             id="domestic"
            ></div>
  
            <div className="justify-between flex mb-2">

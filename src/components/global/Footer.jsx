@@ -51,11 +51,15 @@ const Footer = () => {
           <div className="flex flex-col lg:justify-start lg:items-start items-center">
             <h6 className="mb-4 font-semibold uppercase">Quick Links</h6>
             <ul className="flex flex-col lg:justify-start lg:items-start items-center">
+             
+             
               <li className="mb-4">
                 <a href="/" className="text-white dark:text-neutral-200">
                   Home
                 </a>
               </li>
+
+
               <li className="mb-4">
                 <Link
                   to="international"
@@ -68,12 +72,12 @@ const Footer = () => {
               </li>
 
               <li className="mb-4">
-                <a
-                  href=""
-                  className="text-white dark:text-neutral-200"
+                <Link
+                  to="trending_package"
+                  className="text-white dark:text-neutral-200 cursor-pointer"
                 >
                   Packages
-                </a>
+                </Link>
               </li>
 
               <li className=" mb-4">

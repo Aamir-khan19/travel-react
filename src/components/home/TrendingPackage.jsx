@@ -104,7 +104,7 @@ const TrendingPackage = () => {
           <div className="inline-block h-10 w-10 animate-spin rounded-full border-4 border-solid border-current border-r-transparent border-gray-600"></div>
         </div>
       ) : (
-        <section className=" mb-10 bg-yellow-100 py-10">
+        <section id="trending_package" className=" mb-10 bg-yellow-100 py-10">
         <div className="mx-auto relative max-w-[1340px] px-4 sm:px-6 lg:ps-8">
           <div className="flex flex-col sm:flex-row items-center justify-between mx-auto mb-4">
             <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold sm:mb-0 flex-grow">
