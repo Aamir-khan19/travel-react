@@ -12,8 +12,8 @@ const About = () => {
     <>
       <Navbar />
       <AboutheroSection />
-      {/* <OurClients /> */}
-      {/* <AboutUsSection /> */}
+      {/* <OurClients />
+      <AboutUsSection /> */}
       {/* <TeamSection /> */}
       <PricingSection />
       <Footer />

@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from "react";
-import api from "../../api";
 import { useDispatch } from "react-redux";
 import { signupAsync } from "../../features/signup/signupSlice";
 
 const Herosection = () => {
   const dispatch = useDispatch();
-
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isFormVisible, setIsFormVisible] = useState(false);
-
   const [flashMessage, setFlashMessage] = useState("");
 
   const [formData, setFormData] = useState({
@@ -22,47 +17,19 @@ const Herosection = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const slides = [
-    { image: "/Images/Homepageimages/goa.jpg" },
-    { image: "/Images/Homepageimages/goa3.jpg" },
-    { image: "/Images/Homepageimages/winter_heroImage.png" },
-    { image: "/Images/Homepageimages/mountain_heroImage.png" },
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) =>
-        prevSlide >= slides.length - 1 ? 0 : prevSlide + 1
-      );
-    }, 2000);
-
-    setTimeout(() => {
-      setIsFormVisible(true);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const handleFormData = (e) => {
     e.preventDefault();
-
-    console.log("handleFormdata", e);
-
     setIsLoading(true);
 
     dispatch(signupAsync(formData))
-      .then((data) => {
+      .then(() => {
         setIsLoading(false);
-        setFlashMessage(
-          "Form submitted successfully you will be contacted soon"
-        );
-        console.log("successfully refgsitered eith us", data);
-
+        setFlashMessage("Form submitted successfully! You will be contacted soon.");
         setFormData({ name: "", company_name: "", email: "", phone: "", location: "", your_requirements: "" });
       })
       .catch((error) => {
         setIsLoading(false);
-        console.log("something went wrong ", error);
+        console.log("Something went wrong", error);
       });
   };
 
@@ -80,181 +47,128 @@ const Herosection = () => {
   };
 
   return (
-    <div className="relative w-full h-[90vh] md:h-[110vh] overflow-hidden">
-      <button
-        className={`absolute z-30 ${
-          isFormVisible ? "md:right-1/3 right-[78%]" : "right-0"
-        } top-1/2 transform -translate-y-1/2 bg-blue-500 text-white  px-4 py-2 rotate-90 origin-bottom transition-all duration-700 whitespace-nowrap`}
-        onClick={() => setIsFormVisible(!isFormVisible)}
-      >
-        Leave Your Inquiry
-      </button>
+    <div
+      className="relative h-screen w-full bg-cover bg-center flex items-center px-10"
+      style={{ backgroundImage: 'url("/Images/Homepageimages/goa.jpg")' }}
+    >
+      {/* Left-Aligned Heading */}
+      <h1 className="absolute top-10 left-10 text-5xl font-bold text-blue-900 drop-shadow-lg">
+        Let’s Explore Goa
+      </h1>
 
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-in-out ${
-            index === currentSlide ? "translate-y-0" : "translate-y-full"
-          }`}
-          style={{
-            backgroundImage: `url('${slide.image}')`,
-            zIndex: index === currentSlide ? 1 : 0,
-          }}
-        />
-      ))}
+      {/* Right-Aligned Transparent Form */}
+      {/* Right-Aligned Transparent Form */}
+<div className="ml-auto w-full max-w-md p-6 bg-white bg-opacity-60 text-gray-800 rounded-lg shadow-lg">
 
-      <div className=" h-full flex flex-col items-end justify-center">
-        <div
-          className={`absolute z-[60] right-0 w-[80%] md:w-1/3 bg-indigo-300 shadow-lg transition-transform duration-700 ease-in-out ${
-            isFormVisible ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <div className=" px-6 py-2">
-            <h2 className="text-2xl font-bold mb-2">Leave Your Inquiry<span className=" text-sm">(happy to help you)</span> </h2>
+        <h2 className="text-lg font-bold text-blue-800 mb-4">Tell us what you're looking for!</h2>
 
-            <div
-              className={`bg-white rounded ${
-                flashMessage ? "block" : "hidden"
-              }`}
-            >
-              <h1 className=" text-center text-green-500 font-bold text-lg">
-                {flashMessage}
-              </h1>
-            </div>
-
-            <form onSubmit={(e) => handleFormData(e)}>
-              <div className="mb-2">
-                <label className="block text-gray-700 font-bold" htmlFor="name">
-                  Name
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="name"
-                  type="text"
-                  name="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-
-              <div className="mb-2">
-                <label className="block text-gray-700 font-bold" htmlFor="company_name">
-                  Business Name
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="company_name"
-                  type="text"
-                  name="company_name"
-                  placeholder="Your business name"
-                  value={formData.company_name}
-                  onChange={handleChange}
-              
-                />
-              </div>
-
-
-  
-              <div className="mb-2">
-                <label
-                  className="block text-gray-700 font-bold"
-                  htmlFor="phone"
-                >
-                  Phone
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="phone"
-                  type="number"
-                  name="phone"
-                  placeholder="Your Phone Number"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-
-
-              <div className="mb-2">
-                <label
-                  className="block text-gray-700 font-bold"
-                  htmlFor="email"
-                >
-                  Email
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="email"
-                  type="email"
-                  name="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-
-
-
-
-              <div className="mb-2">
-                <label className="block text-gray-700 font-bold" htmlFor="location">
-                  Location
-                </label>
-                <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  id="location"
-                  type="text"
-                  name="location"
-                  placeholder="Your location"
-                  value={formData.location}
-                  onChange={handleChange}
-              
-                />
-              </div>
-            
-
-              <div className="mb-2">
-                <label
-                  className="block text-gray-700 font-bold"
-                  htmlFor="your_requirements"
-                >
-                  Your Requirements
-                </label>
-
-                <textarea
-                  value={formData.your_requirements}
-                  onChange={handleChange}
-                  name="your_requirements"
-                  id="your_requirements"
-                  placeholder="Your requirements"
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                ></textarea>
-              </div>
-
-              
-              <div className="flex items-center justify-between">
-                <button
-                 disabled={isLoading}                
-
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                  type="submit"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+        {flashMessage && (
+          <div className="bg-white text-green-500 opacity-75 text-center font-bold p-2 rounded mb-3">
+            {flashMessage}
           </div>
-          {/* form ends here  */}
-        </div>
+        )}
+
+        <form onSubmit={handleFormData} className="space-y-4">
+          <input
+            id="name"
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+          />
+
+          <input
+            id="company_name"
+            type="text"
+            name="company_name"
+            placeholder="Your Business Name"
+            value={formData.company_name}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+          />
+
+          <input
+            id="phone"
+            type="number"
+            name="phone"
+            placeholder="Your Phone Number"
+            value={formData.phone}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+          />
+
+          <input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+          />
+
+          <input
+            id="location"
+            type="text"
+            name="location"
+            placeholder="Your Location"
+            value={formData.location}
+            onChange={handleChange}
+            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+          />
+
+          <textarea
+            value={formData.your_requirements}
+            onChange={handleChange}
+            name="your_requirements"
+            id="your_requirements"
+            placeholder="Your Requirements"
+            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+          ></textarea>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-900 text-white py-2 rounded hover:bg-blue-800 transition"
+          >
+            {isLoading ? "Submitting..." : "Submit"}
+          </button>
+
+          <div className="flex items-center">
+            <input type="checkbox" name="agree" className="mr-2" />
+            <label className="text-sm text-gray-800">I agree to get all Email/SMS from you.</label>
+          </div>
+        </form>
       </div>
-      {/* form div parent div ends here  */}
     </div>
   );
 };
 
 export default Herosection;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

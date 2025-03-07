@@ -180,7 +180,7 @@ const {
 
             const { data } = await axios.post(`${conf.laravelBaseUrl}/api/itinerary`, formData, {
                 headers: {
-                    Authorization: "Bearer " + tokenObj?.token
+                    Authorization: "Bearer " + tokenObj?.token,
                 }
             });
 
