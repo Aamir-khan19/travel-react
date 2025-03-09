@@ -47,20 +47,26 @@ const Herosection = () => {
   };
 
   return (
-    <div
-      className="relative h-screen w-full bg-cover bg-center flex items-center px-10"
-      style={{ backgroundImage: 'url("/Images/Homepageimages/goa.jpg")' }}
-    >
-      {/* Left-Aligned Heading */}
-      <h1 className="absolute top-10 left-10 text-5xl font-bold text-blue-900 drop-shadow-lg">
+    <div className="relative h-[80vh] w-full flex items-center px-10">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover"
+      >
+        <source src="/Videos/tnw_welcome.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay Heading */}
+      {/* <h1 className="absolute top-10 left-10 text-5xl font-bold text-blue-900 drop-shadow-lg">
         Let’s Explore Goa
-      </h1>
+      </h1> */}
 
       {/* Right-Aligned Transparent Form */}
-      {/* Right-Aligned Transparent Form */}
-<div className="ml-auto w-full max-w-md p-6 bg-white bg-opacity-60 text-gray-800 rounded-lg shadow-lg">
-
-        <h2 className="text-lg font-bold text-blue-800 mb-4">Tell us what you're looking for!</h2>
+      <div className="relative z-10 ml-auto w-full max-w-[320px] p-4 bg-white bg-opacity-70 text-gray-800 rounded-lg shadow-lg">
+        <h2 className="text-lg font-bold text-blue-800">Tell us what you're looking for!</h2>
 
         {flashMessage && (
           <div className="bg-white text-green-500 opacity-75 text-center font-bold p-2 rounded mb-3">
@@ -68,7 +74,7 @@ const Herosection = () => {
           </div>
         )}
 
-        <form onSubmit={handleFormData} className="space-y-4">
+        <form onSubmit={handleFormData} className="space-y-2">
           <input
             id="name"
             type="text"
@@ -77,7 +83,7 @@ const Herosection = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+            className="w-full px-1 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
           />
 
           <input
@@ -88,7 +94,7 @@ const Herosection = () => {
             value={formData.company_name}
             onChange={handleChange}
             required
-            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+            className="w-full px-1 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
           />
 
           <input
@@ -99,7 +105,7 @@ const Herosection = () => {
             value={formData.phone}
             onChange={handleChange}
             required
-            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+            className="w-full px-1 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
           />
 
           <input
@@ -110,7 +116,7 @@ const Herosection = () => {
             value={formData.email}
             onChange={handleChange}
             required
-            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+            className="w-full px-1 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
           />
 
           <input
@@ -120,7 +126,7 @@ const Herosection = () => {
             placeholder="Your Location"
             value={formData.location}
             onChange={handleChange}
-            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+            className="w-full px-1 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
           />
 
           <textarea
@@ -129,12 +135,12 @@ const Herosection = () => {
             name="your_requirements"
             id="your_requirements"
             placeholder="Your Requirements"
-            className="w-full p-2 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
+            className="w-full px-1 border-[1.5px] border-gray-400 rounded bg-transparent text-gray-800"
           ></textarea>
 
           <button
             type="submit"
-            className="w-full bg-blue-900 text-white py-2 rounded hover:bg-blue-800 transition"
+            className="w-full bg-blue-900 text-white py-1 rounded hover:bg-blue-800 transition"
           >
             {isLoading ? "Submitting..." : "Submit"}
           </button>

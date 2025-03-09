@@ -107,8 +107,8 @@ const VerifiedHotel2 = () => {
   });
 
   return (
-    <section>
-      <div className="mx-auto max-w-7xl pb-10 px-5">
+    <section className="bg-gradient-to-r from-[#FCECE6] via-white to-[#E6F0FE]">
+      <div className="mx-auto max-w-7xl pb-10 px-5 bg-gradient-to-r from-[#FCECE6] via-white to-[#E6F0FE]">
         <div className="sm:mt-16 mt-4 lg:col-span-2  lg:mx-0">
           <div ref={sliderRef} className="keen-slider">
             {hotelsData.map((item) => (

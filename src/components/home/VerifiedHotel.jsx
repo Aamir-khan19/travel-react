@@ -108,7 +108,7 @@ const VerifiedHotel = () => {
   });
 
   return (
-    <section>
+    <section className="bg-gradient-to-r from-[#FCECE6] via-white to-[#E6F0FE]">
       <div className="mx-auto max-w-7xl px-5 pt-10">
         <div className="max-w-7xl items-center justify-center sm:flex sm:pe-6 lg:pe-8">
           <h1 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0">

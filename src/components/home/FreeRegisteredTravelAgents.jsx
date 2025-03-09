@@ -894,7 +894,7 @@ const FreeRegisteredTravelAgents = () => {
       <div className="mx-auto relative max-w-[1340px] px-4 py-10 sm:px-6 lg:ps-8">
         <div className="flex flex-col sm:flex-row items-center justify-between">
           <h2 className="text-center text-[#01055b] md:text-5xl text-3xl font-bold mb-4 sm:mb-0 flex-grow">
-            Registered Travel Agents
+            Browse Top Travel
           </h2>
 
           <div className="relative w-full sm:w-auto flex items-center max-w-sm">

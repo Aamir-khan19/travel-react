@@ -11,7 +11,7 @@ const AboutUsSection = () => {
     }
 
   return (
-    <div className="flex flex-wrap justify-center items-center py-12 px-6 bg-white">
+    <div className="flex flex-wrap justify-center items-center p-6 bg-white">
       {/* Left Section - Images */}
       <div className="relative w-full lg:w-[40%] flex justify-center md:justify-start items-center">
         <div className="relative">

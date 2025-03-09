@@ -2,9 +2,9 @@ import React from "react";
 
 const Client = () => {
   return (
-    <section className=" w-full flex flex-col items-center justify-center px-5 mx-auto pt-10 pb-7">
+    <section className=" w-full bg-gray-50 flex flex-col items-center justify-center px-5 mx-auto py-7">
       <div className="grid grid-cols-1 max-w-7xl  w-fit gap-8 text-gray-500 sm:gap-12 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-5 lg:grid-cols-4 dark:text-gray-400 justify-center md:justify-center">
-        <div className=" flex justify-center items-center">
+        <div className=" flex justify-center items-center p-2 border-[1.5px] border-dashed border-gray-500">
           <a
             href="#"
             className="flex justify-center items-center h-full w-full"
@@ -16,7 +16,7 @@ const Client = () => {
             />
           </a>
         </div>
-        <div className="flex justify-center items-center">
+        <div className=" flex justify-center items-center p-2 border-[1.5px] border-dashed border-gray-500">
           <a
             href="#"
             className="flex justify-center items-center h-full w-full"
@@ -28,7 +28,7 @@ const Client = () => {
             />
           </a>
         </div>
-        <div className="flex justify-center items-center">
+        <div className=" flex justify-center items-center p-2 border-[1.5px] border-dashed border-gray-500">
           <a
             href="#"
             className="flex justify-center items-center h-full w-full"
@@ -40,7 +40,7 @@ const Client = () => {
             />
           </a>
         </div>
-        <div className="flex justify-center items-center">
+        <div className=" flex justify-center items-center p-2 border-[1.5px] border-dashed border-gray-500">
           <a
             href="#"
             className="flex justify-center items-center h-full w-full"
@@ -52,7 +52,7 @@ const Client = () => {
             />
           </a>
         </div>
-        <div className="flex justify-center items-center">
+        <div className=" flex justify-center items-center p-2 border-[1.5px] border-dashed border-gray-500">
           <a
             href="#"
             className="flex justify-center items-center h-full w-full"

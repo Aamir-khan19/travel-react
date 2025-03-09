@@ -130,7 +130,7 @@ const DomesticTopTourPackage = () => {
 
        :
 
-       <section className="py-2">
+       <section className="py-2 mb-10">
 
        <div className="mx-auto max-w-[1340px] px-4 sm:px-6 lg:px-8">
  
