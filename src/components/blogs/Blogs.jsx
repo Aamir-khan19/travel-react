@@ -39,9 +39,22 @@ dispatch(publicGetAllBlogCategoriesAsync());
       :
 
       <section className="w-full">
+
+
+
+<video
+        autoPlay
+        loop
+        muted
+        className="w-full md:h-[80vh] object-cover"
+      >
+        <source src="/Videos/blog.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
       <div className="max-w-7xl mx-auto py-10 px-5">
         <div className="relative w-full">
-          <div className="relative">
+          {/* <div className="relative">
             <img
               src="https://cdn.pixabay.com/photo/2019/12/14/19/37/autumn-4695599_640.jpg"
               alt=""
@@ -59,7 +72,11 @@ dispatch(publicGetAllBlogCategoriesAsync());
             <button className="bg-white text-black font-bold py-2 px-4 rounded-lg w-max">
               Explore Blogs
             </button>
-          </div>
+          </div> */}
+
+
+
+
         </div>
 
         <div className="flex flex-col gap-10 md:py-20 py-10">

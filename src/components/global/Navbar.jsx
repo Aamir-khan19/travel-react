@@ -10,6 +10,77 @@ import {
 } from "react-icons/fa";
 import tripIdeaItems from "../packages/Allpackages/tripIdeas";
 
+
+
+
+
+const domesticLinks = [
+  { to: `/tour-packages/Andhra-Pradesh`, text: "Andhra Pradesh" },
+  { to: `/tour-packages/Arunachal-Pradesh`, text: "Arunachal Pradesh" },
+  { to: `/tour-packages/Assam`, text: "Assam" },
+  { to: `/tour-packages/Andaman`, text: "Andaman" },
+  { to: `/tour-packages/Bihar`, text: "Bihar" },
+  { to: `/tour-packages/Chhattisgarh`, text: "Chhattisgarh" },
+  { to: `/tour-packages/Delhi`, text: "Delhi" },
+  { to: `/tour-packages/Goa`, text: "Goa" },
+  { to: `/tour-packages/Gujarat`, text: "Gujarat" },
+  { to: `/tour-packages/Haryana`, text: "Haryana" },
+  { to: `/tour-packages/Himachal-Pradesh`, text: "Himachal Pradesh" },
+  { to: `/tour-packages/Jharkhand`, text: "Jharkhand" },
+  { to: `/tour-packages/Karnataka`, text: "Karnataka" },
+  { to: `/tour-packages/Kerala`, text: "Kerala" },
+  { to: `/tour-packages/Madhya-Pradesh`, text: "Madhya Pradesh" },
+  { to: `/tour-packages/Maharashtra`, text: "Maharashtra" },
+  { to: `/tour-packages/Manipur`, text: "Manipur" },
+  { to: `/tour-packages/Meghalaya`, text: "Meghalaya" },
+  { to: `/tour-packages/Mizoram`, text: "Mizoram" },
+  { to: `/tour-packages/Nagaland`, text: "Nagaland" },
+  { to: `/tour-packages/Odisha`, text: "Odisha" },
+  { to: `/tour-packages/Punjab`, text: "Punjab" },
+  { to: `/tour-packages/Rajasthan`, text: "Rajasthan" },
+  { to: `/tour-packages/Sikkim`, text: "Sikkim" },
+  { to: `/tour-packages/Tamil-Nadu`, text: "Tamil Nadu" },
+  { to: `/tour-packages/Telangana`, text: "Telangana" },
+  { to: `/tour-packages/Tripura`, text: "Tripura" },
+  { to: `/tour-packages/Uttar-Pradesh`, text: "Uttar Pradesh" },
+  { to: `/tour-packages/Uttarakhand`, text: "Uttarakhand" },
+  { to: `/tour-packages/West-Bengal`, text: "West Bengal" },
+  { to: `/tour-packages/Chandigarh`, text: "Chandigarh" },
+  { to: `/tour-packages/Lakshadweep`, text: "Lakshadweep" },
+  { to: `/tour-packages/Puducherry`, text: "Puducherry" },
+  { to: `/tour-packages/Kashmir`, text: "Kashmir" },
+  { to: `/tour-packages/Ladakh`, text: "Ladakh" }
+];
+
+const internationalLinks = [
+{ to: `/tour-packages/Thailand`, text: "Thailand" },
+{ to: `/tour-packages/UAE`, text: "UAE" },
+{ to: `/tour-packages/Indonesia`, text: "Indonesia" },
+{ to: `/tour-packages/Maldives`, text: "Maldives" },
+{ to: `/tour-packages/Saudi-Arabia`, text: "Saudi Arabia" },
+{ to: `/tour-packages/Malaysia`, text: "Malaysia" },
+{ to: `/tour-packages/USA`, text: "USA" },
+{ to: `/tour-packages/Spain`, text: "Spain" },
+{ to: `/tour-packages/Israel`, text: "Israel" },
+{ to: `/tour-packages/France`, text: "France" },
+{ to: `/tour-packages/China`, text: "China" },
+{ to: `/tour-packages/Vietnam`, text: "Vietnam" },
+{ to: `/tour-packages/UK`, text: "United Kingdom" },
+{ to: `/tour-packages/Tunisia`, text: "Tunisia" },
+{ to: `/tour-packages/Sri-Lanka`, text: "Sri Lanka" },
+{ to: `/tour-packages/Russia`, text: "Russia" },
+{ to: `/tour-packages/Japan`, text: "Japan" },
+{ to: `/tour-packages/Great-Britain`, text: "Britain" },
+{ to: `/tour-packages/Italy`, text: "Italy" },
+{ to: `/tour-packages/Estonia`, text: "Estonia" },
+{ to: `/tour-packages/Australia`, text: "Australia" },
+{ to: `/tour-packages/Turkey`, text: "Turkey" },
+];
+
+
+
+
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -71,7 +142,8 @@ function TripIdeasComponent() {
 }
 
 const NavLinks = ({ menuOpen }) => {
-  const [isOnDropDownMenu, setIsOnDropDownMenu] = useState(false);
+  const [isDomesticDropDownMenu, setIsDomesticDropDownMenu] = useState(false);
+  const [isInternationalDropDownMenu, setIsInternationalDropDownMenu] = useState(false);
 
   const [isTripIdeasVisible, setIsTripIdeasVisible] = useState(false);
 
@@ -88,17 +160,15 @@ const NavLinks = ({ menuOpen }) => {
       >
         <NavLink to="/" text="Home" />
         <NavLink to="/about" text="About" />
-        <button onMouseEnter={() => setIsOnDropDownMenu(true)} onMouseLeave={() => setIsOnDropDownMenu(false)} >
 
+
+        <button onMouseEnter={() => setIsDomesticDropDownMenu(true)} onMouseLeave={() => setIsDomesticDropDownMenu(false)} >
 
           <NavLinkWithDropdown
-
-            text="Packages"
-          // isOnDropDownMenu={isOnDropDownMenu}
-          // setIsOnDropDownMenu={setIsOnDropDownMenu}
+            text="Domestic"
           >
             {
-              isOnDropDownMenu &&
+              isDomesticDropDownMenu &&
 
               <div className=" relative">
                 <div className=" absolute top-0 bg-transparent left-0 right-0 h-10" />
@@ -107,15 +177,13 @@ const NavLinks = ({ menuOpen }) => {
 
 
             {
-              isOnDropDownMenu &&
+              isDomesticDropDownMenu &&
               <div className=" relative" >
 
                 <div className=" absolute left-1/2 -translate-x-1/2 h-fit w-fit">
 
-                  <DropdownMenu
-                    // isOnDropDownMenu={isOnDropDownMenu}
-                    // setIsOnDropDownMenu={setIsOnDropDownMenu}
-                    items={dropdownItems}
+                  <DomesticDropdownMenu
+                    items={domesticLinks}
                   />
 
                 </div>
@@ -126,6 +194,43 @@ const NavLinks = ({ menuOpen }) => {
           </NavLinkWithDropdown>
 
         </button>
+
+
+
+
+        <button onMouseEnter={() => setIsInternationalDropDownMenu(true)} onMouseLeave={() => setIsInternationalDropDownMenu(false)} >
+<NavLinkWithDropdown
+  text="International"
+
+>
+  {
+    isInternationalDropDownMenu &&
+
+    <div className=" relative">
+      <div className=" absolute top-0 bg-transparent left-0 right-0 h-10" />
+    </div>
+  }
+
+
+  {
+    isInternationalDropDownMenu &&
+    <div className=" relative" >
+      <div className=" absolute left-1/2 -translate-x-1/2 h-fit w-fit">
+        <InternationalDropdownMenu
+          items={internationalLinks}
+        />
+
+      </div>
+    </div>
+
+  }
+
+</NavLinkWithDropdown>
+
+</button>
+
+
+
 
         <NavLink to="/blog" text="Blogs" />
         <NavLink to="/contact" text="Contact" />
@@ -181,136 +286,105 @@ const NavLinkWithDropdown = ({
   );
 };
 
-const DropdownMenu = ({ items }) => {
+const DomesticDropdownMenu = ({items}) => {
+
   const [showMore, setShowMore] = useState(false);
 
   const handleToggle = () => {
     setShowMore(!showMore);
   };
 
-  const visibleIndianItems = showMore ? items.indian : items.indian.slice(0, 9);
-  const visibleInternationalItems = showMore
-    ? items.international
-    : items.international.slice(0, 9);
+  const visibleIndianItems = showMore ? items : items.slice(0, 12);
 
   return (
     <div
-    className="absolute z-[100] translate-x-[-50%] left-1/2 lg:w-[700px] md:w-[500px] sm:w-[300px] xs:w-[250px] bg-gradient-to-r from-white to-gray-50 shadow-lg border border-gray-200 rounded-xl p-6 transition-opacity duration-300 mt-6"
+    className="absolute z-[100] translate-x-[-50%] left-1/2 lg:w-[480px] md:w-[450px] sm:w-[300px] xs:w-[250px] bg-gradient-to-r from-white to-gray-50 shadow-lg border border-gray-200 rounded-xl p-2 transition-opacity duration-300 mt-6"
   >
-    <div className="flex flex-col lg:flex-row gap-8">
+   
       {/* Domestic Packages Section */}
       <div>
-        <h1 className="font-extrabold text-xl text-[#02173b] hover:text-[#3d71cc] transition">
-          🌟 Domestic Packages
-        </h1>
-        <ul className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
+        <ul className="grid md:grid-cols-3 grid-cols-1 gap-1">
           {visibleIndianItems.map((item, index) => (
             <li key={index}>
               <Link
                 to={item.to}
-                className="block py-2 px-3 bg-gray-100 hover:bg-[#3d71cc] hover:text-white rounded-lg font-medium transition"
+                className="block py-1 bg-gray-100 hover:bg-[#3d71cc] hover:text-white rounded-lg font-medium text-sm transition"
               >
                 {item.text}
               </Link>
             </li>
           ))}
         </ul>
-      </div>
-  
-      {/* International Packages Section */}
-      <div>
-        <h1 className="font-extrabold text-xl text-[#02173b] hover:text-[#3d71cc] transition">
-          ✈️ International Packages
-        </h1>
-        <ul className="grid md:grid-cols-2 grid-cols-1 gap-4 mt-4">
-          {visibleInternationalItems.map((item, index) => (
-            <li key={index}>
-              <Link
-                to={item.to}
-                className="block py-2 px-3 bg-gray-100 hover:bg-[#3d71cc] hover:text-white rounded-lg font-medium transition"
-              >
-                {item.text}
-              </Link>
-            </li>
-          ))}
-        </ul>
+
         <button
           onClick={handleToggle}
-          className="mt-6 bg-gradient-to-r from-[#3d71cc] to-[#1a2f53] text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg hover:opacity-90 transition"
+          className="mt-4 bg-gradient-to-r from-[#3d71cc] to-[#1a2f53] text-white px-3 py-2 rounded-lg font-semibold hover:shadow-lg hover:opacity-90 transition"
         >
           {showMore ? "Read Less" : "Read More"}
         </button>
+
       </div>
-    </div>
+
   </div>
   
   );
 };
 
-const dropdownItems = {
-  indian: [
-      { to: `/tour-packages/Andhra-Pradesh`, text: "Andhra Pradesh" },
-      { to: `/tour-packages/Arunachal-Pradesh`, text: "Arunachal Pradesh" },
-      { to: `/tour-packages/Assam`, text: "Assam" },
-      { to: `/tour-packages/Andaman`, text: "Andaman" },
-      { to: `/tour-packages/Bihar`, text: "Bihar" },
-      { to: `/tour-packages/Chhattisgarh`, text: "Chhattisgarh" },
-      { to: `/tour-packages/Delhi`, text: "Delhi" },
-      { to: `/tour-packages/Goa`, text: "Goa" },
-      { to: `/tour-packages/Gujarat`, text: "Gujarat" },
-      { to: `/tour-packages/Haryana`, text: "Haryana" },
-      { to: `/tour-packages/Himachal-Pradesh`, text: "Himachal Pradesh" },
-      { to: `/tour-packages/Jharkhand`, text: "Jharkhand" },
-      { to: `/tour-packages/Karnataka`, text: "Karnataka" },
-      { to: `/tour-packages/Kerala`, text: "Kerala" },
-      { to: `/tour-packages/Madhya-Pradesh`, text: "Madhya Pradesh" },
-      { to: `/tour-packages/Maharashtra`, text: "Maharashtra" },
-      { to: `/tour-packages/Manipur`, text: "Manipur" },
-      { to: `/tour-packages/Meghalaya`, text: "Meghalaya" },
-      { to: `/tour-packages/Mizoram`, text: "Mizoram" },
-      { to: `/tour-packages/Nagaland`, text: "Nagaland" },
-      { to: `/tour-packages/Odisha`, text: "Odisha" },
-      { to: `/tour-packages/Punjab`, text: "Punjab" },
-      { to: `/tour-packages/Rajasthan`, text: "Rajasthan" },
-      { to: `/tour-packages/Sikkim`, text: "Sikkim" },
-      { to: `/tour-packages/Tamil-Nadu`, text: "Tamil Nadu" },
-      { to: `/tour-packages/Telangana`, text: "Telangana" },
-      { to: `/tour-packages/Tripura`, text: "Tripura" },
-      { to: `/tour-packages/Uttar-Pradesh`, text: "Uttar Pradesh" },
-      { to: `/tour-packages/Uttarakhand`, text: "Uttarakhand" },
-      { to: `/tour-packages/West-Bengal`, text: "West Bengal" },
-      { to: `/tour-packages/Chandigarh`, text: "Chandigarh" },
-      { to: `/tour-packages/Lakshadweep`, text: "Lakshadweep" },
-      { to: `/tour-packages/Puducherry`, text: "Puducherry" },
-      { to: `/tour-packages/Kashmir`, text: "Kashmir" },
-      { to: `/tour-packages/Ladakh`, text: "Ladakh" }
-  ],
 
-  international: [
-    { to: `/tour-packages/Thailand`, text: "Thailand" },
-    { to: `/tour-packages/UAE`, text: "UAE" },
-    { to: `/tour-packages/Indonesia`, text: "Indonesia" },
-    { to: `/tour-packages/Maldives`, text: "Maldives" },
-    { to: `/tour-packages/Saudi-Arabia`, text: "Saudi Arabia" },
-    { to: `/tour-packages/Malaysia`, text: "Malaysia" },
-    { to: `/tour-packages/USA`, text: "USA" },
-    { to: `/tour-packages/Spain`, text: "Spain" },
-    { to: `/tour-packages/Israel`, text: "Israel" },
-    { to: `/tour-packages/France`, text: "France" },
-    { to: `/tour-packages/China`, text: "China" },
-    { to: `/tour-packages/Vietnam`, text: "Vietnam" },
-    { to: `/tour-packages/UK`, text: "United Kingdom" },
-    { to: `/tour-packages/Tunisia`, text: "Tunisia" },
-    { to: `/tour-packages/Sri-Lanka`, text: "Sri Lanka" },
-    { to: `/tour-packages/Russia`, text: "Russia" },
-    { to: `/tour-packages/Japan`, text: "Japan" },
-    { to: `/tour-packages/Great-Britain`, text: "Britain" },
-    { to: `/tour-packages/Italy`, text: "Italy" },
-    { to: `/tour-packages/Estonia`, text: "Estonia" },
-    { to: `/tour-packages/Australia`, text: "Australia" },
-    { to: `/tour-packages/Turkey`, text: "Turkey" },
-  ],
+
+
+
+
+
+const InternationalDropdownMenu = ({items}) => {
+
+  const [showMore, setShowMore] = useState(false);
+
+  const handleToggle = () => {
+    setShowMore(!showMore);
+  };
+
+  const visibleInternationalItems = showMore ? items : items.slice(0, 12);
+
+  return (
+    <div
+    className="absolute z-[100] translate-x-[-50%] left-1/2 lg:w-[480px] md:w-[450px] sm:w-[300px] xs:w-[250px] bg-gradient-to-r from-white to-gray-50 shadow-lg border border-gray-200 rounded-xl p-2 transition-opacity duration-300 mt-6"
+  >
+   
+      {/* Domestic Packages Section */}
+      <div>
+        <ul className="grid md:grid-cols-3 grid-cols-1 gap-1">
+          {visibleInternationalItems.map((item, index) => (
+            <li key={index}>
+              <Link
+                to={item.to}
+                className="block py-1 bg-gray-100 hover:bg-[#3d71cc] hover:text-white rounded-lg font-medium text-sm transition"
+              >
+                {item.text}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <button
+          onClick={handleToggle}
+          className="mt-4 bg-gradient-to-r from-[#3d71cc] to-[#1a2f53] text-white px-3 py-2 rounded-lg font-semibold hover:shadow-lg hover:opacity-90 transition"
+        >
+          {showMore ? "Read Less" : "Read More"}
+        </button>
+
+      </div>
+
+  </div>
+  
+  );
 };
+
+
+
+
+
+
 
 const MenuToggle = ({ onClick, menuOpen }) => (
   <div onClick={onClick} className="text-2xl cursor-pointer lg:hidden z-50">
@@ -362,13 +436,7 @@ const ContactUs = ({ mobile = false }) => {
       className={`flex items-center gap-6 ${mobile ? "lg:mt-0 lg:hidden" : "hidden lg:flex md:hidden"
         }`}
     >
-      {/* <Link
-        to="/B2BLogin"
-        className="bg-[#071835] flex items-center gap-1 justify-center text-white px-4 py-2 rounded-xl hover:bg-[#1a2f53] text-xl"
-      >
-        <CiUser color="white" size={20} />
-        Login
-      </Link> */}
+     
 
       <button
         onClick={handleRequestQuoteOpenModal}

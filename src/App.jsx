@@ -82,10 +82,10 @@ if (currentDate >= targetDate) {
           <AboutUsSection />
           <Client />
           <TrendingDestination />
+          <OurTravelAgents />
           <InternationalTopTourPackage />
           <DomesticTopTourPackage />
           <VerifiedHotel />
-          <OurTravelAgents />
           <TrendingPackage />
           <InternationalTopTourPackage />
           <DomesticTopTourPackage />
