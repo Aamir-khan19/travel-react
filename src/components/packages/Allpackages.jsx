@@ -43,6 +43,15 @@ const Allpackages = () => {
   }
 
 
+  useEffect(() => {
+
+    scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [name]);
+
+
   return (
     <>
 

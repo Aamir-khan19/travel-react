@@ -9,37 +9,71 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-5 py-10 md:py-20">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col gap-5">
-            <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center">
-              <h6 className="mb-4 font-semibold uppercase">Support</h6>
+
+
+          <div className="flex flex-col lg:justify-start lg:items-start justify-center items-center">
+              <h6 className="mb-4 font-semibold uppercase">Policy</h6>
               <ul>
-                <li className="mb-4">
-                  <a href="/contact" className="text-white dark:text-neutral-200">Contact Us</a>
+                <li className="mb-2">
+                  <a
+                    href="/privacyPolicy"
+                    className="text-white dark:text-neutral-200"
+                  >
+                    Privacy Policy
+                  </a>
                 </li>
                 <li className="mb-4">
+                  <a href="/terms" className="text-white dark:text-neutral-200">
+                    Terms of Use
+                  </a>
+                </li>
+              </ul>
+
+
+              <h6 className="mb-2 font-semibold uppercase">Support</h6>
+              <ul>
+                <li className="mb-2">
+                  <a href="/contact" className="text-white dark:text-neutral-200">Contact Us</a>
+                </li>
+                <li className="mb-2">
                   <a href="/about" className="text-white dark:text-neutral-200">About Us</a>
                 </li>
               </ul>
+
             </div>
+
           </div>
 
           <div className="flex flex-col lg:justify-start lg:items-start items-center">
             <h6 className="mb-4 font-semibold uppercase">Quick Links</h6>
             <ul className="flex flex-col lg:justify-start lg:items-start items-center">
-              <li className="mb-4">
+              <li className="mb-2">
                 <a href="/" className="text-white dark:text-neutral-200">Home</a>
               </li>
-              <li className="mb-4">
+              <li className="mb-2">
                 <Link to="international" smooth={true} duration={500} className="text-white dark:text-neutral-200 cursor-pointer">International Destination</Link>
               </li>
-              <li className="mb-4">
+              <li className="mb-2">
                 <Link to="trending_package" className="text-white dark:text-neutral-200 cursor-pointer">Packages</Link>
               </li>
-              <li className="mb-4">
+              <li className="mb-2">
                 <Link to="domestic" smooth={true} duration={500} className="text-white dark:text-neutral-200 cursor-pointer">Domestic Destination</Link>
               </li>
-              <li className="mb-4">
+              <li className="mb-2">
                 <RouterLink to="/b2b-login" className="text-white dark:text-neutral-200 cursor-pointer">B2B Login</RouterLink>
               </li>
+            </ul>
+          </div>
+
+
+          <div className="flex flex-col lg:justify-start lg:items-start items-center">
+            <h6 className="mb-4 font-semibold uppercase">Trip Ideas</h6>
+            <ul>
+              <li className="mb-2"><RouterLink to="/trip-ideas/Visa-Free-Countries/1" className="text-white dark:text-neutral-200">Visa Free Countries</RouterLink></li>
+              <li className="mb-2"><RouterLink to="/trip-ideas/Best-Places-Near-Delhi/2" className="text-white dark:text-neutral-200">Best Places Near Delhi</RouterLink></li>
+              <li className="mb-2"><RouterLink to="/trip-ideas/Economic-Budget-Places/3" className="text-white dark:text-neutral-200">Economic Budget Places</RouterLink></li>
+              <li className="mb-2"><RouterLink to="/trip-ideas/Honeymoon-Destinations/4" className="text-white dark:text-neutral-200">Honeymoon Destinations</RouterLink></li>
+              <li><RouterLink to="/trip-ideas/Beautiful-Women-Countries/8" className="text-white dark:text-neutral-200">Romantic Hotels Chennai</RouterLink></li>
             </ul>
           </div>
 
@@ -75,16 +109,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className="flex flex-col lg:justify-start lg:items-start items-center">
-            <h6 className="mb-4 font-semibold uppercase">Trip Ideas</h6>
-            <ul>
-              <li className="mb-2"><RouterLink to="/Visa-Free-Countries" className="text-white dark:text-neutral-200">Visa Free Countries</RouterLink></li>
-              <li className="mb-2"><RouterLink to="/Best-Places-Near-Delhi" className="text-white dark:text-neutral-200">Best Places Near Delhi</RouterLink></li>
-              <li className="mb-2"><RouterLink to="/Economic-Budget-Places" className="text-white dark:text-neutral-200">Economic Budget Places</RouterLink></li>
-              <li className="mb-2"><RouterLink to="/Honeymoon-Destinations" className="text-white dark:text-neutral-200">Honeymoon Destinations</RouterLink></li>
-              <li><RouterLink to="/Romantic-Hotels-Chennai" className="text-white dark:text-neutral-200">Romantic Hotels Chennai</RouterLink></li>
-            </ul>
-          </div>
+        
 
 
 
