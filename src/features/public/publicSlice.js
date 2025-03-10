@@ -80,6 +80,9 @@ export const publicGetRandomItinerariesAsync = createAsyncThunk(
     async (_, options) => {
         try {
             const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-random-itineraries`);
+
+            console.log("publicSlice.js", data);
+
             return data;
         } catch (error) {
             console.log("publicSlice.js publicGetRandomItinerariesAsync error", error);
