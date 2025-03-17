@@ -46,6 +46,7 @@ import DashboardEditBlogContentImages from "./pages/DashboardEditBlogContentImag
 import AllInternationalItinerariesPage from "./pages/AllInternationalItinerariesPage.jsx";
 import AllDomesticItinerariesPage from "./pages/AllDomesticItinerariesPage.jsx";
 import AllPlacesToVisit from "./pages/AllPlacesToVisit.jsx";
+import ParticularVerifiedTravelAgentDetailsPage from "./pages/ParticularVerifiedTravelAgentDetailsPage.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
@@ -75,6 +76,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="/all-international-itineraries" element={<AllInternationalItinerariesPage />} />
             <Route path='/all-domestic-itineraries' element={<AllDomesticItinerariesPage />} />
             <Route path="/all-places-to-visit" element={<AllPlacesToVisit />} />
+            <Route path="/verified-travel-agent/:id" element={<ParticularVerifiedTravelAgentDetailsPage />} />
 
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashboard-users" element={<DashboardUsers />} />

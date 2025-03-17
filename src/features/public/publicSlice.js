@@ -18,6 +18,7 @@ const initialState = {
     particularBlog: {},
 
     verifiedTravelAgents: [],
+    verifiedTravelAgentDetails: {},
 
     isLeadCreated: false,
     isCustomizeItineraryCreated: false,
@@ -273,6 +274,20 @@ export const publicGetAllVerifiedTravelAgentsAsync = createAsyncThunk(
 );
 
 
+export const publicGetParticularVerifiedTravelAgentAsync = createAsyncThunk(
+    'public/getParticularVerifiedTravelAgent',
+    async (id, options) => {
+        try {
+            const { data } = await axios.get(`${conf.laravelBaseUrl}/api/public-verified-travel-agent/${id}`);
+            return data;
+        } catch (error) {
+            console.log("publicSlice.js publicGetAllVerifiedTravelAgentsAsync error", error);
+            throw options.rejectWithValue(error?.response?.data);
+        }
+    }
+);
+
+
 // lead api endpoints ends here
 // Store lead phone and email
 export const publicStoreLeadPhoneEmailAsync = createAsyncThunk(
@@ -491,6 +506,18 @@ const publicSlice = createSlice({
                 state.errors = action.payload;
                 state.isLoading = false;
 
+            })
+
+            .addCase(publicGetParticularVerifiedTravelAgentAsync.pending, (state) => {
+                state.isLoading = true;
+            })
+            .addCase(publicGetParticularVerifiedTravelAgentAsync.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.verifiedTravelAgentDetails = action.payload;
+            })
+            .addCase(publicGetParticularVerifiedTravelAgentAsync.rejected, (state, action) => {
+                state.errors = action.payload;
+                state.isLoading = false;
             })
 
 

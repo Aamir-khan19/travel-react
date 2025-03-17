@@ -12,7 +12,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 import { publicGetAllVerifiedTravelAgentsAsync } from "../../features/public/publicSlice";
 import conf from "../../../conf/conf";
-
+import { Link } from "react-router-dom";
 
 const OurTravelAgents = () => {
   const dispatch = useDispatch();
@@ -185,6 +185,7 @@ const OurTravelAgents = () => {
             {filteredAgents?.length > 0 ? (
               filteredAgents?.map((agent, i) => (
                 <div className="keen-slider__slide" key={i}>
+                  <Link to={`/verified-travel-agent/${agent?.id}`}>
                   <div className=" flex border-[1px] p-2 min-h-[220px] border-gray-600 rounded-lg relative w-full">
                     <div className="bg-[url('/Images/travelAgenciesLogo/verifiedimg.jpeg')] bg-cover bg-center w-[100px] h-[100px] top-0 left-0 absolute z-[-10]"></div>
 
@@ -272,6 +273,9 @@ const OurTravelAgents = () => {
                       </div>
                     </div>
                   </div>
+
+                  </Link>
+
                 </div>
               ))
             ) : (
